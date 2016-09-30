@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>江湖单元测试</title>
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js">
+	</script>
+	<script type="text/javascript">
+	function getUnreadNum(){  
+		$.ajax({
+			cache: false,
+			type: "POST",
+    	url:"http://localhost/jianghu/index.php/home/msg/getunreadnum",	//把表单数据发送到ajax.jsp
+    	data:{
+    		'user_id':$('#userid').val(),	
+    	},
+    	error: function(){
+    	},
+    	success: function(data) {
+    		$("#unread_msg").val(data);	
+    	}
+    }); 
+    //递归调用自己实现实时更新
+    setTimeout('getUnreadNum();',10000);  
+}  
+
+
+$(document).ready(function() {  
+      getUnreadNum();//实时  
+  });
+</script>
+<script>
+
+</script>
+</head>
+<body >
+	<h2>用户模块</h2>
+	<form method="post" action="http://localhost/jianghu/index.php/home/user/join.html">
+		<table>
+			<tr>
+				<td>姓名</td>
+				<td><input type="text"name="username"></td>
+			</tr>
+			<tr>
+				<td >密码</td>
+				<td><input type="text"name="password"></td>
+			</tr>
+			<tr>
+				<td >性别</td>
+				<td><input type="text"name="sex"></td>
+			</tr>
+			<tr>
+				<td >电话</td>
+				<td><input type="text"name="phonenum"></td>
+			</tr>
+			<tr>
+				<td >地址</td>
+				<td><input type="text"name="addr"></td>
+			</tr>
+		</table>
+		<button type="submit" >注册</button>
+	</form>
+	<form method="get" action="http://localhost/jianghu/index.php/home/user/login.html">
+		<table>
+			<tr>
+				<td>姓名</td>
+				<td><input type="text"name="username"></td>
+			</tr>
+			<tr>
+				<td >密码</td>
+				<td><input type="text"name="password"></td>
+			</tr>
+		</table>
+		<button type="submit" >登录</button>
+	</form>
+	
+	<form method="post" action="http://localhost/jianghu/index.php/home/user/outlogin.html">
+		<table>
+			<tr>
+				<td>姓名</td>
+				<td><input type="text"name="username"></td>
+			</tr>
+		</table>
+		<button type="submit" >退出登录</button>
+	</form>
+	
+	<form method="post" action="http://localhost/jianghu/index.php/home/user/addface.html"enctype="multipart/form-data" >
+		<table>
+			<tr>
+				<td>姓名</td>
+				<td><input type="text"name="username"></td>
+			</tr>
+			<tr>
+				<td >头像</td>
+				<td><input type="file"name="photo"></td>
+			</tr>
+		</table>
+		<button type="submit" >上传头像</button>
+	</form>
+	<form method="post" action="http://localhost/jianghu/index.php/home/user/changeface.html"enctype="multipart/form-data" >
+		<table>
+			<tr>
+				<td>姓名</td>
+				<td><input type="text"name="username"></td>
+			</tr>
+			<tr>
+				<td >头像</td>
+				<td><input type="file"name="photo"></td>
+			</tr>
+		</table>
+		<button type="submit" >更改头像</button>
+	</form>
+	
+	
+	<h2>推荐模块</h2>
+	<form method="post" action="http://localhost/jianghu/index.php/home/introduce/add.html"enctype="multipart/form-data">
+		<table>
+			<tr>
+				<td>用户名</td>
+				<td><input type="text"name="username"></td>
+			</tr>
+			<tr>
+				<td >文字</td>
+				<td><textarea  name="text"></textarea>
+				</tr>
+				<tr>
+					<td>图片</td>
+					<td><input type="file"name="photo[]"></td>
+					<td><input type="file"name="photo[]"></td>
+					<td><input type="file"name="photo[]"></td>
+					<td><input type="file"name="photo[]"></td>
+					<td><input type="file"name="photo[]"></td>
+					<td><input type="file"name="photo[]"></td>
+					<td><input type="file"name="photo[]"></td>
+					<td><input type="file"name="photo[]"></td>
+					<td><input type="file"name="photo[]"></td>
+				</tr>
+			</table>
+			<button type="submit" >添加推荐</button>
+		</form>
+		
+		<form method="post" action="http://localhost/jianghu/index.php/home/introduce/del.html">
+			<table>
+				<tr>
+					<td>推荐id</td>
+					<td><input type="text"name="id"></td>
+				</tr>
+			</table>
+			<button type="submit" >删除推荐</button>
+		</form>
+		
+		<form method="post" action="http://localhost/jianghu/index.php/home/introduce/showFriendIntro.html">
+			<table>
+				<tr>
+					<td>用户名</td>
+					<td><input type="text"name="username"></td>
+				</tr>
+			</table>
+			<button type="submit" >查看朋友推荐</button>
+		</form>
+		
+		<form method="post" action="http://localhost/jianghu/index.php/home/introduce/showUserIntro.html">
+			<table>
+				<tr>
+					<td>用户名</td>
+					<td><input type="text"name="username"></td>
+				</tr>
+			</table>
+			<button type="submit" >查看自己的推荐</button>
+		</form>
+		
+		<form method="post" action="http://localhost/jianghu/index.php/home/introduce/addpraise.html">
+			<table>
+				<tr>
+					<td>用户名</td>
+					<td><input type="text"name="username"></td>
+				</tr>
+				<tr>
+					<td>推荐id</td>
+					<td><input type="text"name="introduce_id"></td>
+				</tr>
+			</table>
+			<button type="submit" >点赞</button>
+		</form>
+		
+		<form method="post" action="http://localhost/jianghu/index.php/home/introduce/delpraise.html">
+			<table>
+				<tr>
+					<td>点赞id</td>
+					<td><input type="text"name="praise_id"></td>
+				</tr>
+			</table>
+			<button type="submit" >取消点赞</button>
+		</form>
+		
+		<form method="post" action="http://localhost/jianghu/index.php/home/introduce/showwhopraise.html">
+			<table>
+				<tr>
+					<td>推荐id</td>
+					<td><input type="text"name="introduce_id"></td>
+				</tr>
+			</table>
+			<button type="submit" >查看点赞了这条推荐的用户</button>
+		</form>
+		
+		<form method="post" action="http://localhost/jianghu/index.php/home/introduce/forward.html">
+			<table>
+				<tr>
+					<td>用户id</td>
+					<td><input type="text"name="user_id"></td>
+				</tr>
+				<tr>
+					<td>转发评论</td>
+					<td><input type="text"name="comment"></td>
+				</tr>
+				<tr>
+					<td>推荐id</td>
+					<td><input type="text"name="introduce_id"></td>
+				</tr>
+			</table>
+			<button type="submit" >转发</button>
+		</form>
+		
+		
+		
+		
+		<h2>好友模块</h2>
+
+		<form method="post" action="http://localhost/jianghu/index.php/home/friend/add.html">
+			<table>
+				<tr>
+					<td>用户id</td>
+					<td><input type="text"name="userid"></td>
+				</tr>
+				<tr>
+					<td >添加的朋友id</td>
+					<td><input  name="friendid"></input>
+					</tr>
+				</table>
+				<button type="submit" >添加朋友</button>
+			</form>
+			
+			<form method="post" action="http://localhost/jianghu/index.php/home/friend/delete.html">
+				<table>
+					<tr>
+						<td>用户id</td>
+						<td><input type="text"name="userid"></td>
+					</tr>
+					<tr>
+						<td >删除的朋友id</td>
+						<td><input  name="friendid"></input>
+						</tr>
+					</table>
+					<button type="submit" >删除好友</button>
+				</form>
+				
+				<form method="post" action="http://localhost/jianghu/index.php/home/friend/showfriendlist.html">
+					<table>
+						<tr>
+							<td>用户名</td>
+							<td><input type="text"name="username"></td>
+						</tr>
+					</table>
+					<button type="submit" >查看所有好友</button>
+				</form>
+				
+				<h2>消息模块</h2>
+				
+				<form action="http://localhost/jianghu/index.php/home/msg/checkmsg.html">
+					<table>
+						<tr>
+							<td>用户id</td>
+							<td><input type="text"id="userid"name="userid" value="4"></td>
+						</tr>
+						<tr>
+							<td>未读消息数</td>
+							<td><input type="text"id="unread_msg"></td>
+						</tr>
+					</table>
+					<button type="submit" id="checkmsg">查看消息</button>
+				</form>
+			</body>
+			</html>
