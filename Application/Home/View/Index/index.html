@@ -279,5 +279,19 @@ $(document).ready(function() {
 					</table>
 					<button type="submit" id="checkmsg">查看消息</button>
 				</form>
+			
+			
+			<h2>排名模块</h2>
+			<form action="http://localhost/jianghu/index.php/home/sort/sort.html">
+					<table>
+						<tr>
+							<td>用户id</td>
+							<td><input type="text"id="userid"name="userid" ></td>
+						</tr>
+					</table>
+					<button type="submit" id="checkmsg">查看排名</button>
+				</form>
 			</body>
+			
+			
 			</html>

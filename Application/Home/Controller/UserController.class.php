@@ -12,6 +12,7 @@ class UserController extends Controller
     public function join()
     {
         $User = D('user');
+        $Friend=D('friend');
         $data['username'] = I('username');
         if (checkUserExist($data['username'])) {
             $this->ajaxReturn(4); // 用户已存在
@@ -25,8 +26,14 @@ class UserController extends Controller
         }
         $data['addr'] = I('addr');
         $data['time'] = date('Y-m-d');
-        $flag = $User->add($data);
-        if ($flag) {
+        //把数据插入用户表
+        $flag1 = $User->add($data);
+        //自己和自己成为好友关系
+            //flag1为用户id
+        $add['user_id']=$flag1;
+        $add['friend_id']=$add['user_id'];
+        $flag2=$Friend->add($add);
+        if ($flag1&&$flag2) {
             $this->ajaxReturn(0); // 注册成功
         } else {
             $this->ajaxReturn(1); // 账户已存在
@@ -107,7 +114,6 @@ class UserController extends Controller
         $image = imageUpload();
         $add['faceurl'] = $image['url'];
         $add['facepath'] = $image['path'];
-//         dump($image);
         foreach ($add as $k => $v) { // 将二维数组装换成一维
             $add1[$k] = $v[0];
         }
