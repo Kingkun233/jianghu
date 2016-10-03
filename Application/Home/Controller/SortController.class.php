@@ -19,14 +19,19 @@ class SortController extends Controller{
         //先将sort表全部排好序，再从里面找出好友
         $sortall=$User->order('praisenum desc')->select();
 //         dump($sortall);die;
+        $i=0;
+//         dump($sortall);die;
         foreach ($sortall as $k=>$v){
+            $show=null;
             //如果user_id在朋友id里
             if(in_array($v['id'], $fid)){
+                $i=$i+1;
+                $show['ranking']=$i;
                 $show['username']=$v['username'];
                 $show['faceurl']=$v['faceurl'];
                 $show['praisenum']=$v['praisenum'];
+                $showall[]=$show;
             }
-            $showall[]=$show;
         }
         dump($showall);die;
         $this->ajaxReturn($showall);

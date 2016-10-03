@@ -57,6 +57,12 @@ $(document).ready(function() {
 				<td >地址</td>
 				<td><input type="text"name="addr"></td>
 			</tr>
+			<tr>
+				<td >领域</td>
+				<td><input type="text"name="domain[]"></td>
+				<td><input type="text"name="domain[]"></td>
+				<td><input type="text"name="domain[]"></td>
+			</tr>
 		</table>
 		<button type="submit" >注册</button>
 	</form>
@@ -124,18 +130,15 @@ $(document).ready(function() {
 				<td><textarea  name="text"></textarea>
 				</tr>
 				<tr>
-					<td>图片</td>
-					<td><input type="file"name="photo[]"></td>
-					<td><input type="file"name="photo[]"></td>
-					<td><input type="file"name="photo[]"></td>
-					<td><input type="file"name="photo[]"></td>
-					<td><input type="file"name="photo[]"></td>
-					<td><input type="file"name="photo[]"></td>
-					<td><input type="file"name="photo[]"></td>
-					<td><input type="file"name="photo[]"></td>
-					<td><input type="file"name="photo[]"></td>
+					<td>领域</td>
+					<td><input type="text"name="domain"></td>
 				</tr>
 			</table>
+			<span>图片</span><br>
+			<input type="file"name="photo[]"><br>
+			<input type="file"name="photo[]"><br>
+			<input type="file"name="photo[]"><br>
+			<br>
 			<button type="submit" >添加推荐</button>
 		</form>
 		
@@ -286,12 +289,22 @@ $(document).ready(function() {
 					<table>
 						<tr>
 							<td>用户id</td>
-							<td><input type="text"id="userid"name="userid" ></td>
+							<td><input type="text"name="userid" ></td>
 						</tr>
 					</table>
-					<button type="submit" id="checkmsg">查看排名</button>
+					<button type="submit" >查看排名</button>
 				</form>
 			</body>
 			
-			
+			<h2>搜索模块</h2>
+			<form action="http://localhost/jianghu/index.php/home/search/search.html">
+					<table>
+						<tr>
+							<td>领域或用户名</td>
+							<td><input type="text" name="key" ></td>
+						</tr>
+					</table>
+					<button type="submit" >搜索</button>
+				</form>
+			</body>
 			</html>

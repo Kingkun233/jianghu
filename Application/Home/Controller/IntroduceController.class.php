@@ -15,18 +15,28 @@ class IntroduceController extends Controller
             // 用户未登陆
             $this->ajaxReturn(2);
         }
+        $Domain=D('introduce_domain');
         $User = D('user');
         $Intro = D('introduce');
         $Image = D('introduce_images');
         $username = I('username');
+        //$add2为邻域表的数据
+        $add2['name']=I('domain');
         $add['text'] = I('text');
-        $add['user_id'] = getUidByUsername($username); // 得到user_id
+        // 得到user_id
+        $add['user_id'] = getUidByUsername($username); 
         $add['time'] = date("Y-m-d H:i:s");
-        $img['intro_id'] = $Intro->add($add); // 获取推荐id
+        // 获取推荐id
+        $img['intro_id'] = $Intro->add($add);
+        $add2['introduce_id']=$img['intro_id'];
         if (! $img['intro_id']) {
-            $this->ajaxReturn(1); // 数据插入失败
+            // 数据插入失败
+            $this->ajaxReturn(1); 
         }
-        $imageinfo = imageUpload(); // 上传图片
+        //若不存在，插入邻域表
+        $Domain->add($add2);
+        // 上传图片
+        $imageinfo = imageUpload();
         $img['imageurl'] = $imageinfo['url'];
         $img['imagepath'] = $imageinfo['path'];
         foreach ($img['imageurl'] as $k => $v) {
@@ -53,20 +63,26 @@ class IntroduceController extends Controller
         $Intro = D('introduce');
         $Image = D('introduce_images');
         $intro_id = I('id');
+        $Domain=D('introduce_domain');
         $where['introduce_id'] = $intro_id;
         if (! imageDel($Image, $where, 'imagepath')) {
-            $this->ajaxReturn(1); // 图片删除失败
+            // 图片删除失败
+            $this->ajaxReturn(1); 
         }
+        //删除该推荐的领域
+        $flag3=$Domain->where(array('introduce_id'=>$intro_id))->delete();
         $flag1 = $Image->where(array(
             'introduce_id' => $intro_id
         ))->delete();
         $flag2 = $Intro->where(array(
             'id' => $intro_id
         ))->delete();
-        if (! ($flag1 && $flag2)) {
-            $this->ajaxReturn(1); // 推荐删除失败
+        if (! ($flag1 && $flag2&&$flag3)) {
+            // 推荐删除失败
+            $this->ajaxReturn(1); 
         }
-        $this->ajaxReturn(0); // 推荐删除成功
+        // 推荐删除成功
+        $this->ajaxReturn(0); 
     }
 
     /**

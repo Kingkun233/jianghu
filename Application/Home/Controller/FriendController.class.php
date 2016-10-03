@@ -34,5 +34,8 @@ class FriendController extends Controller{
             $this->ajaxReturn(1);//好友删除失败
         }
     }
+    /**
+     * showfriends
+     */
     
 }

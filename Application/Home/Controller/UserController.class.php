@@ -1,8 +1,6 @@
 <?php
 namespace Home\Controller;
-
 use Think\Controller;
-
 class UserController extends Controller
 {
 
@@ -11,14 +9,17 @@ class UserController extends Controller
      */
     public function join()
     {
+//         dump(I());die;
         $User = D('user');
         $Friend=D('friend');
+        $Domain=D('user_domain');
         $data['username'] = I('username');
         if (checkUserExist($data['username'])) {
             $this->ajaxReturn(4); // 用户已存在
         }
         $data['password'] = md5(I('password'));
         $data['phonenum'] = I('phonenum');
+        $domains=I('domain');
         if ('男' == I('sex')) {
             $data['sex'] = 0; // 男
         } else {
@@ -28,12 +29,18 @@ class UserController extends Controller
         $data['time'] = date('Y-m-d');
         //把数据插入用户表
         $flag1 = $User->add($data);
+        //把数据插入领域表
+        $add1['user_id']=$flag1;
+        foreach ($domains as $k=>$v){
+            $add1['name']=$v;
+            $flag3=$Domain->add($add1);
+        }
         //自己和自己成为好友关系
             //flag1为用户id
         $add['user_id']=$flag1;
         $add['friend_id']=$add['user_id'];
         $flag2=$Friend->add($add);
-        if ($flag1&&$flag2) {
+        if ($flag1&&$flag2&&$flag3) {
             $this->ajaxReturn(0); // 注册成功
         } else {
             $this->ajaxReturn(1); // 账户已存在
