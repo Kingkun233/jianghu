@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>-.-</title>
-<link rel="stylesheet" href="/jianghuadmin/Public/css/backstage.css">
+<link rel="stylesheet" href="/jianghu/Public/css/backstage.css">
 </head>
 </head>
 
