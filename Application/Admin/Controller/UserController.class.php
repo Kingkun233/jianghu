@@ -29,8 +29,9 @@ class UserController extends Controller{
         }
         $User=D('user');
         $id=I('id');
-        $face=$User->where(array('id'=>$id))->getField('path');
-        unlink($face);
+        $facepath=$User->where(array('id'=>$id))->getField('facepath');
+        //删除照片
+        unlink($facepath);
         $flag=$User->where(array('id'=>$id))->delete();
         if ($flag){
             $this->success('删除成功',U('user/index'));
@@ -65,11 +66,11 @@ class UserController extends Controller{
         $image=imageUpload();
         $face=$image['url'];
         $path=$image['path'];
-        $data['face']=$face[0];
-        $data['path']=$path[0];
+        $data['faceurl']=$face[0];
+        $data['facepath']=$path[0];
         $flag=$User->add($data);
         if ($flag){
-            $this->success('添加成功',"user/index");
+            $this->success('添加成功',U("user/index"));
         }else {
             $this->error('添加失败');
         }

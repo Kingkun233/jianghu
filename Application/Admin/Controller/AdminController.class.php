@@ -15,22 +15,22 @@ class AdminController extends Controller{
      */
     public function dologin(){
        $Admin=D('admin');
-       $adminname=I('name');
+       $name=I('name');
        $password=I('password');
        $code=I('verify');
-       if (!$adminname||!$password){
+       if (!$name||!$password){
            $this->error('用户名或密码不能为空');
        }
-       if(!$this->checkadminExist($adminname)){
+       if(!$this->checkadminExist($name)){
            $this->error('用户不存在');
        }
        if(!$this->checkVerify($code)){
            $this->error('验证码错误');
        }
-       $dbpassword=$Admin->where(array('adminname'=>$adminname))->getField('password');
-       $adminid=$Admin->where(array('adminname'=>$adminname))->getField('id');
+       $dbpassword=$Admin->where(array('name'=>$name))->getField('password');
+       $adminid=$Admin->where(array('name'=>$name))->getField('id');
        if($password==$dbpassword){
-           session('adminname',$adminname);
+           session('name',$name);
            session('adminid',$adminid);
            $this->success('登录成功',U('index/index'));
        }else {
@@ -97,7 +97,7 @@ class AdminController extends Controller{
         $Admin=D('admin');
         $id=I('id');
         $rows=$Admin->where(array('id'=>$id))->find();
-        $this->assign('adminname',$rows['adminname']);
+        $this->assign('name',$rows['name']);
         $this->assign('password',$rows['password']);
         $this->assign('email',$rows['email']);
         $this->assign('id',$id);
@@ -146,11 +146,11 @@ class AdminController extends Controller{
         
     /**
      * 检查管理员是否存在
-     * @param unknown $adminname 提交的管理员名
+     * @param unknown $name 提交的管理员名
      */
-    public function checkadminExist($adminname){
+    public function checkadminExist($name){
         $Admin=D('admin');
-        $flag=$Admin->where(array('name'=>$adminname))->select();
+        $flag=$Admin->where(array('name'=>$name))->select();
         if ($flag){
             return true;
         }else{
