@@ -35,6 +35,7 @@ function imageUpload(){
     $upload->saveName = array('uniqid','');
     // 上传文件
     $info   =   $upload->upload();
+//     dump($upload->getError());die;
     foreach ($info as $k=>$v){
         $imageinfo['url'][]="http://localhost".__ROOT__.'/Uploads/'.date('Y-m-d')."/".$info[$k]['savename'];
         $imageinfo['path'][]='./Uploads/'.date('Y-m-d')."/".$info[$k]['savename'];

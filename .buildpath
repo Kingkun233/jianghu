@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <buildpath>
-	<buildpathentry excluding="vendor/**/test*/**" kind="src" path=""/>
+	<buildpathentry excluding="vendor/**/test*/**|Public/" kind="src" path=""/>
+	<buildpathentry kind="src" path="Public"/>
 	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
 </buildpath>
