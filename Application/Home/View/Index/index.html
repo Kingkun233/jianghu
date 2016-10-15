@@ -224,7 +224,23 @@ $(document).ready(function() {
 			<button type="submit" >转发</button>
 		</form>
 		
-		
+		<form method="post" action="http://localhost/jianghu/index.php/home/introduce/addcomment.html">
+			<table>
+				<tr>
+					<td>用户id</td>
+					<td><input type="text"name="user_id"></td>
+				</tr>
+				<tr>
+					<td>推荐id</td>
+					<td><input type="text"name="introduce_id"></td>
+				</tr>
+				<tr>
+					<td>评论内容</td>
+					<td><input type="text"name="content"></td>
+				</tr>
+			</table>
+			<button type="submit" >评论</button>
+		</form>
 		
 		
 		<h2>好友模块</h2>
@@ -233,11 +249,11 @@ $(document).ready(function() {
 			<table>
 				<tr>
 					<td>用户id</td>
-					<td><input type="text"name="userid"></td>
+					<td><input type="text"name="user_id"></td>
 				</tr>
 				<tr>
 					<td >添加的朋友id</td>
-					<td><input  name="friendid"></input>
+					<td><input  name="friend_id"></input>
 					</tr>
 				</table>
 				<button type="submit" >添加朋友</button>

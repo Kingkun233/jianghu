@@ -26,7 +26,7 @@ class UserController extends Controller
             $data['sex'] = 1; // 女
         }
         $data['addr'] = I('addr');
-        $data['time'] = date('Y-m-d');
+        $data['jointime'] = date('Y-m-d');
         //把数据插入用户表
         $flag1 = $User->add($data);
         //把数据插入领域表
@@ -40,10 +40,23 @@ class UserController extends Controller
         $add['user_id']=$flag1;
         $add['friend_id']=$add['user_id'];
         $flag2=$Friend->add($add);
-        if ($flag1&&$flag2&&$flag3) {
+        //每日注册量加一
+        $Joinnum=D("daily_num");
+        $today=date("Y-m-d");
+        if($Joinnum->where(array("date"=>$today))->select()){
+            $flag4=$Joinnum->where(array("date"=>$today))->setInc("joinnum");
+        }else {
+            $data1['date']=$today;
+            $data1['joinnum']=1;
+            $flag4=$Joinnum->add($data1);
+        }
+        //判断上述操作是否成功
+        if ($flag1&&$flag2&&$flag3&&$flag4) {
             $this->ajaxReturn(0); // 注册成功
         } else {
-            $this->ajaxReturn(1); // 账户已存在
+//             $flag[]=[$flag1,$flag2,$flag3,$flag4];
+//             dump($flag);
+            $this->ajaxReturn(1); //注册失败
         }
     }
 
@@ -53,6 +66,7 @@ class UserController extends Controller
     public function login()
     {
         $User = D('user');
+        $Joinnum=D("daily_num");
         $data['username'] = I('username');
         $data['password'] = md5(I('password'));
         $flag = $User->where(array(
@@ -61,15 +75,34 @@ class UserController extends Controller
         if (! flag) {
             $this->ajaxReturn(2); // 用户不存在
         }
+        //获取数据库密码
         $dbpassword = $User->where(array(
             'username' => $data['username']
         ))->getField('password');
+        //和传过来的密码比较
         $userid = $User->where(array(
             'username' => $data['username']
         ))->getField('id');
         if ($dbpassword == $data['password']) {
+            //匹配的话就存入session
             session('username', $data['username']);
             session('userid', $userid);
+            //每日登陆人数加一
+            $today=date("Y-m-d");
+            if($Joinnum->where(array("date"=>$today))->select()){
+                $Joinnum->where(array("date"=>$today))->setInc("lognum");
+            }else {
+                $data1['date']=$today;
+                $data1['lognum']=1;
+                $Joinnum->add($data1);
+            }
+            //查看是不是留存用户，是的话keep++
+            $jointime=$User->where(array("id"=>$userid))->getField("jointime");
+            $jointime=date("Y-m-d",strtotime($jointime));
+            $yesterday=date("Y-m-d",strtotime("-1 day"));
+            if($jointime==$yesterday){
+                $Joinnum->where(array("date"=>$today))->setInc("keep");
+            }
             $this->ajaxReturn(0); // 登录成功
         } else {
             $this->ajaxReturn(1); // 登录失败
@@ -135,6 +168,4 @@ class UserController extends Controller
             $this->ajaxReturn(1); // 头像更改失败
         }
     }
-   
-    
 }

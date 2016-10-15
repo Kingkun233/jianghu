@@ -3,9 +3,7 @@ namespace Admin\Controller;
 use Think\Controller;
 class IntroduceController extends Controller{
     public function index(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $Introduce=D('introduce');
         $Img=D('introduce_images');
         $count=$Introduce->count();
@@ -35,9 +33,7 @@ class IntroduceController extends Controller{
      * 删除推送
      */
     public function del(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $Introduce=D('introduce');
         $Img=D('introduce_images');
         $id=I('id');
@@ -56,9 +52,7 @@ class IntroduceController extends Controller{
      * 推送详情
      */
     public function showdetail(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $Introduce=D('introduce');
         $Img=D('introduce_images');
         $User=D('user');

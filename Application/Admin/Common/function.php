@@ -20,10 +20,8 @@ function page($Page=null){
  * @return boolean
  */
 function checkAdminLogin(){
-    if(!session('adminid')){
-        return false;
-    }else {
-        return true;
+    if(!session('name')){
+        redirect(U('admin/login') ,2 ,'未登录' );
     }
 }
 /**

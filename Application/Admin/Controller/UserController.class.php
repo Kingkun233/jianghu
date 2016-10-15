@@ -6,9 +6,7 @@ class UserController extends Controller{
      * 用户列表
      */
     public function index(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $user=D('user');
         $count=$user->count();
         $Page=new \Think\Page($count,3);
@@ -24,9 +22,7 @@ class UserController extends Controller{
      * 删除用户
      */
     public function del(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $User=D('user');
         $id=I('id');
         $facepath=$User->where(array('id'=>$id))->getField('facepath');
@@ -43,18 +39,14 @@ class UserController extends Controller{
      * 用户添加界面
      */
     public function add(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $this->display();
     }
     /**
      * 用户添加逻辑
      */
     public function doadd(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         
         $User=D('user');
         $data['username']=I('username');
@@ -74,5 +66,34 @@ class UserController extends Controller{
         }else {
             $this->error('添加失败');
         }
+    }
+    /**
+     * 查看每天数据
+     */
+    public function showDailyNum(){
+        $Joinnum=D("daily_num");
+        $num=$Joinnum->select();
+        $last=0;
+        foreach($num as $k=>$v){
+            $show=array();
+            $show['date']=$v['date'];
+            $show['commentnum']=$v['commentnum'];
+            $show['praisenum']=$v['praisenum'];
+            $show['joinnum']=$v['joinnum'];
+            $show['lognum']=$v['lognum'];
+            $show['stay']=round($v['keep']/$last*100,2);
+            $show1[]=$show;
+            $last=$Joinnum->where(array("date"=>$v['date']))->getField("joinnum");
+        }
+//         dump($show);
+        $this->assign("num",$show1);
+        $this->display();
+    }
+    /**
+     * 禁用用户（不能登录）
+     */
+    public function ban(){
+        $User=D("User");
+        
     }
 }

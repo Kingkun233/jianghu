@@ -11,12 +11,16 @@ class FriendController extends Controller{
             $this->ajaxReturn(2);
         }
         $Friend=D('friend');
-        $data['user_id']=I('userid');
-        $data['friend_id']=I('friendid');
-        if(!$Friend->add($data)){
-            $this->ajaxReturn(1);//好友添加失败
+        $data1['user_id']=I('user_id');
+        $data1['friend_id']=I('friend_id');
+        $data2['user_id']=$data1['friend_id'];
+        $data2['friend_id']=$data1['user_id'];
+        $flag2=$Friend->add($data1);
+        $flag1=$Friend->add($data2);
+        if($flag1&&$flag2){
+            $this->ajaxReturn(0);//好友添加成功
         }
-        $this->ajaxReturn(0);//好友添加成功
+        $this->ajaxReturn(1);//好友添加失败
     }
     /**
      * 删除好友

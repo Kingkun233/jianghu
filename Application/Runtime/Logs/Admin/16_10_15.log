@@ -1,0 +1,57 @@
+[ 2016-10-15T09:42:52+08:00 ] ::1 /jianghu/index.php/Admin/user/showDailyNum.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001108s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001191s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `jianghu_daily_num`  [ RunTime:0.0004s ]
+NOTIC: [2] Division by zero D:\xampp\htdocs\jianghu\Application\Admin\Controller\UserController.class.php 第 84 行.
+SQL: SELECT `joinnum` FROM `jianghu_daily_num` WHERE `date` = '2016-10-11' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `joinnum` FROM `jianghu_daily_num` WHERE `date` = '2016-10-12' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `joinnum` FROM `jianghu_daily_num` WHERE `date` = '2016-10-13' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `joinnum` FROM `jianghu_daily_num` WHERE `date` = '2016-10-14' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000165s ]
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\5920d3b0e70ddfcaac84dc1222d43670.php 第 39 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012396s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012466s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000908s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000988s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000878s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000925s ]
+
+[ 2016-10-15T09:43:21+08:00 ] ::1 /jianghu/index.php/Admin/user/showDailyNum.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000488s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jianghu_daily_num`  [ RunTime:0.0003s ]
+NOTIC: [2] Division by zero D:\xampp\htdocs\jianghu\Application\Admin\Controller\UserController.class.php 第 84 行.
+SQL: SELECT `joinnum` FROM `jianghu_daily_num` WHERE `date` = '2016-10-11' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `joinnum` FROM `jianghu_daily_num` WHERE `date` = '2016-10-12' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `joinnum` FROM `jianghu_daily_num` WHERE `date` = '2016-10-13' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `joinnum` FROM `jianghu_daily_num` WHERE `date` = '2016-10-14' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `joinnum` FROM `jianghu_daily_num` WHERE `date` = '2016-10-15' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000102s ]
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\5920d3b0e70ddfcaac84dc1222d43670.php 第 39 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008154s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008208s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000512s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000815s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000868s ]
+

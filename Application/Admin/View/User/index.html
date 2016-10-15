@@ -9,9 +9,6 @@
 <body>
 <div class="details">
 <div class="details_operation clearfix">
-                        <div class="bui_select">
-                            <input type="button" value="添&nbsp;&nbsp;加" class="add"  onclick="addUser()">
-                        </div>
                         </div>
                     <!--表格-->
                     <table class="table" cellspacing="0" cellpadding="0">
@@ -19,8 +16,12 @@
                             <tr>
                                 <th >编号</th>
                                 <th >用户名称</th>
+                                <th >性别</th>
                                 <th >用户邮箱</th>
+                                <th >用户手机</th>
+                                <th >注册时间</th>
                                 <th >头像</th>
+                                <th >状态</th>
                                 <th>操作</th>
                             </tr>
                         </thead>
@@ -30,9 +31,16 @@
                                 <!--这里的id和for里面的c1 需要循环出来-->
                                 <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label">{$vo.id}</label></td>
                                 <td>{$vo.username}</td>
+                                <td>{$vo.sex}</td>
                                 <td>{$vo.email}</td>
+                                <td>{$vo.phonenum}</td>
+                                <td>{$vo.jointime}</td>
                                 <td><img height="30px" alt="" src="{$vo.faceurl}"></td>
-                                <td align="center"><input type="button" value="删除" class="btn"  onclick="delUser({$vo.id})"></td>
+                                <td></td>
+                                <td align="center">
+                                	<input type="button" value="禁用" class="btn"  onclick="ban({$vo.id})">
+                                	<input type="button" value="解除禁用" class="btn"  onclick="unban({$vo.id})">
+                                </td>
                             </tr>
                          </foreach>
                          
@@ -45,14 +53,11 @@
 </body>
 <script type="text/javascript">
 	
-	function addUser(){
-		window.location="{:U('user/add')}";
+	function unban(id){
+		window.location="{:U('user/unban')}"+'?id='+id;
 	}
-	
-	function delUser(id){
-			if(window.confirm("您确定要删除吗？删除之后不可以恢复哦！！！")){
-				window.location="{:U('user/del')}"+'?id='+id;
-			}
+	function ban(id){
+		window.location="{:U('user/ban')}"+'?id='+id;	
 	}
 </script>
 </html>

@@ -29,7 +29,7 @@
 	<table width="70%" border="1" cellpadding="5" cellspacing="0" bgcolor="#cccccc">
 		<tr>
 			<th>系统名称</th>
-			<td>抱团后台管理系统</td>
+			<td>江湖后台管理系统</td>
 		</tr>
 		<tr>
 			<th>开发者</th>

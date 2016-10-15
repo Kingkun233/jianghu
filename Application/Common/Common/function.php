@@ -80,3 +80,16 @@ function getUsernameByUId($uid){
     $username=$User->where(array('id'=>$uid))->getField('username');
     return $username;
 }
+/**
+ * 判断是不是同一天
+ * @param String $time “Y-m-d H:i:s”格式的时间
+ * @return boolean
+ */
+function isToday($time){
+    $time1=strtotime($time);
+    if(date("Y-m-d")==date("Y-m-d",$time1)){
+        return true;
+    }else{
+        return false;
+    }
+}

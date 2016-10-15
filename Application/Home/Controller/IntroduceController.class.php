@@ -19,6 +19,7 @@ class IntroduceController extends Controller
         $User = D('user');
         $Intro = D('introduce');
         $Image = D('introduce_images');
+        $Forward=D('forward');
         $username = I('username');
         //$add2为邻域表的数据
         $add2['name']=I('domain');
@@ -26,7 +27,8 @@ class IntroduceController extends Controller
         // 得到user_id
         $add['user_id'] = getUidByUsername($username); 
         $add['time'] = date("Y-m-d H:i:s");
-        // 获取推荐id
+        $add['degree']=1;
+        // 插入推荐表，获取推荐id
         $img['intro_id'] = $Intro->add($add);
         $add2['introduce_id']=$img['intro_id'];
         if (! $img['intro_id']) {
@@ -48,6 +50,14 @@ class IntroduceController extends Controller
                 $this->ajaxReturn(1); // 数据插入失败
             }
         }
+        //自己转发自己
+        $add3['user_id']=$add['user_id'];
+        $add3['introduce_id']=$add2['introduce_id'];
+        $add3['original_id']=$add2['introduce_id'];
+        $add3['time']=date("Y-m-d H:i:s");
+        $add3['owner_id']=$add['user_id'];
+        $add3['degree']=1;
+        $Forward->add($add3);
         $this->ajaxReturn(0); // 推荐插入成功
     }
 
@@ -191,29 +201,44 @@ class IntroduceController extends Controller
         $User = D('user');
         $Intro = D('introduce');
         $Praise = D('praise');
+        $Num=D("daily_num");
         $username = I('username');
         $introduce_id= I('introduce_id');
+        $user_id=getUidByUsername($username);
         // 通过推荐表获取所有者的id
         $owner_id= $Intro->where(array(
             'id' => $introduce_id
         ))->getField('user_id');
+        //每日点赞人数加一
+        $today=date("Y-m-d");
+        $times=$Praise->where(array("user_id"=>$user_id))->field("time")->select();
+        $count=0;
+        foreach ($times as $k=>$v){
+            //如果该用户在这一天有点过赞，count=1
+            if(isToday($v["time"])){
+                $count=1;break;
+            }
+        }
+        if(!$count){
+            $Num->where(array("date"=>$today))->setInc("praisenum");
+        }
         // $data1用于插入praise表
         $data1['introduce_id'] =$introduce_id;
-        $data1['user_id'] = getUidByUsername($username);
-        $data1['time'] = date('Y-m-d H-i-s');
+        $data1['user_id'] = $user_id;
+        $data1['time'] = date('Y-m-d H:i:s');
         $data1['owner_id']=$owner_id;
         // 插入praise表
         $flag1 = $Praise->add($data1);
         //该推荐的用户未读消息加一
-        $userid=$Intro->where(array('id'=>$data1['introduce_id']))->getField('user_id');
-        $flag4=$User->where(array('id'=>$userid))->setInc('unreadnum');
+        $flag4=$User->where(array('id'=>$owner_id))->setInc('unreadnum');
         // Introduce表的praisenum++
         $flag2 = $Intro->where(array(
             'id' => $introduce_id
         ))->setInc('praisenum');
         // 推荐所有者的口碑++
         $flag3 = $User->where(array('id'=>$owner_id))->setInc('praisenum');
-        if ($flag1 && $flag2 && $flag3&&flag4) {
+       
+        if ($flag1 && $flag2 && $flag3&&$flag4) {
             // 点赞成功
             $this->ajaxReturn(0); 
         }
@@ -301,27 +326,73 @@ class IntroduceController extends Controller
         $User=D('user');
         $Intro = D('introduce');
         $Forward = D('forward');
+        $Friend=D("friend");
         $introduce_id = I('introduce_id');
         //推荐所有者的未读消息加一
+            //owner_id并不一定指原创的作者id 谁转载了谁就owner
+            //原创的推荐id存在introduce表的isforward字段中
         $owner_id=$Intro->where(array('id'=>$introduce_id))->getField('user_id');
         $flag4=$User->where(array('id'=>$owner_id))->setInc('unreadnum');
+//         dump($flag4);die;
         //得到转采的推荐id 没有就返回0
         $isforward = $Intro->where(array(
             'id' => $introduce_id
         ))->getField('isforward');
         if ($isforward) {
-            $introduce_id = $isforward;
+            //如果该推荐时转载的，introduce_id1为原创推荐的id
+            $introduce_id1 = $isforward;
+        }else{
+            //若转载的就是原创推荐
+            $introduce_id1=$introduce_id;
         }
         // 转采表的数据
         $data1['user_id'] = I('user_id');
+            //转载表的introduce_id为上一位转载的推荐的id，不是原创推荐的id
         $data1['introduce_id'] = $introduce_id;
-        $data1['time'] = date('Y-m-d H-i-s');
+        $data1['time'] = date('Y-m-d H:i:s');
         $data1['owner_id']=$owner_id;
+        $data1['original_id']=$introduce_id1;
         // 推荐表的数据
         $data2['time'] = $data1['time'];
-        $data2['isforward'] = $data1['introduce_id'];
+            //isforward放的是原创推荐的id
+        $data2['isforward'] = $introduce_id1;
         $data2['text'] = I('comment');
         $data2['user_id'] = $data1['user_id'];
+         //度数逻辑
+             //获得被转发推荐的度数a
+        $degree=$Intro->where(array("id"=>$introduce_id))->getField("degree");
+            //degree大于一的时候才需要判断，若degree转载的时候为一，就直接加一
+            if($degree>1){
+                //在forward表找到1.度数小于当前度数的2.和转发者是朋友的3.推荐id和该推荐一样的
+                $where1['degree']=array("lt",$degree);
+                $where1['original_id']=array("eq",$introduce_id1);
+                $friends=$Friend->where(array("user_id"=>$data1['user_id']))->field("friend_id")->select();
+                foreach ($friends as $k=>$v){
+                    $friend[]=$v["friend_id"];
+                }
+                //         dump($friend);die;
+                $where1['user_id']=array("in",$friend);
+                $rows=$Intro->where($where1)->select();
+                
+//                 dump($rows);die;
+                if(!$rows){
+                    //如果没有找到，则度数为a++
+                    $degree=$degree+1;
+                    $data1["degree"]=$degree;
+                    $data2["degree"]=$degree;
+                    //更新原创推荐的度数
+                    $Intro->where(array("id"=>$introduce_id1))->save(array("degree"=>$degree));
+                }else{
+                    //如果找到记录，度数不变
+                    $data2["degree"]=$degree;
+                    $data1["degree"]=$degree;
+                }
+            }else{
+                $degree=$degree+1;
+                $data2["degree"]=$degree;
+                $data1["degree"]=$degree;
+                $Intro->where(array("id"=>$introduce_id1))->save(array("degree"=>$degree));
+            }
         // 插入推荐表
         $flag = $Intro->add($data2);
         // 插入转采表
@@ -333,6 +404,7 @@ class IntroduceController extends Controller
         //User表口碑加一
         $where['id']=$Intro->where(array('id'=>$introduce_id))->getField('user_id');
         $flag3=$User->where($where)->setInc('praisenum',3);
+//         dump(array($flag,$flag1,$flag2,$flag3,$flag4));
         if ($flag && $flag1 && $flag2 && $flag3&&$flag4) {
             // 转采成功
             $this->ajaxReturn(0);
@@ -344,6 +416,38 @@ class IntroduceController extends Controller
     /**
      * 添加评论
      */
-    public function addcomment()
-    {}
+    public function addcomment(){
+        $Comment=D("comment");
+        $Num=D("daily_num");
+        $Intro=D("introduce");
+        $User=D("user");
+        $data['user_id']=I("user_id");
+        $data['introduce_id']=I("introduce_id");
+        $data['content']=I("content");
+        $data['time']=date("Y-m-d H:i:s");
+        //推荐所有者未读消息加一
+            //根据introduce_id获得owner_id
+        $owner_id=$Intro->where(array("id"=>$data['introduce_id']))->getField("user_id");
+        $flag1=$User->where(array("id"=>$owner_id))->setInc("unreadnum");
+        //每日评论人数加一
+        $today=date("Y-m-d");
+        $times=$Comment->where(array("user_id"=>$data['user_id']))->field("time")->select();
+        $count=0;
+        foreach ($times as $k=>$v){
+            //如果该用户在这一天有评论过，count=1
+            if(isToday($v["time"])){
+                $count=1;break;
+            }
+        }
+        if(!$count){
+            $Num->where(array("date"=>$today))->setInc("commentnum");
+        }
+        //数据插入comment表
+        $flag2=$Comment->add($data);
+        if($flag1&&$flag2){
+            $this->ajaxReturn(0);
+        }else {
+            $this->ajaxReturn(1);
+        }
+    }
 }

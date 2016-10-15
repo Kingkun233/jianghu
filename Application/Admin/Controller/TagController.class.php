@@ -7,9 +7,7 @@ class TagController extends Controller{
      * 搜索标签列表
      */
     public function index(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $Tag=D('tag');
         $count=$Tag->count();
         $Page=new Page($count,3);
@@ -24,18 +22,14 @@ class TagController extends Controller{
      * 添加标签页面
      */
     public function add(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $this->display();
     }
     /**
      * 添加标签逻辑
      */
     public function doadd(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $Tag=D('tag');
         $Tag->create();
         $flag=$Tag->add();
@@ -49,9 +43,7 @@ class TagController extends Controller{
      * 标签编辑界面
      */
     public function edit(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $Tag=D('tag');
         $id=I('id');
         $name=$Tag->where(array('id'=>$id))->getField('name');
@@ -63,9 +55,7 @@ class TagController extends Controller{
      * 标签编辑逻辑
      */
     public function doedit(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $Tag=D('tag');
         $id=I('id');
         $data['name']=I('name');
@@ -80,9 +70,7 @@ class TagController extends Controller{
      * 删除标签
      */
     public function del(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $Tag=D('tag');
         $id=I('id');
         $flag=$Tag->where(array('id'=>$id))->delete();

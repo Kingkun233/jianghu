@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <title>登陆</title>
-<link rel="stylesheet" type="text/css" href="/jianghuadmin/Public/css/main.css" />
-<link rel="stylesheet" type="text/css" href="/jianghuadmin/Public/css/reset.css" />
+<link rel="stylesheet" type="text/css" href="/jianghu/Public/css/main.css" />
+<link rel="stylesheet" type="text/css" href="/jianghu/Public/css/reset.css" />
 <!--[if IE 6]>
 <script type="text/javascript" src="../js/DD_belatedPNG_0.0.8a-min.js"></script>
 <script type="text/javascript" src="../js/ie6Fixpng.js"></script>
@@ -16,7 +16,7 @@
 	<div class="logoBar login_logo">
 		<div class="comWidth">
 			<div class="logo fl">
-				<a href="#"><img src="/jianghuadmin/Public/images/logo.jpg" alt="慕课网"></a>
+				<a href="#"><img src="/jianghu/Public/images/logo.jpg" alt="慕课网"></a>
 			</div>
 			<h3 class="welcome_title">欢迎登陆</h3>
 		</div>
@@ -45,7 +45,7 @@
 <div class="footer">
 	<p><a href="#">慕课简介</a><i>|</i><a href="#">慕课公告</a><i>|</i> <a href="#">招纳贤士</a><i>|</i><a href="#">联系我们</a><i>|</i>客服热线：400-675-1234</p>
 	<p>Copyright &copy; 2006 - 2014 慕课版权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;&nbsp;京ICP证B1034-8373号&nbsp;&nbsp;&nbsp;某市公安局XX分局备案编号：123456789123</p>
-	<p class="web"><a href="#"><img src="/jianghuadmin/Public/images/webLogo.jpg" alt="logo"></a><a href="#"><img src="/jianghuadmin/Public/images/webLogo.jpg" alt="logo"></a><a href="#"><img src="/jianghuadmin/Public/images/webLogo.jpg" alt="logo"></a><a href="#"><img src="/jianghuadmin/Public/images/webLogo.jpg" alt="logo"></a></p>
+	<p class="web"><a href="#"><img src="/jianghu/Public/images/webLogo.jpg" alt="logo"></a><a href="#"><img src="/jianghu/Public/images/webLogo.jpg" alt="logo"></a><a href="#"><img src="/jianghu/Public/images/webLogo.jpg" alt="logo"></a><a href="#"><img src="/jianghu/Public/images/webLogo.jpg" alt="logo"></a></p>
 </div>
 </body>
 </html>

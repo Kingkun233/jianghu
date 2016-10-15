@@ -41,9 +41,7 @@ class AdminController extends Controller{
      * 管理员列表
      */
     public function index(){
-        if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+        checkAdminLogin();
         $Admin=D('admin');
         $count=$Admin->count();
         $Page=new Page($count,3);
@@ -67,18 +65,14 @@ class AdminController extends Controller{
      * 添加管理员界面
      */
     public function add(){
-        if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+        checkAdminLogin();
         $this->display();
     }
     /**
      * 添加管理员逻辑
      */
     public function doadd(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+        checkAdminLogin();
         $Admin=D('admin');
         $Admin->create();
         if($Admin->add()){
@@ -91,9 +85,7 @@ class AdminController extends Controller{
      * 管理员修改界面
      */
     public function edit(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+        checkAdminLogin();
         $Admin=D('admin');
         $id=I('id');
         $rows=$Admin->where(array('id'=>$id))->find();
@@ -107,9 +99,7 @@ class AdminController extends Controller{
      * 修改逻辑
      */
     public function doedit(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $Admin=D('admin');
         $Admin->create();
         if($Admin->save()){
@@ -122,9 +112,7 @@ class AdminController extends Controller{
      * 删除管理员
      */
     public function del(){
-    if(!checkAdminLogin()){
-            $this->error("管理员未登录");
-        }
+    checkAdminLogin();
         $Admin=D('admin');
         $id=I('id');
         $flag=$Admin->where(array('id'=>$id))->delete();
