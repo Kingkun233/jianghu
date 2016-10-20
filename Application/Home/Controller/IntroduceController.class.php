@@ -15,17 +15,22 @@ class IntroduceController extends Controller
             // 用户未登陆
             $this->ajaxReturn(2);
         }
+        $user_id = I('user_id');
+        if(isban($user_id)){
+            //用户被禁用
+            $this->ajaxReturn(3);
+        }
         $Domain=D('introduce_domain');
         $User = D('user');
         $Intro = D('introduce');
         $Image = D('introduce_images');
         $Forward=D('forward');
-        $username = I('username');
+        $user_id = I('user_id');
         //$add2为邻域表的数据
         $add2['name']=I('domain');
         $add['text'] = I('text');
         // 得到user_id
-        $add['user_id'] = getUidByUsername($username); 
+        $add['user_id'] = $user_id;
         $add['time'] = date("Y-m-d H:i:s");
         $add['degree']=1;
         // 插入推荐表，获取推荐id
@@ -323,6 +328,11 @@ class IntroduceController extends Controller
             // 用户未登陆
             $this->ajaxReturn(2);
         }
+        $user_id=I('user_id');
+        if(isban($user_id)){
+            //用户被禁用
+            $this->ajaxReturn(3);
+        }
         $User=D('user');
         $Intro = D('introduce');
         $Forward = D('forward');
@@ -346,7 +356,7 @@ class IntroduceController extends Controller
             $introduce_id1=$introduce_id;
         }
         // 转采表的数据
-        $data1['user_id'] = I('user_id');
+        $data1['user_id'] = $user_id;
             //转载表的introduce_id为上一位转载的推荐的id，不是原创推荐的id
         $data1['introduce_id'] = $introduce_id;
         $data1['time'] = date('Y-m-d H:i:s');

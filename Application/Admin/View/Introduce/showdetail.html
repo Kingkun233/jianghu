@@ -5,17 +5,35 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>添加用户</h3>
+<h3>推荐详情</h3>
 
-<table width="70%" border="1" cellpadding="5" cellspacing="0" bgcolor="#cccccc">
+<table width="70%" border="1" cellpadding="5" cellspacing="0" bgcolor="#ddd">
+<foreach name="rows" item="vo">
 	<tr>
 		<td align="right">用户名</td>
-		<td><input type="text" name="username" value="{$username}"/></td>
+		<td>{$username}</td>
 	</tr>
 	<tr>
 		<td align="right">推送内容</td>
-		<td><textarea  name="content" />{$content}</textarea></td>
+		<td>{$vo.text}</td>
 	</tr>
+	<tr>
+		<td align="right">时间</td>
+		<td>{$vo.time}</td>
+	</tr>
+	<tr>
+		<td align="right">点赞数</td>
+		<td>{$vo.praisenum}</td>
+	</tr>
+	<tr>
+		<td align="right">转载数</td>
+		<td>{$vo.forwardnum}</td>
+	</tr>
+	<tr>
+		<td align="right">度数</td>
+		<td>{$vo.degree}</td>
+	</tr>
+	</foreach>
 	<tr>
 		<td align="right">推送图片</td>
 		<td>

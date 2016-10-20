@@ -5,17 +5,20 @@ class UserController extends Controller
 {
 
     /**
-     * 注册接口
+     * 注册接口 
      */
     public function join()
     {
-//         dump(I());die;
+        $type=100;
+        if($type!=I("type")){
+            $this->ajaxReturn(responseMsg(5,$type));//调用错误
+        }
         $User = D('user');
         $Friend=D('friend');
         $Domain=D('user_domain');
         $data['username'] = I('username');
         if (checkUserExist($data['username'])) {
-            $this->ajaxReturn(4); // 用户已存在
+            $this->ajaxReturn(responseMsg(6,$type)); // 用户已存在
         }
         $data['password'] = md5(I('password'));
         $data['phonenum'] = I('phonenum');
@@ -51,8 +54,9 @@ class UserController extends Controller
             $flag4=$Joinnum->add($data1);
         }
         //判断上述操作是否成功
+//         dump(array($flag1,$flag2,$flag3,$flag4));
         if ($flag1&&$flag2&&$flag3&&$flag4) {
-            $this->ajaxReturn(0); // 注册成功
+            $this->ajaxReturn(responseMsg(0,$type)); // 注册成功
         } else {
 //             $flag[]=[$flag1,$flag2,$flag3,$flag4];
 //             dump($flag);
@@ -65,28 +69,43 @@ class UserController extends Controller
      */
     public function login()
     {
+        $type=101;
+        if($type!=I("type")){
+            $this->ajaxReturn(responseMsg(5,$type));
+        }
         $User = D('user');
         $Joinnum=D("daily_num");
+        $Token=D('token');
         $data['username'] = I('username');
         $data['password'] = md5(I('password'));
         $flag = $User->where(array(
             'username' => $data['username']
         ))->select();
         if (! flag) {
-            $this->ajaxReturn(2); // 用户不存在
+            $this->ajaxReturn(responseMsg(4,$type)); // 用户不存在
+        }
+        //检查用户被禁用
+        $user_id = $User->where(array(
+            'username' => $data['username']
+        ))->getField('id');
+        if (isban($user_id)) {
+            $this->ajaxReturn(responseMsg(3,$type)); // 用户被禁用
         }
         //获取数据库密码
         $dbpassword = $User->where(array(
             'username' => $data['username']
         ))->getField('password');
         //和传过来的密码比较
-        $userid = $User->where(array(
-            'username' => $data['username']
-        ))->getField('id');
         if ($dbpassword == $data['password']) {
-            //匹配的话就存入session
-            session('username', $data['username']);
-            session('userid', $userid);
+            //匹配的话插入token表
+                //生成token
+            $timestamp=time();
+            $str1=array($user_id,$timestamp);
+            $str=implode($str1);
+            $add_token['token']=md5($str);
+            $add_token['user_id']=$user_id;
+            $add_token['time']=date("Y-m-d H:i:s");
+            $Token->add($add_token);
             //每日登陆人数加一
             $today=date("Y-m-d");
             if($Joinnum->where(array("date"=>$today))->select()){
@@ -97,15 +116,19 @@ class UserController extends Controller
                 $Joinnum->add($data1);
             }
             //查看是不是留存用户，是的话keep++
-            $jointime=$User->where(array("id"=>$userid))->getField("jointime");
+            $jointime=$User->where(array("id"=>$user_id))->getField("jointime");
             $jointime=date("Y-m-d",strtotime($jointime));
             $yesterday=date("Y-m-d",strtotime("-1 day"));
             if($jointime==$yesterday){
                 $Joinnum->where(array("date"=>$today))->setInc("keep");
             }
-            $this->ajaxReturn(0); // 登录成功
+            //整合要返回的数据
+            $msg=$User->where(array("id"=>$user_id))->find();
+            $resp=responseMsg(0, 101, $msg);
+            $resp['token']=$add_token['token'];
+            $this->ajaxReturn($resp); // 登录成功
         } else {
-            $this->ajaxReturn(1); // 登录失败
+            $this->ajaxReturn(responseMsg(1)); // 登录失败
         }
     }
 
@@ -136,6 +159,28 @@ class UserController extends Controller
             $this->ajaxReturn(0); // 头像添加成功
         } else {
             $this->ajaxReturn(1); // 头像添加失败
+        }
+    }
+    /**
+     * 退出登录
+     */
+    public function outlogin(){
+        $type=102;
+        //检查调用是否正确
+        if($type!=I("type")){
+            $this->ajaxReturn(responseMsg(5,$type));
+        }
+        //检查登录状态
+        if(!checkUserLogin(I("token"))){
+            $this->ajaxReturn(responseMsg(2,$type));
+        }
+        $Token=D("token");
+        $user_id=I("user_id");
+        if($Token->where(array("user_id"=>$user_id))->save(array("state"=>1)))
+        {
+            $this->ajaxReturn(responseMsg(0, $type));//登出成功
+        }else {
+            $this->ajaxReturn(responseMsg(1, $type));//登出失败
         }
     }
 

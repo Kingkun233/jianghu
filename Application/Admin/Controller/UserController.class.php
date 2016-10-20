@@ -47,7 +47,6 @@ class UserController extends Controller{
      */
     public function doadd(){
     checkAdminLogin();
-        
         $User=D('user');
         $data['username']=I('username');
         if(checkUserExist($data['username'])){
@@ -71,6 +70,7 @@ class UserController extends Controller{
      * 查看每天数据
      */
     public function showDailyNum(){
+        checkAdminLogin();
         $Joinnum=D("daily_num");
         $num=$Joinnum->select();
         $last=0;
@@ -89,11 +89,46 @@ class UserController extends Controller{
         $this->assign("num",$show1);
         $this->display();
     }
-    /**
-     * 禁用用户（不能登录）
+     /**
+     * 禁用用户
      */
     public function ban(){
-        $User=D("User");
-        
+        checkAdminLogin();
+        $User=D("user");
+        $user_id=I("id");
+        $flag=$User->where(array("id"=>$user_id))->save(array("isban"=>'1'));
+        if($flag){
+            $this->success("禁用成功");
+        }else{
+            $this->error("禁用失败");
+        }
+    }
+    /**
+     * 解除禁用
+     */
+    public function unban(){
+        checkAdminLogin();
+        $User=D("user");
+        $user_id=I("id");
+        $flag=$User->where(array("id"=>$user_id))->save(array("isban"=>'0'));
+        if($flag){
+            $this->success("解除成功");
+        }else{
+            $this->error("解除失败");
+        }
+    }
+    /**
+     * 用户详情
+     */
+    public function userdetails(){
+        checkAdminLogin();
+        $User=D("user");
+        $username=I("username");
+        $rows=$User->where(array("username"=>$username))->select();
+        $backurl = empty($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'],
+         $_SERVER['HTTP_HOST']) ?  '#' : $_SERVER['HTTP_REFERER'];
+        $this->assign("rows",$rows);
+        $this->assign('backurl', $backurl);
+        $this->display();
     }
 }

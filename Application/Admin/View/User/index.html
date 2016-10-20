@@ -7,9 +7,9 @@
 </head>
 
 <body>
+<br>
+<h3>&nbsp用户列表</h3>
 <div class="details">
-<div class="details_operation clearfix">
-                        </div>
                     <!--表格-->
                     <table class="table" cellspacing="0" cellpadding="0">
                         <thead>
@@ -30,13 +30,13 @@
                             <tr>
                                 <!--这里的id和for里面的c1 需要循环出来-->
                                 <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label">{$vo.id}</label></td>
-                                <td>{$vo.username}</td>
+                                <td><a href="{:U('user/userdetails')}?username={$vo.username}"}>{$vo.username}</a></td>
                                 <td>{$vo.sex}</td>
                                 <td>{$vo.email}</td>
                                 <td>{$vo.phonenum}</td>
                                 <td>{$vo.jointime}</td>
                                 <td><img height="30px" alt="" src="{$vo.faceurl}"></td>
-                                <td></td>
+                                <td>{$vo.isban}</td>
                                 <td align="center">
                                 	<input type="button" value="禁用" class="btn"  onclick="ban({$vo.id})">
                                 	<input type="button" value="解除禁用" class="btn"  onclick="unban({$vo.id})">

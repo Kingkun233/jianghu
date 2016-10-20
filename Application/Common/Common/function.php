@@ -1,12 +1,28 @@
 <?php
 /**
- * 检查用户是否登录
+ * 封装返回数据
+ * @param int $re 状态码
+ * @param unknown $type 接口标示
+ * @param unknown $msg 返回消息
+ * @param unknown $token 可选
+ * @return unknown[] 返回封装好的数组
  */
-function checkUserLogin(){
-    if(!session('username')){
-       return false;//用户未登录
-    }
-    return true;
+function responseMsg($re,$type,$msg=null){
+    return array("re"=>$re,"type"=>$type,"msg"=>$msg);
+}
+/**
+ * 检查用户登录
+ * @param unknown $token
+ * @return boolean
+ */
+function checkUserLogin($token){
+   $Token=D("token");
+   $where['token']=$token;
+   $where['state']=0;
+   if($Token->where($where)->find()){
+       return true;
+   }
+   return false;
 }
 /**
  * 检查用户是否存在

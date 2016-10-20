@@ -3,13 +3,28 @@
 <head>
 <meta charset="utf-8">
 <title>-.-</title>
+</script>
 <link rel="stylesheet" href="/jianghu/Public/css/backstage.css">
 </head>
-</head>
-
 <body>
+</br>
+<h3>&nbsp推荐列表</h3>
 <div class="details">
-                    
+<div align="right">
+<form method="post" action="<?php echo U('search/doaction');?>">
+    <select name="cate" class="btn" id="selector">
+        <option value="1">按用户名查找</option>
+        <option value="2">按推荐关键字查找</option>
+        <option value="3">按度数查找</option>
+        <option value="4">按时间查找</option>
+        <option value="5">按标签查找</option>
+        <option value="6">按范围查找</option>
+    </select>
+    <input type=“text‘ name="searchkey" id="searchkey" class="search" placeholder="请输入搜索条件"></input>
+    <input class="btn" type="submit" />
+</form>
+</br>
+</div>
                     <!--表格-->
                     <table class="table" cellspacing="0" cellpadding="0">
                         <thead>
@@ -25,7 +40,7 @@
                         <?php if(is_array($introduce)): foreach($introduce as $key=>$vo): ?><tr>
                                 <!--这里的id和for里面的c1 需要循环出来-->
                                 <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label"><?php echo ($vo["id"]); ?></label></td>
-                                <td><?php echo ($vo["username"]); ?></td>
+                                <td><a href="<?php echo U('user/userdetails');?>?username=<?php echo ($vo["username"]); ?>"}><?php echo ($vo["username"]); ?></a></td>
                                 <td><?php echo ($vo["text"]); ?></td>
                                 <td><?php echo ($vo["time"]); ?></td>
                                 <td align="center"><input type="button" value="详情" class="btn" onclick="showDetail(<?php echo ($vo["id"]); ?>)"><input type="button" value="删除" class="btn"  onclick="delMsg(<?php echo ($vo["id"]); ?>)">
@@ -41,7 +56,6 @@
 	function showDetail(id){
 		window.location="<?php echo U('introduce/showdetail');?>"+'?id='+id;
 	}
-	
 	function delMsg(id){
 			if(window.confirm("您确定要删除吗？删除之后不可以恢复哦！！！")){
 				window.location="<?php echo U('introduce/del');?>"+'?id='+id;

@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <title>-.-</title>
-</script>
 <link rel="stylesheet" href="/jianghu/Public/css/backstage.css">
 </head>
 <body>
@@ -11,8 +10,8 @@
 <h3>&nbsp推荐列表</h3>
 <div class="details">
 <div align="right">
-<form method="post" action="{:U('search/doaction')}">
-    <select name="cate" class="btn" id="selector">
+<form method="post" action="http://localhost/jianghu/index.php/admin/search/doaction">
+    <select name="cate" class="btn">
         <option value="1">按用户名查找</option>
         <option value="2">按推荐关键字查找</option>
         <option value="3">按度数查找</option>
@@ -20,7 +19,7 @@
         <option value="5">按标签查找</option>
         <option value="6">按范围查找</option>
     </select>
-    <input type=“text‘ name="searchkey" id="searchkey" class="search" placeholder="请输入搜索条件"></input>
+    <input type=“text‘ name="searchkey" class="search" placeholder="请输入搜索条件"></input>
     <input class="btn" type="submit" />
 </form>
 </br>
@@ -37,7 +36,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <foreach name='introduce' item='vo' id="introduce_id">
+                        <foreach name='introduce' item='vo'>
                             <tr>
                                 <!--这里的id和for里面的c1 需要循环出来-->
                                 <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label">{$vo.id}</label></td>

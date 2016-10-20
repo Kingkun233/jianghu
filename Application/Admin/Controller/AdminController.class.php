@@ -149,8 +149,8 @@ class AdminController extends Controller{
      * 登出
      */
     public function logout(){
-        checkAdminLogin();
-        session('[destroy]');
+        session('adminid',null);
+        session('name',null);
         $this->success('退出成功',U('admin/login'));
     }
 }

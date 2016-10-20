@@ -7,9 +7,9 @@
 </head>
 
 <body>
+<br>
+<h3>&nbsp用户列表</h3>
 <div class="details">
-<div class="details_operation clearfix">
-                        </div>
                     <!--表格-->
                     <table class="table" cellspacing="0" cellpadding="0">
                         <thead>
@@ -29,13 +29,13 @@
                         <?php if(is_array($user)): foreach($user as $key=>$vo): ?><tr>
                                 <!--这里的id和for里面的c1 需要循环出来-->
                                 <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label"><?php echo ($vo["id"]); ?></label></td>
-                                <td><?php echo ($vo["username"]); ?></td>
+                                <td><a href="<?php echo U('user/userdetails');?>?username=<?php echo ($vo["username"]); ?>"}><?php echo ($vo["username"]); ?></a></td>
                                 <td><?php echo ($vo["sex"]); ?></td>
                                 <td><?php echo ($vo["email"]); ?></td>
                                 <td><?php echo ($vo["phonenum"]); ?></td>
                                 <td><?php echo ($vo["jointime"]); ?></td>
                                 <td><img height="30px" alt="" src="<?php echo ($vo["faceurl"]); ?>"></td>
-                                <td></td>
+                                <td><?php echo ($vo["isban"]); ?></td>
                                 <td align="center">
                                 	<input type="button" value="禁用" class="btn"  onclick="ban(<?php echo ($vo["id"]); ?>)">
                                 	<input type="button" value="解除禁用" class="btn"  onclick="unban(<?php echo ($vo["id"]); ?>)">

@@ -83,8 +83,8 @@ $(document).ready(function() {
 	<form method="post" action="http://localhost/jianghu/index.php/home/user/outlogin.html">
 		<table>
 			<tr>
-				<td>姓名</td>
-				<td><input type="text"name="username"></td>
+				<td>用户id</td>
+				<td><input type="text"name="user_id"></td>
 			</tr>
 		</table>
 		<button type="submit" >退出登录</button>
@@ -122,8 +122,8 @@ $(document).ready(function() {
 	<form method="post" action="http://localhost/jianghu/index.php/home/introduce/add.html"enctype="multipart/form-data">
 		<table>
 			<tr>
-				<td>用户名</td>
-				<td><input type="text"name="username"></td>
+				<td>用户id</td>
+				<td><input type="text"name="user_id"></td>
 			</tr>
 			<tr>
 				<td >文字</td>

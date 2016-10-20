@@ -1,0 +1,6 @@
+[ 2016-10-20T17:34:47+08:00 ] ::1 /jianghu/index.php/jianghu/index.php/Admin/introduce/showIntroduce.html/u.id/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000526s ]
+ERR: 无法加载模块:Jianghu
+

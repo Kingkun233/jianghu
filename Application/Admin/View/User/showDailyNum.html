@@ -7,11 +7,9 @@
 </head>
 
 <body>
+<br>
+<h3>&nbsp每日统计</h3>
 <div class="details">
-<div class="details_operation clearfix">
-                        </div>
-                        <h3>每日统计</h3>
-                        <br>
                     <!--表格-->
                     <table class="table" cellspacing="0" cellpadding="0">
                         <thead>
