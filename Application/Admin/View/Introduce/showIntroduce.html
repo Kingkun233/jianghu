@@ -11,7 +11,7 @@
 <div class="details">
 <div align="right">
 <form method="post" action="http://localhost/jianghu/index.php/admin/search/doaction">
-    <select name="cate" class="btn">
+    <select name="cate" class="btn" >
         <option value="1">按用户名查找</option>
         <option value="2">按推荐关键字查找</option>
         <option value="3">按度数查找</option>
@@ -19,7 +19,7 @@
         <option value="5">按标签查找</option>
         <option value="6">按范围查找</option>
     </select>
-    <input type=“text‘ name="searchkey" class="search" placeholder="请输入搜索条件"></input>
+    <input type=“text‘ name="searchkey" class="search" placeholder="请输入搜索条件" value="{$searchkey}"></input>
     <input class="btn" type="submit" />
 </form>
 </br>

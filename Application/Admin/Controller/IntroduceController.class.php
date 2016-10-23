@@ -46,10 +46,12 @@ class IntroduceController extends Controller{
     public function showdetail(){
         checkAdminLogin();
         $Introduce=D('introduce');
+        $Domain=D('introduce_domain');
         $Img=D('introduce_images');
         $User=D('user');
         $id=I('id');
         $introduce=$Introduce->where(array('id'=>$id))->select();
+        $domains=$Domain->where(array('introduce_id'=>$id))->select();
         $uid=$Introduce->where(array('id'=>$id))->getField('user_id');
         $intro_id=$Introduce->where(array('id'=>$id))->getField('id');
         $images=$Img->where(array('introduce_id'=>$intro_id))->select();
@@ -59,6 +61,7 @@ class IntroduceController extends Controller{
         $username=$User->where(array('id'=>$uid))->getField('username');
         $backurl = empty($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'],
          $_SERVER['HTTP_HOST']) ?  '#' : $_SERVER['HTTP_REFERER'];
+        $this->assign('domains',$domains);
         $this->assign('rows',$introduce);
         $this->assign('username',$username);
         $this->assign('image',$image);
@@ -72,6 +75,9 @@ class IntroduceController extends Controller{
         $Introduce=D('introduce');
         $Img=D('introduce_images');
         $sql=I('where');
+        $cate=I('cate');
+        $searchkey=I('searchkey');
+//         dump($searchkey);die;
 //         dump($where);die;
         //将+还原为空格
         $where=str_replace('+', " ", $sql);
@@ -92,7 +98,11 @@ class IntroduceController extends Controller{
         ->where($where)
         ->field('m.*,u.username')
         ->limit($Page->firstRow . ',' . $Page->listRows)
+        ->order('time desc')
         ->select();
+        //保持搜索条件
+        $this->assign('cate',$cate);
+        $this->assign('searchkey',$searchkey);
         $this->assign('introduce',$list);
         $this->assign('page',$pageshow);
         $this->display();

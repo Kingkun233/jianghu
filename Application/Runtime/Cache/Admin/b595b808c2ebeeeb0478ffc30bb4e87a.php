@@ -45,7 +45,7 @@
                     <li>
                         <h3><span  onclick="show('menu3','change3')" id="change3" >+</span>推荐管理</h3>
                         <dl id="menu3" style="display:none;">
-                            <dd><a href="<?php echo U('introduce/index');?>" target="mainFrame">推荐列表</a></dd>
+                            <dd><a href="<?php echo U('introduce/showIntroduce');?>" target="mainFrame">推荐列表</a></dd>
                         </dl>
                     </li>
                     <li>

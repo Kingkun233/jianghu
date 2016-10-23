@@ -1,0 +1,323 @@
+[ 2016-10-21T15:43:19+08:00 ] ::1 /jianghu/index.php/home/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000742s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001028s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010593s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010687s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001183s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001258s ]
+
+[ 2016-10-21T15:43:19+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000544s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0048s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:43:29+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000790s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001508s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0044s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2016-10-21T15:43:39+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000916s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000972s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0029s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:43:49+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000731s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001142s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001215s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-10-21T15:43:59+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000581s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000900s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000955s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0047s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:44:05+08:00 ] ::1 /jianghu/index.php/home/introduce/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001437s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001653s ]
+NOTIC: [2] Missing argument 1 for checkUserLogin(), called in D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php on line 14 and defined D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 18 行.
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0702s ]
+NOTIC: [8] Undefined variable: token D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 20 行.
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = null AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-10-21T15:44:08+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000967s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0050s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-10-21T15:44:18+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000807s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001211s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001303s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0045s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:44:19+08:00 ] ::1 /jianghu/index.php/home/user/login.html?username=he&password=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000667s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001241s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001408s ]
+
+[ 2016-10-21T15:44:21+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000869s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-10-21T15:44:24+08:00 ] ::1 /jianghu/index.php/home/introduce/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001263s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001352s ]
+NOTIC: [2] Missing argument 1 for checkUserLogin(), called in D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php on line 14 and defined D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 18 行.
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0028s ]
+NOTIC: [8] Undefined variable: token D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 20 行.
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = null AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-10-21T15:44:26+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000868s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0064s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-10-21T15:44:29+08:00 ] ::1 /jianghu/index.php/home/user/login.html?username=he&password=123
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000679s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001548s ]
+
+[ 2016-10-21T15:45:43+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000953s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0072s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2016-10-21T15:45:53+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000945s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0029s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:46:04+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000900s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000957s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0027s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:46:15+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000576s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000964s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0039s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:46:26+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001002s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0032s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:46:37+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001443s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001512s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0030s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:46:48+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000898s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000960s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0046s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:46:49+08:00 ] ::1 /jianghu/index.php/home/user/login?type=101&username=L&password=123&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1477035996294
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000610s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000894s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000956s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0027s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0027s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 'L'  [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant flag - assumed 'flag' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 84 行.
+SQL: SELECT `id` FROM `jianghu_user` WHERE `username` = 'L' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 25 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `password` FROM `jianghu_user` WHERE `username` = 'L' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_token` (`token`,`user_id`,`time`) VALUES ('e42d4e872a937802b4665a4f33edfdc0','25','2016-10-21 15:46:49') [ RunTime:0.0675s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-10-21'  [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2016-10-21','1') [ RunTime:0.0410s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 25 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 25 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-10-21T15:46:59+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000949s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0048s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:47:09+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000892s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0028s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:47:19+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001009s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0046s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:47:29+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000837s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001185s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001259s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0031s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:47:39+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0031s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:47:49+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000817s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001354s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0105s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-10-21T15:47:59+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001024s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+SQL: SELECT `unreadnum` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-21T15:48:04+08:00 ] ::1 /jianghu/index.php/home/introduce/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001178s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001269s ]
+NOTIC: [2] Missing argument 1 for checkUserLogin(), called in D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php on line 14 and defined D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 18 行.
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0029s ]
+NOTIC: [8] Undefined variable: token D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 20 行.
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = null AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+

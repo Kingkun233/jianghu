@@ -38,6 +38,12 @@
 			<?php if(is_array($image)): foreach($image as $key=>$vo): ?><img src="<?php echo ($vo); ?>" height='60px' padding="2px">&nbsp<?php endforeach; endif; ?>
 		</td>
 	</tr>
+	<tr>
+		<td align="right">推送领域</td>
+		<td>
+			<?php if(is_array($domains)): foreach($domains as $key=>$vo): echo ($vo["name"]); ?>&nbsp<?php endforeach; endif; ?>
+		</td>
+	</tr>
 </table>
 <a href="<?php echo ($backurl); ?>" class='btn'>返回</a>
 </body>

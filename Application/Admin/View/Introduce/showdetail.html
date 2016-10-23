@@ -42,6 +42,14 @@
 			</foreach>
 		</td>
 	</tr>
+	<tr>
+		<td align="right">推送领域</td>
+		<td>
+			<foreach name="domains" item='vo' >
+				{$vo.name}&nbsp
+			</foreach>
+		</td>
+	</tr>
 </table>
 <a href="{$backurl}" class='btn'>返回</a>
 </body>
