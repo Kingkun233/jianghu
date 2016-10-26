@@ -32,6 +32,7 @@
                                 <th>用户</th>
                                 <th>推送内容</th>
                                 <th>时间</th>
+                                <th>度数</th>
                                 <th>操作</th>
                             </tr>
                         </thead>
@@ -42,6 +43,7 @@
                                 <td><a href="<?php echo U('user/userdetails');?>?username=<?php echo ($vo["username"]); ?>"}><?php echo ($vo["username"]); ?></a></td>
                                 <td><?php echo ($vo["text"]); ?></td>
                                 <td><?php echo ($vo["time"]); ?></td>
+                                <td><?php echo ($vo["praisenum"]); ?></td>
                                 <td align="center"><input type="button" value="详情" class="btn" onclick="showDetail(<?php echo ($vo["id"]); ?>)"><input type="button" value="删除" class="btn"  onclick="delMsg(<?php echo ($vo["id"]); ?>)">
                                 	
                                 </td>

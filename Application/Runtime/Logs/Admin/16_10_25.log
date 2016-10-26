@@ -1,0 +1,826 @@
+[ 2016-10-25T12:54:57+08:00 ] ::1 /jianghu/index.php/Admin/Introduce/showIntroduce/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001713s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001871s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.1122s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0041s ]
+SQL: SELECT m.*,u.username FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  ORDER BY time desc LIMIT 3,3   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007478s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007537s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000593s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000636s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000797s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000841s ]
+
+[ 2016-10-25T12:54:58+08:00 ] ::1 /jianghu/index.php/Admin/user/userdetails.html?username=B
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001008s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001093s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 'B'  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000033s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+NOTIC: [8] Undefined variable: description D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\15c7eebfed225aff2357fe2665153870.php 第 42 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007915s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007987s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000727s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000766s ]
+
+[ 2016-10-25T12:54:59+08:00 ] ::1 /jianghu/index.php/Admin/Introduce/showIntroduce/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000854s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0038s ]
+SQL: SELECT m.*,u.username FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  ORDER BY time desc LIMIT 3,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008341s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008405s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001112s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000762s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000798s ]
+
+[ 2016-10-25T20:29:19+08:00 ] ::1 /jianghu/index.php/Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000777s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009531s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009594s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000733s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000777s ]
+
+[ 2016-10-25T20:29:19+08:00 ] ::1 /jianghu/index.php/Admin/index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000781s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001322s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001601s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013888s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013974s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000587s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000879s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000930s ]
+
+[ 2016-10-25T20:29:25+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showIntroduce.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000756s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0044s ]
+SQL: SELECT m.*,u.username FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  ORDER BY time desc LIMIT 0,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007966s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008021s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000629s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000758s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000804s ]
+
+[ 2016-10-25T20:29:28+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showdetail.html?id=66
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000480s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000813s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 66  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce_domain` WHERE `introduce_id` = 66  [ RunTime:0.0002s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 66 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `jianghu_introduce` WHERE `id` = 66 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_introduce_images` WHERE `introduce_id` = 66  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: image D:\xampp\htdocs\jianghu\Application\Admin\Controller\IntroduceController.class.php 第 67 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000143s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008717s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008818s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000750s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000805s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000819s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000859s ]
+
+[ 2016-10-25T20:29:34+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showIntroduce.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000716s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0033s ]
+SQL: SELECT COUNT(*) AS tp_count FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0035s ]
+SQL: SELECT m.*,u.username FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  ORDER BY time desc LIMIT 0,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008737s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008826s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000589s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000625s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000769s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000817s ]
+
+[ 2016-10-25T20:29:45+08:00 ] ::1 /jianghu/index.php/Admin/user/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002399s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0359s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` LIMIT 0,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000087s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007842s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007898s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000677s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001164s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001228s ]
+
+[ 2016-10-25T20:29:47+08:00 ] ::1 /jianghu/index.php/Admin/User/index/p/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000693s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` LIMIT 24,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007921s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007975s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000603s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000660s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000817s ]
+
+[ 2016-10-25T20:29:49+08:00 ] ::1 /jianghu/index.php/Admin/user/userdetails.html?username=M
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 'M'  [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+NOTIC: [8] Undefined variable: description D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\15c7eebfed225aff2357fe2665153870.php 第 42 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007796s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007864s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000657s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000830s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000885s ]
+
+[ 2016-10-25T20:29:50+08:00 ] ::1 /jianghu/index.php/Admin/User/index/p/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001122s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001191s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0049s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` LIMIT 24,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000095s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007488s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007549s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000618s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000869s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000913s ]
+
+[ 2016-10-25T20:34:45+08:00 ] ::1 /jianghu/index.php/Admin/user/userdetails.html?username=M
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000724s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 'M'  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+NOTIC: [8] Undefined variable: description D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\15c7eebfed225aff2357fe2665153870.php 第 42 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007751s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007816s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000596s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001435s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001512s ]
+
+[ 2016-10-25T20:34:47+08:00 ] ::1 /jianghu/index.php/Admin/User/index/p/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000487s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0063s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` LIMIT 24,3   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008547s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008600s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000875s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001016s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001084s ]
+
+[ 2016-10-25T20:34:48+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showIntroduce.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000643s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000896s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0037s ]
+SQL: SELECT m.*,u.username FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  ORDER BY time desc LIMIT 0,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000134s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009954s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010024s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000819s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000881s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000812s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000852s ]
+
+[ 2016-10-25T20:34:50+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showdetail.html?id=67
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0142s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 67  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_introduce_domain` WHERE `introduce_id` = 67  [ RunTime:0.0005s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 67 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `jianghu_introduce` WHERE `id` = 67 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_introduce_images` WHERE `introduce_id` = 67  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 26 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: image D:\xampp\htdocs\jianghu\Application\Admin\Controller\IntroduceController.class.php 第 67 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008998s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009057s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000639s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000678s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000855s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000894s ]
+
+[ 2016-10-25T20:34:54+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showIntroduce.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000867s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0039s ]
+SQL: SELECT m.*,u.username FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  ORDER BY time desc LIMIT 0,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000097s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008034s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008102s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001265s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001334s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000809s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000849s ]
+
+[ 2016-10-25T20:35:08+08:00 ] ::1 /jianghu/index.php/Admin/user/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000898s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` LIMIT 0,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008504s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008559s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000727s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000803s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000841s ]
+
+[ 2016-10-25T20:36:08+08:00 ] ::1 /jianghu/index.php/Admin/user/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000811s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0318s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_user` LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` LIMIT 0,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007905s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007959s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000710s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000763s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001118s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001176s ]
+
+[ 2016-10-25T20:36:09+08:00 ] ::1 /jianghu/index.php/Admin/User/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000782s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000842s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` LIMIT 3,3   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007975s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008027s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000737s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001025s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001093s ]
+
+[ 2016-10-25T20:36:10+08:00 ] ::1 /jianghu/index.php/Admin/User/index/p/9.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000060s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000914s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` LIMIT 24,3   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008255s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008308s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000822s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000938s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000988s ]
+
+[ 2016-10-25T20:36:13+08:00 ] ::1 /jianghu/index.php/Admin/User/index/p/8.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000455s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0039s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` LIMIT 21,3   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007938s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007996s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000892s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000951s ]
+
+[ 2016-10-25T20:36:15+08:00 ] ::1 /jianghu/index.php/Admin/User/index/p/7.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001167s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001234s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0049s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` LIMIT 18,3   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000063s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000121s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008307s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008357s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000693s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000884s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000926s ]
+
+[ 2016-10-25T20:36:17+08:00 ] ::1 /jianghu/index.php/Admin/User/index/p/6.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000815s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000862s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_user` LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` LIMIT 15,3   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008411s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008462s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000611s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000648s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000873s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000911s ]
+
+[ 2016-10-25T20:36:18+08:00 ] ::1 /jianghu/index.php/Admin/user/userdetails.html?username=A
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000557s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001415s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001483s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0074s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 'A'  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000080s ]
+NOTIC: [8] Undefined variable: description D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\15c7eebfed225aff2357fe2665153870.php 第 42 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007428s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007482s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000708s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000824s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000862s ]
+
+[ 2016-10-25T20:37:06+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showIntroduce.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000746s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0048s ]
+SQL: SELECT COUNT(*) AS tp_count FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0034s ]
+SQL: SELECT m.*,u.username FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  ORDER BY time desc LIMIT 0,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008781s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008867s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000864s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000981s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001022s ]
+
+[ 2016-10-25T20:37:08+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showdetail.html?id=68
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000442s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001762s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 68  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce_domain` WHERE `introduce_id` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `jianghu_introduce` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_introduce_images` WHERE `introduce_id` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: image D:\xampp\htdocs\jianghu\Application\Admin\Controller\IntroduceController.class.php 第 67 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009697s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009756s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000684s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000745s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000891s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000931s ]
+
+[ 2016-10-25T20:38:19+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showIntroduce.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000850s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000921s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0035s ]
+SQL: SELECT COUNT(*) AS tp_count FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0038s ]
+SQL: SELECT m.*,u.username FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  ORDER BY time desc LIMIT 0,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000081s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008110s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008171s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000994s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001050s ]
+
+[ 2016-10-25T20:38:21+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showdetail.html?id=67
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 67  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce_domain` WHERE `introduce_id` = 67  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 67 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `id` FROM `jianghu_introduce` WHERE `id` = 67 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_introduce_images` WHERE `introduce_id` = 67  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 26 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: image D:\xampp\htdocs\jianghu\Application\Admin\Controller\IntroduceController.class.php 第 67 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009485s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009543s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000672s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000711s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000868s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000924s ]
+
+[ 2016-10-25T20:38:22+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showIntroduce.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001532s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001644s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0037s ]
+SQL: SELECT m.*,u.username FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  ORDER BY time desc LIMIT 0,3   [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000035s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008057s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008177s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000633s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000676s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000835s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000879s ]
+
+[ 2016-10-25T20:38:26+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showdetail.html?id=68
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000533s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000929s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 68  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce_domain` WHERE `introduce_id` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `id` FROM `jianghu_introduce` WHERE `id` = 68 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_introduce_images` WHERE `introduce_id` = 68  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: image D:\xampp\htdocs\jianghu\Application\Admin\Controller\IntroduceController.class.php 第 67 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009738s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009800s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000704s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000749s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000882s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000928s ]
+
+[ 2016-10-25T20:38:28+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showIntroduce.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001726s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001189s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001292s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0080s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0042s ]
+SQL: SELECT COUNT(*) AS tp_count FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0039s ]
+SQL: SELECT m.*,u.username FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  ORDER BY time desc LIMIT 0,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000036s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008904s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008977s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000802s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000888s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000930s ]
+
+[ 2016-10-25T21:09:51+08:00 ] ::1 /jianghu/index.php/Admin/introduce/showIntroduce.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001703s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.009237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.009458s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0079s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SELECT COUNT(*) AS tp_count FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SELECT m.*,u.username FROM jianghu_introduce m left join jianghu_user u on m.user_id=u.id  ORDER BY time desc LIMIT 0,3   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010586s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010675s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001173s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001249s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001037s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001091s ]
+

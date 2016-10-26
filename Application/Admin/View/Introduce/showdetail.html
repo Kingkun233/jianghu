@@ -3,15 +3,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/jianghu/Public/css/backstage.css">
 </head>
 <body>
 <h3>推荐详情</h3>
 
-<table width="70%" border="1" cellpadding="5" cellspacing="0" bgcolor="#ddd">
+<table  bgcolor="#ddd" class="table">
 <foreach name="rows" item="vo">
 	<tr>
 		<td align="right">用户名</td>
-		<td>{$username}</td>
+		<td><a href="{:U('user/userdetails')}?username={$username}">{$username}</a></td>
 	</tr>
 	<tr>
 		<td align="right">推送内容</td>
@@ -28,6 +29,10 @@
 	<tr>
 		<td align="right">转载数</td>
 		<td>{$vo.forwardnum}</td>
+	</tr>
+	<tr>
+		<td align="right">评论数</td>
+		<td>{$vo.commentnum}</td>
 	</tr>
 	<tr>
 		<td align="right">度数</td>
@@ -50,7 +55,12 @@
 			</foreach>
 		</td>
 	</tr>
+	<tr>
+		<td align="right">查看原创推荐</td>
+		<td><a href="{:U('introduce/showdetail')}?id={$original_intro}">{$original_intro}</a>{$msg}</td>
+	</tr>
 </table>
+<br>
 <a href="{$backurl}" class='btn'>返回</a>
 </body>
 </html>

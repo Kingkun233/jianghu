@@ -15,9 +15,11 @@ function responseMsg($re,$type,$msg=null){
  * @param unknown $token
  * @return boolean
  */
-function checkUserLogin($token){
+function checkUserLogin($token,$user_id){
+//     dump('halo');die;
    $Token=D("token");
    $where['token']=$token;
+   $where['user_id']=$user_id;
    $where['state']=0;
    if($Token->where($where)->find()){
        return true;

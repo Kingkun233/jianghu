@@ -3,14 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/jianghu/Public/css/backstage.css">
 </head>
 <body>
 <h3>推荐详情</h3>
 
-<table width="70%" border="1" cellpadding="5" cellspacing="0" bgcolor="#ddd">
+<table  bgcolor="#ddd" class="table">
 <?php if(is_array($rows)): foreach($rows as $key=>$vo): ?><tr>
 		<td align="right">用户名</td>
-		<td><?php echo ($username); ?></td>
+		<td><a href="<?php echo U('user/userdetails');?>?username=<?php echo ($username); ?>"><?php echo ($username); ?></a></td>
 	</tr>
 	<tr>
 		<td align="right">推送内容</td>
@@ -29,6 +30,10 @@
 		<td><?php echo ($vo["forwardnum"]); ?></td>
 	</tr>
 	<tr>
+		<td align="right">评论数</td>
+		<td><?php echo ($vo["commentnum"]); ?></td>
+	</tr>
+	<tr>
 		<td align="right">度数</td>
 		<td><?php echo ($vo["degree"]); ?></td>
 	</tr><?php endforeach; endif; ?>
@@ -44,7 +49,12 @@
 			<?php if(is_array($domains)): foreach($domains as $key=>$vo): echo ($vo["name"]); ?>&nbsp<?php endforeach; endif; ?>
 		</td>
 	</tr>
+	<tr>
+		<td align="right">查看原创推荐</td>
+		<td><a href="<?php echo U('introduce/showdetail');?>?id=<?php echo ($original_intro); ?>"><?php echo ($original_intro); ?></a><?php echo ($msg); ?></td>
+	</tr>
 </table>
+<br>
 <a href="<?php echo ($backurl); ?>" class='btn'>返回</a>
 </body>
 </html>

@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/jianghu/Public/css/backstage.css">
 </head>
 <body>
 	<h3>用户详情</h3>
 
-	<table width="50%" border="1" cellpadding="5" cellspacing="0"
-		bgcolor="#ddd">
+	<table bgcolor="#ddd" class="table">
 		<?php if(is_array($rows)): foreach($rows as $key=>$vo): ?><tr>
 			<td align="right">用户id</td>
 			<td><?php echo ($vo["id"]); ?></td>
@@ -57,6 +57,7 @@
 			<td colspan="2"><a href="<?php echo U('search/searchByUid');?>?user_id=<?php echo ($vo["id"]); ?>">查看该用户所有推荐</a></td>
 		</tr><?php endforeach; endif; ?>
 	</table>
+	<br>
 	<a href="<?php echo ($backurl); ?>" class='btn'>返回</a>
 </body>
 </html>

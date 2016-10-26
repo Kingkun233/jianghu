@@ -11,15 +11,8 @@ class IntroduceController extends Controller
      */
     public function add()
     {
-        if (! checkUserLogin()) {
-            // 用户未登陆
-            $this->ajaxReturn(2);
-        }
-        $user_id = I('user_id');
-        if(isban($user_id)){
-            //用户被禁用
-            $this->ajaxReturn(3);
-        }
+        $type=201;
+        loginPermitApiPreTreat($type);
         $Domain=D('introduce_domain');
         $User = D('user');
         $Intro = D('introduce');
@@ -32,13 +25,14 @@ class IntroduceController extends Controller
         // 得到user_id
         $add['user_id'] = $user_id;
         $add['time'] = date("Y-m-d H:i:s");
+        //推荐度数为1
         $add['degree']=1;
         // 插入推荐表，获取推荐id
         $img['intro_id'] = $Intro->add($add);
         $add2['introduce_id']=$img['intro_id'];
         if (! $img['intro_id']) {
             // 数据插入失败
-            $this->ajaxReturn(1); 
+            $this->ajaxReturn(responseMsg(1, $type));
         }
         //若不存在，插入邻域表
         $Domain->add($add2);
@@ -52,7 +46,7 @@ class IntroduceController extends Controller
             $add1['imagepath'] = $img['imagepath'][$k];
             $flag2 = $Image->add($add1); // 插入图片到数据库
             if (! $flag2) {
-                $this->ajaxReturn(1); // 数据插入失败
+                $this->ajaxReturn(responseMsg(1, $type));// 数据插入失败
             }
         }
         //自己转发自己
@@ -63,7 +57,7 @@ class IntroduceController extends Controller
         $add3['owner_id']=$add['user_id'];
         $add3['degree']=1;
         $Forward->add($add3);
-        $this->ajaxReturn(0); // 推荐插入成功
+        $this->ajaxReturn(responseMsg(0, $type));// 推荐插入成功
     }
 
     /**
@@ -105,24 +99,23 @@ class IntroduceController extends Controller
      */
     public function showFriendIntro()
     {
-        if (! checkUserLogin()) {
-            // 用户未登陆
-            $this->ajaxReturn(2);
-        }
+        $type=202;
+        loginPermitApiPreTreat($type);
         $User = D('user');
         $Friend = D('friend');
         $Intro = D('introduce');
         $Image = D('introduce_images');
-        $username = I('username');
-        $user_id = getUidByUsername($username);
+        $user_id = I('user_id');
         $fid2 = $Friend->where(array(
             'user_id' => $user_id
         ))
             ->field('friend_id')
             ->select(); // 得到好友id,二维数组
+//             dump($fid2);die;
         foreach ($fid2 as $k => $v) { // 二维转一维
             $fid1[] = $v['friend_id'];
         }
+//         dump($fid1);die;
         $contents = $Intro->order('time desc')->select();
         foreach ($contents as $k => $v) {
             if (in_array($v['user_id'], $fid1)) {
@@ -148,9 +141,7 @@ class IntroduceController extends Controller
                 $showall[] = $show;
             }
         }
-        dump($showall);
-        die();
-        $this->ajaxReturn($showall);
+        $this->ajaxReturn(responseMsg(0, 202,$showall));
     }
 
     /**
@@ -158,15 +149,12 @@ class IntroduceController extends Controller
      */
     public function showUserIntro()
     {
-        if (! checkUserLogin()) {
-            // 用户未登陆
-            $this->ajaxReturn(2);
-        }
+        $type=203;
+        loginPermitApiPreTreat($type);
         $User = D('user');
         $Image = D('introduce_images');
         $Intro = D('introduce');
-        $username = I('username');
-        $user_id = getUidByUsername($username);
+        $user_id = I('user_id');
         $contents = $Intro->order('time desc')->select();
         // dump($contents);die;
         foreach ($contents as $k => $v) {
@@ -189,9 +177,7 @@ class IntroduceController extends Controller
                 $showall[] = $show;
             }
         }
-        dump($showall);
-        die();
-        $this->ajaxReturn($showall);
+        $this->ajaxReturn(responseMsg(0, 203,$showall));
     }
 
     /**
@@ -199,17 +185,15 @@ class IntroduceController extends Controller
      */
     public function addPraise()
     {
-        if (! checkUserLogin()) {
-            // 用户未登陆
-            $this->ajaxReturn(2);
-        }
+        $type=204;
+        //登录权限接口预处理，包括接口调用正确性，用户是否登录，用户是否被禁用
+        loginPermitApiPreTreat($type);
         $User = D('user');
         $Intro = D('introduce');
         $Praise = D('praise');
         $Num=D("daily_num");
-        $username = I('username');
         $introduce_id= I('introduce_id');
-        $user_id=getUidByUsername($username);
+        $user_id=I('user_id');
         // 通过推荐表获取所有者的id
         $owner_id= $Intro->where(array(
             'id' => $introduce_id
@@ -245,10 +229,10 @@ class IntroduceController extends Controller
        
         if ($flag1 && $flag2 && $flag3&&$flag4) {
             // 点赞成功
-            $this->ajaxReturn(0); 
+            $this->ajaxReturn(responseMsg(0, $type)); 
         }
         // 数据插入失败
-        $this->ajaxReturn(1); 
+        $this->ajaxReturn(responseMsg(1, $type)); 
     }
 
     /**
@@ -324,26 +308,19 @@ class IntroduceController extends Controller
      */
     public function forward()
     {
-        if (! checkUserLogin()) {
-            // 用户未登陆
-            $this->ajaxReturn(2);
-        }
-        $user_id=I('user_id');
-        if(isban($user_id)){
-            //用户被禁用
-            $this->ajaxReturn(3);
-        }
+        $type=205;
+        loginPermitApiPreTreat($type);
         $User=D('user');
         $Intro = D('introduce');
         $Forward = D('forward');
         $Friend=D("friend");
         $introduce_id = I('introduce_id');
+        $user_id=I('user_id');
         //推荐所有者的未读消息加一
             //owner_id并不一定指原创的作者id 谁转载了谁就owner
             //原创的推荐id存在introduce表的isforward字段中
         $owner_id=$Intro->where(array('id'=>$introduce_id))->getField('user_id');
         $flag4=$User->where(array('id'=>$owner_id))->setInc('unreadnum');
-//         dump($flag4);die;
         //得到转采的推荐id 没有就返回0
         $isforward = $Intro->where(array(
             'id' => $introduce_id
@@ -373,35 +350,36 @@ class IntroduceController extends Controller
         $degree=$Intro->where(array("id"=>$introduce_id))->getField("degree");
             //degree大于一的时候才需要判断，若degree转载的时候为一，就直接加一
             if($degree>1){
-                //在forward表找到1.度数小于当前度数的2.和转发者是朋友的3.推荐id和该推荐一样的
+                //在forward表找到1.度数小于当前度数的2.和转发者是朋友的3.原创推荐id和forward表中的original_id一样的
                 $where1['degree']=array("lt",$degree);
                 $where1['original_id']=array("eq",$introduce_id1);
                 $friends=$Friend->where(array("user_id"=>$data1['user_id']))->field("friend_id")->select();
                 foreach ($friends as $k=>$v){
                     $friend[]=$v["friend_id"];
                 }
-                //         dump($friend);die;
                 $where1['user_id']=array("in",$friend);
-                $rows=$Intro->where($where1)->select();
-                
-//                 dump($rows);die;
+                $rows=$Forward->where($where1)->select();
                 if(!$rows){
-                    //如果没有找到，则度数为a++
+                    //如果没有找到，则度数为被转载推荐的度数加一
                     $degree=$degree+1;
                     $data1["degree"]=$degree;
                     $data2["degree"]=$degree;
-                    //更新原创推荐的度数
-                    $Intro->where(array("id"=>$introduce_id1))->save(array("degree"=>$degree));
                 }else{
-                    //如果找到记录，度数不变
-                    $data2["degree"]=$degree;
-                    $data1["degree"]=$degree;
+                    //如果找到记录，度数为这些记录的最小的度数加一
+                        //得到这些记录中最小的度数
+                    $min=10000;
+                    foreach ($rows as $k=>$v){
+                        if($v['degree']<$min){
+                            $min=$v['degree'];
+                        }
+                    }
+                    $data2["degree"]=$min+1;
+                    $data1["degree"]=$min+1;
                 }
             }else{
                 $degree=$degree+1;
                 $data2["degree"]=$degree;
                 $data1["degree"]=$degree;
-                $Intro->where(array("id"=>$introduce_id1))->save(array("degree"=>$degree));
             }
         // 插入推荐表
         $flag = $Intro->add($data2);
@@ -417,16 +395,18 @@ class IntroduceController extends Controller
 //         dump(array($flag,$flag1,$flag2,$flag3,$flag4));
         if ($flag && $flag1 && $flag2 && $flag3&&$flag4) {
             // 转采成功
-            $this->ajaxReturn(0);
+            $this->ajaxReturn(responseMsg(0, $type));
         }
         // 转采失败
-        $this->ajaxReturn(1);
+        $this->ajaxReturn(responseMsg(1, $type));
     }
 
     /**
      * 添加评论
      */
     public function addcomment(){
+        $type=206;
+        loginPermitApiPreTreat($type);
         $Comment=D("comment");
         $Num=D("daily_num");
         $Intro=D("introduce");
@@ -454,10 +434,12 @@ class IntroduceController extends Controller
         }
         //数据插入comment表
         $flag2=$Comment->add($data);
+        //推荐评论数加一
+        $Intro->where(array('id'=>$data['introduce_id']))->setInc("commentnum");
         if($flag1&&$flag2){
-            $this->ajaxReturn(0);
+            $this->ajaxReturn(responseMsg(0, $type));
         }else {
-            $this->ajaxReturn(1);
+            $this->ajaxReturn(responseMsg(1, $type));
         }
     }
 }

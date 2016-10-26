@@ -3,6 +3,8 @@
 li{list-style: none;}
 input,select,textarea{outline: none;border: none; background: none;}
 textarea{resize: none;}
+table{border-collapse:collapse}
+table td{empty-cells:show}
 a{text-decoration: none;}
 a:hover{text-decoration: underline;}
 .clearfix:after,

@@ -59,8 +59,8 @@ class UserController extends Controller
             $this->ajaxReturn(responseMsg(0,$type)); // 注册成功
         } else {
 //             $flag[]=[$flag1,$flag2,$flag3,$flag4];
-//             dump($flag);
-            $this->ajaxReturn(1); //注册失败
+//             dump($flag);die;
+            $this->ajaxReturn(responseMsg(1,$type)); //注册失败
         }
     }
 

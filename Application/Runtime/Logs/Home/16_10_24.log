@@ -1,0 +1,855 @@
+[ 2016-10-24T14:24:29+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000853s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+NOTIC: [2] Missing argument 1 for checkUserLogin(), called in D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php on line 18 and defined D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 18 行.
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0457s ]
+NOTIC: [8] Undefined variable: token D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 20 行.
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = null AND `state` = 0 LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2016-10-24T14:25:20+08:00 ] ::1 /jianghu/index.php/home/user/login?type=101&username=he&password=123&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1477289561801
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000787s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001329s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001424s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 'he'  [ RunTime:0.0005s ]
+NOTIC: [8] Use of undefined constant flag - assumed 'flag' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 84 行.
+SQL: SELECT `id` FROM `jianghu_user` WHERE `username` = 'he' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_token` SET `state`='1' WHERE `user_id` = 1 [ RunTime:0.0003s ]
+
+[ 2016-10-24T14:26:30+08:00 ] ::1 /jianghu/index.php/home/user/login?type=101&username=he&password=123&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1477289561802
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 'he'  [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant flag - assumed 'flag' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 84 行.
+SQL: SELECT `id` FROM `jianghu_user` WHERE `username` = 'he' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `password` FROM `jianghu_user` WHERE `username` = 'he' LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_token` (`token`,`user_id`,`time`) VALUES ('2ea7c6999b86afb0f34bc274e78377fe','1','2016-10-24 14:26:30') [ RunTime:0.0635s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-10-24'  [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2016-10-24','1') [ RunTime:0.0341s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2016-10-24T14:26:57+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002454s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002527s ]
+NOTIC: [2] Missing argument 1 for checkUserLogin(), called in D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php on line 18 and defined D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 18 行.
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0338s ]
+NOTIC: [8] Undefined variable: token D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 20 行.
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = null AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-10-24T14:26:59+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000703s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000901s ]
+NOTIC: [2] Missing argument 1 for checkUserLogin(), called in D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php on line 18 and defined D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 18 行.
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0036s ]
+NOTIC: [8] Undefined variable: token D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 20 行.
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = null AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-10-24T14:28:14+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000666s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0079s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是he的内容','1','2016-10-24 14:28:14','1') [ RunTime:0.0746s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`name`,`introduce_id`) VALUES ('运动','64') [ RunTime:0.0366s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 54 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 58 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 53 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('1','64','64','2016-10-24 14:28:14','1','1') [ RunTime:0.0430s ]
+
+[ 2016-10-24T14:48:52+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000039s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000688s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000866s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0042s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0075s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0036s ]
+SQL: SELECT `id` FROM `jianghu_user` WHERE `username` = '' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = null  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY time desc  [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: showall D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 164 行.
+
+[ 2016-10-24T14:51:25+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000805s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000893s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000962s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0039s ]
+SQL: SELECT `id` FROM `jianghu_user` WHERE `username` = '' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = null  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY time desc  [ RunTime:0.0013s ]
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: showall D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 164 行.
+
+[ 2016-10-24T14:51:37+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000530s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001379s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001486s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0064s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0052s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0038s ]
+SQL: SELECT `id` FROM `jianghu_user` WHERE `username` = '' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = null  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY time desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [2] in_array() expects parameter 2 to be array, null given D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+NOTIC: [8] Undefined variable: showall D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 164 行.
+
+[ 2016-10-24T14:54:08+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001836s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001023s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0053s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0054s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0048s ]
+SQL: SELECT `id` FROM `jianghu_user` WHERE `username` = '' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = null  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 139 行.
+
+[ 2016-10-24T14:54:10+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000936s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000859s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0053s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0053s ]
+SQL: SELECT `id` FROM `jianghu_user` WHERE `username` = '' LIMIT 1   [ RunTime:0.0026s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = null  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: fid1 D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 139 行.
+
+[ 2016-10-24T14:55:42+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001139s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001218s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0036s ]
+SQL: SELECT `id` FROM `jianghu_user` WHERE `username` = '' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = null  [ RunTime:0.0004s ]
+
+[ 2016-10-24T14:55:44+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000860s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000922s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0039s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0035s ]
+SQL: SELECT `id` FROM `jianghu_user` WHERE `username` = '' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = null  [ RunTime:0.0003s ]
+
+[ 2016-10-24T14:56:31+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001015s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001089s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0039s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY time desc  [ RunTime:0.0012s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 64  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 63  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 35  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 26 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 26  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 34  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 26 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 26  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 33  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 26 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 26  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 27  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 26 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 26  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 26  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 25  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 24  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 22  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 21  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 19  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 18  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 17  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 16  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 15  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 9  [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 14  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 9  [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 13  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 12  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 11  [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 10  [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 9  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 7  [ RunTime:0.0003s ]
+
+[ 2016-10-24T15:08:25+08:00 ] ::1 /jianghu/index.php/home/introduce/showUserIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001468s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001580s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0384s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2016-10-24T15:09:18+08:00 ] ::1 /jianghu/index.php/home/introduce/showUserIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000514s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001204s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001327s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0508s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY time desc  [ RunTime:0.0010s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 64  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 63  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 26  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 25  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 24  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 21  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 18  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 17  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 16  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 9  [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 15  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 9  [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 14  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0002s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 12  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 7  [ RunTime:0.0003s ]
+
+[ 2016-10-24T15:21:40+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraise
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001162s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001251s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0304s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0437s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0094s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0043s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `time` FROM `jianghu_praise` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `praisenum`=praisenum+1 WHERE `date` = '2016-10-24' [ RunTime:0.0772s ]
+ERR: 1048:Column 'owner_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_praise` (`introduce_id`,`user_id`,`time`,`owner_id`) VALUES ('2','1','2016-10-24 15:21:40',NULL)
+ERR: 1048:Column 'owner_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_praise` (`introduce_id`,`user_id`,`time`,`owner_id`) VALUES ('2','1','2016-10-24 15:21:40',NULL)
+
+[ 2016-10-24T15:23:15+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraise
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000687s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000932s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0055s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 64 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `time` FROM `jianghu_praise` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `praisenum`=praisenum+1 WHERE `date` = '2016-10-24' [ RunTime:0.1109s ]
+SQL: INSERT INTO `jianghu_praise` (`introduce_id`,`user_id`,`time`,`owner_id`) VALUES ('64','1','2016-10-24 15:23:15','1') [ RunTime:0.0446s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 1 [ RunTime:0.0467s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 64 [ RunTime:0.0417s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.0468s ]
+
+[ 2016-10-24T15:34:21+08:00 ] ::1 /jianghu/index.php/home/introduce/forward
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000924s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000949s ]
+
+[ 2016-10-24T15:35:29+08:00 ] ::1 /jianghu/index.php/home/introduce/forward
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000529s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001287s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001376s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0042s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0047s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 1 [ RunTime:0.1002s ]
+SQL: SELECT `isforward` FROM `jianghu_introduce` WHERE `id` = 64 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `degree` FROM `jianghu_introduce` WHERE `id` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_introduce` SET `degree`='2' WHERE `id` = 64 [ RunTime:0.0365s ]
+SQL: INSERT INTO `jianghu_introduce` (`time`,`isforward`,`text`,`user_id`,`degree`) VALUES ('2016-10-24 15:35:29','64','he转发了he的推荐','1','2') [ RunTime:0.0412s ]
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`time`,`owner_id`,`original_id`,`degree`) VALUES ('1','64','2016-10-24 15:35:29','1','64','2') [ RunTime:0.0414s ]
+SQL: UPDATE `jianghu_introduce` SET `forwardnum`=forwardnum+1 WHERE `id` = 64 [ RunTime:0.0392s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+3 WHERE `id` = 1 [ RunTime:0.0435s ]
+
+[ 2016-10-24T15:55:07+08:00 ] ::1 /jianghu/index.php/home/introduce/addComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000046s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001991s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000833s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000899s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0060s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0049s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0085s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0041s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 64 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 1 [ RunTime:0.0979s ]
+SQL: SELECT `time` FROM `jianghu_comment` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `commentnum`=commentnum+1 WHERE `date` = '2016-10-24' [ RunTime:0.0471s ]
+SQL: INSERT INTO `jianghu_comment` (`user_id`,`introduce_id`,`content`,`time`) VALUES ('1','64','评论','2016-10-24 15:55:06') [ RunTime:0.0368s ]
+
+[ 2016-10-24T19:40:09+08:00 ] ::1 /jianghu/index.php/home/introduce/addComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000501s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001066s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0034s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 1 [ RunTime:0.0834s ]
+SQL: SELECT `time` FROM `jianghu_comment` WHERE `user_id` = 1  [ RunTime:0.0013s ]
+SQL: INSERT INTO `jianghu_comment` (`user_id`,`introduce_id`,`content`,`time`) VALUES ('1','64','评论','2016-10-24 19:40:09') [ RunTime:0.0750s ]
+SQL: UPDATE `jianghu_introduce` SET `commentnum`=commentnum+1 WHERE `id` = 64 [ RunTime:0.0918s ]
+

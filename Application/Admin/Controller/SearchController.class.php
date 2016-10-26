@@ -8,7 +8,6 @@ class SearchController extends Controller{
     public function doaction(){
         $cate=I('cate');
         $searchkey=I('searchkey');
-//         dump($searchkey);die;
         switch ($cate){
             case 1 : $this->redirect("search/searchByUsername",array('cate'=>$cate,"searchkey"=>$searchkey));
                             break;

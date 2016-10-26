@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="/jianghu/Public/css/backstage.css">
 </head>
 <body>
 	<h3>用户详情</h3>
 
-	<table width="50%" border="1" cellpadding="5" cellspacing="0"
-		bgcolor="#ddd">
+	<table bgcolor="#ddd" class="table">
 		<foreach name='rows' item='vo'>
 		<tr>
 			<td align="right">用户id</td>
@@ -59,6 +59,7 @@
 		</tr>
 		</foreach>
 	</table>
+	<br>
 	<a href="{$backurl}" class='btn'>返回</a>
 </body>
 </html>

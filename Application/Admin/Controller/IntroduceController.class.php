@@ -50,6 +50,7 @@ class IntroduceController extends Controller{
         $Img=D('introduce_images');
         $User=D('user');
         $id=I('id');
+//         dump($id);die;
         $introduce=$Introduce->where(array('id'=>$id))->select();
         $domains=$Domain->where(array('introduce_id'=>$id))->select();
         $uid=$Introduce->where(array('id'=>$id))->getField('user_id');
@@ -61,6 +62,14 @@ class IntroduceController extends Controller{
         $username=$User->where(array('id'=>$uid))->getField('username');
         $backurl = empty($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'],
          $_SERVER['HTTP_HOST']) ?  '#' : $_SERVER['HTTP_REFERER'];
+         foreach($introduce as $k=>$v){
+             $original_intro=$v['isforward'];
+         }
+         if($original_intro){
+             $this->assign('original_intro',$original_intro);
+         }else{
+             $this->assign('msg',"这条是原创推荐");
+         }
         $this->assign('domains',$domains);
         $this->assign('rows',$introduce);
         $this->assign('username',$username);
@@ -77,11 +86,8 @@ class IntroduceController extends Controller{
         $sql=I('where');
         $cate=I('cate');
         $searchkey=I('searchkey');
-//         dump($searchkey);die;
-//         dump($where);die;
         //将+还原为空格
         $where=str_replace('+', " ", $sql);
-//         dump($where);die;
         //得到页数
         $count=$Introduce
         ->table('jianghu_introduce m')
