@@ -6,13 +6,18 @@ class UserController extends Controller{
      * 用户列表
      */
     public function index(){
-    checkAdminLogin();
+        checkAdminLogin();
         $user=D('user');
-        $count=$user->count();
+        $searchkey=I('searchkey');
+        //得到页数
+        $where['username']=array('like',"%".$searchkey."%");
+        $count=$user->where($where)
+        ->count();
         $Page=new \Think\Page($count,3);
         $pageshow=page($Page);
         $list=$user
         ->limit($Page->firstRow . ',' . $Page->listRows)
+        ->where($where)
         ->select();
         $this->assign('user',$list);
         $this->assign('page',$pageshow);
@@ -131,4 +136,5 @@ class UserController extends Controller{
         $this->assign('backurl', $backurl);
         $this->display();
     }
+    
 }

@@ -35,7 +35,7 @@
                 <div class="title">管理员</div>
                 <ul class="mList">
                     <li>
-                        <h3><span onclick="show('menu1','change1')" id="change1">+</span>搜索标签管理</h3>
+                        <h3 onclick="show('menu1','change1')" id="change1"><span >+</span>搜索标签管理</h3>
                         <dl id="menu1" style="display:none;">
                         	<dd><a href="{:U('tag/add')}" target="mainFrame">添加搜索标签</a></dd>
                             <dd><a href="{:U('tag/index')}" target="mainFrame">搜索标签列表</a></dd>
@@ -43,20 +43,20 @@
                     </li>
                     
                     <li>
-                        <h3><span  onclick="show('menu3','change3')" id="change3" >+</span>推荐管理</h3>
+                        <h3 onclick="show('menu3','change3')" id="change3" ><span  >+</span>推荐管理</h3>
                         <dl id="menu3" style="display:none;">
                             <dd><a href="{:U('introduce/showIntroduce')}" target="mainFrame">推荐列表</a></dd>
                         </dl>
                     </li>
                     <li>
-                        <h3><span onclick="show('menu4','change4')" id="change4">+</span>用户管理</h3>
+                        <h3 onclick="show('menu4','change4')" id="change4"><span >+</span>用户管理</h3>
                         <dl id="menu4" style="display:none;">
                             <dd><a href="{:U('user/index')}" target="mainFrame">用户列表</a></dd>
                             <dd><a href="{:U('user/showDailyNum')}" target="mainFrame">每日统计</a></dd>
                         </dl>
                     </li>
                     <li>
-                        <h3><span onclick="show('menu5','change5')" id="change5">+</span>管理员管理</h3>
+                        <h3 onclick="show('menu5','change5')" id="change5"><span class="menu5">+</span>管理员管理</h3>
                         <dl id="menu5" style="display:none;">
                         	<dd><a href="{:U('admin/add')}" target="mainFrame">添加管理员</a></dd>
                             <dd><a href="{:U('admin/index')}" target="mainFrame">管理员列表</a></dd>
@@ -71,11 +71,12 @@
     	function show(num,change){
 	    		var menu=document.getElementById(num);
 	    		var change=document.getElementById(change);
-	    		if(change.innerHTML=="+"){
-	    				change.innerHTML="-";
-	        	}else{
-						change.innerHTML="+";
-	            }
+	    		var span =change.firstChild;
+	    		if(span.innerHTML=="+"){
+	    			span.innerHTML="-";
+	    		}else{
+	    			span.innerHTML="+";
+	    		}
     		   if(menu.style.display=='none'){
     	             menu.style.display='';
     		    }else{
