@@ -34,6 +34,14 @@
 			<td><?php echo ($vo["praisenum"]); ?> </td>
 		</tr>
 		<tr>
+			<td align="right">总赞数</td>
+			<td><?php echo ($vo["allpraise"]); ?> </td>
+		</tr>
+		<tr>
+			<td align="right">总踩数</td>
+			<td><?php echo ($vo["alloppose"]); ?> </td>
+		</tr>
+		<tr>
 			<td align="right">生日</td>
 			<td><?php echo ($vo["birthday"]); ?> </td>
 		</tr>

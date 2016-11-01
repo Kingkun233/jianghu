@@ -1,0 +1,309 @@
+[ 2016-10-30T12:28:04+08:00 ] ::1 /jianghu/index.php/home/introduce/addComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000637s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `user_id` = 1 AND `state` = 0 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0032s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 64 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 1 [ RunTime:0.0945s ]
+SQL: SELECT `time` FROM `jianghu_comment` WHERE `user_id` = 1  [ RunTime:0.0013s ]
+SQL: UPDATE `jianghu_daily_num` SET `commentnum`=commentnum+1 WHERE `date` = '2016-10-30' [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_comment` (`user_id`,`introduce_id`,`content`,`time`) VALUES ('1','64','评论','2016-10-30 12:28:03') [ RunTime:0.0429s ]
+SQL: UPDATE `jianghu_introduce` SET `commentnum`=commentnum+1 WHERE `id` = 64 [ RunTime:0.0690s ]
+
+[ 2016-10-30T14:21:50+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraise
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000635s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001044s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001158s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `user_id` = 3 AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-10-30T14:21:50+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=2&type=204
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+
+[ 2016-10-30T14:22:07+08:00 ] ::1 /jianghu/index.php/home/user/login?type=101&username=he&password=123&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1477801461241
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000854s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 'he'  [ RunTime:0.0004s ]
+NOTIC: [8] Use of undefined constant flag - assumed 'flag' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 84 行.
+SQL: SELECT `id` FROM `jianghu_user` WHERE `username` = 'he' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `password` FROM `jianghu_user` WHERE `username` = 'he' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_token` (`token`,`user_id`,`time`) VALUES ('0ba4d1d0bc01d2a5b3abdbc36e512e12','1','2016-10-30 14:22:07') [ RunTime:0.0540s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-10-30'  [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2016-10-30','1') [ RunTime:0.0394s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-10-30T14:24:35+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraise
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000620s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000671s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0659s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '0ba4d1d0bc01d2a5b3abdbc36e512e12' AND `user_id` = 1 AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0032s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 76 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `time` FROM `jianghu_praise` WHERE `user_id` = 1  [ RunTime:0.0011s ]
+SQL: UPDATE `jianghu_daily_num` SET `praisenum`=praisenum+1 WHERE `date` = '2016-10-30' [ RunTime:0.1301s ]
+SQL: INSERT INTO `jianghu_praise` (`introduce_id`,`user_id`,`time`,`owner_id`) VALUES ('76','1','2016-10-30 14:24:35','17') [ RunTime:0.0515s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 17 [ RunTime:0.0545s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 76 [ RunTime:0.0334s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+0.1 WHERE `id` = 17 [ RunTime:0.0019s ]
+
+[ 2016-10-30T14:26:03+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraise
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000738s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '0ba4d1d0bc01d2a5b3abdbc36e512e12' AND `user_id` = 1 AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0033s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 76 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `time` FROM `jianghu_praise` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_praise` (`introduce_id`,`user_id`,`time`,`owner_id`) VALUES ('76','1','2016-10-30 14:26:03','17') [ RunTime:0.0810s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 17 [ RunTime:0.0600s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 76 [ RunTime:0.0332s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+0.1 WHERE `id` = 17 [ RunTime:0.0003s ]
+
+[ 2016-10-30T14:29:58+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraise
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '0ba4d1d0bc01d2a5b3abdbc36e512e12' AND `user_id` = 1 AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0031s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 76 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `time` FROM `jianghu_praise` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_praise` (`introduce_id`,`user_id`,`time`,`owner_id`) VALUES ('76','1','2016-10-30 14:29:57','17') [ RunTime:0.0878s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 17 [ RunTime:0.0604s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 76 [ RunTime:0.0357s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 17 [ RunTime:0.0529s ]
+
+[ 2016-10-30T23:35:46+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001073s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0580s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `user_id` = 1 AND `state` = 0 LIMIT 1   [ RunTime:0.0286s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0034s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是he的内容','1','2016-10-30 23:35:46','1') [ RunTime:0.0966s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`name`,`introduce_id`) VALUES ('运动','77') [ RunTime:0.0345s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('1','77','77','2016-10-30 23:35:46','1','1') [ RunTime:0.0471s ]
+
+[ 2016-10-30T23:36:35+08:00 ] ::1 /jianghu/index.php/home/introduce/forward
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000659s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000709s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'f0eac881e871f806c946703600ca3c5e' AND `user_id` = 2 AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2016-10-30T23:36:35+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=2&type=205
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000699s ]
+
+[ 2016-10-30T23:49:32+08:00 ] ::1 /jianghu/index.php/home/introduce/forward
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000543s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000664s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000714s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'f0eac881e871f806c946703600ca3c5e' AND `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0032s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 77 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 1 [ RunTime:0.1376s ]
+SQL: SELECT `isforward` FROM `jianghu_introduce` WHERE `id` = 77 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `degree` FROM `jianghu_introduce` WHERE `id` = 77 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`time`,`owner_id`,`original_id`,`original_id2`,`degree`) VALUES ('2','77','2016-10-30 23:49:32','1','77','2','2') [ RunTime:0.0532s ]
+SQL: INSERT INTO `jianghu_introduce` (`time`,`isforward`,`text`,`user_id`,`degree`,`forward_id`) VALUES ('2016-10-30 23:49:32','77','1','2','2','61') [ RunTime:0.0409s ]
+SQL: UPDATE `jianghu_introduce` SET `forwardnum`=forwardnum+1 WHERE `id` = 77 [ RunTime:0.0364s ]
+
+[ 2016-10-30T23:54:51+08:00 ] ::1 /jianghu/index.php/home/introduce/forward
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000800s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'f0eac881e871f806c946703600ca3c5e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0031s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 77 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 1 [ RunTime:0.1120s ]
+SQL: SELECT `isforward` FROM `jianghu_introduce` WHERE `id` = 77 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `degree` FROM `jianghu_introduce` WHERE `id` = 77 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`time`,`owner_id`,`original_id`,`original_id2`,`degree`) VALUES ('17','77','2016-10-30 23:54:50','1','77','17','2') [ RunTime:0.1136s ]
+SQL: INSERT INTO `jianghu_introduce` (`time`,`isforward`,`text`,`user_id`,`degree`,`forward_id`) VALUES ('2016-10-30 23:54:50','77','1','17','2','62') [ RunTime:0.0853s ]
+SQL: UPDATE `jianghu_introduce` SET `forwardnum`=forwardnum+1 WHERE `id` = 77 [ RunTime:0.0634s ]
+
+[ 2016-10-30T23:55:14+08:00 ] ::1 /jianghu/index.php/home/introduce/forward
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000852s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000913s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'f0eac881e871f806c946703600ca3c5e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0035s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 2 [ RunTime:0.0816s ]
+SQL: SELECT `isforward` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `degree` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 17  [ RunTime:0.0011s ]
+SQL: SELECT * FROM `jianghu_forward` WHERE `degree` < '2' AND `original_id` = '77' AND `user_id` IN ('17','18','19','19','21')  [ RunTime:0.0003s ]
+SQL: SELECT `forward_id` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_forward` WHERE `id` = 61  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant degree - assumed 'degree' D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 376 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`time`,`owner_id`,`original_id`,`original_id3`,`degree`) VALUES ('17','78','2016-10-30 23:55:13','2','77','17','3') [ RunTime:0.0323s ]
+SQL: INSERT INTO `jianghu_introduce` (`time`,`isforward`,`text`,`user_id`,`degree`,`forward_id`) VALUES ('2016-10-30 23:55:13','77','1','17','3','63') [ RunTime:0.0325s ]
+SQL: UPDATE `jianghu_introduce` SET `forwardnum`=forwardnum+1 WHERE `id` = 78 [ RunTime:0.0337s ]
+
+[ 2016-10-30T23:58:09+08:00 ] ::1 /jianghu/index.php/home/introduce/forward
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001016s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001091s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'f0eac881e871f806c946703600ca3c5e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0040s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 2 [ RunTime:0.0720s ]
+SQL: SELECT `isforward` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `degree` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 17  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_forward` WHERE `degree` < '2' AND `original_id` = '77' AND `user_id` IN ('17','18','19','19','21')  [ RunTime:0.0004s ]
+SQL: SELECT `forward_id` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_forward` WHERE `id` = 61  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant degree - assumed 'degree' D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 376 行.
+
+[ 2016-10-30T23:59:30+08:00 ] ::1 /jianghu/index.php/home/introduce/forward
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000840s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'f0eac881e871f806c946703600ca3c5e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0030s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 2 [ RunTime:0.0694s ]
+SQL: SELECT `isforward` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `degree` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 17  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_forward` WHERE `degree` < '2' AND `original_id` = '77' AND `user_id` IN ('17','18','19','19','21')  [ RunTime:0.0003s ]
+SQL: SELECT `forward_id` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_forward` WHERE `id` = 61  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant degree - assumed 'degree' D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 376 行.
+
+[ 2016-10-30T23:59:48+08:00 ] ::1 /jianghu/index.php/home/introduce/forward
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001413s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0228s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'f0eac881e871f806c946703600ca3c5e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0036s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 2 [ RunTime:0.0830s ]
+SQL: SELECT `isforward` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `degree` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 17  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_forward` WHERE `degree` < '2' AND `original_id` = '77' AND `user_id` IN ('17','18','19','19','21')  [ RunTime:0.0004s ]
+SQL: SELECT `forward_id` FROM `jianghu_introduce` WHERE `id` = 78 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_forward` WHERE `id` = 61  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant degree - assumed 'degree' D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 376 行.
+

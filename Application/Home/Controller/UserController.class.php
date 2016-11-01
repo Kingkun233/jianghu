@@ -76,6 +76,7 @@ class UserController extends Controller
         $User = D('user');
         $Joinnum=D("daily_num");
         $Token=D('token');
+        $LoginCount=D('login_count');
         $data['username'] = I('username');
         $data['password'] = md5(I('password'));
         $flag = $User->where(array(
@@ -122,6 +123,12 @@ class UserController extends Controller
             if($jointime==$yesterday){
                 $Joinnum->where(array("date"=>$today))->setInc("keep");
             }
+            //插入登陆统计表
+            $add_lc['user_id']=$user_id;
+            $add_lc['date']=date("Y-m-d");
+            $LoginCount->add($add_lc);
+            //登陆加一口碑
+            $User->where(array('id'=>$user_id))->setInc('praisenum');
             //整合要返回的数据
             $msg=$User->where(array("id"=>$user_id))->find();
             $resp=responseMsg(0, 101, $msg);

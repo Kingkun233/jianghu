@@ -26,6 +26,10 @@
 		<td><?php echo ($vo["praisenum"]); ?></td>
 	</tr>
 	<tr>
+		<td align="right">踩数</td>
+		<td><?php echo ($vo["opposenum"]); ?></td>
+	</tr>
+	<tr>
 		<td align="right">转载数</td>
 		<td><?php echo ($vo["forwardnum"]); ?></td>
 	</tr>
