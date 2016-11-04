@@ -3,7 +3,7 @@ namespace Admin\Controller;
 use Think\Controller;
 class SearchController extends Controller{
     /**
-     * 搜索方式处理器
+     * 推荐搜索方式处理器
      */
     public function doaction(){
         $cate=I('cate');
@@ -136,5 +136,84 @@ class SearchController extends Controller{
             $sql="m.id=0";
         }
         $this->redirect("introduce/showIntroduce",array('where'=>$sql,'cate'=>$cate,'searchkey'=>$domain));
+    }
+    /**
+     * 商户搜索方式处理器
+     */
+    public function dobusinessaction(){
+        $cate=I('cate');
+        $searchkey=I('searchkey');
+        switch ($cate){
+            case 1 : $this->redirect("search/searchBusiByName",array('cate'=>$cate,"searchkey"=>$searchkey));
+            break;
+            case 2 : $this->redirect("search/searchBusiByStar",array('cate'=>$cate,"searchkey"=>$searchkey));
+            break;
+            case 3 : $this->redirect("search/searchBusiByAddr",array('cate'=>$cate,"searchkey"=>$searchkey));
+            break;
+        }
+    }
+    /**
+     * 通过名字找商户
+     */
+    public function searchBusiByName(){
+        $Busi=D('business');
+        $name=I('searchkey');
+        $cate=I('cate');
+        $where['name']=array('like',"%".$name."%");
+        $rows=$Busi->where($where)->select();
+        foreach ($rows as $k=>$v){
+            $business[]=$v['id'];
+        }
+//         dump($business);die;
+        //where的sql语句
+        if($business){
+            $sql="b.id IN (".implode(',',$business).")";
+            //         dump($sql);die;
+        }else {
+            $sql="b.id=0";
+        }
+        $this->redirect("business/businessList",array('where'=>$sql,'cate'=>$cate,'searchkey'=>$name));
+    }
+    /**
+     * 通过星级找商户
+     */
+    public function searchBusiByStar(){
+        $Busi=D('business');
+        $star=I('searchkey');
+        $cate=I('cate');
+        $where['star']=$star;
+        $rows=$Busi->where($where)->select();
+        foreach ($rows as $k=>$v){
+            $business[]=$v['id'];
+        }
+        //where的sql语句
+        if($business){
+            $sql="b.id IN (".implode(',',$business).")";
+            //         dump($sql);die;
+        }else {
+            $sql="b.id=0";
+        }
+        $this->redirect("business/businessList",array('where'=>$sql,'cate'=>$cate,'searchkey'=>$star));
+    }
+    /**
+     * 通过找商户
+     */
+    public function searchBusiByAddr(){
+        $Busi=D('business');
+        $addr=I('searchkey');
+        $cate=I('cate');
+        $where['addr']=array('like','%'.$addr.'%');
+        $rows=$Busi->where($where)->select();
+        foreach ($rows as $k=>$v){
+            $business[]=$v['id'];
+        }
+        //where的sql语句
+        if($business){
+            $sql="b.id IN (".implode(',',$business).")";
+            //         dump($sql);die;
+        }else {
+            $sql="b.id=0";
+        }
+        $this->redirect("business/businessList",array('where'=>$sql,'cate'=>$cate,'searchkey'=>$addr));
     }
 }

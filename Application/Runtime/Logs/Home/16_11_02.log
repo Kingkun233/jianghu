@@ -1,0 +1,254 @@
+[ 2016-11-02T18:51:50+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraiseInJianghu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000649s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000910s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('1','2016-11-02') [ RunTime:0.1043s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.1015s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02'  [ RunTime:0.0007s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2016-11-02','1') [ RunTime:0.0874s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0594s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 101 LIMIT 1   [ RunTime:0.0006s ]
+SQL: UPDATE `jianghu_user` SET `temp_praisenum`=temp_praisenum+1 WHERE `id` = 17 [ RunTime:0.1491s ]
+SQL: SELECT `temp_praisenum` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0014s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 101 [ RunTime:0.1874s ]
+
+[ 2016-11-02T18:52:20+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraiseInJianghu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000880s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0642s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0559s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0478s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 101 LIMIT 1   [ RunTime:0.0011s ]
+SQL: UPDATE `jianghu_user` SET `temp_praisenum`=temp_praisenum+1 WHERE `id` = 17 [ RunTime:0.0594s ]
+SQL: SELECT `temp_praisenum` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0025s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 101 [ RunTime:0.0372s ]
+
+[ 2016-11-02T18:52:23+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraiseInJianghu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000631s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000873s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 101 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `temp_praisenum`=temp_praisenum+1 WHERE `id` = 17 [ RunTime:0.0650s ]
+SQL: SELECT `temp_praisenum` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 101 [ RunTime:0.0589s ]
+
+[ 2016-11-02T18:52:23+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraiseInJianghu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000558s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000812s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000862s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0035s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 101 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `temp_praisenum`=temp_praisenum+1 WHERE `id` = 17 [ RunTime:0.0547s ]
+SQL: SELECT `temp_praisenum` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 101 [ RunTime:0.0431s ]
+
+[ 2016-11-02T18:52:24+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraiseInJianghu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000907s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0034s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 101 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `temp_praisenum`=temp_praisenum+1 WHERE `id` = 17 [ RunTime:0.0655s ]
+SQL: SELECT `temp_praisenum` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0008s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 101 [ RunTime:0.0974s ]
+
+[ 2016-11-02T18:52:25+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraiseInJianghu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000560s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000970s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0381s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0218s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0083s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0052s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 101 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_user` SET `temp_praisenum`=temp_praisenum+1 WHERE `id` = 17 [ RunTime:0.0614s ]
+SQL: SELECT `temp_praisenum` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 101 [ RunTime:0.0358s ]
+
+[ 2016-11-02T18:52:25+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraiseInJianghu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000882s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000943s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 101 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `temp_praisenum`=temp_praisenum+1 WHERE `id` = 17 [ RunTime:0.0871s ]
+SQL: SELECT `temp_praisenum` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0009s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 101 [ RunTime:0.0614s ]
+
+[ 2016-11-02T18:52:26+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraiseInJianghu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001085s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0043s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 101 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_user` SET `temp_praisenum`=temp_praisenum+1 WHERE `id` = 17 [ RunTime:0.0591s ]
+SQL: SELECT `temp_praisenum` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0005s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 101 [ RunTime:0.0397s ]
+
+[ 2016-11-02T18:52:27+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraiseInJianghu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000876s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0035s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 101 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_user` SET `temp_praisenum`=temp_praisenum+1 WHERE `id` = 17 [ RunTime:0.0656s ]
+SQL: SELECT `temp_praisenum` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 101 [ RunTime:0.0466s ]
+
+[ 2016-11-02T18:52:51+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraiseInJianghu
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000755s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000805s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0663s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0402s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0524s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0460s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 101 LIMIT 1   [ RunTime:0.0007s ]
+SQL: UPDATE `jianghu_user` SET `temp_praisenum`=temp_praisenum+1 WHERE `id` = 17 [ RunTime:0.0988s ]
+SQL: SELECT `temp_praisenum` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 17 [ RunTime:0.0890s ]
+SQL: UPDATE `jianghu_user` SET `temp_praisenum`='0' WHERE `id` = 17 [ RunTime:0.0554s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 101 [ RunTime:0.1321s ]
+
+[ 2016-11-02T22:27:44+08:00 ] ::1 /jianghu/index.php/home/business/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000693s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001009s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001079s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0136s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0136s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0339s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0092s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0154s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `jianghu_business` (`name`,`addr`,`discription`,`state`,`logourl`,`logopath`,`phone`,`user_id`) VALUES ('章鱼小丸子','贝岗','好吃啊','1','http://localhost/jianghu/Uploads/2016-11-02/5819f7e024d48.jpg','./Uploads/2016-11-02/5819f7e024d48.jpg','1302063303','1') [ RunTime:0.0646s ]
+
+[ 2016-11-02T22:28:44+08:00 ] ::1 /jianghu/index.php/home/business/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001336s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-02' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0038s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `jianghu_business` (`name`,`addr`,`latitude`,`discription`,`state`,`joindate`,`logourl`,`logopath`,`phone`,`user_id`) VALUES ('章鱼小丸子','贝岗','192123','好吃啊','1','2016-11-02','http://localhost/jianghu/Uploads/2016-11-02/5819f81c0e57d.jpg','./Uploads/2016-11-02/5819f81c0e57d.jpg','1302063303','1') [ RunTime:0.0700s ]
+

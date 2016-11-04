@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/jianghu/Public/css/backstage.css">
+</head>
+<body>
+	<h3>商户详情</h3>
+
+	<table bgcolor="#ddd" class="table">
+		<foreach name="rows" item="vo">
+		<tr>
+			<td align="right">商户名字</td>
+			<td>{$vo.name}</td>
+		</tr>
+		<tr>
+			<td align="right">商户地址</td>
+			<td>{$vo.addr}</td>
+		</tr>
+		<tr>
+			<td align="right">商户介绍</td>
+			<td>{$vo.discription}</td>
+		</tr>
+		<tr>
+			<td align="right">商户状态</td>
+			<td>{$vo.state}</td>
+		</tr>
+		<tr>
+			<td align="right">加入江湖的日期</td>
+			<td>{$vo.joindate}</td>
+		</tr>
+		<tr>
+			<td align="right">联系电话</td>
+			<td>{$vo.phone}</td>
+		</tr>
+		<tr>
+			<td align="right">推荐人</td>
+			<td>{$username}</td>
+		</tr>
+
+		<tr>
+			<td align="right">logo</td>
+			<td><img src="{$vo.logourl}" height='60px' padding="2px">&nbsp
+			</td>
+		</tr>
+		<tr>
+			<td align="right">星级</td>
+			<td>{$vo.star}&nbsp</td>
+		</tr>
+		</foreach>
+	</table>
+
+	<br>
+
+	<a href="{$backurl}" class='btn'>返回</a>
+</body>
+</html>

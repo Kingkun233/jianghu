@@ -184,9 +184,9 @@ class IntroduceController extends Controller
     }
 
     /**
-     * 点赞推荐
+     * 从圈子点赞推荐，不加口碑
      */
-    public function addPraise()
+    public function addPraiseInQuanzi()
     {
         $type = 204;
         // 登录权限接口预处理，包括接口调用正确性，用户是否登录，用户是否被禁用
@@ -245,13 +245,9 @@ class IntroduceController extends Controller
         ))->setInc('praisenum');
         //原创推荐的priasenum++
         $Intro->where(array('id'=>$original_intro_id))->setInc('praisenum');
-        // 推荐所有者的口碑++
-        $flag3 = $User->where(array(
-            'id' => $owner_id
-        ))->setInc('praisenum');
         // $res=array($flag1,$flag2, $flag3,$flag4);
         // dump($res);die;
-        if ($flag1 && $flag2 && $flag3 && $flag4) {
+        if ($flag1 && $flag2 && $flag4) {
             // 点赞成功
             $this->ajaxReturn(responseMsg(0, $type));
         }
@@ -310,11 +306,6 @@ class IntroduceController extends Controller
         $introduce_id = $Praise->where(array(
             'id' => $praise_id
         ))->getField('introduce_id');
-        // 该推荐所有者的口碑减一
-        $where['id'] = $Intro->where(array(
-            'id' => $introduce_id
-        ))->getField('user_id');
-        $User->where($where)->setDec('praisenum');
         // 删除点赞表中的记录
         $flag1 = $Praise->where(array(
             'id' => $praise_id
@@ -641,5 +632,30 @@ class IntroduceController extends Controller
         }else{
             $this->ajaxReturn(responseMsg(1, $type));
         }
+    }
+    /**
+     * 从江湖中点赞非好友推荐，加0.1口碑
+     */
+    public function addPraiseInJianghu(){
+        $type=208;
+        loginPermitApiPreTreat($type);
+        $User=D('user');
+        $Intro=D('introduce');
+        $introduce_id=I('introduce_id');
+        //得到推荐所有人id
+        $owner=$Intro->where(array('id'=>$introduce_id))->getField('user_id');
+        //江湖点赞临时存放点加一
+        $User->where(array('id'=>$owner))->setInc('temp_praisenum');
+        $temp_praisenum=$User->where(array('id'=>$owner))->getField('temp_praisenum');
+        //判断是否点赞了十次，若被点赞了十次，则口碑加一
+        if($temp_praisenum==10){
+            //口碑加一
+            $User->where(array('id'=>$owner))->setInc('praisenum');
+            //点赞临时存放点清零
+            $User->where(array('id'=>$owner))->save(array('temp_praisenum'=>0));
+        }
+        //该推荐点赞数加一
+        $Intro->where(array('id'=>$introduce_id))->setInc('praisenum');
+        $this->ajaxReturn(responseMsg(0, $type));
     }
 }

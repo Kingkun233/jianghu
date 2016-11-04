@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>江湖后台管理系统</title>
+<title>江湖后台管理系统1.0</title>
 
 <load href="/jianghu/Public/css/backstage.css" />
 </head>
@@ -10,7 +10,7 @@
 <body>
     <div class="head">
             
-            <h3 class="head_text fl">江湖后台管理系统</h3>
+            <h3 class="head_text fl">江湖后台管理系统1.0</h3>
     </div>
     <div class="operation_user clearfix">
        
@@ -60,6 +60,13 @@
                         <dl id="menu5" style="display:none;">
                         	<dd><a href="{:U('admin/add')}" target="mainFrame">添加管理员</a></dd>
                             <dd><a href="{:U('admin/index')}" target="mainFrame">管理员列表</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <h3 onclick="show('menu6','change6')" id="change6"><span class="menu6">+</span>商户管理</h3>
+                        <dl id="menu6" style="display:none;">
+                        	<dd><a href="{:U('business/businessList')}" target="mainFrame">商户列表</a></dd>
+                        	<dd><a href="{:U('business/add')}" target="mainFrame">添加商户</a></dd>
                         </dl>
                     </li>
                 </ul>
