@@ -1,0 +1,149 @@
+[ 2016-11-06T23:08:22+08:00 ] ::1 /jianghu/index.php/home/friend/friendRequest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000758s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000819s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0134s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0137s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0149s ]
+
+[ 2016-11-06T23:09:00+08:00 ] ::1 /jianghu/index.php/home/friend/friendRequest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000482s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000786s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0135s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0149s ]
+
+[ 2016-11-06T23:11:26+08:00 ] ::1 /jianghu/index.php/home/friend/friendRequest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000565s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001047s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0201s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0148s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0124s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0139s ]
+
+[ 2016-11-06T23:12:22+08:00 ] ::1 /jianghu/index.php/home/friend/friendRequest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000081s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001007s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000989s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001057s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0771s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0166s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0172s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0124s ]
+
+[ 2016-11-06T23:13:35+08:00 ] ::1 /jianghu/index.php/home/friend/friendRequest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0148s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0152s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0126s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0120s ]
+
+[ 2016-11-06T23:14:07+08:00 ] ::1 /jianghu/index.php/home/friend/friendRequest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000593s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0159s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0144s ]
+
+[ 2016-11-06T23:14:21+08:00 ] ::1 /jianghu/index.php/home/business/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000594s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0175s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0162s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0552s ]
+
+[ 2016-11-06T23:17:15+08:00 ] ::1 /jianghu/index.php/home/business/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000790s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000682s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0139s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0135s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0143s ]
+
+[ 2016-11-06T23:21:01+08:00 ] ::1 /jianghu/index.php/home/business/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0153s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0199s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0288s ]
+
+[ 2016-11-06T23:21:39+08:00 ] ::1 /jianghu/index.php/home/friend/friendRequest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000437s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000584s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000644s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0162s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0206s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-06' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-06' LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('1','2016-11-06') [ RunTime:0.0761s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.0684s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-06'  [ RunTime:0.0013s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2016-11-06','1') [ RunTime:0.0423s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend_request` [ RunTime:0.0148s ]
+SQL: INSERT INTO `jianghu_friend_request` (`date`,`user_id`,`friend_id`) VALUES ('2016-11-06','1','2') [ RunTime:0.1739s ]
+
+[ 2016-11-06T23:35:31+08:00 ] ::1 /jianghu/index.php/home/friend/friendRequest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000888s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001113s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0368s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0155s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0145s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-06' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-06' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend_request` [ RunTime:0.0220s ]
+SQL: INSERT INTO `jianghu_friend_request` (`date`,`user_id`,`friend_id`) VALUES ('2016-11-06','1','2') [ RunTime:0.0658s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` = 2 [ RunTime:0.1883s ]
+

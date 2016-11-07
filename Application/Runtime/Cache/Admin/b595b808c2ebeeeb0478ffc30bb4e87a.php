@@ -67,6 +67,7 @@
                         <dl id="menu6" style="display:none;">
                         	<dd><a href="<?php echo U('business/businessList');?>" target="mainFrame">商户列表</a></dd>
                         	<dd><a href="<?php echo U('business/add');?>" target="mainFrame">添加商户</a></dd>
+                        	<dd><a href="<?php echo U('business/uncheckList');?>" target="mainFrame">待审核商户</a></dd>
                         </dl>
                     </li>
                 </ul>

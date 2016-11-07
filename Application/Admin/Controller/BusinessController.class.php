@@ -16,7 +16,12 @@ class BusinessController extends Controller
         $cate = I('cate');
         $searchkey = I('searchkey');
         // 将+还原为空格
-        $where = str_replace('+', " ", $sql);
+//         dump($sql);die;
+        if($sql){
+            $where = str_replace('+', " ", $sql)."AND state=0";
+        }else{
+            $where="state=0";
+        }
         // 得到页数
         $count = $Busi->table('jianghu_business b')
             ->join('left join jianghu_user u on b.user_id=u.id')
@@ -153,5 +158,33 @@ class BusinessController extends Controller
             'logourl' => $logo['url'][0]
         ));
         $this->success('添加成功', U('business/businessList'));
+    }
+    /**
+     * 未审核商户列表
+     */
+    public function uncheckList(){
+       $Busi=D('business');
+       $business=$Busi->where(array('state'=>1))->select();
+       // 状态显示
+       foreach ($business  as $k => $v) {
+       
+           if ($v['state']) {
+               // 注意！！想在foreach中改变二维数组的值要用“绝对路径”$list[$k][...]，不能用$v['...']
+               $business[$k]['state'] = "未审核";
+           } else {
+               $business[$k]['state'] = "已审核";
+           }
+       }
+       $this->assign('business',$business);
+       $this->display();
+    }
+    /**
+     * 审核通过
+     */
+    public function check(){
+        $Busi=D('business');
+        $id=I('id');
+        $Busi->where(array('id'=>$id))->save(array('state'=>0));
+        $this->success('审核成功',U('business/uncheckList'));
     }
 }
