@@ -7,7 +7,7 @@ class TagController extends Controller{
      * 搜索标签列表
      */
     public function index(){
-    checkAdminLogin();
+        checkAdminLogin();
         $Tag=D('tag');
         $count=$Tag->count();
         $Page=new Page($count,3);

@@ -1,0 +1,430 @@
+[ 2016-11-12T00:07:33+08:00 ] ::1 /jianghu/index.php/home/introduce/addComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000859s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000916s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0176s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 6 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('6','2016-11-12') [ RunTime:0.0846s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 6 [ RunTime:0.0557s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12'  [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2016-11-12','1') [ RunTime:0.0996s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0107s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0106s ]
+NOTIC: [8] Use of undefined constant data - assumed 'data' D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 571 行.
+NOTIC: [2] Illegal string offset 'introduce_id' D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 571 行.
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `time` FROM `jianghu_comment` WHERE `user_id` = 6  [ RunTime:0.0008s ]
+SQL: UPDATE `jianghu_daily_num` SET `commentnum`=commentnum+1 WHERE `date` = '2016-11-12' [ RunTime:0.0430s ]
+ERR: 1048:Column 'owner_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_comment` (`user_id`,`introduce_id`,`content`,`owner_id`,`time`) VALUES ('6','90','评论',NULL,'2016-11-12 00:07:33')
+ERR: 1048:Column 'owner_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_comment` (`user_id`,`introduce_id`,`content`,`owner_id`,`time`) VALUES ('6','90','评论',NULL,'2016-11-12 00:07:33')
+
+[ 2016-11-12T00:13:05+08:00 ] ::1 /jianghu/index.php/home/introduce/addComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 7 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('7','2016-11-12') [ RunTime:0.1040s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 7 [ RunTime:0.0420s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12'  [ RunTime:0.0011s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2016-11-12' [ RunTime:0.0352s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0653s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0591s ]
+NOTIC: [8] Use of undefined constant data - assumed 'data' D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 571 行.
+NOTIC: [2] Illegal string offset 'introduce_id' D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 571 行.
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `time` FROM `jianghu_comment` WHERE `user_id` = 7  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `commentnum`=commentnum+1 WHERE `date` = '2016-11-12' [ RunTime:0.0706s ]
+ERR: 1048:Column 'owner_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_comment` (`user_id`,`introduce_id`,`content`,`owner_id`,`time`) VALUES ('7','90','评论',NULL,'2016-11-12 00:13:04')
+ERR: 1048:Column 'owner_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_comment` (`user_id`,`introduce_id`,`content`,`owner_id`,`time`) VALUES ('7','90','评论',NULL,'2016-11-12 00:13:04')
+
+[ 2016-11-12T00:13:37+08:00 ] ::1 /jianghu/index.php/home/introduce/addComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000726s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000969s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 7 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0053s ]
+NOTIC: [8] Use of undefined constant data - assumed 'data' D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 571 行.
+NOTIC: [2] Illegal string offset 'introduce_id' D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 571 行.
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2016-11-12T00:16:11+08:00 ] ::1 /jianghu/index.php/home/introduce/addComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000935s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 7 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0033s ]
+NOTIC: [8] Use of undefined constant data - assumed 'data' D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 571 行.
+NOTIC: [2] Illegal string offset 'introduce_id' D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 571 行.
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-11-12T00:20:29+08:00 ] ::1 /jianghu/index.php/home/introduce/addComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000887s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0115s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 7 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0050s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `time` FROM `jianghu_comment` WHERE `user_id` = 7  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `commentnum`=commentnum+1 WHERE `date` = '2016-11-12' [ RunTime:0.1184s ]
+SQL: INSERT INTO `jianghu_comment` (`user_id`,`introduce_id`,`content`,`owner_id`,`time`) VALUES ('7','90','评论','1','2016-11-12 00:20:29') [ RunTime:0.0449s ]
+SQL: UPDATE `jianghu_introduce` SET `commentnum`=commentnum+1 WHERE `id` = 90 [ RunTime:0.0336s ]
+
+[ 2016-11-12T00:24:31+08:00 ] ::1 /jianghu/index.php/home/msg/checkCommentMsg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000877s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000869s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0306s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'a7369773cfc392c5516570ee3194fa4a' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('1','2016-11-12') [ RunTime:0.0703s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.0398s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12'  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2016-11-12' [ RunTime:0.0332s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `owner_id` = 1 AND `user_id` <> '1' ORDER BY time desc  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `jianghu_comment` SET `state`='1' WHERE `owner_id` = 1 AND `state` = 0 [ RunTime:0.0498s ]
+
+[ 2016-11-12T00:25:19+08:00 ] ::1 /jianghu/index.php/home/introduce/addComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 8 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('8','2016-11-12') [ RunTime:0.0837s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 8 [ RunTime:0.0461s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12'  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2016-11-12' [ RunTime:0.0321s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0070s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `time` FROM `jianghu_comment` WHERE `user_id` = 8  [ RunTime:0.0007s ]
+SQL: UPDATE `jianghu_daily_num` SET `commentnum`=commentnum+1 WHERE `date` = '2016-11-12' [ RunTime:0.0738s ]
+SQL: INSERT INTO `jianghu_comment` (`user_id`,`introduce_id`,`content`,`owner_id`,`time`) VALUES ('8','90','评论','1','2016-11-12 00:25:19') [ RunTime:0.0639s ]
+SQL: UPDATE `jianghu_introduce` SET `commentnum`=commentnum+1 WHERE `id` = 90 [ RunTime:0.0710s ]
+
+[ 2016-11-12T00:25:23+08:00 ] ::1 /jianghu/index.php/home/introduce/addComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000877s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000934s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 9 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('9','2016-11-12') [ RunTime:0.0696s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 9 [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12'  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2016-11-12' [ RunTime:0.0339s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0032s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `time` FROM `jianghu_comment` WHERE `user_id` = 9  [ RunTime:0.0002s ]
+SQL: UPDATE `jianghu_daily_num` SET `commentnum`=commentnum+1 WHERE `date` = '2016-11-12' [ RunTime:0.0482s ]
+SQL: INSERT INTO `jianghu_comment` (`user_id`,`introduce_id`,`content`,`owner_id`,`time`) VALUES ('9','90','评论','1','2016-11-12 00:25:23') [ RunTime:0.0320s ]
+SQL: UPDATE `jianghu_introduce` SET `commentnum`=commentnum+1 WHERE `id` = 90 [ RunTime:0.0224s ]
+
+[ 2016-11-12T00:25:28+08:00 ] ::1 /jianghu/index.php/home/msg/checkCommentMsg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000567s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000903s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'a7369773cfc392c5516570ee3194fa4a' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `owner_id` = 1 AND `user_id` <> '1' ORDER BY time desc  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `jianghu_comment` SET `state`='1' WHERE `owner_id` = 1 AND `state` = 0 [ RunTime:0.1099s ]
+
+[ 2016-11-12T00:30:23+08:00 ] ::1 /jianghu/index.php/home/friend/accept
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000521s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000709s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000756s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('2','2016-11-12') [ RunTime:0.1037s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0582s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12'  [ RunTime:0.0009s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2016-11-12' [ RunTime:0.0420s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend_request` [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0071s ]
+SQL: SELECT `user_id` FROM `jianghu_friend_request` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+ERR: 1048:Column 'friend_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('2',NULL)
+ERR: 1048:Column 'friend_id' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('2',NULL)
+
+[ 2016-11-12T00:41:59+08:00 ] ::1 /jianghu/index.php/home/msg/checkRequestMsg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000472s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000794s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000842s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'a7369773cfc392c5516570ee3194fa4a' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1146:Table 'jianghu.jianghu_request' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jianghu_request`
+ERR: 1146:Table 'jianghu.jianghu_request' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jianghu_request`
+
+[ 2016-11-12T00:42:23+08:00 ] ::1 /jianghu/index.php/home/msg/checkRequestMsg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000838s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000895s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0103s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'a7369773cfc392c5516570ee3194fa4a' AND `state` = 0 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend_request` [ RunTime:0.0031s ]
+ERR: 1054:Unknown column 'time' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `jianghu_friend_request` WHERE `friend_id` = 2 ORDER BY time desc 
+ERR: 1054:Unknown column 'time' in 'order clause'
+ [ SQL语句 ] : SELECT * FROM `jianghu_friend_request` WHERE `friend_id` = 2 ORDER BY time desc 
+
+[ 2016-11-12T00:42:53+08:00 ] ::1 /jianghu/index.php/home/msg/checkRequestMsg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000596s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'a7369773cfc392c5516570ee3194fa4a' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend_request` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_friend_request` WHERE `friend_id` = 2 ORDER BY date desc  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `jianghu_friend_request` SET `state`='1' WHERE `friend_id` = 2 AND `state` = 0 [ RunTime:0.1188s ]
+
+[ 2016-11-12T00:45:13+08:00 ] ::1 /jianghu/index.php/home/friend/friendRequest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000933s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001007s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 18 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('18','2016-11-12') [ RunTime:0.0761s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 18 [ RunTime:0.0636s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12'  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2016-11-12' [ RunTime:0.0333s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend_request` [ RunTime:0.0035s ]
+SQL: INSERT INTO `jianghu_friend_request` (`date`,`user_id`,`friend_id`) VALUES ('2016-11-12','18','1') [ RunTime:0.0475s ]
+
+[ 2016-11-12T00:45:44+08:00 ] ::1 /jianghu/index.php/home/msg/checkRequestMsg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000960s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001027s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'a7369773cfc392c5516570ee3194fa4a' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend_request` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_friend_request` WHERE `friend_id` = 1 ORDER BY date desc  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: UPDATE `jianghu_friend_request` SET `state`='1' WHERE `friend_id` = 1 AND `state` = 0 [ RunTime:0.0691s ]
+
+[ 2016-11-12T00:47:16+08:00 ] ::1 /jianghu/index.php/home/friend/accept
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000580s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001033s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001105s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '6523205cd074195bd9252252b0eab96e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend_request` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0034s ]
+SQL: SELECT `user_id` FROM `jianghu_friend_request` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('1','18') [ RunTime:0.1193s ]
+SQL: INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('18','1') [ RunTime:0.0285s ]
+SQL: DELETE FROM `jianghu_friend_request` WHERE `id` = 5 [ RunTime:0.0659s ]
+
+[ 2016-11-12T00:48:14+08:00 ] ::1 /jianghu/index.php/home/msg/checkRequestMsg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000497s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'a7369773cfc392c5516570ee3194fa4a' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-12' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend_request` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_friend_request` WHERE `friend_id` = 1 ORDER BY date desc  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_friend_request` SET `state`='1' WHERE `friend_id` = 1 AND `state` = 0 [ RunTime:0.0003s ]
+

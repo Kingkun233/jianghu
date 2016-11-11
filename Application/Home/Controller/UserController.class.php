@@ -15,14 +15,19 @@ class UserController extends Controller
         }
         $User = D('user');
         $Friend=D('friend');
-        $Domain=D('user_domain');
+        $Token=D('token');
+        $LoginCount=D('login_count');
+        $Joinnum=D("daily_num");
+        $UserDomain=D('user_domain');
+        $Domain=D('domain');
         $data['username'] = I('username');
         if (checkUserExist($data['username'])) {
             $this->ajaxReturn(responseMsg(6,$type)); // 用户已存在
         }
+        
         $data['password'] = md5(I('password'));
         $data['phonenum'] = I('phonenum');
-        $domains=I('domain');
+        $domain_ids=I('domain_id');
         if ('男' == I('sex')) {
             $data['sex'] = 0; // 男
         } else {
@@ -32,11 +37,16 @@ class UserController extends Controller
         $data['jointime'] = date('Y-m-d');
         //把数据插入用户表
         $flag1 = $User->add($data);
+        $user_id=$flag1;
         //把数据插入领域表
         $add1['user_id']=$flag1;
-        foreach ($domains as $k=>$v){
-            $add1['name']=$v;
-            $flag3=$Domain->add($add1);
+        foreach ($domain_ids as $k=>$v){
+            $domain_name=$Domain->where(array('id'=>$v['id']))->getField('name');
+            if($v['id']){
+                $domain_names[]=$domain_name;
+                $add1['domain']=$domain_name;
+                $UserDomain->add($add1);
+            }
         }
         //自己和自己成为好友关系
             //flag1为用户id
@@ -44,7 +54,7 @@ class UserController extends Controller
         $add['friend_id']=$add['user_id'];
         $flag2=$Friend->add($add);
         //每日注册量加一
-        $Joinnum=D("daily_num");
+        
         $today=date("Y-m-d");
         if($Joinnum->where(array("date"=>$today))->select()){
             $flag4=$Joinnum->where(array("date"=>$today))->setInc("joinnum");
@@ -53,10 +63,46 @@ class UserController extends Controller
             $data1['joinnum']=1;
             $flag4=$Joinnum->add($data1);
         }
+        
+        //顺便登录
+            //生成token
+        $timestamp=time();
+        $str1=array($user_id,$timestamp);
+        $str=implode($str1);
+        $add_token['token']=md5($str);
+        $add_token['user_id']=$user_id;
+        $add_token['time']=date("Y-m-d H:i:s");
+        $Token->add($add_token);
+            //每日登陆人数加一
+        $today=date("Y-m-d");
+        if($Joinnum->where(array("date"=>$today))->select()){
+            $Joinnum->where(array("date"=>$today))->setInc("lognum");
+        }else {
+            $data1['date']=$today;
+            $data1['lognum']=1;
+            $Joinnum->add($data1);
+        }
+            //查看是不是留存用户，是的话keep++
+        $jointime=$User->where(array("id"=>$user_id))->getField("jointime");
+        $jointime=date("Y-m-d",strtotime($jointime));
+        $yesterday=date("Y-m-d",strtotime("-1 day"));
+        if($jointime==$yesterday){
+            $Joinnum->where(array("date"=>$today))->setInc("keep");
+        }
+            //插入登陆统计表
+        $add_lc['user_id']=$user_id;
+        $add_lc['date']=date("Y-m-d");
+        $LoginCount->add($add_lc);
+            //登陆加一口碑
+        $User->where(array('id'=>$user_id))->setInc('praisenum');
+            //整合要返回的数据
+        $msg=$User->where(array("id"=>$user_id))->find();
+        $msg['token']=$add_token['token'];
+        $msg['domain']=$domain_names;
         //判断上述操作是否成功
-//         dump(array($flag1,$flag2,$flag3,$flag4));
-        if ($flag1&&$flag2&&$flag3&&$flag4) {
-            $this->ajaxReturn(responseMsg(0,$type)); // 注册成功
+//         dump(array($flag1,$flag2,$flag3,$flag4));die;
+        if ($flag1&&$flag2&&$flag4) {
+            $this->ajaxReturn(responseMsg(0,$type,$msg)); // 注册成功
         } else {
 //             $flag[]=[$flag1,$flag2,$flag3,$flag4];
 //             dump($flag);die;
@@ -76,25 +122,26 @@ class UserController extends Controller
         $User = D('user');
         $Joinnum=D("daily_num");
         $Token=D('token');
+        $UserDomain=D('user_domain');
         $LoginCount=D('login_count');
-        $data['username'] = I('username');
+        $data['phonenum'] = I('phonenum');
         $data['password'] = md5(I('password'));
         $flag = $User->where(array(
-            'username' => $data['username']
+            'phonenum' => $data['phonenum']
         ))->select();
         if (! flag) {
             $this->ajaxReturn(responseMsg(4,$type)); // 用户不存在
         }
         //检查用户被禁用
         $user_id = $User->where(array(
-            'username' => $data['username']
+            'phonenum' => $data['phonenum']
         ))->getField('id');
         if (isban($user_id)) {
             $this->ajaxReturn(responseMsg(3,$type)); // 用户被禁用
         }
         //获取数据库密码
         $dbpassword = $User->where(array(
-            'username' => $data['username']
+            'phonenum' => $data['phonenum']
         ))->getField('password');
         //和传过来的密码比较
         if ($dbpassword == $data['password']) {
@@ -131,8 +178,14 @@ class UserController extends Controller
             $User->where(array('id'=>$user_id))->setInc('praisenum');
             //整合要返回的数据
             $msg=$User->where(array("id"=>$user_id))->find();
+            $msg['token']=$add_token['token'];
+                //msg整合domain
+            $domain_names2=$UserDomain->where(array('user_id'=>$user_id))->select();
+            foreach ($domain_names2 as $k=>$v){
+                $domain_names[]=$v['domain'];
+            }
+            $msg['domain']=$domain_names;
             $resp=responseMsg(0, 101, $msg);
-            $resp['token']=$add_token['token'];
             $this->ajaxReturn($resp); // 登录成功
         } else {
             $this->ajaxReturn(responseMsg(1)); // 登录失败

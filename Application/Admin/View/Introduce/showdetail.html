@@ -6,65 +6,58 @@
 <link rel="stylesheet" href="/jianghu/Public/css/backstage.css">
 </head>
 <body>
-<h3>推荐详情</h3>
+	<h3>推荐详情</h3>
 
-<table  bgcolor="#ddd" class="table">
-<foreach name="rows" item="vo">
-	<tr>
-		<td align="right">用户名</td>
-		<td><a href="{:U('user/userdetails')}?username={$username}">{$username}</a></td>
-	</tr>
-	<tr>
-		<td align="right">推送内容</td>
-		<td>{$vo.text}</td>
-	</tr>
-	<tr>
-		<td align="right">时间</td>
-		<td>{$vo.time}</td>
-	</tr>
-	<tr>
-		<td align="right">点赞数</td>
-		<td>{$vo.praisenum}</td>
-	</tr>
-	<tr>
-		<td align="right">踩数</td>
-		<td>{$vo.opposenum}</td>
-	</tr>
-	<tr>
-		<td align="right">转载数</td>
-		<td>{$vo.forwardnum}</td>
-	</tr>
-	<tr>
-		<td align="right">评论数</td>
-		<td>{$vo.commentnum}</td>
-	</tr>
-	<tr>
-		<td align="right">度数</td>
-		<td>{$vo.degree}</td>
-	</tr>
-	</foreach>
-	<tr>
-		<td align="right">推送图片</td>
-		<td>
-			<foreach name="image" item='vo' >
-				<img src="{$vo}" height='60px' padding="2px">&nbsp
-			</foreach>
-		</td>
-	</tr>
-	<tr>
-		<td align="right">推送领域</td>
-		<td>
-			<foreach name="domains" item='vo' >
-				{$vo.name}&nbsp
-			</foreach>
-		</td>
-	</tr>
-	<tr>
-		<td align="right">查看原创推荐</td>
-		<td><a href="{:U('introduce/showdetail')}?id={$original_intro}">{$original_intro}</a>{$msg}</td>
-	</tr>
-</table>
-<br>
-<a href="{$backurl}" class='btn'>返回</a>
+	<table bgcolor="#ddd" class="table">
+		<foreach name="rows" item="vo">
+		<tr>
+			<td align="right">用户名</td>
+			<td><a href="{:U('user/userdetails')}?username={$username}">{$username}</a></td>
+		</tr>
+		<tr>
+			<td align="right">推送内容</td>
+			<td>{$vo.text}</td>
+		</tr>
+		<tr>
+			<td align="right">时间</td>
+			<td>{$vo.time}</td>
+		</tr>
+		<tr>
+			<td align="right">点赞数</td>
+			<td>{$vo.praisenum}</td>
+		</tr>
+		<tr>
+			<td align="right">踩数</td>
+			<td>{$vo.opposenum}</td>
+		</tr>
+		<tr>
+			<td align="right">转载数</td>
+			<td>{$vo.forwardnum}</td>
+		</tr>
+		<tr>
+			<td align="right">评论数</td>
+			<td>{$vo.commentnum}</td>
+		</tr>
+		<tr>
+			<td align="right">度数</td>
+			<td>{$vo.degree}</td>
+		</tr>
+		<tr>
+			<td align="right">推荐领域</td>
+			<td>{$vo.domain}</td>
+		</tr>
+		</foreach>
+		<tr>
+			<td align="right">推送图片</td>
+			<td><foreach name="image" item='vo'> <img src="{$vo}"
+					height='60px' padding="2px">&nbsp </foreach></td>
+		</tr>
+		<tr>
+			<td align="right">查看原创推荐</td>
+			<td><a href="{:U('introduce/showdetail')}?id={$original_intro}">{$original_intro}</a>{$msg}</td>
+		</tr>
+	</table>
+	<br>
+	<a href="{$backurl}" class='btn'>返回</a>
 </body>
 </html>

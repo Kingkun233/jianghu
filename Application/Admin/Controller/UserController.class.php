@@ -51,7 +51,7 @@ class UserController extends Controller{
      * 用户添加逻辑
      */
     public function doadd(){
-    checkAdminLogin();
+        checkAdminLogin();
         $User=D('user');
         $data['username']=I('username');
         if(checkUserExist($data['username'])){

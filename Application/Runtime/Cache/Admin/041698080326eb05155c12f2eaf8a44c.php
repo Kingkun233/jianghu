@@ -1,4 +1,4 @@
-<!doctype html>
+<?php if (!defined('THINK_PATH')) exit();?><!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -24,28 +24,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <foreach name='domain' item='vo'>
-                            <tr>
+                        <?php if(is_array($domain)): foreach($domain as $key=>$vo): ?><tr>
                                 <!--这里的id和for里面的c1 需要循环出来-->
-                                <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label">{$vo.id}</label></td>
-                                <td>{$vo.name}</td>
-                                <td align="center"><input type="button" value="删除" class="btn"  onclick="delDomain({$vo.id})"></td>
-                            </tr>
-                         </foreach>
+                                <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label"><?php echo ($vo["id"]); ?></label></td>
+                                <td><?php echo ($vo["name"]); ?></td>
+                                <td align="center"><input type="button" value="删除" class="btn"  onclick="delDomain(<?php echo ($vo["id"]); ?>)"></td>
+                            </tr><?php endforeach; endif; ?>
                          
                         </tbody>
                     </table>
-                    <div class="pagination">{$page}</div>
+                    <div class="pagination"><?php echo ($page); ?></div>
                 </div>
 </body>
 <script type="text/javascript">
 
 	function addDomain(){
-		window.location="{:U('Domain/add')}";	
+		window.location="<?php echo U('Domain/add');?>";	
 	}
 	function delDomain(id){
 			if(window.confirm("您确定要删除吗？删除之后不可以恢复哦！！！")){
-				window.location="{:U('Domain/del')}"+'?id='+id;
+				window.location="<?php echo U('Domain/del');?>"+'?id='+id;
 			}
 	}
 </script>

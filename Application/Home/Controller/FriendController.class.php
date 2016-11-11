@@ -62,38 +62,14 @@ class FriendController extends Controller
         $add['friend_id'] = $friend_id;
         // 插入请求表
         $flag1 = $Request->add($add);
-        // 被请求者未读消息加一
-        $flag2 = $User->where(array(
-            'id' => $friend_id
-        ))->setInc('unreadnum');
-        if ($flag1 && $flag2) {
+        
+        if ($flag1 ) {
             $this->ajaxReturn(responseMsg(0, $type));
         } else {
             $this->ajaxReturn(responseMsg(1, $type));
         }
     }
 
-    /**
-     * 查看好友请求
-     */
-    public function checkRequest()
-    {
-        $type = 301;
-        loginPermitApiPreTreat($type);
-        $User = D('user');
-        $Request = D('friend_request');
-        $user_id = I('user_id');
-        //查表
-        $msg=$Request->where(array(
-            'friend_id' => $user_id
-        ))
-            ->table("jianghu_friend_request r")
-            ->join("left join jianghu_user u on u.id=r.user_id")
-            ->field("u.username,u.faceurl,r.*")
-            ->order('date desc')
-            ->select();
-        $this->ajaxReturn(responseMsg(0, $type,$msg));
-    }
     /**
      * 通过好友请求
      */

@@ -18,7 +18,7 @@ class SearchController extends Controller
         //name为domain名字
         $where['name'] = array(
             'like',
-            '%' . $key . '%'
+             '%' . $key . '%'
         );
         //text为推荐文字内容
         $where['text'] = array(

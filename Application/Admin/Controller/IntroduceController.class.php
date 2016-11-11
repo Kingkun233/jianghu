@@ -52,7 +52,7 @@ class IntroduceController extends Controller{
         $id=I('id');
 //         dump($id);die;
         $introduce=$Introduce->where(array('id'=>$id))->select();
-        $domains=$Domain->where(array('introduce_id'=>$id))->select();
+        $domain_name=$Domain->where(array('introduce_id'=>$id))->getField('domain');
         $uid=$Introduce->where(array('id'=>$id))->getField('user_id');
         $intro_id=$Introduce->where(array('id'=>$id))->getField('id');
         $images=$Img->where(array('introduce_id'=>$intro_id))->select();
@@ -70,7 +70,8 @@ class IntroduceController extends Controller{
          }else{
              $this->assign('msg',"这条是原创推荐");
          }
-        $this->assign('domains',$domains);
+        $introduce[0]['domain']=$domain_name;
+//         dump($introduce);die;
         $this->assign('rows',$introduce);
         $this->assign('username',$username);
         $this->assign('image',$image);

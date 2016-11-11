@@ -70,6 +70,13 @@
                         	<dd><a href="<?php echo U('business/uncheckList');?>" target="mainFrame">待审核商户</a></dd>
                         </dl>
                     </li>
+                    <li>
+                        <h3 onclick="show('menu7','change7')" id="change7"><span >+</span>领域管理</h3>
+                        <dl id="menu7" style="display:none;">
+                        	<dd><a href="<?php echo U('domain/add');?>" target="mainFrame">添加领域</a></dd>
+                            <dd><a href="<?php echo U('domain/index');?>" target="mainFrame">领域列表</a></dd>
+                        </dl>
+                    </li>
                 </ul>
             </div>
         </div>

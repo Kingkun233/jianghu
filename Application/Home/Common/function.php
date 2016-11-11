@@ -48,6 +48,13 @@ function loginPermitApiPreTreat($apiType){
     $where['date']=$today;
     $flag1=$LoginCount->where($where)->find();
     $flag2=$DailyNum->where(array('date'=>$where['date']))->find();
+    //查看是不是留存用户，是的话keep++
+    $jointime=$User->where(array("id"=>$user_id))->getField("jointime");
+    $jointime=date("Y-m-d",strtotime($jointime));
+    $yesterday=date("Y-m-d",strtotime("-1 day"));
+    if($jointime==$yesterday){
+        $DailyNum->where(array("date"=>$today))->setInc("keep");
+    }
     if(!$flag1){
         //插入登陆记录表
         $LoginCount->add($where);
