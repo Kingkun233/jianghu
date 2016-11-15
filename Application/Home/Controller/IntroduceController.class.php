@@ -1,6 +1,8 @@
 <?php
 namespace Home\Controller;
+
 use Think\Controller;
+
 class IntroduceController extends Controller
 {
 
@@ -12,15 +14,23 @@ class IntroduceController extends Controller
         $type = 201;
         loginPermitApiPreTreat($type);
         $IntroDomain = D('introduce_domain');
-        $Domain=D('domain');
+        $Domain = D('domain');
         $User = D('user');
         $Intro = D('introduce');
         $Image = D('introduce_images');
         $Forward = D('forward');
+        $Friend = D('friend');
+        $Busi=D('business');
         $user_id = I('user_id');
         // $add2为邻域表的数据
-        $domain_id= I('domain_id');
-        $add2['domain'] =$Domain->where(array('id'=>$domain_id))->getField("name");
+        $domain_id = I('domain_id');
+        $add2['domain'] = $Domain->where(array(
+            'id' => $domain_id
+        ))->getField("name");
+        $business_id=I('business_id');
+        $add['business_id']=$business_id;
+        $add['business_name']=$Busi->where(array('id'=>$business_id))->getField('name');
+        $add['business_addr']=I('business_addr');
         $add['text'] = I('text');
         // 得到user_id
         $add['user_id'] = $user_id;
@@ -57,10 +67,24 @@ class IntroduceController extends Controller
         $add3['owner_id'] = $add['user_id'];
         $add3['degree'] = 1;
         $Forward->add($add3);
-        //用户口碑加一
-        $User->where(array('id'=>$user_id))->setInc('praisenum');
+        // 该用户的朋友的未读推荐数加一
+        $friends2 = $Friend->where(array(
+            'user_id' => $user_id
+        ))->select();
+        foreach ($friends2 as $k => $v) {
+            $friends[] = $v['friend_id'];
+        }
+        $where_friend['id'] = array(
+            "IN",
+            $friends
+        );
+        $User->where($where_friend)->setInc("unreadnum");
+        // 用户口碑加一
+        $User->where(array(
+            'id' => $user_id
+        ))->setInc('praisenum');
         // 推荐插入成功
-        $this->ajaxReturn(responseMsg(0, $type)); 
+        $this->ajaxReturn(responseMsg(0, $type));
     }
 
     /**
@@ -110,46 +134,73 @@ class IntroduceController extends Controller
         $Friend = D('friend');
         $Intro = D('introduce');
         $Image = D('introduce_images');
+        $IntroDomain = D('introduce_domain');
         $user_id = I('user_id');
+        $from = I('from');
+        $length = 10;
         $fid2 = $Friend->where(array(
             'user_id' => $user_id
         ))
             ->field('friend_id')
-            ->select(); // 得到好友id,二维数组
-                        // dump($fid2);die;
-        foreach ($fid2 as $k => $v) { // 二维转一维
+            ->select();
+        // 得到好友id
+        foreach ($fid2 as $k => $v) {
             $fid1[] = $v['friend_id'];
         }
-        // dump($fid1);die;
-        $contents = $Intro->order('time desc')->select();
+        $where['user_id'] = array(
+            'IN',
+            $fid1
+        );
+        $contents = $Intro->where($where)
+            ->order('time desc')
+            ->limit($from, $length)
+            ->select();
         foreach ($contents as $k => $v) {
-            if (in_array($v['user_id'], $fid1)) {
-                $img = array(); // $img归零
-                $show = array(); // $show置null
-                $show['id'] = $v['id'];
-                $show['friend_id'] = $v['user_id'];
-                $show['friendname'] = $User->where(array(
-                    'id' => $v['user_id']
-                ))->getField('username'); // 得到朋友名字
-                $show['text'] = $v['text']; // 文字内容
-                $show['time'] = $v['time'];
-                $show['degree']=$v['degree'];
-                $show['praisenum'] = $v['praisenum'];
-                $show['allpraise'] = $v['allpraise'];
-                $show['alloppose'] = $v['alloppose'];
-                $show['forwardnum'] = $v['forwardnum'];
-                $show['image'] = $Image->getIntroImg($v['id']);
-                // 如果是转载
-                if ($v['isforward']) {
-                    $show['isforward'] = $Intro->where(array(
-                        'id' => $v['isforward']
-                    ))->find();
-                    $show['isforward']['image'] = $Image->getIntroImg($v['isforward']);
-                }
-                $showall[] = $show;
+            
+            // 得到朋友名字
+            $contents[$k]['friendname'] = $User->where(array(
+                'id' => $v['user_id']
+            ))->getField('username');
+            // 整合朋友头像
+            $contents[$k]['friendface'] = $User->where(array(
+                'id' => $v['user_id']
+            ))->getField('faceurl');
+            // 整合推荐图片
+            $contents[$k]['image'] = $Image->getIntroImg($v['id']);
+            // 整合推荐领域
+            $contents[$k]['domain'] = $IntroDomain->where(array(
+                'introduce_id' => $v['id']
+            ))->getField('domain');
+            // 如果是转载
+            if ($v['isforward']) {
+                // 得到原创推荐记录
+                $contents[$k]['isforward'] = $Intro->where(array(
+                    'id' => $v['isforward']
+                ))->find();
+                $originaluser_id = $contents[$k]['isforward']['user_id'];
+                // 得到原创者名字
+                $contents[$k]['isforward']['username'] = $User->where(array(
+                    'id' => $originaluser_id
+                ))->getField('username');
+                // 整合原创者头像
+                $contents[$k]['isforward']['userface'] = $User->where(array(
+                    'id' => $originaluser_id
+                ))->getField('faceurl');
+                // 整合推荐图片
+                $contents[$k]['isforward']['image'] = $Image->getIntroImg($v['isforward']);
+                // 整合推荐领域
+                $contents[$k]['isforward']['domain'] = $IntroDomain->where(array(
+                    'introduce_id' => $v['isforward']
+                ))->getField('domain');
             }
         }
-        $this->ajaxReturn(responseMsg(0, 202, $showall));
+        //该用户的未读推荐数置零
+        $User->where(array('id'=>$user_id))->save(array('unreadnum'=>0));
+        // 分页返回
+        $resp = responseMsg(0, 202, $contents);
+        $resp['from'] = $from;
+        $resp['length'] = $length;
+        $this->ajaxReturn($resp);
     }
 
     /**
@@ -162,30 +213,52 @@ class IntroduceController extends Controller
         $User = D('user');
         $Image = D('introduce_images');
         $Intro = D('introduce');
+        $IntroDomain = D('introduce_domain');
         $user_id = I('user_id');
-        $contents = $Intro->order('time desc')->select();
-        // dump($contents);die;
+        $from = I('from');
+        $length = 10;
+        $contents = $Intro->where(array(
+            'user_id' => $user_id
+        ))
+            ->order('time desc')
+            ->select();
         foreach ($contents as $k => $v) {
-            if ($v['user_id'] == $user_id) {
-                $img = array(); // $img归零
-                $show['id'] = $v['id'];
-                $show['user_id'] = $v['user_id']; // 用户id
-                                                  // 如果是转载
-                if ($v['isforward']) {
-                    $show['isforward'] = $Intro->where(array(
-                        'id' => $v['isforward']
-                    ))->find();
-                    $show['isforward']['image'] = $Image->getIntroImg($v['isforward']);
-                }
-                $show['text'] = $v['text']; // 文字内容
-                $show['time'] = $v['time']; // 推荐创建时间
-                $show['praisenum'] = $v['praisenum'];
-                $show['forwardnum'] = $v['forwardnum'];
-                $show['image'] = $Image->getIntroImg($v['id']);
-                $showall[] = $show;
+            // 如果是转载
+            if ($v['isforward']) {
+                $contents[$k]['isforward'] = $Intro->where(array(
+                    'id' => $v['isforward']
+                ))->find();
+                // 整合推荐图片
+                $contents[$k]['isforward']['image'] = $Image->getIntroImg($v['isforward']);
+                // 整合用户头像和名字
+                $contents[$k]['isforward']['username'] = $User->where(array(
+                    'id' => $contents[$k]['isforward']['user_id']
+                ))->getField('username');
+                $contents[$k]['isforward']['face'] = $User->where(array(
+                    'id' => $contents[$k]['isforward']['user_id']
+                ))->getField('faceurl');
+                // 整合推荐领域
+                $contents[$k]['isforward']['domain'] = $IntroDomain->where(array(
+                    'introduce_id' => $v['isforward']
+                ))->getField('domain');
             }
+            // 整合推荐图片
+            $contents[$k]['image'] = $Image->getIntroImg($v['id']);
+            // 整合用户头像和名字
+            $contents[$k]['username'] = $User->where(array(
+                'id' => $user_id
+            ))->getField('username');
+            $contents[$k]['face'] = $User->where(array(
+                'id' => $user_id
+            ))->getField('faceurl');
+            $contents[$k]['domain'] = $IntroDomain->where(array(
+                'introduce_id' => $v['id']
+            ))->getField('domain');
         }
-        $this->ajaxReturn(responseMsg(0, 203, $showall));
+        $resp = responseMsg(0, 203, $contents);
+        $resp['from'] = $from;
+        $resp['length'] = $length;
+        $this->ajaxReturn($resp);
     }
 
     /**
@@ -206,9 +279,13 @@ class IntroduceController extends Controller
         $owner_id = $Intro->where(array(
             'id' => $introduce_id
         ))->getField('user_id');
-        //得到原创推荐所有者id
-        $original_intro_id=$Intro->where(array('id'=>$introduce_id))->getField('isforward');
-        $original_user_id=$Intro->where(array('id'=>$original_intro_id))->getField('user_id');
+        // 得到原创推荐所有者id
+        $original_intro_id = $Intro->where(array(
+            'id' => $introduce_id
+        ))->getField('isforward');
+        $original_user_id = $Intro->where(array(
+            'id' => $original_intro_id
+        ))->getField('user_id');
         // 每日点赞人数加一
         $today = date("Y-m-d");
         $times = $Praise->where(array(
@@ -236,16 +313,22 @@ class IntroduceController extends Controller
         $data1['owner_id'] = $owner_id;
         // 插入praise表
         $flag1 = $Praise->add($data1);
-        //该推荐所有者的总点赞数加一
-        $User->where(array('id'=>$owner_id))->setInc('allpraise');
-        //该推荐的原创用户的总点赞数加一
-        $User->where(array('id'=>$original_user_id))->setInc('allpraise');
+        // 该推荐所有者的总点赞数加一
+        $User->where(array(
+            'id' => $owner_id
+        ))->setInc('allpraise');
+        // 该推荐的原创用户的总点赞数加一
+        $User->where(array(
+            'id' => $original_user_id
+        ))->setInc('allpraise');
         // 该推荐的praisenum++
         $flag2 = $Intro->where(array(
             'id' => $introduce_id
         ))->setInc('praisenum');
-        //原创推荐的priasenum++
-        $Intro->where(array('id'=>$original_intro_id))->setInc('praisenum');
+        // 原创推荐的priasenum++
+        $Intro->where(array(
+            'id' => $original_intro_id
+        ))->setInc('praisenum');
         // $res=array($flag1,$flag2, $flag3,$flag4);
         // dump($res);die;
         if ($flag1 && $flag2) {
@@ -419,7 +502,7 @@ class IntroduceController extends Controller
                     ))->setInc('praisenum', $degree - $i);
                 }
                 // 给原创推荐所有者增加口碑
-                    // 得到原创推荐所有者的id
+                // 得到原创推荐所有者的id
                 $original_intro_userid = $Intro->where(array(
                     'id' => $original_id
                 ))->getField('user_id');
@@ -470,7 +553,7 @@ class IntroduceController extends Controller
                 // 新增度数源
                 $data1['original_id' . $min] = $user_id;
                 // 复制度数源
-                $degreesum=0;
+                $degreesum = 0;
                 for ($i = 2; $i < $min; $i ++) {
                     $data1['original_id' . $i] = $forword['original_id' . $i];
                     // 给度数源用户加口碑
@@ -524,15 +607,17 @@ class IntroduceController extends Controller
             'id' => $forward_id
         ))->getField('user_id');
         if ($user_id != $introduce_owner) {
-            //如果转载的度数大于3，给原创推荐的alldegree增加该转载的度数
-            if($data1["degree"]>=3){
-                $Intro->where(array('id'=>$original_id))->setInc('alldegree',$data1["degree"]);
+            // 如果转载的度数大于3，给原创推荐的alldegree增加该转载的度数
+            if ($data1["degree"] >= 3) {
+                $Intro->where(array(
+                    'id' => $original_id
+                ))->setInc('alldegree', $data1["degree"]);
             }
             // 插入转采表
             // dump($data1);die;
             $flag1 = $Forward->add($data1);
             // 插入推荐表
-                // 保存该推荐的转载记录id
+            // 保存该推荐的转载记录id
             $data2['forward_id'] = $flag1;
             $flag = $Intro->add($data2);
             // 该推荐表转采数加一
@@ -544,9 +629,20 @@ class IntroduceController extends Controller
                 'id' => $original_id
             ))->setInc('praisenum');
         }
-        
+        // 该用户的朋友的未读推荐数加一
+        $friends2 = $Friend->where(array(
+            'user_id' => $user_id
+        ))->select();
+        foreach ($friends2 as $k => $v) {
+            $friends[] = $v['friend_id'];
+        }
+        $where_friend['id'] = array(
+            "IN",
+            $friends
+        );
+        $User->where($where_friend)->setInc("unreadnum");
         // dump(array($flag,$flag1,$flag2,$flag3,$flag4));
-        if ($flag && $flag1 && $flag2 ) {
+        if ($flag && $flag1 && $flag2) {
             // 转采成功
             $this->ajaxReturn(responseMsg(0, $type));
         }
@@ -568,7 +664,9 @@ class IntroduceController extends Controller
         $data['user_id'] = I("user_id");
         $data['introduce_id'] = I("introduce_id");
         $data['content'] = I("content");
-        $data['owner_id']=$Intro->where(array('id'=>$data['introduce_id']))->getField("user_id");
+        $data['owner_id'] = $Intro->where(array(
+            'id' => $data['introduce_id']
+        ))->getField("user_id");
         $data['time'] = date("Y-m-d H:i:s");
         // 每日评论人数加一
         $today = date("Y-m-d");
@@ -602,81 +700,146 @@ class IntroduceController extends Controller
             $this->ajaxReturn(responseMsg(1, $type));
         }
     }
+
     /**
      * 踩推荐
      */
-    public function addOppose(){
-        $type=207;
+    public function addOppose()
+    {
+        $type = 207;
         loginPermitApiPreTreat($type);
-        $Intro=D('introduce');
-        $User=D('user');
-        $introduce_id=I('introduce_id');
-        $user_id=$Intro->where(array('id'=>$introduce_id))->getField('user_id');
-        //推荐的踩数加一
-        $flag1=$Intro->where(array('id'=>$introduce_id))->setInc('opposenum');
-        //原创推荐的踩数加一
-        $original_id=$Intro->where(array('id'=>$introduce_id))->getField('isforward');
-        $Intro->where(array('id'=>$original_id))->setInc('opposenum');
-        //用户总踩量加一
-        $flag2=$User->where(array('id'=>$user_id))->setInc('alloppose');
-        //原创用户总踩量加一
-        $owner_id=$Intro->where(array('id'=>$original_id))->getField('user_id');
-        $User->where(array('id'=>$owner_id))->setInc('alloppose');
-        if($flag1&&$flag2){
+        $Intro = D('introduce');
+        $User = D('user');
+        $introduce_id = I('introduce_id');
+        $user_id = $Intro->where(array(
+            'id' => $introduce_id
+        ))->getField('user_id');
+        // 推荐的踩数加一
+        $flag1 = $Intro->where(array(
+            'id' => $introduce_id
+        ))->setInc('opposenum');
+        // 原创推荐的踩数加一
+        $original_id = $Intro->where(array(
+            'id' => $introduce_id
+        ))->getField('isforward');
+        $Intro->where(array(
+            'id' => $original_id
+        ))->setInc('opposenum');
+        // 用户总踩量加一
+        $flag2 = $User->where(array(
+            'id' => $user_id
+        ))->setInc('alloppose');
+        // 原创用户总踩量加一
+        $owner_id = $Intro->where(array(
+            'id' => $original_id
+        ))->getField('user_id');
+        $User->where(array(
+            'id' => $owner_id
+        ))->setInc('alloppose');
+        if ($flag1 && $flag2) {
             $this->ajaxReturn(responseMsg(0, $type));
-        }else{
+        } else {
             $this->ajaxReturn(responseMsg(1, $type));
         }
     }
+
     /**
      * 从江湖中点赞非好友推荐，加0.1口碑
      */
-    public function addPraiseInJianghu(){
-        $type=208;
+    public function addPraiseInJianghu()
+    {
+        $type = 208;
         loginPermitApiPreTreat($type);
-        $User=D('user');
-        $Intro=D('introduce');
-        $introduce_id=I('introduce_id');
-        //得到推荐所有人id
-        $owner=$Intro->where(array('id'=>$introduce_id))->getField('user_id');
-        //江湖点赞临时存放点加一
-        $User->where(array('id'=>$owner))->setInc('temp_praisenum');
-        $temp_praisenum=$User->where(array('id'=>$owner))->getField('temp_praisenum');
-        //判断是否点赞了十次，若被点赞了十次，则口碑加一
-        if($temp_praisenum==10){
-            //口碑加一
-            $User->where(array('id'=>$owner))->setInc('praisenum');
-            //点赞临时存放点清零
-            $User->where(array('id'=>$owner))->save(array('temp_praisenum'=>0));
+        $User = D('user');
+        $Intro = D('introduce');
+        $introduce_id = I('introduce_id');
+        // 得到推荐所有人id
+        $owner = $Intro->where(array(
+            'id' => $introduce_id
+        ))->getField('user_id');
+        // 江湖点赞临时存放点加一
+        $User->where(array(
+            'id' => $owner
+        ))->setInc('temp_praisenum');
+        $temp_praisenum = $User->where(array(
+            'id' => $owner
+        ))->getField('temp_praisenum');
+        // 判断是否点赞了十次，若被点赞了十次，则口碑加一
+        if ($temp_praisenum == 10) {
+            // 口碑加一
+            $User->where(array(
+                'id' => $owner
+            ))->setInc('praisenum');
+            // 点赞临时存放点清零
+            $User->where(array(
+                'id' => $owner
+            ))->save(array(
+                'temp_praisenum' => 0
+            ));
         }
-        //该推荐点赞数加一
-        $Intro->where(array('id'=>$introduce_id))->setInc('praisenum');
+        // 该推荐点赞数加一
+        $Intro->where(array(
+            'id' => $introduce_id
+        ))->setInc('praisenum');
         $this->ajaxReturn(responseMsg(0, $type));
     }
+
     /**
      * 返回江湖推荐
      */
-    public function jianghuIntroduce(){
-        $type=209;
-        //判断有没有调用错接口
-        if(!$type==I('type')){
+    public function jianghuIntroduce()
+    {
+        $type = 209;
+        // 判断有没有调用错接口
+        if (! $type == I('type')) {
             $this->ajaxReturn(responseMsg(5, $type));
         }
-        //如果有用户登录，就按照domain找推荐，没有的话就不按domain找
-        $user_id=I('user_id');
-        $Intro=D('introduce');
-        $User=D('user');
-        //如果有传user_id,则where有条件，否者where为空
-        if($user_id){
+        // 如果有用户登录，就按照domain找推荐，没有的话就不按domain找
+        $user_id = I('user_id');
+        $Intro = D('introduce');
+        $User = D('user');
+        $UserDomain = D('user_domain');
+        $IntroImage = D('introduce_images');
+        $from = I('from');
+        $length = 10;
+        // 要求原创
+        $where['isforward'] = 0;
+        // 如果有传user_id,则where有条件，否者where为空
+        if ($user_id) {
             loginPermitApiPreTreat($type);
-            //得到该用户的domain
-            $domain2=$User->where(array('id'=>$user_id))->select();
-            foreach ($domain2 as $k=>$v){
-                $domain[]=$v['domain'];
+            // 得到该用户的domain
+            $domain2 = $UserDomain->where(array(
+                'user_id' => $user_id
+            ))->select();
+            foreach ($domain2 as $k => $v) {
+                $domain[] = $v['domain'];
             }
-            $where=array("IN",$domain);
+            $where = array(
+                "IN",
+                $domain
+            );
+            $msg = $Intro->where($where)
+                ->order('alldegree desc')
+                ->limit($from, $length)
+                ->select();
+        } else {
+            $msg = $Intro->order('alldegree desc')
+                ->limit($from, $length)
+                ->select();
         }
-        $msg=$Intro->where($where)->order('alldegree desc')->limit(30)->select();
-        $this->ajaxReturn(responseMsg(0, $type,$msg));
+        foreach ($msg as $k => $v) {
+            $msg[$k]['face'] = $User->where(array(
+                'id' => $v['user_id']
+            ))->getField('faceurl');
+            $msg[$k]['username'] = $User->where(array(
+                'id' => $v['user_id']
+            ))->getField('username');
+            $msg[$k]['image'] = $IntroImage->getIntroImg($v['id']);
+        }
+        $resp = responseMsg(0, $type, $msg);
+        // 返回整合from，length
+        $resp['from'] = $from;
+        $resp['length'] = $length;
+        $this->ajaxReturn($resp);
     }
 }

@@ -3,7 +3,7 @@ namespace Home\Controller;
 use Think\Controller;
 class MsgController extends Controller{
     /**
-     * 得到用户未读消息数(包括总未读数，转采，评论，赞，申请好友的未读消息数)
+     * 得到用户未读消息数(包括总未读数，转采，评论，赞，申请好友,新的好友推荐等的未读消息数)
      */
     public function getUnreadNum(){
         $type=600;
@@ -28,12 +28,14 @@ class MsgController extends Controller{
         $requestmsgnum=$Friend->where($wherefriend)->count();
         //得到用户总未读消息数
         $allmsgnum=$forwardmsgnum+$praisemsgnum+$requestmsgnum+$commentmsgnum;
+        $newintronum=$User->where(array('id'=>$user_id))->getField('unreadnum');
         //整合返回数据
         $msg['allmsgnum']="".$allmsgnum;
         $msg['forwardmsgnum']=$forwardmsgnum;
         $msg['praisemsgnum']=$praisemsgnum;
         $msg['commentmsgnum']=$commentmsgnum;
         $msg['requestmsgnum']=$requestmsgnum;
+        $msg['newintronum']=$newintronum;
         $this->ajaxReturn(responseMsg(0, $type,$msg));
     }
     /**

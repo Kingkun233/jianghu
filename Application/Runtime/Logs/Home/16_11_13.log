@@ -1,0 +1,1338 @@
+[ 2016-11-13T15:41:15+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000949s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0206s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0341s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 27 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('27','2016-11-13') [ RunTime:0.0975s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 27 [ RunTime:0.0497s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13'  [ RunTime:0.0008s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2016-11-13','1') [ RunTime:0.0421s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0124s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0097s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0263s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0163s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是test1的内容','27','2016-11-13 15:41:15','1') [ RunTime:0.0693s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','109') [ RunTime:0.0484s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+SQL: INSERT INTO `jianghu_introduce_images` (`introduce_id`,`imageurl`,`imagepath`) VALUES ('109','http://localhost/jianghu/Uploads/2016-11-13/5828191b669ff.jpg','./Uploads/2016-11-13/5828191b669ff.jpg') [ RunTime:0.1042s ]
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('27','109','109','2016-11-13 15:41:15','27','1') [ RunTime:0.0532s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 27 [ RunTime:0.0416s ]
+
+[ 2016-11-13T18:47:12+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000803s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000863s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('1','2016-11-13') [ RunTime:0.0878s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.1112s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13'  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2016-11-13' [ RunTime:0.0733s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0046s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY time desc LIMIT 1,10   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 106  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 105  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 104  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 103  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+
+[ 2016-11-13T18:47:59+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000840s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('2','2016-11-13') [ RunTime:0.0694s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0433s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13'  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2016-11-13' [ RunTime:0.0879s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0035s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是2的内容','2','2016-11-13 18:47:59','1') [ RunTime:0.0815s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','110') [ RunTime:0.0557s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('2','110','110','2016-11-13 18:47:59','2','1') [ RunTime:0.1135s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0467s ]
+
+[ 2016-11-13T18:48:01+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000524s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000846s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000901s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0044s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是2的内容','2','2016-11-13 18:48:01','1') [ RunTime:0.0562s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','111') [ RunTime:0.0368s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('2','111','111','2016-11-13 18:48:01','2','1') [ RunTime:0.0413s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0448s ]
+
+[ 2016-11-13T18:48:02+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000467s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000734s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000802s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0046s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是2的内容','2','2016-11-13 18:48:01','1') [ RunTime:0.0942s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','112') [ RunTime:0.0431s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('2','112','112','2016-11-13 18:48:02','2','1') [ RunTime:0.0799s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0775s ]
+
+[ 2016-11-13T18:48:02+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000760s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0038s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是2的内容','2','2016-11-13 18:48:02','1') [ RunTime:0.0875s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','113') [ RunTime:0.0431s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('2','113','113','2016-11-13 18:48:02','2','1') [ RunTime:0.0380s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0435s ]
+
+[ 2016-11-13T18:48:03+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000463s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0054s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0034s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是2的内容','2','2016-11-13 18:48:03','1') [ RunTime:0.0553s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','114') [ RunTime:0.0339s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('2','114','114','2016-11-13 18:48:03','2','1') [ RunTime:0.0412s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0477s ]
+
+[ 2016-11-13T18:48:04+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000832s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0037s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是2的内容','2','2016-11-13 18:48:04','1') [ RunTime:0.0674s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','115') [ RunTime:0.0468s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('2','115','115','2016-11-13 18:48:04','2','1') [ RunTime:0.0374s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0340s ]
+
+[ 2016-11-13T18:48:04+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000540s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000809s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0040s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是2的内容','2','2016-11-13 18:48:04','1') [ RunTime:0.0444s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','116') [ RunTime:0.0363s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('2','116','116','2016-11-13 18:48:04','2','1') [ RunTime:0.0418s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0472s ]
+
+[ 2016-11-13T18:48:05+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000864s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0035s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是2的内容','2','2016-11-13 18:48:05','1') [ RunTime:0.0865s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','117') [ RunTime:0.0402s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('2','117','117','2016-11-13 18:48:05','2','1') [ RunTime:0.0427s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0437s ]
+
+[ 2016-11-13T18:48:06+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000801s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000857s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0046s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是2的内容','2','2016-11-13 18:48:06','1') [ RunTime:0.0659s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','118') [ RunTime:0.0230s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('2','118','118','2016-11-13 18:48:06','2','1') [ RunTime:0.0407s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0229s ]
+
+[ 2016-11-13T18:48:07+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000872s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0042s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是2的内容','2','2016-11-13 18:48:06','1') [ RunTime:0.0966s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','119') [ RunTime:0.0413s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('2','119','119','2016-11-13 18:48:06','2','1') [ RunTime:0.0383s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0444s ]
+
+[ 2016-11-13T18:48:08+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001286s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001389s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0044s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是2的内容','2','2016-11-13 18:48:07','1') [ RunTime:0.0744s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','120') [ RunTime:0.0642s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('2','120','120','2016-11-13 18:48:07','2','1') [ RunTime:0.0433s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0428s ]
+
+[ 2016-11-13T18:48:08+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000794s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0039s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_introduce` (`text`,`user_id`,`time`,`degree`) VALUES ('这是2的内容','2','2016-11-13 18:48:08','1') [ RunTime:0.0601s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','121') [ RunTime:0.0771s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 56 行.
+NOTIC: [8] Undefined variable: imageinfo D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 60 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 43 行.
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('2','121','121','2016-11-13 18:48:08','2','1') [ RunTime:0.0763s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0549s ]
+
+[ 2016-11-13T18:48:20+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000776s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000824s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0713s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0049s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY time desc LIMIT 1,10   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 120  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 118  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 119  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 117  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 115  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 116  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 114  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 113  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 111  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 112  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+
+[ 2016-11-13T18:49:07+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000798s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000855s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0034s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY time desc LIMIT 11,10   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 110  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 106  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 105  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 104  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 103  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+
+[ 2016-11-13T18:50:24+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000826s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0036s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY time desc LIMIT 11,10   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 110  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 106  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 105  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 104  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 103  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+
+[ 2016-11-13T18:50:43+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000788s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000878s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000955s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0037s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY time desc LIMIT 11,10   [ RunTime:0.0009s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 110  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 106  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 105  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 104  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 103  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+
+[ 2016-11-13T18:51:11+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0036s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY time desc LIMIT 11,10   [ RunTime:0.0006s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 110  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 106  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 105  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 104  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 6 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: allpraise D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 140 行.
+NOTIC: [8] Undefined index: alloppose D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 141 行.
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 103  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: img D:\xampp\htdocs\jianghu\Application\Home\Model\IntroduceImagesModel.class.php 第 21 行.
+
+[ 2016-11-13T19:08:56+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce?token=&user_id=&type=209&from=1&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1479032396020
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000815s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000860s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: where D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 687 行.
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY alldegree desc LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1054:Unknown column 'name' in 'field list'
+ [ SQL语句 ] : SELECT `name` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1  
+ERR: 1054:Unknown column 'name' in 'field list'
+ [ SQL语句 ] : SELECT `name` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1  
+
+[ 2016-11-13T19:09:12+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce?token=&user_id=&type=209&from=1&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1479032396021
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+NOTIC: [8] Undefined variable: where D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 687 行.
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY alldegree desc LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Missing argument 1 for Think\Controller::ajaxReturn(), called in D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php on line 696 and defined D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Controller.class.php 第 210 行.
+NOTIC: [8] Undefined variable: data D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Controller.class.php 第 216 行.
+
+[ 2016-11-13T19:09:24+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce?token=&user_id=&type=209&from=1&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1479032396022
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000141s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001020s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000866s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000930s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+NOTIC: [8] Undefined variable: where D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 687 行.
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY alldegree desc LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-11-13T19:09:52+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce?token=&user_id=&type=209&from=1&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1479032396023
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001670s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000974s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+NOTIC: [8] Undefined variable: where D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 687 行.
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY alldegree desc LIMIT 1,10   [ RunTime:0.0010s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-11-13T19:17:56+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce?token=&user_id=&type=209&from=1&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1479032396024
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000574s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000823s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+NOTIC: [8] Undefined variable: where D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 687 行.
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY alldegree desc LIMIT 1,30   [ RunTime:0.0007s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-11-13T19:19:29+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce?token=&user_id=&type=209&from=1&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1479032396025
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000836s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0084s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` = 0 ORDER BY alldegree desc LIMIT 1,30   [ RunTime:0.0007s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-11-13T19:23:32+08:00 ] ::1 /jianghu/index.php/home/introduce/forward
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000594s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000840s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'f0eac881e871f806c946703600ca3c5e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 0 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('0','2016-11-13') [ RunTime:0.1048s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 0 [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13'  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2016-11-13' [ RunTime:0.0434s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0033s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `isforward` FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `degree` FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `forward_id` FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `jianghu_forward` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`time`,`owner_id`,`original_id`,`original_id2`,`degree`) VALUES ('0','90','2016-11-13 19:23:32','1','90','0','2') [ RunTime:0.0975s ]
+SQL: INSERT INTO `jianghu_introduce` (`time`,`isforward`,`text`,`user_id`,`degree`,`forward_id`) VALUES ('2016-11-13 19:23:32','90','1','0','2','105') [ RunTime:0.0428s ]
+SQL: UPDATE `jianghu_introduce` SET `forwardnum`=forwardnum+1 WHERE `id` = 90 [ RunTime:0.0602s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 90 [ RunTime:0.0389s ]
+
+[ 2016-11-13T19:25:35+08:00 ] ::1 /jianghu/index.php/home/introduce/forward
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000807s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000862s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'f0eac881e871f806c946703600ca3c5e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 32 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 32 AND `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 32 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('32','2016-11-13') [ RunTime:0.1070s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 32 [ RunTime:0.0605s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-13'  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2016-11-13' [ RunTime:0.0438s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0047s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isforward` FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `degree` FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `forward_id` FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `jianghu_forward` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`time`,`owner_id`,`original_id`,`original_id2`,`degree`) VALUES ('32','90','2016-11-13 19:25:35','1','90','32','2') [ RunTime:0.0741s ]
+SQL: INSERT INTO `jianghu_introduce` (`time`,`isforward`,`text`,`user_id`,`degree`,`forward_id`) VALUES ('2016-11-13 19:25:35','90','1','32','2','106') [ RunTime:0.0562s ]
+SQL: UPDATE `jianghu_introduce` SET `forwardnum`=forwardnum+1 WHERE `id` = 90 [ RunTime:0.0413s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 90 [ RunTime:0.0557s ]
+
+[ 2016-11-13T23:45:19+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce?token=&user_id=&type=209&from=1&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1479051755609
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0071s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` = 0 ORDER BY alldegree desc LIMIT 1,30   [ RunTime:0.0008s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0190s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-11-13T23:53:49+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce?token=&user_id=&type=209&from=1&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1479051755610
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001025s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000990s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` = 0 ORDER BY alldegree desc LIMIT 1,30   [ RunTime:0.0012s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-11-13T23:53:53+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce?token=&user_id=&type=209&from=1&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1479051755611
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000525s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` = 0 ORDER BY alldegree desc LIMIT 1,30   [ RunTime:0.0007s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 19 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 27 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2016-11-13T23:59:33+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce?token=&user_id=&type=209&from=1&%5B%5D=%E5%8F%91%E9%80%81&%5B%5D=mock&_=1479051755612
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000545s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000819s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_introduce` ORDER BY alldegree desc LIMIT 1,30   [ RunTime:0.0011s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 5 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 8 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 7 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 16 LIMIT 1   [ RunTime:0.0003s ]
+
