@@ -74,6 +74,11 @@ class BusinessController extends Controller
             'id' => $user_id
         ))->getField('username');
         $backurl = empty($_SERVER['HTTP_REFERER']) && strstr($_SERVER['HTTP_REFERER'], $_SERVER['HTTP_HOST']) ? '#' : $_SERVER['HTTP_REFERER'];
+        if($rows[0]['state']){
+            $rows[0]['state']="未审核";
+        }else{
+            $rows[0]['state']="已审核";
+        }
         $this->assign('username', $username);
         $this->assign('rows', $rows);
         $this->assign('backurl', $backurl);

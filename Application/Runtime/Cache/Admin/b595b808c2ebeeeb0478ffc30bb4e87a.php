@@ -77,6 +77,14 @@
                             <dd><a href="<?php echo U('domain/index');?>" target="mainFrame">领域列表</a></dd>
                         </dl>
                     </li>
+                    <li>
+                        <h3 onclick="show('menu8','change8')" id="change8"><span >+</span>海报管理</h3>
+                        <dl id="menu8" style="display:none;">
+                        	<dd><a href="<?php echo U('poster/add');?>" target="mainFrame">添加海报</a></dd>
+                            <dd><a href="<?php echo U('poster/index');?>" target="mainFrame">海报列表</a></dd>
+                             <dd><a href="<?php echo U('poster/overtimeList');?>" target="mainFrame">已过期海报</a></dd>
+                        </dl>
+                    </li>
                 </ul>
             </div>
         </div>

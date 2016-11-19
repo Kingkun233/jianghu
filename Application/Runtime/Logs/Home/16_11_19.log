@@ -1,0 +1,20 @@
+[ 2016-11-19T14:09:29+08:00 ] ::1 /jianghu/index.php/home/poster/getPoster
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000770s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0058s ]
+SQL: SELECT * FROM `jianghu_poster`  [ RunTime:0.0004s ]
+
+[ 2016-11-19T14:10:25+08:00 ] ::1 /jianghu/index.php/home/poster/getPoster
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000979s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0  [ RunTime:0.0004s ]
+

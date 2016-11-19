@@ -44,6 +44,14 @@
 		<tr>
 			<td align="right">推荐领域</td>
 			<td><?php echo ($vo["domain"]); ?></td>
+		</tr>
+		<tr>
+			<td align="right">推荐商户</td>
+			<td><a href="<?php echo U('business/showdetail');?>?id=<?php echo ($vo["business_id"]); ?>"><?php echo ($vo["business_name"]); ?></a></td>
+		</tr>
+		<tr>
+			<td align="right">推荐领域</td>
+			<td><?php echo ($vo["domain"]); ?></td>
 		</tr><?php endforeach; endif; ?>
 		<tr>
 			<td align="right">推送图片</td>

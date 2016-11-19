@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>-.-</title>
+<link rel="stylesheet" href="/jianghu/Public/css/backstage.css">
+</head>
+
+<body>
+	<div class="details">
+		<div class="details_operation clearfix">
+		</div>
+		<!--表格-->
+		<table class="table" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>海报名称</th>
+					<th>发布时间</th>
+					<th>状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<foreach name='poster' item='vo'>
+				<tr>
+					<!--这里的id和for里面的c1 需要循环出来-->
+					<td><input type="checkbox" id="c1" class="check"><label
+						for="c1" class="label">{$vo.id}</label></td>
+					<td>{$vo.title}</td>
+					<td>{$vo.time}</td>
+					<td>{$vo.state}</td>
+					<td align="center">
+						<input type="button" value="再次运营"
+						class="btn" onclick="intime({$vo.id})">
+						<input type="button" value="详情"
+						class="btn" onclick="detail({$vo.id})">
+					</td>
+				</tr>
+				</foreach>
+
+			</tbody>
+		</table>
+		<div class="pagination">{$page}</div>
+	</div>
+</body>
+<script type="text/javascript">
+	function intime(id){
+		window.location="{:U('poster/intime')}"+'?id='+id;
+	}
+	function detail(id){
+		window.location="{:U('poster/detail')}"+'?id='+id;
+	}
+</script>
+</html>

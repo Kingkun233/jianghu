@@ -273,4 +273,27 @@ class UserController extends Controller
             $this->ajaxReturn(1); // 头像更改失败
         }
     }
+    /**
+     * 查看用户详细信息
+     */
+    public function checkUserDetail(){
+        $type=103;
+        if($type!=I('type')){
+            $this->ajaxReturn(responseMsg(5, $type));
+        }
+        $User=D('user');
+        $Domain=D('user_domain');
+        $user_id=I('user_id');
+        $domain2=$Domain->where(array('user_id'=>$user_id))->select();
+        foreach($domain2 as $k=>$v){
+            $domain[]=$v['domain'];
+        }
+        $msg=$User->where(array('id'=>$user_id))->find();
+        $msg['domain']=$domain;
+        unset($msg['unreadnum']);
+        unset($msg['isban']);
+        unset($msg['password']);
+        unset($msg['temp_praisenum']);
+        $this->ajaxReturn(responseMsg(0, $type,$msg));
+    }
 }

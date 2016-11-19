@@ -160,3 +160,414 @@ SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0048s ]
 SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
 SQL: SELECT u.id,u.username FROM jianghu_user u right join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%小%' OR d.domain LIKE '%小%' GROUP BY u.id  [ RunTime:0.0010s ]
 
+[ 2016-11-16T19:28:42+08:00 ] ::1 /jianghu/index.php/home/introduce/checkComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000685s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002309s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'a7369773cfc392c5516570ee3194fa4a' AND `state` = 0 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-16' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-16' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('1','2016-11-16') [ RunTime:0.0830s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.0359s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-16'  [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2016-11-16','1') [ RunTime:0.0319s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0047s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18') ORDER BY time desc  [ RunTime:0.0007s ]
+
+[ 2016-11-16T19:34:30+08:00 ] ::1 /jianghu/index.php/home/introduce/checkComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000773s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'a7369773cfc392c5516570ee3194fa4a' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-16' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-16' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0045s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0042s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18') ORDER BY time desc  [ RunTime:0.0011s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2016-11-16T19:35:32+08:00 ] ::1 /jianghu/index.php/home/introduce/checkComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000607s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000707s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'a7369773cfc392c5516570ee3194fa4a' AND `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2016-11-16' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2016-11-16' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0034s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18') AND `introduce_id` = 90 ORDER BY time desc  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+
+[ 2016-11-16T19:55:12+08:00 ] ::1 /jianghu/index.php/home/user/checkUserDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000703s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+
+[ 2016-11-16T19:55:22+08:00 ] ::1 /jianghu/index.php/home/user/checkUserDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000756s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000717s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000771s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+
+[ 2016-11-16T19:56:03+08:00 ] ::1 /jianghu/index.php/home/user/checkUserDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000758s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000892s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+
+[ 2016-11-16T19:56:06+08:00 ] ::1 /jianghu/index.php/home/user/checkUserDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001233s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001329s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+
+[ 2016-11-16T19:57:45+08:00 ] ::1 /jianghu/index.php/home/user/checkUserDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000914s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+
+[ 2016-11-16T19:58:00+08:00 ] ::1 /jianghu/index.php/home/user/checkUserDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000519s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000788s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [2] Illegal string offset 'domain' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 293 行.
+
+[ 2016-11-16T19:58:36+08:00 ] ::1 /jianghu/index.php/home/user/checkUserDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000693s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000856s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000913s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 292 行.
+
+[ 2016-11-16T20:01:29+08:00 ] ::1 /jianghu/index.php/home/user/checkUserDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000880s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000846s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 292 行.
+
+[ 2016-11-16T20:02:34+08:00 ] ::1 /jianghu/index.php/home/user/checkUserDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000724s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 292 行.
+
+[ 2016-11-16T20:03:16+08:00 ] ::1 /jianghu/index.php/home/user/checkUserDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000874s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0129s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 292 行.
+

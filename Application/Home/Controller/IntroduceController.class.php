@@ -842,4 +842,30 @@ class IntroduceController extends Controller
         $resp['length'] = $length;
         $this->ajaxReturn($resp);
     }
+    /**
+     * 查看该推荐的一度好友的评论
+     */
+    public function checkComment(){
+        $type=210;
+        loginPermitApiPreTreat($type);
+        $User=D('user');
+        $Comment=D('comment');
+        $Friend=D('friend');
+        $user_id=I('user_id');
+        $introduce_id=I('introduce_id');
+        $friends2=$Friend->where(array('user_id'=>$user_id))->field("friend_id")->select();
+        foreach ($friends2 as $k=>$v){
+            $friends[]=$v['friend_id'];
+        }
+        $where['user_id']=array("IN",$friends);
+        $where['introduce_id']=$introduce_id;
+        $msg=$Comment->where($where)->order("time desc")->select();
+        foreach ($msg as $k=>$v){
+            $msg[$k]['username']=$User->where(array("id"=>$user_id))->getField('username');
+            $msg[$k]['face']=$User->where(array("id"=>$user_id))->getField('faceurl');
+            unset($msg[$k]['state']);   
+            unset($msg[$k]['owner_id']);
+        }
+        $this->ajaxReturn(responseMsg(0, $type,$msg));
+    }
 }
