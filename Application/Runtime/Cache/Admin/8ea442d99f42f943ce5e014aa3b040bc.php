@@ -3,30 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<!-- 样式文件 -->
-<link rel="stylesheet"
-	href="/jianghu/Public/umeditor/themes/default/css/umeditor.css">
-<!-- 引用jquery -->
-<script src="/jianghu/Public/umeditor/third-party/jquery.min.js"></script>
-<!-- 配置文件 -->
-<script type="text/javascript"
-	src="/jianghu/Public/umeditor/umeditor.config.js"></script>
-<!-- 编辑器源码文件 -->
-<script type="text/javascript" src="/jianghu/Public/umeditor/umeditor.js"></script>
-<!-- 语言包文件 -->
-<script type="text/javascript"
-	src="/jianghu/Public/umeditor/lang/zh-cn/zh-cn.js"></script>
-<!-- 实例化编辑器代码 -->
-<script type="text/javascript">
-	$(function() {
-		window.um = UM.getEditor('container');
-		um.ready(function() {
-		    //设置编辑器的内容
-		    var content='<?php echo ($content); ?>';
-			um.execCommand('inserthtml', content);
-		});
-	});
-</script>
+
 </head>
 <body>
 
@@ -37,7 +14,8 @@
 
 	<table width="70%" border="1" cellpadding="5" cellspacing="0"
 		bgcolor="#cccccc">
-		<?php if(is_array($rows)): foreach($rows as $key=>$vo): ?><tr>
+		<?php if(is_array($rows)): foreach($rows as $key=>$vo): ?><input type="hidden" name="poster_id"value="<?php echo ($vo["id"]); ?>"></input>
+		<tr>
 			<td align="right">海报标题</td>
 			<td><input type="text" name="title" value="<?php echo ($vo["title"]); ?>" /></td>
 		</tr>
@@ -48,13 +26,30 @@
 		<tr>
 			<td align="right">海报内容</td>
 			<td>
-				<!-- 加载编辑器的容器 -->
-				 <script id="container" name="content"
-					type="text/plain" style="width:600px;height:200px;">
-    			
-				</script>
+				<!-- 加载编辑器的容器 --> 
+				<script id="container" name="content"
+					type="text/plain">
+        				
+    				</script>
+    				 <!-- 配置文件 --> 
+    				 <script type="text/javascript"
+					src="/jianghu/Public/ueditor/ueditor.config.js">
+    				 </script> 
+    				 <!-- 编辑器源码文件 -->
+				<script type="text/javascript"
+					src="/jianghu/Public/ueditor/ueditor.all.js">
+				</script> 
+				<!-- 实例化编辑器 --> 
+				<script
+					type="text/javascript">
+						var ue = UE.getEditor('container');
+						ue.ready(function() {
+							ue.execCommand('inserthtml','<?php echo htmlspecialchars_decode($content);?>');
+						});
+					</script>
 			</td>
 		</tr><?php endforeach; endif; ?>
+		
 		<tr>
 			<td colspan="2"><input type="submit" value="修改" /></td>
 		</tr>

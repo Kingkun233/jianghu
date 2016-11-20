@@ -3,30 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<!-- 样式文件 -->
-<link rel="stylesheet"
-	href="__PUBLIC__/umeditor/themes/default/css/umeditor.css">
-<!-- 引用jquery -->
-<script src="__PUBLIC__/umeditor/third-party/jquery.min.js"></script>
-<!-- 配置文件 -->
-<script type="text/javascript"
-	src="__PUBLIC__/umeditor/umeditor.config.js"></script>
-<!-- 编辑器源码文件 -->
-<script type="text/javascript" src="__PUBLIC__/umeditor/umeditor.js"></script>
-<!-- 语言包文件 -->
-<script type="text/javascript"
-	src="__PUBLIC__/umeditor/lang/zh-cn/zh-cn.js"></script>
-<!-- 实例化编辑器代码 -->
-<script type="text/javascript">
-	$(function() {
-		window.um = UM.getEditor('container');
-		um.ready(function() {
-		    //设置编辑器的内容
-		    var content='{$content}';
-			um.execCommand('inserthtml', content);
-		});
-	});
-</script>
+
 </head>
 <body>
 
@@ -38,6 +15,7 @@
 	<table width="70%" border="1" cellpadding="5" cellspacing="0"
 		bgcolor="#cccccc">
 		<foreach name="rows" item="vo">
+		<input type="hidden" name="poster_id"value="{$vo.id}"></input>
 		<tr>
 			<td align="right">海报标题</td>
 			<td><input type="text" name="title" value="{$vo.title}" /></td>
@@ -49,14 +27,31 @@
 		<tr>
 			<td align="right">海报内容</td>
 			<td>
-				<!-- 加载编辑器的容器 -->
-				 <script id="container" name="content"
-					type="text/plain" style="width:600px;height:200px;">
-    			
-				</script>
+				<!-- 加载编辑器的容器 --> 
+				<script id="container" name="content"
+					type="text/plain">
+        				
+    				</script>
+    				 <!-- 配置文件 --> 
+    				 <script type="text/javascript"
+					src="__PUBLIC__/ueditor/ueditor.config.js">
+    				 </script> 
+    				 <!-- 编辑器源码文件 -->
+				<script type="text/javascript"
+					src="__PUBLIC__/ueditor/ueditor.all.js">
+				</script> 
+				<!-- 实例化编辑器 --> 
+				<script
+					type="text/javascript">
+						var ue = UE.getEditor('container');
+						ue.ready(function() {
+							ue.execCommand('inserthtml','{:htmlspecialchars_decode($content)}');
+						});
+					</script>
 			</td>
 		</tr>
 		</foreach>
+		
 		<tr>
 			<td colspan="2"><input type="submit" value="修改" /></td>
 		</tr>

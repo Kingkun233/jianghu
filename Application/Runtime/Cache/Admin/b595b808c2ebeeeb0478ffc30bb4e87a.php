@@ -32,7 +32,7 @@
         <!--左侧列表-->
         <div class="menu">
             <div class="cont">
-                <div class="title">管理员</div>
+                <div class="title">管理模块</div>
                 <ul class="mList">
                     <li>
                         <h3 onclick="show('menu1','change1')" id="change1"><span >+</span>搜索标签管理</h3>

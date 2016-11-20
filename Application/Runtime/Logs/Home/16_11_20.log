@@ -1,0 +1,10 @@
+[ 2016-11-20T19:21:06+08:00 ] ::1 /jianghu/index.php/home/poster/getPoster
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000517s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000788s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000847s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0306s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0  [ RunTime:0.0006s ]
+
