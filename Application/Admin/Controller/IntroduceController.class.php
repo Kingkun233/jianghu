@@ -2,12 +2,18 @@
 namespace Admin\Controller;
 use Think\Controller;
 class IntroduceController extends Controller{
-    public function index(){
+    /**
+     * 管理员登录检查
+     */
+    public function __construct(){
+        parent::__construct();
         checkAdminLogin();
+    }
+    public function index(){
         $Introduce=D('introduce');
         $Img=D('introduce_images');
         $count=$Introduce->count();
-        $Page=new \Think\Page($count,3);
+        $Page=new \Think\Page($count,10);
         $pageshow=page($Page);
         $where['u.username']=array('like','%d%');
         $list=$Introduce
@@ -25,7 +31,6 @@ class IntroduceController extends Controller{
      * 删除推送
      */
     public function del(){
-    checkAdminLogin();
         $Introduce=D('introduce');
         $Img=D('introduce_images');
         $id=I('id');
@@ -44,7 +49,6 @@ class IntroduceController extends Controller{
      * 推送详情
      */
     public function showdetail(){
-        checkAdminLogin();
         $Introduce=D('introduce');
         $Domain=D('introduce_domain');
         $Img=D('introduce_images');
@@ -97,7 +101,7 @@ class IntroduceController extends Controller{
         ->field('m.*,u.username')
         ->count();
         //得到记录
-        $Page=new \Think\Page($count,3);
+        $Page=new \Think\Page($count,10);
         $pageshow=page($Page);
         $list=$Introduce
         ->table('jianghu_introduce m')

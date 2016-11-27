@@ -3,6 +3,13 @@ namespace Admin\Controller;
 use Think\Controller;
 class SearchController extends Controller{
     /**
+     * 管理员登录检查
+     */
+    public function __construct(){
+        parent::__construct();
+        checkAdminLogin();
+    }
+    /**
      * 推荐搜索方式处理器
      */
     public function doaction(){

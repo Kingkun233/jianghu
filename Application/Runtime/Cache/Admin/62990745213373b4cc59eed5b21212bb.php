@@ -27,9 +27,9 @@
     					</script> 
     					<!-- 配置文件 -->
     					 <script type="text/javascript"
-					src="/jianghu/Public/ueditor/ueditor.config.js"></script> <!-- 编辑器源码文件 -->
+					src="../../../Public/ueditor/ueditor.config.js"></script> <!-- 编辑器源码文件 -->
 				<script type="text/javascript"
-					src="/jianghu/Public/ueditor/ueditor.all.js"></script> <!-- 实例化编辑器 --> <script
+					src="../../../Public/ueditor/ueditor.all.js"></script> <!-- 实例化编辑器 --> <script
 					type="text/javascript">
 						var ue = UE.getEditor('container');
 					</script>

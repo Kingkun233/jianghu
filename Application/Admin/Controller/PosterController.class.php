@@ -5,6 +5,13 @@ use Think\Controller;
 
 class PosterController extends Controller
 {
+    /**
+     * 管理员登录检查
+     */
+    public function __construct(){
+        parent::__construct();
+        checkAdminLogin();
+    }
 
     /**
      * 添加海报页面

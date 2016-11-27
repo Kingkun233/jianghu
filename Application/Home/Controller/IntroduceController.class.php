@@ -5,7 +5,23 @@ use Think\Controller;
 
 class IntroduceController extends Controller
 {
-
+    /**
+     * 上传图片数组得到图片数组
+     */
+    public function getImageUrl(){
+        $type=211;
+        if($type!=I('type')){
+            $this->ajaxReturn(responseMsg(5, $type));
+        }
+        $image = imageUpload();
+        //         dump($image);die;
+        $msg['imageurl'] = $image['url'];
+        if($image){
+            $this->ajaxReturn(responseMsg(0, $type,$msg));
+        }else{
+            $this->ajaxReturn(responseMsg(1, $type));
+        }
+    }
     /**
      * 添加推荐
      */
@@ -46,19 +62,17 @@ class IntroduceController extends Controller
         }
         // 若不存在，插入邻域表
         $IntroDomain->add($add2);
-        // 上传图片
-        $imageinfo = imageUpload();
-        $img['imageurl'] = $imageinfo['url'];
-        $img['imagepath'] = $imageinfo['path'];
-        foreach ($img['imageurl'] as $k => $v) {
+        // 添加图片url
+        foreach (I('imageurl') as $k => $v) {
             $add1['introduce_id'] = $img['intro_id'];
             $add1['imageurl'] = $v;
-            $add1['imagepath'] = $img['imagepath'][$k];
+            $add1['imagepath'] = ".".strstr($v, "/Uploads");
             $flag2 = $Image->add($add1); // 插入图片到数据库
             if (! $flag2) {
                 $this->ajaxReturn(responseMsg(1, $type)); // 数据插入失败
             }
         }
+        
         // 自己转发自己
         $add3['user_id'] = $add['user_id'];
         $add3['introduce_id'] = $add2['introduce_id'];

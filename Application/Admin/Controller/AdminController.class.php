@@ -42,6 +42,7 @@ class AdminController extends Controller{
      */
     public function index(){
         checkAdminLogin();
+        checkIsSuperAdmin();
         $Admin=D('admin');
         $count=$Admin->count();
         $Page=new Page($count,3);
@@ -66,6 +67,7 @@ class AdminController extends Controller{
      */
     public function add(){
         checkAdminLogin();
+        checkIsSuperAdmin();
         $this->display();
     }
     /**
@@ -86,6 +88,7 @@ class AdminController extends Controller{
      */
     public function edit(){
         checkAdminLogin();
+        checkIsSuperAdmin();
         $Admin=D('admin');
         $id=I('id');
         $rows=$Admin->where(array('id'=>$id))->find();
@@ -113,6 +116,7 @@ class AdminController extends Controller{
      */
     public function del(){
     checkAdminLogin();
+    checkIsSuperAdmin();
         $Admin=D('admin');
         $id=I('id');
         $flag=$Admin->where(array('id'=>$id))->delete();

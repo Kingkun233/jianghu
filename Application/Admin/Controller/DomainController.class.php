@@ -3,13 +3,19 @@ namespace Admin\Controller;
 use Think\Controller;
 class DomainController extends Controller{
     /**
+     * 管理员登录检查
+     */
+    public function __construct(){
+        parent::__construct();
+        checkAdminLogin();
+    }
+    /**
      * 领域列表
      */
     public function index(){
-        checkAdminLogin();
         $Domain=D('domain');
         $count=$Domain->count();
-        $Page=new \Think\Page($count,3);
+        $Page=new \Think\Page($count,10);
         $pageshow=page($Page);
         $list=$Domain->limit($Page->firstRow . ',' . $Page->listRows)
         ->select();
@@ -21,14 +27,12 @@ class DomainController extends Controller{
      * 添加领域页面
      */
     public function add(){
-        checkAdminLogin();
         $this->display();
     }
     /**
      * 添加领域逻辑
      */
     public function doadd(){
-        checkAdminLogin();
         $Domain=D('domain');
         $add['name']=I('name');
         $Domain->add($add);
@@ -38,7 +42,6 @@ class DomainController extends Controller{
      * 删除领域
      */
     public function del(){
-        checkAdminLogin();
         $Domain=D("domain");
         $id=I('id');
         $Domain->where(array('id'=>$id))->delete();

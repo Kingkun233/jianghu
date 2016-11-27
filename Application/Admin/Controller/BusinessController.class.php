@@ -5,6 +5,13 @@ use Think\Controller;
 
 class BusinessController extends Controller
 {
+    /**
+     * 管理员登录检查
+     */
+    public function __construct(){
+        parent::__construct();
+        checkAdminLogin();
+    }
 
     /**
      * 商户列表
@@ -29,7 +36,7 @@ class BusinessController extends Controller
             ->field('b.*,u.username')
             ->count();
         // 得到记录
-        $Page = new \Think\Page($count, 3);
+        $Page = new \Think\Page($count, 10);
         $pageshow = page($Page);
         $list = $Busi->table('jianghu_business b')
             ->join('left join jianghu_user u on b.user_id=u.id')
@@ -150,8 +157,9 @@ class BusinessController extends Controller
     {
         $Busi = D('business');
         $logo = imageUpload();
-        $Busi->create();
-        $id = $Busi->add();
+        $data=$Busi->create();
+        $data['joindate']=date('Y-m-d');
+        $id = $Busi->add($data);
         $Busi->where(array(
             'id' => $id
         ))->save(array(

@@ -54,7 +54,7 @@ function imageUpload(){
     // 上传文件
     $info   =   $upload->upload();
     foreach ($info as $k=>$v){
-        $imageinfo['url'][]="http://localhost".__ROOT__.'/Uploads/'.date('Y-m-d')."/".$info[$k]['savename'];
+        $imageinfo['url'][]="http://".$_SERVER['SERVER_NAME'].__ROOT__.'/Uploads/'.date('Y-m-d')."/".$info[$k]['savename'];
         $imageinfo['path'][]='./Uploads/'.date('Y-m-d')."/".$info[$k]['savename'];
     }
     return $imageinfo;

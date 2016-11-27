@@ -28,6 +28,7 @@ class UserController extends Controller
         $data['password'] = md5(I('password'));
         $data['phonenum'] = I('phonenum');
         $domain_ids=I('domain_id');
+//         dump($domain_ids);die;
         if ('男' == I('sex')) {
             $data['sex'] = 0; // 男
         } else {
@@ -97,12 +98,14 @@ class UserController extends Controller
         $User->where(array('id'=>$user_id))->setInc('praisenum');
             //整合要返回的数据
         $msg=$User->where(array("id"=>$user_id))->find();
-        $msg['token']=$add_token['token'];
+       
         $msg['domain']=$domain_names;
+        $resp=responseMsg(0,$type,$msg);
+        $resp['token']=$add_token['token'];
         //判断上述操作是否成功
 //         dump(array($flag1,$flag2,$flag3,$flag4));die;
         if ($flag1&&$flag2&&$flag4) {
-            $this->ajaxReturn(responseMsg(0,$type,$msg)); // 注册成功
+            $this->ajaxReturn($resp); // 注册成功
         } else {
 //             $flag[]=[$flag1,$flag2,$flag3,$flag4];
 //             dump($flag);die;
@@ -178,7 +181,6 @@ class UserController extends Controller
             $User->where(array('id'=>$user_id))->setInc('praisenum');
             //整合要返回的数据
             $msg=$User->where(array("id"=>$user_id))->find();
-            $msg['token']=$add_token['token'];
                 //msg整合domain
             $domain_names2=$UserDomain->where(array('user_id'=>$user_id))->select();
             foreach ($domain_names2 as $k=>$v){
@@ -186,39 +188,54 @@ class UserController extends Controller
             }
             $msg['domain']=$domain_names;
             $resp=responseMsg(0, 101, $msg);
+            $resp['token']=$add_token['token'];
             $this->ajaxReturn($resp); // 登录成功
         } else {
             $this->ajaxReturn(responseMsg(1)); // 登录失败
         }
     }
-
+/**
+ * 上传图片得到图片地址
+ */
+    public function getFaceUrl(){
+        $type=105;
+        if($type!=I('type')){
+            $this->ajaxReturn(responseMsg(5, $type));
+        }
+        $image = imageUpload();
+        //         dump($image);die;
+        $msg['faceurl'] = $image['url'][0];
+        if($image){
+            $this->ajaxReturn(responseMsg(0, $type,$msg));
+        }else{
+            $this->ajaxReturn(responseMsg(1, $type));
+        }
+    }
     /**
-     * 添加头像
+     * 添加或修改头像
      */
     public function addFace()
     {
-        if(!checkUserLogin()){
-            //用户未登陆
-            $this->ajaxReturn(2);
-        }
+        $type=104;
+        loginPermitApiPreTreat($type);
         $User = D('user');
-        $data['username'] = I('username');
-        $image = imageUpload();
-//         dump($image);die;
-        $add['faceurl'] = $image['url'];
-        $add['facepath'] = $image['path'];
-        foreach ($add as $k => $v) { // 将二维数组装换成一维
-            $add1[$k] = $v[0];
-        }
+        $user_id = I('user_id');
+        //获得原头像
+        $originface=$User->where(array('id'=>$user_id))->getField('facepath');
+        //更改为新头像
+        $add['faceurl'] = I('faceurl');
+        $add['facepath'] =".".strstr($add['faceurl'], "/Uploads");
+//         dump($add['facepath']);die;
         $flag = $User->where(array(
-            'username' => $data['username']
-        ))->save($add1);
-
+            'id' => $user_id
+        ))->save($add);
 //         dump($add1);die;
         if (flag) {
-            $this->ajaxReturn(0); // 头像添加成功
+            //如果添加成功则删除原图片
+            unlink($originface);
+            $this->ajaxReturn(responseMsg(0, $type)); // 头像添加成功
         } else {
-            $this->ajaxReturn(1); // 头像添加失败
+            $this->ajaxReturn(responseMsg(1, $type)); // 头像添加失败
         }
     }
     /**

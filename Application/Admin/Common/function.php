@@ -1,5 +1,14 @@
 <?php
 /**
+ * 检查是否超级管理员
+ */
+function checkIsSuperAdmin(){
+    
+    if(session('name')!='superadmin'){
+        redirect(U('index/main') ,2 ,'你不是超级管理员，不能进行此项操作' );
+    }
+}
+/**
  * 分页处理
 * @param unknown $Page 传入Page实例
 */
@@ -20,8 +29,13 @@ function page($Page=null){
  * @return boolean
  */
 function checkAdminLogin(){
+    
     if(!session('name')){
-        redirect(U('admin/login') ,2 ,'未登录' );
+        //在iframe刷新父及页面到login页面
+        header("Content-type: text/html; charset=utf-8");
+        echo "<script language='javascript'>window.top.location.href='".U("admin/login")."'</script>";
+//         redirect(U('admin/login') ,2 ,'未登录' );
+        dump(session('name'));die;
     }
 }
 /**

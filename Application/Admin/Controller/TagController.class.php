@@ -4,13 +4,19 @@ use Think\Controller;
 use Think\Page;
 class TagController extends Controller{
     /**
+     * 管理员登录检查
+     */
+    public function __construct(){
+        parent::__construct();
+        checkAdminLogin();
+    }
+    /**
      * 搜索标签列表
      */
     public function index(){
-        checkAdminLogin();
         $Tag=D('tag');
         $count=$Tag->count();
-        $Page=new Page($count,3);
+        $Page=new Page($count,10);
         $pageshow=page($Page);
         $list=$Tag->limit($Page->firstRow . ',' . $Page->listRows)
         ->select();
@@ -22,14 +28,12 @@ class TagController extends Controller{
      * 添加标签页面
      */
     public function add(){
-    checkAdminLogin();
         $this->display();
     }
     /**
      * 添加标签逻辑
      */
     public function doadd(){
-    checkAdminLogin();
         $Tag=D('tag');
         $Tag->create();
         $flag=$Tag->add();
@@ -43,7 +47,6 @@ class TagController extends Controller{
      * 标签编辑界面
      */
     public function edit(){
-    checkAdminLogin();
         $Tag=D('tag');
         $id=I('id');
         $name=$Tag->where(array('id'=>$id))->getField('name');
@@ -55,7 +58,6 @@ class TagController extends Controller{
      * 标签编辑逻辑
      */
     public function doedit(){
-    checkAdminLogin();
         $Tag=D('tag');
         $id=I('id');
         $data['name']=I('name');
@@ -70,7 +72,6 @@ class TagController extends Controller{
      * 删除标签
      */
     public function del(){
-    checkAdminLogin();
         $Tag=D('tag');
         $id=I('id');
         $flag=$Tag->where(array('id'=>$id))->delete();

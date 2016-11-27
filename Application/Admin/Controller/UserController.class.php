@@ -3,17 +3,23 @@ namespace Admin\Controller;
 use Think\Controller;
 class UserController extends Controller{
     /**
+     * 管理员登录检查
+     */
+    public function __construct(){
+        parent::__construct();
+        checkAdminLogin();
+    }
+    /**
      * 用户列表
      */
     public function index(){
-        checkAdminLogin();
         $user=D('user');
         $searchkey=I('searchkey');
         //得到页数
         $where['username']=array('like',"%".$searchkey."%");
         $count=$user->where($where)
         ->count();
-        $Page=new \Think\Page($count,3);
+        $Page=new \Think\Page($count,10);
         $pageshow=page($Page);
         $list=$user
         ->limit($Page->firstRow . ',' . $Page->listRows)
@@ -27,7 +33,6 @@ class UserController extends Controller{
      * 删除用户
      */
     public function del(){
-    checkAdminLogin();
         $User=D('user');
         $id=I('id');
         $facepath=$User->where(array('id'=>$id))->getField('facepath');
@@ -44,14 +49,12 @@ class UserController extends Controller{
      * 用户添加界面
      */
     public function add(){
-    checkAdminLogin();
         $this->display();
     }
     /**
      * 用户添加逻辑
      */
     public function doadd(){
-        checkAdminLogin();
         $User=D('user');
         $data['username']=I('username');
         if(checkUserExist($data['username'])){
@@ -75,9 +78,12 @@ class UserController extends Controller{
      * 查看每天数据
      */
     public function showDailyNum(){
-        checkAdminLogin();
         $Joinnum=D("daily_num");
-        $num=$Joinnum->select();
+        $count=$Joinnum
+        ->count();
+        $Page=new \Think\Page($count,10);
+        $pageshow=page($Page);
+        $num=$Joinnum->order('date desc')->limit($Page->firstRow . ',' . $Page->listRows)->select();
         $last=0;
         foreach($num as $k=>$v){
             $show=array();
@@ -92,13 +98,13 @@ class UserController extends Controller{
         }
 //         dump($show);
         $this->assign("num",$show1);
+        $this->assign('page',$pageshow);
         $this->display();
     }
      /**
      * 禁用用户
      */
     public function ban(){
-        checkAdminLogin();
         $User=D("user");
         $user_id=I("id");
         $flag=$User->where(array("id"=>$user_id))->save(array("isban"=>'1'));
@@ -112,7 +118,6 @@ class UserController extends Controller{
      * 解除禁用
      */
     public function unban(){
-        checkAdminLogin();
         $User=D("user");
         $user_id=I("id");
         $flag=$User->where(array("id"=>$user_id))->save(array("isban"=>'0'));
@@ -126,7 +131,6 @@ class UserController extends Controller{
      * 用户详情
      */
     public function userdetails(){
-        checkAdminLogin();
         $User=D("user");
         $username=I("username");
         $rows=$User->where(array("username"=>$username))->select();
