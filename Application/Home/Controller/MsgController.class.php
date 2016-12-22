@@ -7,13 +7,13 @@ class MsgController extends Controller{
      */
     public function getUnreadNum(){
         $type=600;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User=D('user');
         $Forward=D('forward');
         $Praise=D('praise');
         $Comment=D('comment');
         $Friend=D('friend_request');
-        $user_id=I('user_id');
+        $user_id=$post['user_id'];
         $where['owner_id']=$user_id;
         $where['state']=0;
         //得到转采未读消息数
@@ -43,10 +43,10 @@ class MsgController extends Controller{
      */
     public function checkPraiseMsg(){
         $type=601;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User=D('user');
         $Praise=D('praise');
-        $user_id=I('user_id');
+        $user_id=$post['user_id'];
         //把自己给自己点赞的排除
         $where1['owner_id']=$user_id;
         $where1['user_id']=array('neq',$user_id);
@@ -68,10 +68,10 @@ class MsgController extends Controller{
      */
     public function checkForwardMsg(){
         $type=602;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User=D('user');
         $Forward=D('forward');
-        $user_id=I('user_id');
+        $user_id=$post['user_id'];
         //条件：不是自己转载自己,被转载推荐的owner是user_id
         $where1['user_id']=array('neq',$user_id);
         $where1['owner_id']=$user_id;
@@ -101,10 +101,10 @@ class MsgController extends Controller{
      */
     public function checkCommentMsg(){
         $type=603;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User=D('user');
         $Comment=D('comment');
-        $user_id=I('user_id');
+        $user_id=$post['user_id'];
         //把自己给自己评论的排除
         $where1['owner_id']=$user_id;
         $where1['user_id']=array('neq',$user_id);
@@ -122,14 +122,14 @@ class MsgController extends Controller{
         $this->ajaxReturn(responseMsg(0, $type,$msg));
     }
     /**
-     * 查看评论未读消息
+     * 查看未读好友请求
      */
     public function checkRequestMsg(){
         $type=604;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User=D('user');
         $Request=D('friend_request');
-        $user_id=I('user_id');
+        $user_id=$post['user_id'];
         $where1['friend_id']=$user_id;
         $msg=$Request->where($where1)->order("date desc")->select();
         //整合头像和名字

@@ -7,28 +7,6 @@ class FriendController extends Controller
 {
 
     /**
-     * 添加好友关系
-     */
-    public function add()
-    {
-        if (! checkUserLogin()) {
-            // 用户未登陆
-            $this->ajaxReturn(2);
-        }
-        $Friend = D('friend');
-        $data1['user_id'] = I('user_id');
-        $data1['friend_id'] = I('friend_id');
-        $data2['user_id'] = $data1['friend_id'];
-        $data2['friend_id'] = $data1['user_id'];
-        $flag2 = $Friend->add($data1);
-        $flag1 = $Friend->add($data2);
-        if ($flag1 && $flag2) {
-            $this->ajaxReturn(0); // 好友添加成功
-        }
-        $this->ajaxReturn(1); // 好友添加失败
-    }
-
-    /**
      * 删除好友
      */
     public function delete()
@@ -52,11 +30,11 @@ class FriendController extends Controller
     public function friendRequest()
     {
         $type = 300;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User = D('user');
         $Request = D('friend_request');
-        $user_id = I('user_id');
-        $friend_id = I('friend_id');
+        $user_id =$post['user_id'];
+        $friend_id = $post['friend_id'];
         $add['date'] = date("Y-m-d");
         $add['user_id'] = $user_id;
         $add['friend_id'] = $friend_id;
@@ -75,11 +53,11 @@ class FriendController extends Controller
      */
     public function accept(){
         $type=302;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $Request=D('friend_request');
         $Friend=D('friend');
-        $user_id=I('user_id');
-        $request_id=I('request_id');
+        $user_id=$post['user_id'];
+        $request_id=$post['request_id'];
         //获得好友id(也就是发起请求的人的id)
         $friend_id=$Request->where(array('id'=>$request_id))->getField('user_id');
         //在好友表中添加好友关系
@@ -97,4 +75,21 @@ class FriendController extends Controller
             $this->ajaxReturn(responseMsg(1, $type));
         }
     }
+    /**
+     * 获取用户好友列表
+     */
+    public function getFriendList(){
+        $type=301;
+        $post=loginPermitApiPreTreat($type);
+        $Friend=D('friend');
+        $User=D("user");
+        $user_id=$post['user_id'];
+        $friends2=$Friend->where(array('user_id'=>$user_id))->field("friend_id")->select();
+        foreach ($friends2 as $k=>$v){
+            $friends[]=$v['friend_id'];
+        }
+        $where['id']=array("IN",$friends);
+        $friends=$User->where($where)->field("id,username,faceurl,praisenum")->select();
+        $this->ajaxReturn(responseMsg(0, $type,$friends));
+    }    
 }

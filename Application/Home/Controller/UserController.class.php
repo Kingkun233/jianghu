@@ -10,9 +10,7 @@ class UserController extends Controller
     public function join()
     {
         $type=100;
-        if($type!=I("type")){
-            $this->ajaxReturn(responseMsg(5,$type));//调用错误
-        }
+        $post=touristApiPreTreat($type);
         $User = D('user');
         $Friend=D('friend');
         $Token=D('token');
@@ -20,21 +18,21 @@ class UserController extends Controller
         $Joinnum=D("daily_num");
         $UserDomain=D('user_domain');
         $Domain=D('domain');
-        $data['username'] = I('username');
+        $data['username'] = $post['username'];
         if (checkUserExist($data['username'])) {
             $this->ajaxReturn(responseMsg(6,$type)); // 用户已存在
         }
         
-        $data['password'] = md5(I('password'));
-        $data['phonenum'] = I('phonenum');
-        $domain_ids=I('domain_id');
+        $data['password'] = md5($post['password']);
+        $data['phonenum'] =$post['phonenum'];
+        $domain_ids=$post['domain_id'];
 //         dump($domain_ids);die;
-        if ('男' == I('sex')) {
+        if ('男' == $post['sex']) {
             $data['sex'] = 0; // 男
         } else {
             $data['sex'] = 1; // 女
         }
-        $data['addr'] = I('addr');
+        $data['addr'] = $post['addr'];
         $data['jointime'] = date('Y-m-d');
         //把数据插入用户表
         $flag1 = $User->add($data);
@@ -119,16 +117,14 @@ class UserController extends Controller
     public function login()
     {
         $type=101;
-        if($type!=I("type")){
-            $this->ajaxReturn(responseMsg(5,$type));
-        }
+        $post=touristApiPreTreat($type);
         $User = D('user');
         $Joinnum=D("daily_num");
         $Token=D('token');
         $UserDomain=D('user_domain');
         $LoginCount=D('login_count');
-        $data['phonenum'] = I('phonenum');
-        $data['password'] = md5(I('password'));
+        $data['phonenum'] = $post['phonenum'];
+        $data['password'] = md5($post['password']);
         $flag = $User->where(array(
             'phonenum' => $data['phonenum']
         ))->select();
@@ -191,7 +187,7 @@ class UserController extends Controller
             $resp['token']=$add_token['token'];
             $this->ajaxReturn($resp); // 登录成功
         } else {
-            $this->ajaxReturn(responseMsg(1)); // 登录失败
+            $this->ajaxReturn(responseMsg(1,$type)); // 登录失败
         }
     }
 /**
@@ -199,9 +195,6 @@ class UserController extends Controller
  */
     public function getFaceUrl(){
         $type=105;
-        if($type!=I('type')){
-            $this->ajaxReturn(responseMsg(5, $type));
-        }
         $image = imageUpload();
         //         dump($image);die;
         $msg['faceurl'] = $image['url'][0];
@@ -217,13 +210,13 @@ class UserController extends Controller
     public function addFace()
     {
         $type=104;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User = D('user');
-        $user_id = I('user_id');
+        $user_id = $post['user_id'];
         //获得原头像
         $originface=$User->where(array('id'=>$user_id))->getField('facepath');
         //更改为新头像
-        $add['faceurl'] = I('faceurl');
+        $add['faceurl'] =$post['faceurl'];
         $add['facepath'] =".".strstr($add['faceurl'], "/Uploads");
 //         dump($add['facepath']);die;
         $flag = $User->where(array(
@@ -244,15 +237,9 @@ class UserController extends Controller
     public function outlogin(){
         $type=102;
         //检查调用是否正确
-        if($type!=I("type")){
-            $this->ajaxReturn(responseMsg(5,$type));
-        }
-        //检查登录状态
-        if(!checkUserLogin(I("token"))){
-            $this->ajaxReturn(responseMsg(2,$type));
-        }
+        $post=touristApiPreTreat($type);
         $Token=D("token");
-        $user_id=I("user_id");
+        $user_id=$post['user_id'];
         if($Token->where(array("user_id"=>$user_id))->save(array("state"=>1)))
         {
             $this->ajaxReturn(responseMsg(0, $type));//登出成功
@@ -260,47 +247,15 @@ class UserController extends Controller
             $this->ajaxReturn(responseMsg(1, $type));//登出失败
         }
     }
-
-    /**
-     * 更改头像
-     */
-    public function changeFace()
-    {   
-        if(!checkUserLogin()){
-            //用户未登陆
-            $this->ajaxReturn(2);
-        }
-        $User = D('user');
-        $data['username'] = I('username');
-        
-        $image = imageUpload();
-        $add['faceurl'] = $image['url'];
-        $add['facepath'] = $image['path'];
-        foreach ($add as $k => $v) { // 将二维数组装换成一维
-            $add1[$k] = $v[0];
-        }
-        $where['username'] = $data['username'];
-        imageDel($User, $where, "facepath");//删除旧图片
-        $flag = $User->where(array(
-            'username' => $data['username']
-        ))->save($add1);
-        if (flag) {
-            $this->ajaxReturn(0); // 头像更改成功
-        } else {
-            $this->ajaxReturn(1); // 头像更改失败
-        }
-    }
     /**
      * 查看用户详细信息
      */
     public function checkUserDetail(){
         $type=103;
-        if($type!=I('type')){
-            $this->ajaxReturn(responseMsg(5, $type));
-        }
+        $post=touristApiPreTreat($type);
         $User=D('user');
         $Domain=D('user_domain');
-        $user_id=I('user_id');
+        $user_id=$post['user_id'];
         $domain2=$Domain->where(array('user_id'=>$user_id))->select();
         foreach($domain2 as $k=>$v){
             $domain[]=$v['domain'];

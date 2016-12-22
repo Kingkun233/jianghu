@@ -12,9 +12,6 @@ class IntroduceController extends Controller
     public function getImageUrl()
     {
         $type = 211;
-        if ($type != I('type')) {
-            $this->ajaxReturn(responseMsg(5, $type));
-        }
         $image = imageUpload();
         // dump($image);die;
         $msg['imageurl'] = $image['url'];
@@ -31,7 +28,7 @@ class IntroduceController extends Controller
     public function add()
     {
         $type = 201;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $IntroDomain = D('introduce_domain');
         $Domain = D('domain');
         $User = D('user');
@@ -40,24 +37,27 @@ class IntroduceController extends Controller
         $Forward = D('forward');
         $Friend = D('friend');
         $Busi = D('business');
-        $user_id = I('user_id');
+        $user_id = $post['user_id'];
         // $add2为邻域表的数据
-        $domain_id = I('domain_id');
+        $domain_id = $post['domain_id'];
         $add2['domain'] = $Domain->where(array(
             'id' => $domain_id
         ))->getField("name");
-        $business_id = I('business_id');
+        $business_id = $post['business_id'];
         $add['business_id'] = $business_id;
         $add['business_name'] = $Busi->where(array(
             'id' => $business_id
         ))->getField('name');
-        $add['business_addr'] = I('business_addr');
-        $add['text'] = I('text');
+        $add['business_addr'] = $post['business_addr'];
+        $add['business_website']=$post['business_website'];
+        $add['text'] = $post['text'];
         // 得到user_id
         $add['user_id'] = $user_id;
         $add['time'] = date("Y-m-d H:i:s");
         // 推荐度数为1
         $add['degree'] = 1;
+        // 插入领域
+        $add['domain'] = $add2['domain'];
         // 插入推荐表，获取推荐id
         $img['intro_id'] = $Intro->add($add);
         $add2['introduce_id'] = $img['intro_id'];
@@ -68,16 +68,18 @@ class IntroduceController extends Controller
         // 若不存在，插入邻域表
         $IntroDomain->add($add2);
         // 添加图片url
-        foreach (I('imageurl') as $k => $v) {
-            $add1['introduce_id'] = $img['intro_id'];
-            $add1['imageurl'] = $v;
-            $add1['imagepath'] = "." . strstr($v, "/Uploads");
-            $flag2 = $Image->add($add1); // 插入图片到数据库
-            if (! $flag2) {
-                $this->ajaxReturn(responseMsg(1, $type)); // 数据插入失败
+        foreach ($post['imageurl'] as $k => $v) {
+            if ($v) {
+                $add1['introduce_id'] = $img['intro_id'];
+                $add1['imageurl'] = $v;
+                $add1['imagepath'] = "." . strstr($v, "/Uploads");
+                // 生成略缩图地址
+                $imagepath_array = explode("/", $add1['imagepath']);
+                $add1['thumb_imageurl'] = "http://" . $_SERVER['SERVER_NAME'] . __ROOT__ . "/Uploads/" . $imagepath_array[2] . "/1" . $imagepath_array[3];
+                $add1['thumb_imagepath'] = './Uploads/' . $imagepath_array[2] . "/1" . $imagepath_array[3];
+                $Image->add($add1); // 插入图片到数据库
             }
         }
-        
         // 自己转发自己
         $add3['user_id'] = $add['user_id'];
         $add3['introduce_id'] = $add2['introduce_id'];
@@ -148,15 +150,16 @@ class IntroduceController extends Controller
     public function showFriendIntro()
     {
         $type = 202;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User = D('user');
         $Friend = D('friend');
         $Intro = D('introduce');
         $Image = D('introduce_images');
         $IntroDomain = D('introduce_domain');
+        $Praise = D('praise');
         $Comment = D('comment');
-        $user_id = I('user_id');
-        $from = I('from');
+        $user_id =$post['user_id'];
+        $from =$post['from'];
         $length = 10;
         $fid2 = $Friend->where(array(
             'user_id' => $user_id
@@ -191,27 +194,44 @@ class IntroduceController extends Controller
             $contents[$k]['domain'] = $IntroDomain->where(array(
                 'introduce_id' => $v['id']
             ))->getField('domain');
+            // 整合是否点过赞
+            $whopraise = null;
+            $where_praise['introduce_id'] = $v['id'];
+            $where_praise['user_id'] = $user_id;
+            $praiserow = $Praise->where($where_praise)->select();
+            if ($praiserow) {
+                $contents[$k]['ispraised'] = 1;
+            } else {
+                $contents[$k]['ispraised'] = 0;
+            }
             // 整合推荐前两条评论,要求评论人是好友
-            $where_comment['user_id']=array('IN',$fid1);
-            $where_comment['introduce_id']=$v['id'];
-            $two_comment = $Comment->where($where_comment
-            )
+            $contents[$k]['comment']=null;
+            $where_comment['user_id'] = array(
+                'IN',
+                $fid1
+            );
+            $where_comment['introduce_id'] = $v['id'];
+            $two_comment = $Comment->where($where_comment)
                 ->limit(0, 2)
                 ->order("time desc")
                 ->select();
-            foreach ($two_comment as $k => $v) {
-                unset($two_comment[$k]['state']);
-                unset($two_comment[$k]['owner_id']);
+//             dump($two_comment);die;
+            foreach ($two_comment as $a => $b) {
+                unset($two_comment[$a]['state']);
+                unset($two_comment[$a]['owner_id']);
                 // 整合评论人的头像和用户名
-                $two_comment[$k]['face'] = $User->where(array(
-                    'id' => $v['user_id']
+                $two_comment[$a]['face'] = $User->where(array(
+                    'id' => $b['user_id']
                 ))->getField('faceurl');
-                $two_comment[$k]['username'] = $User->where(array(
-                    'id' => $v['user_id']
+                $two_comment[$a]['username'] = $User->where(array(
+                    'id' => $b['user_id']
                 ))->getField('username');
-                
                 $contents[$k]['comment'] = $two_comment;
             }
+            // 去掉不需要的字段
+            unset($contents[$k]['alldegree']);
+            unset($contents[$k]['forward_id']);
+            unset($contents[$k]['collectnum']);
             // 如果是转载
             if ($v['isforward']) {
                 // 得到原创推荐记录
@@ -233,6 +253,10 @@ class IntroduceController extends Controller
                 $contents[$k]['isforward']['domain'] = $IntroDomain->where(array(
                     'introduce_id' => $v['isforward']
                 ))->getField('domain');
+                // 去掉不需要的字段
+                unset($contents[$k]['isforward']['alldegree']);
+                unset($contents[$k]['isforward']['forward_id']);
+                unset($contents[$k]['isforward']['collectnum']);
             }
         }
         // 该用户的未读推荐数置零
@@ -254,13 +278,13 @@ class IntroduceController extends Controller
     public function showUserIntro()
     {
         $type = 203;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User = D('user');
         $Image = D('introduce_images');
         $Intro = D('introduce');
         $IntroDomain = D('introduce_domain');
-        $user_id = I('user_id');
-        $from = I('from');
+        $user_id = $post['user_id'];
+        $from = $post['from'];
         $length = 10;
         $contents = $Intro->where(array(
             'user_id' => $user_id
@@ -313,13 +337,13 @@ class IntroduceController extends Controller
     {
         $type = 204;
         // 登录权限接口预处理，包括接口调用正确性，用户是否登录，用户是否被禁用
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User = D('user');
         $Intro = D('introduce');
         $Praise = D('praise');
         $Num = D("daily_num");
-        $introduce_id = I('introduce_id');
-        $user_id = I('user_id');
+        $introduce_id = $post['introduce_id'];
+        $user_id = $post['user_id'];
         // 通过推荐表获取所有者的id
         $owner_id = $Intro->where(array(
             'id' => $introduce_id
@@ -456,14 +480,14 @@ class IntroduceController extends Controller
     public function forward()
     {
         $type = 205;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User = D('user');
         $Intro = D('introduce');
         $Forward = D('forward');
         $Friend = D("friend");
-        $introduce_id = I('introduce_id');
-        $user_id = I('user_id');
-        $friends=array();
+        $introduce_id = $post['introduce_id'];
+        $user_id = $post['user_id'];
+        $friends = array();
         // owner_id并不一定指原创的作者id 谁被转载了谁就owner
         // 原创的推荐id存在introduce表的isforward字段中
         $owner_id = $Intro->where(array(
@@ -491,7 +515,7 @@ class IntroduceController extends Controller
         $data2['time'] = $data1['time'];
         // isforward放的是原创推荐的id
         $data2['isforward'] = $original_id;
-        $data2['text'] = I('comment');
+        $data2['text'] = $post['comment'];
         $data2['user_id'] = $data1['user_id'];
         // 度数逻辑
         // 获得被转发推荐的度数a
@@ -675,7 +699,11 @@ class IntroduceController extends Controller
                 'id' => $original_id
             ))->setInc('praisenum');
         }
-//         该用户的朋友的未读推荐数加一
+        // 被转载者的总转采数加一
+        $User->where(array(
+            'id' => $owner_id
+        ))->setInc("allforward");
+        // 该用户的朋友的未读推荐数加一
         $friends2 = $Friend->where(array(
             'user_id' => $user_id
         ))->select();
@@ -702,14 +730,14 @@ class IntroduceController extends Controller
     public function addcomment()
     {
         $type = 206;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $Comment = D("comment");
         $Num = D("daily_num");
         $Intro = D("introduce");
         $User = D("user");
-        $data['user_id'] = I("user_id");
-        $data['introduce_id'] = I("introduce_id");
-        $data['content'] = I("content");
+        $data['user_id'] = $post['user_id'];
+        $data['introduce_id'] =$post['introduce_id'];
+        $data['content'] = $post['content'];
         $data['owner_id'] = $Intro->where(array(
             'id' => $data['introduce_id']
         ))->getField("user_id");
@@ -753,10 +781,10 @@ class IntroduceController extends Controller
     public function addOppose()
     {
         $type = 207;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $Intro = D('introduce');
         $User = D('user');
-        $introduce_id = I('introduce_id');
+        $introduce_id =$post['introduce_id'];
         $user_id = $Intro->where(array(
             'id' => $introduce_id
         ))->getField('user_id');
@@ -795,10 +823,12 @@ class IntroduceController extends Controller
     public function addPraiseInJianghu()
     {
         $type = 208;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User = D('user');
         $Intro = D('introduce');
-        $introduce_id = I('introduce_id');
+        $Praise = D('praise');
+        $introduce_id = $post['introduce_id'];
+        $user_id =$post['user_id'];
         // 得到推荐所有人id
         $owner = $Intro->where(array(
             'id' => $introduce_id
@@ -827,6 +857,14 @@ class IntroduceController extends Controller
         $Intro->where(array(
             'id' => $introduce_id
         ))->setInc('praisenum');
+        // 存入点赞表
+        $add_praise['introduce_id'] = $introduce_id;
+        $add_praise['user_id'] = $user_id;
+        $add_praise['time'] = date("Y-m-d H:i:s");
+        $add_praise['owner_id'] = $Intro->where(array(
+            'id' => $introduce_id
+        ))->getField('user_id');
+        $Praise->add($add_praise);
         $this->ajaxReturn(responseMsg(0, $type));
     }
 
@@ -837,16 +875,15 @@ class IntroduceController extends Controller
     {
         $type = 209;
         // 判断有没有调用错接口
-        if (! $type == I('type')) {
-            $this->ajaxReturn(responseMsg(5, $type));
-        }
+        $post=touristApiPreTreat($type);
         // 如果有用户登录，就按照domain找推荐，没有的话就不按domain找
-        $user_id = I('user_id');
+        $user_id = $post['user_id'];
         $Intro = D('introduce');
         $User = D('user');
+        $Praise = D('praise');
         $UserDomain = D('user_domain');
         $IntroImage = D('introduce_images');
-        $from = I('from');
+        $from = $post['from'];
         $length = 10;
         // 要求原创
         $where['isforward'] = 0;
@@ -860,10 +897,13 @@ class IntroduceController extends Controller
             foreach ($domain2 as $k => $v) {
                 $domain[] = $v['domain'];
             }
-            $where = array(
-                "IN",
-                $domain
-            );
+            // dump($domain2);die;
+            if ($domain) {
+                $where['domain'] = array(
+                    "IN",
+                    $domain
+                );
+            }
             $msg = $Intro->where($where)
                 ->order('alldegree desc')
                 ->limit($from, $length)
@@ -881,6 +921,16 @@ class IntroduceController extends Controller
                 'id' => $v['user_id']
             ))->getField('username');
             $msg[$k]['image'] = $IntroImage->getIntroImg($v['id']);
+            // 整合是否点过赞
+            $whopraise = null;
+            $where_praise['introduce_id'] = $v['id'];
+            $where_praise['user_id'] = $user_id;
+            $praiserow = $Praise->where($where_praise)->select();
+            if ($praiserow) {
+                $msg[$k]['ispraised'] = 1;
+            } else {
+                $msg[$k]['ispraised'] = 0;
+            }
         }
         $resp = responseMsg(0, $type, $msg);
         // 返回整合from，length
@@ -895,12 +945,13 @@ class IntroduceController extends Controller
     public function checkComment()
     {
         $type = 210;
-        loginPermitApiPreTreat($type);
+        $post=loginPermitApiPreTreat($type);
         $User = D('user');
         $Comment = D('comment');
         $Friend = D('friend');
-        $user_id = I('user_id');
-        $introduce_id = I('introduce_id');
+        $CommentComment=D('comment_comment');
+        $user_id =$post['user_id'];
+        $introduce_id =$post['introduce_id'];
         $friends2 = $Friend->where(array(
             'user_id' => $user_id
         ))
@@ -924,9 +975,21 @@ class IntroduceController extends Controller
             $msg[$k]['face'] = $User->where(array(
                 "id" => $user_id
             ))->getField('faceurl');
+            $msg[$k]['comment_comment']=$CommentComment->table('jianghu_comment_comment c')->where(array('comment_id'=>$v['id']))->join("left join jianghu_user u on u.id=c.user_id")->field("u.faceurl,u.username,c.*")->select();
             unset($msg[$k]['state']);
             unset($msg[$k]['owner_id']);
         }
         $this->ajaxReturn(responseMsg(0, $type, $msg));
+    }
+    /**
+     * 给评论添加评论
+     */
+    public function addCommentForComment(){
+        $type=212;
+        $post=loginPermitApiPreTreat($type);
+        $Comment=D("comment_comment");
+        $add=$Comment->create($post);
+        $Comment->add($add);
+        $this->ajaxReturn(responseMsg(0, $type));
     }
 }

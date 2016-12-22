@@ -41,11 +41,12 @@ function checkUserExist($username){
     }
 }
 /**
- * 图片上传
+ * 图片上传,保存图片和生成缩略图
  * @return 图片url和path的二维数组
  */
 function imageUpload(){
     $upload = new \Think\Upload();// 实例化上传类
+    //保存原大小图片
     $upload->maxSize   =     3145728 ;// 设置附件上传大小3M
     $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
     $upload->rootPath = './Uploads/';
@@ -56,6 +57,15 @@ function imageUpload(){
     foreach ($info as $k=>$v){
         $imageinfo['url'][]="http://".$_SERVER['SERVER_NAME'].__ROOT__.'/Uploads/'.date('Y-m-d')."/".$info[$k]['savename'];
         $imageinfo['path'][]='./Uploads/'.date('Y-m-d')."/".$info[$k]['savename'];
+    }
+    //生成并保存缩略图
+    $image = new \Think\Image();
+    foreach ($imageinfo['path'] as $k=>$v){
+        $image->open($v);
+        // 按照原图的比例生成一个最大为150*150的缩略图并保存为thumb.jpg
+        $image->thumb(150, 150)->save('./Uploads/'.date('Y-m-d')."/"."1".$info[$k]['savename']);
+        $imageinfo['thumburl'][]="http://".$_SERVER['SERVER_NAME'].__ROOT__.'/Uploads/'.date('Y-m-d')."/"."1".$info[$k]['savename'];
+        $imageinfo['thumbpath'][]='./Uploads/'.date('Y-m-d')."/"."1".$info[$k]['savename'];
     }
     return $imageinfo;
 }

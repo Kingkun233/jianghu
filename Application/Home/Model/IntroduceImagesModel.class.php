@@ -12,12 +12,26 @@ class IntroduceImagesModel extends Model{
         $image = $this->where(array(
             'introduce_id' => $id
         ))
-        ->field('imageurl')
+        ->field('imageurl,thumb_imageurl')
         ->select(); 
         // 转为一维数组
         foreach ($image as $a => $b) { 
-            $img[] = $b["imageurl"];
+            $img["bigimage"][] = $b["imageurl"];
+            $img["thumbimage"][]= $b["thumb_imageurl"];
         }
         return $img;
+    }
+    public function getIntroThumbImg($id){
+        // 得到图片二维数组
+        $image = $this->where(array(
+            'introduce_id' => $id
+        ))
+        ->field('thumb_imageurl')
+        ->select();
+        // 转为一维数组
+        foreach ($image as $a => $b) {
+            $thumd_img[] = $b["thumb_imageurl"];
+        }
+        return $thumd_img;
     }
 }

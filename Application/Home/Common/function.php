@@ -20,15 +20,20 @@ function isban($user_id){
  * @param unknown $token
  * @param unknown $apiType 
  * @param unknown $user_id
+ * @return array post过来的参数数组
  */
 function loginPermitApiPreTreat($apiType){
+    //获取json数据并转化为数组
+    $postjson=file_get_contents("php://input");
+    $post=json_decode($postjson,true);
+    
     $Token=D('token');
     $User=D('user');
     $LoginCount=D('login_count');
     $DailyNum=D('daily_num');
-    $token=I('token');
-    $user_id=I('user_id');
-    $getType=I('type');
+    $token=$post['token'];
+    $user_id=$post['user_id'];
+    $getType=$post['type'];
     //判断是否调用正确的接口
     if($getType!=$apiType){
         redirect(U("return/returnMsg")."?re=5&type=".$apiType);
@@ -69,4 +74,20 @@ function loginPermitApiPreTreat($apiType){
             $DailyNum->add($data1);
         }
     }
+    return $post;
+}
+/**
+ * 游客接口预处理
+ * @param unknown $apiType
+ * @return mixed post过来的参数数组
+ */
+function touristApiPreTreat($apiType){
+    //获取json数据并转化为数组
+    $postjson=file_get_contents("php://input");
+    $post=json_decode($postjson,true);
+    //判断是否调用正确接口
+    if($post['type']!=$apiType){
+        redirect(U("return/returnMsg")."?re=5&type=".$apiType);
+    }
+    return $post;
 }

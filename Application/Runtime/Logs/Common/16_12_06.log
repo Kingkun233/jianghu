@@ -1,0 +1,12 @@
+[ 2016-12-06T22:01:00+08:00 ] ::1 /jianghu/Public/images/icon/des_big.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000673s ]
+ERR: 无法加载模块:Public
+
+[ 2016-12-06T22:02:00+08:00 ] ::1 /jianghu/Public/images/icon/des_big.jpg
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+ERR: 无法加载模块:Public
+

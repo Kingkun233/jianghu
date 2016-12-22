@@ -7,9 +7,7 @@ class DomainController extends Controller{
      */
     public function returnDomain(){
         $type=500;
-        if(!$type==I('type')){
-            $this->ajaxReturn(responseMsg(5, $type));
-        }
+        $post=touristApiPreTreat($type);
         $Domain=D('domain');
         $msg=$Domain->select();
         $this->ajaxReturn(responseMsg(0, $type,$msg));
