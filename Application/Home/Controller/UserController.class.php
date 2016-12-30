@@ -225,12 +225,14 @@ class UserController extends Controller
         // 更改为新头像
         $add['faceurl'] = $post['faceurl'];
         $add['facepath'] = "." . strstr($add['faceurl'], "/Uploads");
-        // dump($add['facepath']);die;
         $flag = $User->where(array(
             'id' => $user_id
         ))->save($add);
-        // dump($add1);die;
+        
         if (flag) {
+            //如果成功则刷新融云的个人信息
+            $username=$User->where(array('id'=>$user_id))->getField("username");
+            $rm=$this->refreshRongYun($user_id, $add['faceurl'], $username);
             // 如果添加成功则删除原图片
             unlink($originface);
             $this->ajaxReturn(responseMsg(0, $type)); // 头像添加成功
@@ -342,11 +344,128 @@ class UserController extends Controller
         
         return json_decode($result, true);
     }
-
-    public function test()
-    {
-        $postjson=file_get_contents("php://input");
-        $post=json_decode($postjson,true);
-        dump($postjson);
+    /**
+     * 刷新融云用户信息
+     * @param unknown $user_id
+     * @param unknown $faceurl
+     * @param unknown $username
+     * @return mixed
+     */
+    public function refreshRongYun($user_id, $faceurl, $username){
+        // 参数初始化
+        $nonce = mt_rand();
+        
+        $timeStamp = time();
+        $appSec = "8u358zT5qaJX";
+        $signature = sha1($appSec . $nonce . $timeStamp); // $appSec是平台分配
+        $appKey = "4z3hlwrv4xj8t";
+        $url = 'http://api.cn.ronghub.com/user/refresh.json';
+        
+        $postData = 'userId=' . $user_id . '&name=' . $username . '&portraitUri=' . $faceurl;
+        
+        $httpHeader = array(
+        
+            'App-Key:' . $appKey, // 平台分配
+        
+            'Nonce:' . $nonce, // 随机数
+        
+            'Timestamp:' . $timeStamp, // 时间戳
+        
+            'Signature:' . $signature, // 签名
+        
+            'Content-Type: application/x-www-form-urlencoded'
+        );
+        
+        // 创建http header
+        
+        $ch = curl_init();
+        
+        curl_setopt($ch, CURLOPT_URL, $url);
+        
+        curl_setopt($ch, CURLOPT_POST, 1);
+        
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+        
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $httpHeader);
+        
+        curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+        
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        
+        $result = curl_exec($ch);
+        
+        curl_close($ch);
+        
+        return json_decode($result, true);
     }
+    /**
+     * 修改用户名
+     */
+    public function changeUsername(){
+        $type=106;
+        $post=loginPermitApiPreTreat($type);
+        $User=D('user');
+        $user_id=$post['user_id'];
+        $data['username']=$post['new_username'];
+        //刷新融云上的用户信息
+        $faceurl=$User->where(array("id"=>$user_id))->getField("faceurl");
+        $this->refreshRongYun($user_id, $faceurl, $data['username']);
+        $User->where(array('id'=>$user_id))->save($data);
+        $this->ajaxReturn(responseMsg(0, $type));
+    }
+    /**
+     * 修改密码
+     */
+    public function changePassword(){
+        $type=107;
+        $post=loginPermitApiPreTreat($type);
+        $User=D('user');
+        $user_id=$post['user_id'];
+        $data['password']=$post['new_password'];
+        $User->where(array('id'=>$user_id))->save($data);
+        $this->ajaxReturn(responseMsg(0, $type));
+    }
+    /**
+     * 修改个人简介
+     */
+    public function changeDescription(){
+        $type=108;
+        $post=loginPermitApiPreTreat($type);
+        $User=D('user');
+        $user_id=$post['user_id'];
+        $data['description']=$post['new_description'];
+        $User->where(array('id'=>$user_id))->save($data);
+        $this->ajaxReturn(responseMsg(0, $type));
+    }
+    /**
+     * 提交反馈
+     */
+    public function feedBack(){
+        $type=109;
+        $post=loginPermitApiPreTreat($type);
+        $Feedback=D('feedback');
+        $add['text']=$post['text'];
+        $add['user_id']=$post['user_id'];
+        $add['time']=date("Y-m-d H:i:s");
+        $Feedback->add($add);
+        $this->ajaxReturn(responseMsg(0, $type));
+    }
+    /**
+     * 收藏推荐
+     */
+    public function collect(){
+        $type=110;
+        $post=loginPermitApiPreTreat($type);
+        $Collection=D('collection');
+        $add['introduce_id']=$post['introduce_id'];
+        $add['user_id']=$post['user_id'];
+        $add['time']=date("Y-m-d H:i:s");
+        $Collection->add($add);
+        $this->ajaxReturn(responseMsg(0, $type));
+    }
+    
 }

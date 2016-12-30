@@ -28,7 +28,7 @@ class IntroduceController extends Controller
     public function add()
     {
         $type = 201;
-        $post=loginPermitApiPreTreat($type);
+        $post = loginPermitApiPreTreat($type);
         $IntroDomain = D('introduce_domain');
         $Domain = D('domain');
         $User = D('user');
@@ -49,7 +49,7 @@ class IntroduceController extends Controller
             'id' => $business_id
         ))->getField('name');
         $add['business_addr'] = $post['business_addr'];
-        $add['business_website']=$post['business_website'];
+        $add['business_website'] = $post['business_website'];
         $add['text'] = $post['text'];
         // 得到user_id
         $add['user_id'] = $user_id;
@@ -150,7 +150,7 @@ class IntroduceController extends Controller
     public function showFriendIntro()
     {
         $type = 202;
-        $post=loginPermitApiPreTreat($type);
+        $post = loginPermitApiPreTreat($type);
         $User = D('user');
         $Friend = D('friend');
         $Intro = D('introduce');
@@ -158,8 +158,8 @@ class IntroduceController extends Controller
         $IntroDomain = D('introduce_domain');
         $Praise = D('praise');
         $Comment = D('comment');
-        $user_id =$post['user_id'];
-        $from =$post['from'];
+        $user_id = $post['user_id'];
+        $from = $post['from'];
         $length = 10;
         $fid2 = $Friend->where(array(
             'user_id' => $user_id
@@ -190,10 +190,8 @@ class IntroduceController extends Controller
             ))->getField('faceurl');
             // 整合推荐图片
             $contents[$k]['image'] = $Image->getIntroImg($v['id']);
-            // 整合推荐领域
-            $contents[$k]['domain'] = $IntroDomain->where(array(
-                'introduce_id' => $v['id']
-            ))->getField('domain');
+            
+            $contents[$k]['degree'] = $this->getTwoTopDegree($v['id']);
             // 整合是否点过赞
             $whopraise = null;
             $where_praise['introduce_id'] = $v['id'];
@@ -205,7 +203,7 @@ class IntroduceController extends Controller
                 $contents[$k]['ispraised'] = 0;
             }
             // 整合推荐前两条评论,要求评论人是好友
-            $contents[$k]['comment']=null;
+            $contents[$k]['comment'] = null;
             $where_comment['user_id'] = array(
                 'IN',
                 $fid1
@@ -215,7 +213,7 @@ class IntroduceController extends Controller
                 ->limit(0, 2)
                 ->order("time desc")
                 ->select();
-//             dump($two_comment);die;
+            // dump($two_comment);die;
             foreach ($two_comment as $a => $b) {
                 unset($two_comment[$a]['state']);
                 unset($two_comment[$a]['owner_id']);
@@ -253,6 +251,8 @@ class IntroduceController extends Controller
                 $contents[$k]['isforward']['domain'] = $IntroDomain->where(array(
                     'introduce_id' => $v['isforward']
                 ))->getField('domain');
+                // 整合度数
+                $contents[$k]['isforward']['degree'] = $this->getTwoTopDegree($v['isforward']);
                 // 去掉不需要的字段
                 unset($contents[$k]['isforward']['alldegree']);
                 unset($contents[$k]['isforward']['forward_id']);
@@ -278,7 +278,7 @@ class IntroduceController extends Controller
     public function showUserIntro()
     {
         $type = 203;
-        $post=loginPermitApiPreTreat($type);
+        $post = loginPermitApiPreTreat($type);
         $User = D('user');
         $Image = D('introduce_images');
         $Intro = D('introduce');
@@ -310,6 +310,7 @@ class IntroduceController extends Controller
                 $contents[$k]['isforward']['domain'] = $IntroDomain->where(array(
                     'introduce_id' => $v['isforward']
                 ))->getField('domain');
+                $contents[$k]["isforward"]['degree'] = $this->getTwoTopDegree($v['isforward']);
             }
             // 整合推荐图片
             $contents[$k]['image'] = $Image->getIntroImg($v['id']);
@@ -320,9 +321,8 @@ class IntroduceController extends Controller
             $contents[$k]['face'] = $User->where(array(
                 'id' => $user_id
             ))->getField('faceurl');
-            $contents[$k]['domain'] = $IntroDomain->where(array(
-                'introduce_id' => $v['id']
-            ))->getField('domain');
+            // 整合度数
+            $contents[$k]['degree'] = $this->getTwoTopDegree($v['id']);
         }
         $resp = responseMsg(0, 203, $contents);
         $resp['from'] = $from;
@@ -337,7 +337,7 @@ class IntroduceController extends Controller
     {
         $type = 204;
         // 登录权限接口预处理，包括接口调用正确性，用户是否登录，用户是否被禁用
-        $post=loginPermitApiPreTreat($type);
+        $post = loginPermitApiPreTreat($type);
         $User = D('user');
         $Intro = D('introduce');
         $Praise = D('praise');
@@ -480,7 +480,7 @@ class IntroduceController extends Controller
     public function forward()
     {
         $type = 205;
-        $post=loginPermitApiPreTreat($type);
+        $post = loginPermitApiPreTreat($type);
         $User = D('user');
         $Intro = D('introduce');
         $Forward = D('forward');
@@ -730,13 +730,13 @@ class IntroduceController extends Controller
     public function addcomment()
     {
         $type = 206;
-        $post=loginPermitApiPreTreat($type);
+        $post = loginPermitApiPreTreat($type);
         $Comment = D("comment");
         $Num = D("daily_num");
         $Intro = D("introduce");
         $User = D("user");
         $data['user_id'] = $post['user_id'];
-        $data['introduce_id'] =$post['introduce_id'];
+        $data['introduce_id'] = $post['introduce_id'];
         $data['content'] = $post['content'];
         $data['owner_id'] = $Intro->where(array(
             'id' => $data['introduce_id']
@@ -781,10 +781,10 @@ class IntroduceController extends Controller
     public function addOppose()
     {
         $type = 207;
-        $post=loginPermitApiPreTreat($type);
+        $post = loginPermitApiPreTreat($type);
         $Intro = D('introduce');
         $User = D('user');
-        $introduce_id =$post['introduce_id'];
+        $introduce_id = $post['introduce_id'];
         $user_id = $Intro->where(array(
             'id' => $introduce_id
         ))->getField('user_id');
@@ -823,12 +823,12 @@ class IntroduceController extends Controller
     public function addPraiseInJianghu()
     {
         $type = 208;
-        $post=loginPermitApiPreTreat($type);
+        $post = loginPermitApiPreTreat($type);
         $User = D('user');
         $Intro = D('introduce');
         $Praise = D('praise');
         $introduce_id = $post['introduce_id'];
-        $user_id =$post['user_id'];
+        $user_id = $post['user_id'];
         // 得到推荐所有人id
         $owner = $Intro->where(array(
             'id' => $introduce_id
@@ -875,7 +875,7 @@ class IntroduceController extends Controller
     {
         $type = 209;
         // 判断有没有调用错接口
-        $post=touristApiPreTreat($type);
+        $post = touristApiPreTreat($type);
         // 如果有用户登录，就按照domain找推荐，没有的话就不按domain找
         $user_id = $post['user_id'];
         $Intro = D('introduce');
@@ -920,6 +920,8 @@ class IntroduceController extends Controller
             $msg[$k]['username'] = $User->where(array(
                 'id' => $v['user_id']
             ))->getField('username');
+            // 整合度数
+            $msg[$k]['degree'] = $this->getTwoTopDegree($v['id']);
             $msg[$k]['image'] = $IntroImage->getIntroImg($v['id']);
             // 整合是否点过赞
             $whopraise = null;
@@ -945,13 +947,13 @@ class IntroduceController extends Controller
     public function checkComment()
     {
         $type = 210;
-        $post=loginPermitApiPreTreat($type);
+        $post = loginPermitApiPreTreat($type);
         $User = D('user');
         $Comment = D('comment');
         $Friend = D('friend');
-        $CommentComment=D('comment_comment');
-        $user_id =$post['user_id'];
-        $introduce_id =$post['introduce_id'];
+        $CommentComment = D('comment_comment');
+        $user_id = $post['user_id'];
+        $introduce_id = $post['introduce_id'];
         $friends2 = $Friend->where(array(
             'user_id' => $user_id
         ))
@@ -975,21 +977,199 @@ class IntroduceController extends Controller
             $msg[$k]['face'] = $User->where(array(
                 "id" => $user_id
             ))->getField('faceurl');
-            $msg[$k]['comment_comment']=$CommentComment->table('jianghu_comment_comment c')->where(array('comment_id'=>$v['id']))->join("left join jianghu_user u on u.id=c.user_id")->field("u.faceurl,u.username,c.*")->select();
+            $msg[$k]['comment_comment'] = $CommentComment->table('jianghu_comment_comment c')
+                ->where(array(
+                'comment_id' => $v['id']
+            ))
+                ->join("left join jianghu_user u on u.id=c.user_id")
+                ->field("u.faceurl,u.username,c.*")
+                ->select();
             unset($msg[$k]['state']);
             unset($msg[$k]['owner_id']);
         }
         $this->ajaxReturn(responseMsg(0, $type, $msg));
     }
+
     /**
      * 给评论添加评论
      */
-    public function addCommentForComment(){
-        $type=212;
-        $post=loginPermitApiPreTreat($type);
-        $Comment=D("comment_comment");
-        $add=$Comment->create($post);
+    public function addCommentForComment()
+    {
+        $type = 212;
+        $post = loginPermitApiPreTreat($type);
+        $Comment = D("comment_comment");
+        $add = $Comment->create($post);
         $Comment->add($add);
         $this->ajaxReturn(responseMsg(0, $type));
+    }
+
+    /**
+     * 得到推荐最高的两个度数
+     */
+    public function getTwoTopDegree($introduce_id)
+    {
+        $Intro = D('introduce');
+        $where['id'] = $introduce_id;
+        $where['isforward'] = 0;
+        $degrees = $Intro->where($where)
+            ->field("degree")
+            ->select();
+        foreach ($degrees as $k => $v) {
+            $degrees1[] = $v['degree'];
+        }
+        $countdegree = array_count_values($degrees1);
+        // 把这个数组消减到只有最高两个度数
+        foreach ($countdegree as $k => $v) {
+            if (count($countdegree) <= 2) {
+                break;
+            } else {
+                unset($countdegree[$k]);
+            }
+        }
+        if (count($countdegree) == 2) {
+            foreach ($countdegree as $k => $v) {
+                $transdegree['second_degree'] = $k;
+                $transdegree['second_degree_num'] = $countdegree[$k];
+                unset($countdegree[$k]);
+                break;
+            }
+            foreach ($countdegree as $k => $v) {
+                $transdegree['highest_degree'] = $k;
+                $transdegree['highest_degree_num'] = $countdegree[$k];
+                unset($countdegree[$k]);
+                break;
+            }
+        } else {
+            foreach ($countdegree as $k => $v) {
+                $transdegree['highest_degree'] = $k;
+                $transdegree['highest_degree_num'] = $countdegree[$k];
+                unset($countdegree[$k]);
+                break;
+            }
+        }
+        // 返回
+        return $transdegree;
+    }
+
+    /**
+     * 查看收藏夹
+     */
+    public function checkCollection()
+    {
+        $type = 213;
+        $post = loginPermitApiPreTreat($type);
+        $Collection = D("collection");
+        $Intro = D('introduce');
+        $Image = D('introduce_images');
+        $User = D('user');
+        $user_id = $post['user_id'];
+        $intros2 = $Collection->where(array(
+            'user_id' => $user_id
+        ))
+            ->field("introduce_id")
+            ->select();
+        foreach ($intros2 as $k => $v) {
+            $intros = $v['introduce_id'];
+        }
+        $where['id'] = array(
+            "IN",
+            $intros
+        );
+        $contents = $Intro->where($where)->select();
+        foreach ($contents as $k => $v) {
+            
+            // 如果是转载
+            if ($v['isforward']) {
+                $contents[$k]['isforward'] = $Intro->where(array(
+                    'id' => $v['isforward']
+                ))->find();
+                // 整合推荐图片
+                $contents[$k]['isforward']['image'] = $Image->getIntroImg($v['isforward']);
+                // 整合用户头像和名字
+                $contents[$k]['isforward']['username'] = $User->where(array(
+                    'id' => $contents[$k]['isforward']['user_id']
+                ))->getField('username');
+                $contents[$k]['isforward']['face'] = $User->where(array(
+                    'id' => $contents[$k]['isforward']['user_id']
+                ))->getField('faceurl');
+                $contents[$k]["isforward"]['degree'] = $this->getTwoTopDegree($v['isforward']);
+            }
+            // 整合推荐图片
+            $contents[$k]['image'] = $Image->getIntroImg($v['id']);
+            // 整合用户头像和名字
+            $contents[$k]['username'] = $User->where(array(
+                'id' => $user_id
+            ))->getField('username');
+            $contents[$k]['face'] = $User->where(array(
+                'id' => $user_id
+            ))->getField('faceurl');
+            // 整合度数
+            $contents[$k]['degree'] = $this->getTwoTopDegree($v['id']);
+        }
+        $this->ajaxReturn(responseMsg(0, $type, $contents));
+    }
+
+    /**
+     * 得到详细推荐
+     * 
+     * @param unknown $introduce_id            
+     * @param unknown $user_id
+     *            当前用户id
+     */
+    public function getIntroContent($introduce_id, $user_id)
+    {
+        $Intro = D('introduce');
+        $Image = D('introduce_images');
+        $User = D('user');
+        $Praise = D('praise');
+        $where['id'] = $introduce_id;
+        $contents = $Intro->where($where)->find();
+        // 整合推荐图片
+        $contents['image'] = $Image->getIntroImg($contents['id']);
+        // 整合用户头像和名字
+        $contents['username'] = $User->where(array(
+            'id' => $contents['user_id']
+        ))->getField('username');
+        $contents['face'] = $User->where(array(
+            'id' => $contents['user_id']
+        ))->getField('faceurl');
+        // 整合度数
+        $contents['degree'] = $this->getTwoTopDegree($contents['id']);
+        // 整合是否点过赞
+        $whopraise = null;
+        $where_praise['introduce_id'] = $contents['id'];
+        $where_praise['user_id'] = $user_id;
+        $praiserow = $Praise->where($where_praise)->select();
+        if ($praiserow) {
+            $contents['ispraised'] = 1;
+        } else {
+            $contents['ispraised'] = 0;
+        }
+        // 去掉不需要的字段
+        unset($contents['alldegree']);
+        unset($contents['forward_id']);
+        unset($contents['collectnum']);
+        // 转载处理
+        $isforward = $contents['isforward'];
+        if ($isforward) {
+            $contents["isforward"] = $this->getIntroContent($isforward, $user_id);
+        }
+        return $contents;
+    }
+
+    /**
+     * 返回详细推荐信息
+     */
+    public function getIntroDetail()
+    {
+        $type = 214;
+        $post = loginPermitApiPreTreat($type);
+        $user_id = $post['user_id'];
+        $contents = $this->getIntroContent($post['introduce_id'], $user_id);
+//         $isforward = $contents['isforward'];
+//         if ($isforward) {
+//             $contents["isforward"] = $this->getIntroContent($isforward, $user_id);
+//         }
+        $this->ajaxReturn(responseMsg(0, $type, $contents));
     }
 }

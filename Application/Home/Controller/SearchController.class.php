@@ -98,4 +98,16 @@ class SearchController extends Controller
             ->select();
         $this->ajaxReturn(responseMsg(0, $type, $msg));
     }
+    
+    /**
+     * 返回搜索标签
+     */
+    public function getTags(){
+        $type=803;
+        $post=touristApiPreTreat($type);
+        $Tag=D('tag');
+        $tags=$Tag->select();
+        $this->ajaxReturn(responseMsg(0, $type,$tags));
+        
+    }
 }

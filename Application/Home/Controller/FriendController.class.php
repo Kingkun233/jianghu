@@ -92,4 +92,25 @@ class FriendController extends Controller
         $friends=$User->where($where)->field("id,username,faceurl,praisenum")->select();
         $this->ajaxReturn(responseMsg(0, $type,$friends));
     }    
+    /**
+     * 返回通讯录中是应用中的用户的用户信息
+     */
+    public function returnUserInAddressBook(){
+        $type=303;
+        $post=loginPermitApiPreTreat($type);
+        $User=D('user');
+//         dump($post);die;
+        $userInfoList=$post['userInfoList'];
+        foreach ($userInfoList as $k=>$v){
+            $userInfo=$User->where(array('phonenum'=>$userInfoList[$k]['phonenum']))->field("username,phonenum,id,faceurl")->find();
+            if($userInfo){
+                $userInfoList[$k]['user_id']=$userInfo['id'];
+                $userInfoList[$k]['username']=$userInfo['username'];
+                $userInfoList[$k]['phonenum']=$userInfo['phonenum'];
+                $userInfoList[$k]['faceurl']=$userInfo['faceurl'];
+                $recommendFriendList[]=$userInfoList[$k];
+            }
+        }
+        $this->ajaxReturn(responseMsg(0, $type,$recommendFriendList));
+    }
 }

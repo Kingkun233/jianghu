@@ -140,5 +140,31 @@ class UserController extends Controller{
         $this->assign('backurl', $backurl);
         $this->display();
     }
-    
+    /**
+     * 用户反馈列表
+     */
+    public function feedbackList(){
+        $User=D('user');
+        $FeedBack=D('feedback');
+        $feedbacks=$FeedBack->order('time desc')->select();
+        foreach ($feedbacks as $k=>$v){
+            $feedbacks[$k]['username']=$User->where(array('id'=>$v['user_id']))->getField("username");
+            if($v['state']){
+                $feedbacks[$k]['state']="已处理";
+            }else {
+                $feedbacks[$k]['state']="未处理";
+            }
+        }
+        $this->assign("feedbacks",$feedbacks);
+        $this->display();
+    }
+    /**
+     * 处理用户反馈
+     */
+    public function handle(){
+        $FeedBack=D('feedback');
+        $id=I('id');
+        $FeedBack->where(array('id'=>$id))->setInc("state");
+        $this->success("处理成功",U('user/feedbackList'));
+    }
 }

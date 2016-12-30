@@ -16,8 +16,11 @@ class IntroduceImagesModel extends Model{
         ->select(); 
         // 转为一维数组
         foreach ($image as $a => $b) { 
-            $img["bigimage"][] = $b["imageurl"];
-            $img["thumbimage"][]= $b["thumb_imageurl"];
+            $image[$a]["small_pic"]=$b["thumb_imageurl"];
+            $image[$a]["big_pic"]=$b["imageurl"];
+            unset($image[$a]["thumb_imageurl"]);
+            unset($image[$a]["imageurl"]);
+            $img[]=$image[$a];
         }
         return $img;
     }
