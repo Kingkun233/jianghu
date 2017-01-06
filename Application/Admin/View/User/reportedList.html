@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>-.-</title>
+<link rel="stylesheet" href="/jianghu/Public/css/backstage.css">
+</head>
+
+<body>
+	<br>
+	<h3>&nbsp举报列表</h3>
+	<div class="details">
+		<!--表格-->
+		<table class="table" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>举报者</th>
+					<th>被举报者</th>
+					<th>违规原因</th>
+					<th>举报时间</th>
+					<th>状态</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<foreach name='report' item='vo'>
+				<tr>
+					<!--这里的id和for里面的c1 需要循环出来-->
+					<td>{$vo.id}</td>
+					<td>{$vo.username}</td>
+					<td><a href="{:U('user/userdetails')}?username={$vo.reportedname}"}>{$vo.reportedname}</td>
+					<td>{$vo.text}</td>
+					<td>{$vo.time}</td>
+					<td>{$vo.state}</td>
+					<td align="center">
+						<input type="button" value="禁用该用户"class="btn" onclick="ban({$vo.reported_id})"> 
+						<input type="button"value="忽略该举报" class="btn" onclick="ignore({$vo.id})">
+					</td>
+				</tr>
+				</foreach>
+			</tbody>
+		</table>
+		<div class="pagination">{$page}</div>
+	</div>
+</body>
+<script type="text/javascript">
+	
+	function ignore(id){
+		window.location="{:U('user/ignore')}"+'?id='+id;
+	}
+	function ban(id){
+		window.location="{:U('user/ban')}"+'?id='+id;	
+	}
+</script>
+</html>

@@ -7,7 +7,7 @@
  * @param unknown $token 可选
  * @return unknown[] 返回封装好的数组
  */
-function responseMsg($re,$type,$msg=null){
+function responseMsg($re,$type,$msg=array()){
     return array("re"=>$re,"type"=>$type,"msg"=>$msg);
 }
 /**

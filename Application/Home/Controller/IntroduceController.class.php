@@ -203,7 +203,7 @@ class IntroduceController extends Controller
                 $contents[$k]['ispraised'] = 0;
             }
             // 整合推荐前两条评论,要求评论人是好友
-            $contents[$k]['comment'] = null;
+            $contents[$k]['comment'] = array();
             $where_comment['user_id'] = array(
                 'IN',
                 $fid1
@@ -977,6 +977,7 @@ class IntroduceController extends Controller
             $msg[$k]['face'] = $User->where(array(
                 "id" => $user_id
             ))->getField('faceurl');
+            $msg[$k]['comment_comment']=array();
             $msg[$k]['comment_comment'] = $CommentComment->table('jianghu_comment_comment c')
                 ->where(array(
                 'comment_id' => $v['id']
@@ -1010,7 +1011,7 @@ class IntroduceController extends Controller
     {
         $Intro = D('introduce');
         $where['id'] = $introduce_id;
-        $where['isforward'] = 0;
+//         $where['isforward'] = 0;
         $degrees = $Intro->where($where)
             ->field("degree")
             ->select();
@@ -1068,13 +1069,15 @@ class IntroduceController extends Controller
         ))
             ->field("introduce_id")
             ->select();
+        $intros=array();
         foreach ($intros2 as $k => $v) {
-            $intros = $v['introduce_id'];
+            $intros[] = $v['introduce_id'];
         }
         $where['id'] = array(
             "IN",
             $intros
         );
+//         dump($intros);die;
         $contents = $Intro->where($where)->select();
         foreach ($contents as $k => $v) {
             
@@ -1134,7 +1137,7 @@ class IntroduceController extends Controller
             'id' => $contents['user_id']
         ))->getField('faceurl');
         // 整合度数
-        $contents['degree'] = $this->getTwoTopDegree($contents['id']);
+        $contents['degree'] = $this->getTwoTopDegree($introduce_id);
         // 整合是否点过赞
         $whopraise = null;
         $where_praise['introduce_id'] = $contents['id'];
@@ -1171,5 +1174,42 @@ class IntroduceController extends Controller
 //             $contents["isforward"] = $this->getIntroContent($isforward, $user_id);
 //         }
         $this->ajaxReturn(responseMsg(0, $type, $contents));
+    }
+    /**
+     * 查看某人的推荐
+     */
+    public function checkOtherUserIntro(){
+        $type=215;
+        $post=touristApiPreTreat($type);
+        $Intro=D('introduce');
+        $user_id=$post['user_id'];
+        $from=$post['from'];
+        $length=10;
+        $intros=$Intro->where(array("user_id"=>$user_id))->limit($from,$length)->order("time desc")->select();
+        foreach ($intros as $k=>$v){
+            $content[]=$this->getIntroContent($v['id'], $user_id);
+        }
+        $msg=responseMsg(0, $type,$content);
+        $msg['from']=$from;
+        $msg['length']=$length;
+        $this->ajaxReturn($msg);
+    }
+    /**
+     * 举报推荐
+     */
+    public function reportIntroduce(){
+        $type=216;
+        $post=loginPermitApiPreTreat($type);
+        $Report=D('introduce_report');
+        $add['introduce_id']=$post['introduce_id'];
+        $add['user_id']=$post['user_id'];
+        $add['text']=$post['text'];
+        $add['time']=date("Y-m-d H:i:s");
+        $flag=$Report->add($add);
+        if($flag){
+            $this->ajaxReturn(responseMsg(0, $type));
+        }else{
+            $this->ajaxReturn(responseMsg(1, $type));
+        }
     }
 }

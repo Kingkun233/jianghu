@@ -63,11 +63,17 @@
 			<td>{$vo.email}</td>
 		</tr>
 		<tr>
+			<td align="right">状态</td>
+			<td>{$vo.isban}</td>
+		</tr>
+		<tr>
 			<td colspan="2"><a href="{:U('search/searchByUid')}?user_id={$vo.id}">查看该用户所有推荐</a></td>
+		</tr>
+		<tr>
+			<td colspan="2"><a href="{:U('user/ban')}?id={$vo.id}">禁用该用户</a></td>
 		</tr>
 		</foreach>
 	</table>
 	<br>
-	<a href="{$backurl}" class='btn'>返回</a>
 </body>
 </html>

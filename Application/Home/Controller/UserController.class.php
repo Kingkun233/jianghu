@@ -20,13 +20,22 @@ class UserController extends Controller
         $Joinnum = D("daily_num");
         $UserDomain = D('user_domain');
         $Domain = D('domain');
-        $data['username'] = $post['username'];
+        if(!$post['username']){
+            //若username为空，则插入默认用户名
+            $data['username']=$this->getDefaultName();
+        }else{
+            $data['username'] = $post['username'];
+        }
         if (checkUserExist($data['username'])) {
             $this->ajaxReturn(responseMsg(6, $type)); // 用户已存在
         }
-        
+        //默认头像
+        $data['faceurl'] =$this->getDefaultFaceUrl();
         $data['password'] =$post['password'];
         $data['phonenum'] = $post['phonenum'];
+        if ($this->checkPhoneExist($data['phonenum'])) {
+            $this->ajaxReturn(responseMsg(7, $type)); // 电话已存在
+        }
         $domain_ids = $post['domain_id'];
         // dump($domain_ids);die;
         if ('男' == $post['sex']) {
@@ -41,11 +50,11 @@ class UserController extends Controller
         $user_id = $flag1;
         // 把数据插入领域表
         $add1['user_id'] = $flag1;
-        foreach ($domain_ids as $k => $v) {
+        foreach ($domain_ids as $k=>$v) {
             $domain_name = $Domain->where(array(
-                'id' => $v['id']
+                'id' => $v
             ))->getField('name');
-            if ($v['id']) {
+            if ($v) {
                 $domain_names[] = $domain_name;
                 $add1['domain'] = $domain_name;
                 $UserDomain->add($add1);
@@ -57,7 +66,6 @@ class UserController extends Controller
         $add['friend_id'] = $add['user_id'];
         $flag2 = $Friend->add($add);
         // 每日注册量加一
-        
         $today = date("Y-m-d");
         if ($Joinnum->where(array(
             "date" => $today
@@ -181,6 +189,7 @@ class UserController extends Controller
             $domain_names2 = $UserDomain->where(array(
                 'user_id' => $user_id
             ))->select();
+            $domain_names=array();
             foreach ($domain_names2 as $k => $v) {
                 $domain_names[] = $v['domain'];
             }
@@ -275,6 +284,7 @@ class UserController extends Controller
         $domain2 = $Domain->where(array(
             'user_id' => $user_id
         ))->select();
+        $domain=array();
         foreach ($domain2 as $k => $v) {
             $domain[] = $v['domain'];
         }
@@ -467,5 +477,64 @@ class UserController extends Controller
         $Collection->add($add);
         $this->ajaxReturn(responseMsg(0, $type));
     }
-    
+    /**
+     * 举报用户
+     */
+    public function reportUser(){
+        $type=111;
+        $post=loginPermitApiPreTreat($type);
+        $Report=D('user_report');
+        $add['user_id']=$post['user_id'];
+        $add['reported_id']=$post['reported_id'];
+        $add['text']=$post['text'];
+        $add['time']=date("Y-m-d H:i:s");
+        $flag=$Report->add($add);
+        if($flag){
+            $this->ajaxReturn(responseMsg(0, $type));
+        }else{
+            $this->ajaxReturn(responseMsg(1, $type));
+        }
+    }
+    /**
+     * 得到用户默认头像
+     * @return string 该头像的url
+     */
+    public function getDefaultFaceUrl(){
+        return "http://121.42.203.85/jianghu/Public/images/default/userface.png";
+    }
+    /**
+     * 得到默认用户名
+     * @return NULL|string 默认用户名
+     */
+    public function getDefaultName(){
+        $User=D('user');
+        $length=9;
+        $str = null;
+        $strPol = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
+        $max = strlen($strPol)-1;
+        for($i=0;$i<$length;$i++){
+            $str.=$strPol[rand(0,$max)];//rand($min,$max)生成介于min和max两个数之间的一个随机整数
+        }
+        //检查数据库中有没有该名字的用户
+        $flag=$User->where(array("username"=>$str))->find();
+        if($flag){
+            //如果有，递归
+            $str=$this->getDefaultName();
+        }
+        return $str;
+    }
+    /**
+     * 检查电话是否存在
+     * @param unknown $phonenum
+     * @return boolean
+     */
+    function checkPhoneExist($phonenum){
+        $User=D('user');
+        $flag=$User->where(array('phonenum'=>$phonenum))->find();
+        if($flag){
+            return true;
+        }else {
+            return false;
+        }
+    }
 }

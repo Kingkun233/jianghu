@@ -26,7 +26,6 @@ function loginPermitApiPreTreat($apiType){
     //获取json数据并转化为数组
     $postjson=file_get_contents("php://input");
     $post=json_decode($postjson,true);
-    
     $Token=D('token');
     $User=D('user');
     $LoginCount=D('login_count');
@@ -91,3 +90,18 @@ function touristApiPreTreat($apiType){
     }
     return $post;
 }
+/**
+ * 把二维数组按照某个键排序
+ * @param unknown $keyname 指定的键名
+ * @param unknown $twoDimensionalArray 该二维数组
+ * @param unknown $order 顺序 默认是降序 升序SORT_ASC
+ */
+function sortTwoDimensionalArrayByKey($keyname,$twoDimensionalArray,$order=SORT_DESC){
+    foreach ($twoDimensionalArray as $k => $v) {
+            $theKeyArray[] = $v[$keyname];
+        }
+//         sort($theKeyArray);
+        array_multisort($theKeyArray, SORT_ASC, $twoDimensionalArray);
+        return $twoDimensionalArray;
+}
+

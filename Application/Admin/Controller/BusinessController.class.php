@@ -159,6 +159,9 @@ class BusinessController extends Controller
         $logo = imageUpload();
         $data=$Busi->create();
         $data['joindate']=date('Y-m-d');
+        if(!$data['star']){
+            $data['star']=3;
+        }
         $id = $Busi->add($data);
         $Busi->where(array(
             'id' => $id

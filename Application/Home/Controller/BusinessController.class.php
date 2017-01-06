@@ -164,11 +164,13 @@ class BusinessController extends Controller
         $Business = D("business");
         $longtitude = $post['longtitude'];
         $latitude = $post['latitude'];
-        $business_locations = $Business->select();
+        $where['name']=array("like","%".$post['key']."%");
+        $business_locations = $Business->where($where)->select();
+        $returnBusiness=array();
         foreach ($business_locations as $k => $v) {
             if ($business_locations[$k]['latitude'] && $business_locations[$k]['longtitude']) {
                 $distance = $this->getDistance($business_locations[$k]['latitude'],$business_locations[$k]['longtitude'], $latitude, $longtitude);
-                if ($distance < 5) {
+                if ($distance < 50) {
                     $business_locations[$k]['distance'] = $distance;
                     unset($business_locations[$k]['state']);
                     unset($business_locations[$k]['user_id']);
@@ -176,6 +178,12 @@ class BusinessController extends Controller
                 }
             }
         }
+      //按照距离排序
+        $returnBusiness=sortTwoDimensionalArrayByKey("distance", $returnBusiness, SORT_ASC);
+//         foreach ($returnBusiness as $k => $v) {
+//             $theKeyArray[] = $v["distance"];
+//         }
+//         array_multisort($theKeyArray, SORT_ASC, $returnBusiness);
         $this->ajaxReturn(responseMsg(0, $type, $returnBusiness));
     }
 

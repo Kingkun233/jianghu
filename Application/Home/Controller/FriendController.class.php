@@ -101,6 +101,7 @@ class FriendController extends Controller
         $User=D('user');
 //         dump($post);die;
         $userInfoList=$post['userInfoList'];
+        $recommendFriendList=array();
         foreach ($userInfoList as $k=>$v){
             $userInfo=$User->where(array('phonenum'=>$userInfoList[$k]['phonenum']))->field("username,phonenum,id,faceurl")->find();
             if($userInfo){

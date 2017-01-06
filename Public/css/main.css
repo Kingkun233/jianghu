@@ -352,7 +352,7 @@
 .cart_btn{width:165px; height:33px; background-color:#E50007; font:18px/33px "Microsoft YaHei", "微软雅黑"; color:#FFF;}
 /*登陆*/
 .login_logo .comWidth{width:460px;}
-.welcome_title{font:22px/85px "Microsoft YaHei", "微软雅黑"; color:#FFF; float:left; padding-left:24px;}
+.welcome_title{font:22px/85px "Microsoft YaHei", "微软雅黑"; color:#FFF;text-align:center}
 .loginBox{width:458px; border:#999 solid 1px; margin:10px auto; position:relative;}
 .login_cont{padding:15px 76px;}
 .l_tit{color:#666; line-height:20px;}

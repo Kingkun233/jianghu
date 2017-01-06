@@ -29,13 +29,24 @@ function page($Page=null){
  * @return boolean
  */
 function checkAdminLogin(){
-    
     if(!session('name')){
-        //在iframe刷新父及页面到login页面
-        header("Content-type: text/html; charset=utf-8");
-        echo "<script language='javascript'>window.top.location.href='".U("admin/login")."'</script>";
-//         redirect(U('admin/login') ,2 ,'未登录' );
-        dump(session('name'));die;
+        //session没有的话，判断有没有cookie,有的话就直接登录
+//         dump(cookie());die;
+        if($_COOKIE["jianghu_name"]&&$_COOKIE["jianghu_token"]){
+            $name=$_COOKIE["jianghu_name"];
+            $token=$_COOKIE["jianghu_token"];
+            $AdminToken=D("admin_token");
+            $where['name']=$name;
+            $where['token']=$token;
+            $flag=$AdminToken->where($where)->find();
+            if($flag){
+                session("name",$name);
+            }
+        }else{
+            //在iframe刷新父及页面到login页面
+            header("Content-type: text/html; charset=utf-8");
+            echo "<script language='javascript'>window.top.location.href='".U("admin/login")."'</script>";
+        }
     }
 }
 /**
@@ -77,29 +88,3 @@ function checkIsFriend($username,$friendname){
     }
 }
 
-
-/**
- * 多维数组转一维
- * @param unknown $arr
- * @return boolean|unknown[]
- */
-function arr_foreach ($arr)
-{
-    static $tmp=array();
-    if (!is_array ($arr))
-    {
-        return false;
-    }
-    foreach ($arr as $val )
-    {
-        if (is_array ($val))
-        {
-            arr_foreach ($val);
-        }
-        else
-        {
-            $tmp[]=$val;
-        }
-    }
-    return $tmp;
-}

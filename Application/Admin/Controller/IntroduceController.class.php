@@ -118,4 +118,74 @@ class IntroduceController extends Controller{
         $this->assign('page',$pageshow);
         $this->display();
     }
+    /**
+     * 举报列表
+     */
+    public function reportedList(){
+        $Report = D('introduce_report');
+        $User = D('user');
+        $Intro=D('introduce');
+        $count = $Report->count();
+        $Page = new \Think\Page($count, 10);
+        $pageshow = page($Page);
+        $list = $Report->limit($Page->firstRow . ',' . $Page->listRows)
+            ->order("time desc")
+            ->select();
+        foreach ($list as $k => $v) {
+            $list[$k]['username'] = $User->where(array(
+                'id' => $v['user_id']
+            ))->getField("username");
+            $list[$k]['introduce_content'] = $Intro->where(array(
+                'id' => $v['introduce_id']
+            ))->getField("text");
+            if ($list[$k]['state'] == 1) {
+                $list[$k]['state'] = "已禁用推荐";
+            } else 
+                if ($list[$k]['state'] == 2) {
+                    $list[$k]['state'] = "已忽略";
+                } else {
+                    $list[$k]['state'] = "未处理";
+                }
+        }
+        $this->assign('report', $list);
+        $this->assign('page', $pageshow);
+        $this->display();
+    }
+    /**
+     * 禁用推荐
+     */
+    public function ban()
+    {
+        $Intro = D("introduce");
+        $Report = D("introduce_report");
+        $introduce_id = I("id");
+        $flag = $Intro->where(array(
+            "id" => $introduce_id
+        ))->save(array(
+            "isban" => 1
+        ));
+        if ($flag) {
+            // 关于该用户的所有举报全都解决
+            $Report->where(array(
+                'introduce_id' => $introduce_id
+            ))->save(array(
+                "state" => 1
+            ));
+            $this->success("禁用成功");
+        } else {
+            $this->error("禁用失败");
+        }
+    }
+    /**
+     * 忽略举报
+     */
+    public function ignore()
+    {
+        $Report = D('introduce_report');
+        $id = I('id');
+        $Report->where(array(
+            'id' => $id
+        ))->setInc("state", 2);
+        $this->success("忽略成功");
+    }
 }

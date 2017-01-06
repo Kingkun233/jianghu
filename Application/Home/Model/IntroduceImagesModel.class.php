@@ -15,6 +15,7 @@ class IntroduceImagesModel extends Model{
         ->field('imageurl,thumb_imageurl')
         ->select(); 
         // 转为一维数组
+        $img=array();
         foreach ($image as $a => $b) { 
             $image[$a]["small_pic"]=$b["thumb_imageurl"];
             $image[$a]["big_pic"]=$b["imageurl"];

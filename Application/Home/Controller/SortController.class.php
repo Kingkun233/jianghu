@@ -30,11 +30,16 @@ class SortController extends Controller
         foreach ($fids as $k => $v) {
             $fid[] = $v['friend_id'];
         }
-        // 先将sort表全部排好序
-        $where['id'] = array(
-            'IN',
-            $fid
-        );
+        if($fid){
+            // 先将sort表全部排好序
+            $where['id'] = array(
+                'IN',
+                $fid
+            );
+        }else{
+            $where['id']=-1;
+        }
+        
         $sortall = $User->where($where)
             ->order('praisenum desc')
             ->select();
@@ -84,16 +89,21 @@ class SortController extends Controller
         
         // 获得最高两个度数的个数
         $transdegree = null;
-        $where_intro['isforward'] = 0;
+        $where_intro['isforward'] = null;
         $where_intro['user_id'] = $user_id;
         $intro_ids2 = $Intro->where($where_intro)->select();
         foreach ($intro_ids2 as $k => $v) {
             $intro_ids[] = $v['id'];
         }
-        $where_forward['introduce_id'] = array(
-            "IN",
-            $intro_ids
-        );
+        if($intro_ids){
+            $where_forward['introduce_id'] = array(
+                "IN",
+                $intro_ids
+            );
+        }else{
+            $where_forward['introduce_id'] =-1;
+        }
+        
         $degrees = $Forward->field('degree')
             ->where($where_forward)
             ->select();

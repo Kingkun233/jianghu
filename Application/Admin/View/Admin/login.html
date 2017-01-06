@@ -14,12 +14,7 @@
 <body>
 <div class="headerBar">
 	<div class="logoBar login_logo">
-		<div class="comWidth">
-			<div class="logo fl">
-				<a href="#"><img src="/jianghu/Public/images/logo.jpg" alt="慕课网"></a>
-			</div>
 			<h3 class="welcome_title">欢迎登陆</h3>
-		</div>
 	</div>
 </div>
 
@@ -43,8 +38,8 @@
 
 <div class="hr_25"></div>
 <div class="footer">
-	<p><a href="#">慕课简介</a><i>|</i><a href="#">慕课公告</a><i>|</i> <a href="#">招纳贤士</a><i>|</i><a href="#">联系我们</a><i>|</i>客服热线：400-675-1234</p>
-	<p>Copyright &copy; 2006 - 2014 慕课版权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;&nbsp;京ICP证B1034-8373号&nbsp;&nbsp;&nbsp;某市公安局XX分局备案编号：123456789123</p>
+	<p><a href="#">江湖简介</a><i>|</i><a href="#">江湖公告</a><i>|</i> <a href="#">招纳贤士</a><i>|</i><a href="#">联系我们</a><i>|</i>客服热线：</p>
+	<p>Copyright &copy; 2006 - 2014 江湖版权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;&nbsp;京ICP证B1034-8373号&nbsp;&nbsp;&nbsp;某市公安局XX分局备案编号：123456789123</p>
 	<p class="web"><a href="#"><img src="/jianghu/Public/images/webLogo.jpg" alt="logo"></a><a href="#"><img src="/jianghu/Public/images/webLogo.jpg" alt="logo"></a><a href="#"><img src="/jianghu/Public/images/webLogo.jpg" alt="logo"></a><a href="#"><img src="/jianghu/Public/images/webLogo.jpg" alt="logo"></a></p>
 </div>
 </body>

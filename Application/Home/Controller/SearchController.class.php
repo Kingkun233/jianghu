@@ -63,7 +63,8 @@ class SearchController extends Controller
             "%" . $key . "%"
         );
         $business = $Busi->where($where)
-            ->field("id,name")
+            ->field("id,name,star,logourl")
+            ->order("star desc")
             ->select();
         $this->ajaxReturn(responseMsg(0, $type, $business));
     }
