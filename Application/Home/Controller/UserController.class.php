@@ -44,6 +44,8 @@ class UserController extends Controller
             $data['sex'] = 1; // 女
         }
         $data['addr'] = $post['addr'];
+        $data['wechat_id']=$post['wechat_id'];
+        $data['qq_id']=$post['qq_id'];
         $data['jointime'] = date('Y-m-d');
         // 把数据插入用户表
         $flag1 = $User->add($data);
@@ -535,6 +537,78 @@ class UserController extends Controller
             return true;
         }else {
             return false;
+        }
+    }
+    /**
+     * 用QQ账户登录
+     */
+    public function loginByQQAccount(){
+        $type=112;
+        $post=touristApiPreTreat($type);
+        $User=D("user");
+        $where['qq_id']=$post['qq_id'];
+        $userDetails=$User->where($where)->find();
+        //如果存在，就登录，不存在，就返回用户不存在4
+        if($userDetails){
+            // 顺便登录
+            // post json请求
+            $data = array(
+                "phonenum" => $userDetails['phonenum'],
+                "password" => $userDetails['password'],
+                "type"=>"101"
+            );
+            $data_string = json_encode($data);
+            $url="http://121.42.203.85/jianghu/index.php/home/user/login";
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen($data_string)
+            ));
+            
+            $result = curl_exec($ch);
+            curl_close($ch);
+            print_r($result);
+        }else{
+            $this->ajaxReturn(responseMsg(4, $type));
+        }
+    }
+    /**
+     * 用微信账户登录
+     */
+    public function loginByWechatAccount(){
+        $type=113;
+        $post=touristApiPreTreat($type);
+        $User=D("user");
+        $where['wechat_id']=$post['wechat_id'];
+        $userDetails=$User->where($where)->find();
+        //如果存在，就登录，不存在，就返回用户不存在4
+        if($userDetails){
+            // 顺便登录
+            // post json请求
+            $data = array(
+                "phonenum" => $userDetails['phonenum'],
+                "password" => $userDetails['password'],
+                "type"=>"101"
+            );
+            $data_string = json_encode($data);
+            $url="http://121.42.203.85/jianghu/index.php/home/user/login";
+            $ch = curl_init($url);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+                'Content-Type: application/json',
+                'Content-Length: ' . strlen($data_string)
+            ));
+    
+            $result = curl_exec($ch);
+            curl_close($ch);
+            print_r($result);
+        }else{
+            $this->ajaxReturn(responseMsg(4, $type));
         }
     }
 }

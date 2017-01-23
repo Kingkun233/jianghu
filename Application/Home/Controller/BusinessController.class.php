@@ -61,35 +61,6 @@ class BusinessController extends Controller
             $alldegree += $v['alldegree'];
             $degrees[] = $v['degree'];
         }
-        $countdegree = array_count_values($degrees);
-        foreach ($countdegree as $k => $v) {
-            if (count($countdegree) <= 2) {
-                break;
-            } else {
-                unset($countdegree[$k]);
-            }
-        }
-        if (count($countdegree) == 2) {
-            foreach ($countdegree as $k => $v) {
-                $transdegree['second_degree'] = $k;
-                $transdegree['second_degree_num'] = $countdegree[$k];
-                unset($countdegree[$k]);
-                break;
-            }
-            foreach ($countdegree as $k => $v) {
-                $transdegree['highest_degree'] = $k;
-                $transdegree['highest_degree_num'] = $countdegree[$k];
-                unset($countdegree[$k]);
-                break;
-            }
-        } else {
-            foreach ($countdegree as $k => $v) {
-                $transdegree['highest_degree'] = $k;
-                $transdegree['highest_degree_num'] = $countdegree[$k];
-                unset($countdegree[$k]);
-                break;
-            }
-        }
         // 更新star
         if ($alldegree <= 300) {
             $star = 3;
@@ -109,7 +80,7 @@ class BusinessController extends Controller
                 'star' => $star
             ));
         }
-        $msg['degree'] = $transdegree;
+        $msg['degree'] = R("sort/getTwoTopDegree",array($degrees2));
         $msg['star'] = $star;
         $this->ajaxReturn(responseMsg(0, $type, $msg));
     }

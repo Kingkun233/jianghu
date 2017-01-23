@@ -48,6 +48,9 @@ class IntroduceController extends Controller
         $add['business_name'] = $Busi->where(array(
             'id' => $business_id
         ))->getField('name');
+        if(!$add['business_name']){
+            $add['business_name']="";
+        }
         $add['business_addr'] = $post['business_addr'];
         $add['business_website'] = $post['business_website'];
         $add['text'] = $post['text'];
@@ -886,7 +889,7 @@ class IntroduceController extends Controller
         $from = $post['from'];
         $length = 10;
         // 要求原创
-        $where['isforward'] = 0;
+        $where['isforward'] = array("exp","is NULL");
         // 如果有传user_id,则where有条件，否者where为空
         if ($user_id) {
             loginPermitApiPreTreat($type);
@@ -1210,6 +1213,19 @@ class IntroduceController extends Controller
             $this->ajaxReturn(responseMsg(0, $type));
         }else{
             $this->ajaxReturn(responseMsg(1, $type));
+        }
+    }
+    /**
+     * 把数据库中的isforward0改成null
+     */
+    public function changeZoreToNull(){
+        $Intro=D('introduce');
+        $where['isforward']=0;
+        $flag=$Intro->where($where)->save(array("isforward"=>null));
+        if($flag){
+            echo "success";
+        }else{
+            echo "error";
         }
     }
 }

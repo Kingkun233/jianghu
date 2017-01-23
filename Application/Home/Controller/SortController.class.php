@@ -30,14 +30,14 @@ class SortController extends Controller
         foreach ($fids as $k => $v) {
             $fid[] = $v['friend_id'];
         }
-        if($fid){
+        if ($fid) {
             // 先将sort表全部排好序
             $where['id'] = array(
                 'IN',
                 $fid
             );
-        }else{
-            $where['id']=-1;
+        } else {
+            $where['id'] = - 1;
         }
         
         $sortall = $User->where($where)
@@ -58,6 +58,7 @@ class SortController extends Controller
             $show['username'] = $v['username'];
             $show['faceurl'] = $v['faceurl'];
             $show['weeknewpraise'] = $weeknewpraise;
+            $show['thumbnum']=$SortPraise->where(array('sort_user_id'=>$v['id']))->count();
             $where_sort_praise['sort_user_id'] = $v['id'];
             if ($SortPraise->where($where_sort_praise)->find()) {
                 $show['ispraised'] = 1;
@@ -84,68 +85,39 @@ class SortController extends Controller
         foreach ($showall as $k => $v) {
             if ($user_id == $friendsort[$k]['user_id']) {
                 $userrank = $showall[$k]['rank'];
+                $userWeekPraisenum=$showall[$k]['weeknewpraise'];
             }
         }
         
         // 获得最高两个度数的个数
-        $transdegree = null;
-        $where_intro['isforward'] = null;
+        $where_intro['isforward'] = array("exp","is NULL");
         $where_intro['user_id'] = $user_id;
+//         dump($user_id);die;
         $intro_ids2 = $Intro->where($where_intro)->select();
         foreach ($intro_ids2 as $k => $v) {
             $intro_ids[] = $v['id'];
         }
-        if($intro_ids){
+//         dump($intro_ids2);die;
+        if ($intro_ids) {
             $where_forward['introduce_id'] = array(
                 "IN",
                 $intro_ids
             );
-        }else{
-            $where_forward['introduce_id'] =-1;
+        } else {
+            $where_forward['introduce_id'] = - 1;
         }
         
         $degrees = $Forward->field('degree')
             ->where($where_forward)
             ->select();
-        foreach ($degrees as $k => $v) {
-            $degrees1[] = $v['degree'];
-        }
-        $countdegree = array_count_values($degrees1);
-            //把这个数组消减到只有最高两个度数
-        foreach ($countdegree as $k => $v) {
-            if (count($countdegree) <= 2) {
-                break;
-            } else {
-                unset($countdegree[$k]);
-            }
-        }
-        if (count($countdegree) == 2) {
-            foreach ($countdegree as $k => $v) {
-                $transdegree['second_degree'] = $k;
-                $transdegree['second_degree_num'] = $countdegree[$k];
-                unset($countdegree[$k]);
-                break;
-            }
-            foreach ($countdegree as $k => $v) {
-                $transdegree['highest_degree'] = $k;
-                $transdegree['highest_degree_num'] = $countdegree[$k];
-                unset($countdegree[$k]);
-                break;
-            }
-        } else {
-            foreach ($countdegree as $k => $v) {
-                $transdegree['highest_degree'] = $k;
-                $transdegree['highest_degree_num'] = $countdegree[$k];
-                unset($countdegree[$k]);
-                break;
-            }
-        }
+        
         // 整合数据
-        $msg['degree'] = $transdegree;
+        $msg['degree'] = $this->getTwoTopDegree($degrees);
         $msg['allpraise'] = $User->where(array(
             'id' => $user_id
         ))->getField('allpraise');
         $msg['userrank'] = $userrank;
+        $msg['userweeknewpraise']=$userWeekPraisenum;
         $msg['username'] = $User->where(array(
             'id' => $user_id
         ))->getField('username');
@@ -259,5 +231,56 @@ class SortController extends Controller
         $add['date'] = date("Y-m-d");
         $Praise->add($add);
         $this->ajaxReturn(responseMsg(0, $type));
+    }
+    /**
+     * 得到两个最高的度数
+     * @param unknown $degrees 度数二维数组
+     * @return number 最高两个度数
+     */
+    public function getTwoTopDegree($degrees){
+        //dump($degrees);die;
+        foreach ($degrees as $k => $v) {
+            $degrees1[] = $v['degree'];
+        }
+        $countdegree = array_count_values($degrees1);
+        // 把这个数组消减到只有最高两个度数
+        foreach ($countdegree as $k => $v) {
+            if (count($countdegree) <= 2) {
+                break;
+            } else {
+                unset($countdegree[$k]);
+            }
+        }
+        if (! $countdegree) {
+            $transdegree['highest_degree'] = 0;
+            $transdegree['highest_degree_num'] = 0;
+            $transdegree['second_degree'] = 0;
+            $transdegree['second_degree_num'] = 0;
+        } else {
+            if (count($countdegree) == 2) {
+                foreach ($countdegree as $k => $v) {
+                    $transdegree['second_degree'] = $k;
+                    $transdegree['second_degree_num'] = $countdegree[$k];
+                    unset($countdegree[$k]);
+                    break;
+                }
+                foreach ($countdegree as $k => $v) {
+                    $transdegree['highest_degree'] = $k;
+                    $transdegree['highest_degree_num'] = $countdegree[$k];
+                    unset($countdegree[$k]);
+                    break;
+                }
+            } else {
+                foreach ($countdegree as $k => $v) {
+                    $transdegree['highest_degree'] = $k;
+                    $transdegree['highest_degree_num'] = $countdegree[$k];
+                    unset($countdegree[$k]);
+                    break;
+                }
+                $transdegree['second_degree'] = 0;
+                $transdegree['second_degree_num'] = 0;
+            }
+        }
+        return $transdegree;
     }
 }
