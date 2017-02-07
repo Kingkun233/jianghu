@@ -160,6 +160,7 @@ class IntroduceController extends Controller
         $Image = D('introduce_images');
         $IntroDomain = D('introduce_domain');
         $Praise = D('praise');
+        $Oppose=D('oppose');
         $Comment = D('comment');
         $user_id = $post['user_id'];
         $from = $post['from'];
@@ -196,7 +197,6 @@ class IntroduceController extends Controller
             
             $contents[$k]['degree'] = $this->getTwoTopDegree($v['id']);
             // 整合是否点过赞
-            $whopraise = null;
             $where_praise['introduce_id'] = $v['id'];
             $where_praise['user_id'] = $user_id;
             $praiserow = $Praise->where($where_praise)->select();
@@ -204,6 +204,15 @@ class IntroduceController extends Controller
                 $contents[$k]['ispraised'] = 1;
             } else {
                 $contents[$k]['ispraised'] = 0;
+            }
+            //整合是否踩过
+            $where_oppose['introduce_id'] = $v['id'];
+            $where_oppose['user_id'] = $user_id;
+            $opposerow = $Oppose->where($where_oppose)->select();
+            if ($opposerow) {
+                $contents[$k]['isopposed'] = 1;
+            } else {
+                $contents[$k]['isopposed'] = 0;
             }
             // 整合推荐前两条评论,要求评论人是好友
             $contents[$k]['comment'] = array();
@@ -787,7 +796,9 @@ class IntroduceController extends Controller
         $post = loginPermitApiPreTreat($type);
         $Intro = D('introduce');
         $User = D('user');
+        $Oppose=D('oppose');
         $introduce_id = $post['introduce_id'];
+        //获得推荐用户
         $user_id = $Intro->where(array(
             'id' => $introduce_id
         ))->getField('user_id');
@@ -813,7 +824,12 @@ class IntroduceController extends Controller
         $User->where(array(
             'id' => $owner_id
         ))->setInc('alloppose');
-        if ($flag1 && $flag2) {
+        //加入踩表
+        $add_oppose['user_id']=$post['user_id'];
+        $add_oppose['introduce_id']=$post['introduce_id'];
+        $add_oppose['time']=date("Y-m-d H:i:s");
+        $flag3=$Oppose->add($add_oppose);
+        if ($flag1 && $flag2 &&flag3) {
             $this->ajaxReturn(responseMsg(0, $type));
         } else {
             $this->ajaxReturn(responseMsg(1, $type));
@@ -884,6 +900,7 @@ class IntroduceController extends Controller
         $Intro = D('introduce');
         $User = D('user');
         $Praise = D('praise');
+        $Oppose=D('oppose');
         $UserDomain = D('user_domain');
         $IntroImage = D('introduce_images');
         $from = $post['from'];
@@ -935,6 +952,15 @@ class IntroduceController extends Controller
                 $msg[$k]['ispraised'] = 1;
             } else {
                 $msg[$k]['ispraised'] = 0;
+            }
+            //整合是否踩过
+            $where_oppose['introduce_id'] = $v['id'];
+            $where_oppose['user_id'] = $user_id;
+            $opposerow = $Oppose->where($where_oppose)->select();
+            if ($opposerow) {
+                $msg[$k]['isopposed'] = 1;
+            } else {
+                $msg[$k]['isopposed'] = 0;
             }
         }
         $resp = responseMsg(0, $type, $msg);
@@ -1188,6 +1214,7 @@ class IntroduceController extends Controller
         $user_id=$post['user_id'];
         $from=$post['from'];
         $length=10;
+        $content=array();
         $intros=$Intro->where(array("user_id"=>$user_id))->limit($from,$length)->order("time desc")->select();
         foreach ($intros as $k=>$v){
             $content[]=$this->getIntroContent($v['id'], $user_id);
