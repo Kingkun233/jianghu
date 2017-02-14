@@ -16,10 +16,9 @@ function responseMsg($re,$type,$msg=array()){
  * @return boolean
  */
 function checkUserLogin($token,$user_id){
-//     dump('halo');die;
    $Token=D("token");
    $where['token']=$token;
-//    $where['user_id']=$user_id;
+   $where['user_id']=$user_id;
    $where['state']=0;
    if($Token->where($where)->find()){
        return true;
@@ -78,9 +77,7 @@ function imageUpload(){
  */
 function imageDel($Album,$where,$fieldname){
     $images=$Album->where($where)->select();
-//     dump($images);
     foreach ($images as $k=>$v){
-//         var_dump($v[$fieldname]);
         $flag=unlink($v[$fieldname]);
         if(!$flag){
             return false;

@@ -16,15 +16,12 @@ class BusinessController extends Controller
         $Busis = D('business');
         $User = D('user');
         $Domain = D('domain');
-        $logo = imageUpload();
         $add['name'] = $post['name'];
         $add['addr'] = $post['addr'];
         $add['latitude'] = $post['latitude'];
         $add['discription'] = $post['discription'];
         $add['state'] = 1;
         $add['joindate'] = date('Y-m-d');
-        $add['logourl'] = $logo['url'][0];
-        $add['logopath'] = $logo['path'][0];
         $add['phone'] = $post['phone'];
         $add['user_id'] = $post['user_id'];
         $domain_id = $post['domain_id'];
