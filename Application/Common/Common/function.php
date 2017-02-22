@@ -18,7 +18,7 @@ function responseMsg($re,$type,$msg=array()){
 function checkUserLogin($token,$user_id){
    $Token=D("token");
    $where['token']=$token;
-   $where['user_id']=$user_id;
+//    $where['user_id']=$user_id;
    $where['state']=0;
    if($Token->where($where)->find()){
        return true;

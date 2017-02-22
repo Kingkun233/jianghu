@@ -480,6 +480,23 @@ class UserController extends Controller
         $this->ajaxReturn(responseMsg(0, $type));
     }
     /**
+     * 删除收藏
+     */
+    public function delCollection(){
+        $type=114;
+        $post=loginPermitApiPreTreat($type);
+        $Collect=D('collection');
+        $where_collect['user_id']=$post['user_id'];
+        $where_collect['id']=$post['collection_id'];
+        $flag=$Collect->where($where_collect)->delete();
+        if($flag){
+            $this->ajaxReturn(responseMsg(0, $type));
+        }else{
+            $this->ajaxReturn(responseMsg(1, $type));
+        }
+    }
+        
+    /**
      * 举报用户
      */
     public function reportUser(){
