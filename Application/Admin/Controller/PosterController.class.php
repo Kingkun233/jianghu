@@ -5,10 +5,12 @@ use Think\Controller;
 
 class PosterController extends Controller
 {
+
     /**
      * 管理员登录检查
      */
-    public function __construct(){
+    public function __construct()
+    {
         parent::__construct();
         checkAdminLogin();
     }
@@ -37,8 +39,23 @@ class PosterController extends Controller
             $add['posterurl'] = $poster['url'][0];
             $add['posterpath'] = $poster['path'][0];
             $add['title'] = I('title');
-            $add['content'] = I('content');
+            $add['content_url'] = I('content_url');
             // dump($add['content']);die;
+            // 生成html并保存,将该html的url存到content字段
+//             $html = html_entity_decode(I('content'));
+//             $html=
+//             "<!DOCTYPE html>
+//              <html lang='en'>
+//              <head>
+//               <meta charset='UTF-8'>
+//               <title>Title</title>
+//               </head>
+//               <body>" . $html . "</body>
+//               </html>
+//               ";
+//             $filename = "Uploads/poster/" . md5(time()) . ".html";
+//             file_put_contents($filename, $html);
+//             $content_url="http://".$_SERVER['SERVER_NAME'].__ROOT__."/".$filename;
             $add['time'] = date("Y-m-d H:i:s");
             $flag = $Poster->add($add);
             if ($flag) {
@@ -152,9 +169,6 @@ class PosterController extends Controller
         $poster = $Poster->where(array(
             'id' => $poster_id
         ))->select();
-        $content = html_entity_decode($poster[0]['content']);
-        // dump($content);die;
-        $this->assign('content', $content);
         $this->assign('rows', $poster);
         $this->display();
     }
@@ -170,9 +184,11 @@ class PosterController extends Controller
         $data['posterpath'] = $poster['path'][0];
         $data['title'] = I('title');
         $data['content'] = I('content');
-        $poster_id=I('poster_id');
+        $poster_id = I('poster_id');
         $data['time'] = date("Y-m-d H:i:s");
-        $flag = $Poster->where(array('id'=>$poster_id))->save($data);
+        $flag = $Poster->where(array(
+            'id' => $poster_id
+        ))->save($data);
         if ($flag) {
             $this->success("海报修改成功");
         } else {

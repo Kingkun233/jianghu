@@ -1,0 +1,175 @@
+[ 2017-04-04T12:45:04+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000594s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000840s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0742s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0258s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0070s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 4 AND `date` = '2017-04-04' LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-04' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('4','2017-04-04') [ RunTime:0.0914s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 4 [ RunTime:0.0847s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-04'  [ RunTime:0.0009s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2017-04-04','1') [ RunTime:0.0686s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0459s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0355s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0226s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0088s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0093s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0082s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0236s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `jianghu_business` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: business_addr D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 59 行.
+ERR: 1048:Column 'business_addr' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_introduce` (`business_id`,`business_name`,`business_latitude`,`business_longtitude`,`business_website`,`business_addr`,`text`,`user_id`,`time`,`degree`,`domain`) VALUES ('1','章鱼小丸子','123456','123456','blablabla',NULL,'这是4的内容','4','2017-04-04 12:45:04','1',NULL)
+ERR: 1048:Column 'business_addr' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_introduce` (`business_id`,`business_name`,`business_latitude`,`business_longtitude`,`business_website`,`business_addr`,`text`,`user_id`,`time`,`degree`,`domain`) VALUES ('1','章鱼小丸子','123456','123456','blablabla',NULL,'这是4的内容','4','2017-04-04 12:45:04','1',NULL)
+
+[ 2017-04-04T12:45:48+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000542s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 4 AND `date` = '2017-04-04' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-04' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0037s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `jianghu_business` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1048:Column 'domain' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_introduce` (`business_id`,`business_name`,`business_latitude`,`business_longtitude`,`business_website`,`business_addr`,`text`,`user_id`,`time`,`degree`,`domain`) VALUES ('1','章鱼小丸子','123456','123456','blablabla','','这是4的内容','4','2017-04-04 12:45:48','1',NULL)
+ERR: 1048:Column 'domain' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_introduce` (`business_id`,`business_name`,`business_latitude`,`business_longtitude`,`business_website`,`business_addr`,`text`,`user_id`,`time`,`degree`,`domain`) VALUES ('1','章鱼小丸子','123456','123456','blablabla','','这是4的内容','4','2017-04-04 12:45:48','1',NULL)
+
+[ 2017-04-04T12:54:23+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000793s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 4 AND `date` = '2017-04-04' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-04' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0033s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 9 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `jianghu_business` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_introduce` (`business_id`,`business_name`,`business_latitude`,`business_longtitude`,`business_website`,`business_addr`,`text`,`user_id`,`time`,`degree`,`domain`) VALUES ('1','章鱼小丸子','123456','123456','blablabla','','这是4的内容','4','2017-04-04 12:54:22','1','购物') [ RunTime:0.1134s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('购物','234') [ RunTime:0.0471s ]
+SQL: INSERT INTO `jianghu_introduce_images` (`introduce_id`,`imageurl`,`imagepath`,`thumb_imageurl`,`thumb_imagepath`) VALUES ('234','http://121.42.203.85/jianghu/Uploads/2016-12-21/585a7bf4495a0.jpg','./Uploads/2016-12-21/585a7bf4495a0.jpg','http://localhost/jianghu/Uploads/2016-12-21/1585a7bf4495a0.jpg','./Uploads/2016-12-21/1585a7bf4495a0.jpg') [ RunTime:0.0403s ]
+SQL: INSERT INTO `jianghu_introduce_images` (`introduce_id`,`imageurl`,`imagepath`,`thumb_imageurl`,`thumb_imagepath`) VALUES ('234','http://121.42.203.85/jianghu/Uploads/2016-12-21/585a7bf44998f.jpg','./Uploads/2016-12-21/585a7bf44998f.jpg','http://localhost/jianghu/Uploads/2016-12-21/1585a7bf44998f.jpg','./Uploads/2016-12-21/1585a7bf44998f.jpg') [ RunTime:0.0443s ]
+SQL: INSERT INTO `jianghu_introduce_images` (`introduce_id`,`imageurl`,`imagepath`,`thumb_imageurl`,`thumb_imagepath`) VALUES ('234','http://121.42.203.85/jianghu/Uploads/2016-12-21/585a7bf449bdd.jpg','./Uploads/2016-12-21/585a7bf449bdd.jpg','http://localhost/jianghu/Uploads/2016-12-21/1585a7bf449bdd.jpg','./Uploads/2016-12-21/1585a7bf449bdd.jpg') [ RunTime:0.0571s ]
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('4','234','234','2017-04-04 12:54:23','4','1') [ RunTime:0.0878s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 4  [ RunTime:0.0006s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` IN ('4') [ RunTime:0.0437s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 4 [ RunTime:0.0447s ]
+
+[ 2017-04-04T14:37:21+08:00 ] ::1 /jianghu/index.php/home/poster/getPoster
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2d461ebf6c5364e366e759f234d9434e' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-04-04' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-04' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('1','2017-04-04') [ RunTime:0.0914s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.0466s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-04'  [ RunTime:0.0014s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2017-04-04' [ RunTime:0.0500s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster_praise` [ RunTime:0.0064s ]
+NOTIC: [8] Undefined index: poster_id D:\xampp\htdocs\jianghu\Application\Home\Controller\PosterController.class.php 第 23 行.
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 43  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 41  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 40  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 38  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 37  [ RunTime:0.0003s ]
+
+[ 2017-04-04T14:50:43+08:00 ] ::1 /jianghu/index.php/home/poster/getPoster
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000951s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001016s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2d461ebf6c5364e366e759f234d9434e' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-04-04' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-04' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster_praise` [ RunTime:0.0034s ]
+NOTIC: [8] Undefined index: poster_id D:\xampp\htdocs\jianghu\Application\Home\Controller\PosterController.class.php 第 23 行.
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 44  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: content D:\xampp\htdocs\jianghu\Application\Home\Controller\PosterController.class.php 第 46 行.
+
+[ 2017-04-04T14:52:50+08:00 ] ::1 /jianghu/index.php/home/poster/getPoster
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000762s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001135s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001220s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2d461ebf6c5364e366e759f234d9434e' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-04-04' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-04' LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster_praise` [ RunTime:0.0037s ]
+NOTIC: [8] Undefined index: poster_id D:\xampp\htdocs\jianghu\Application\Home\Controller\PosterController.class.php 第 23 行.
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 44  [ RunTime:0.0003s ]
+

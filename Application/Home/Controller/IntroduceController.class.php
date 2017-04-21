@@ -2,6 +2,7 @@
 namespace Home\Controller;
 
 use Think\Controller;
+use Think\Model;
 
 class IntroduceController extends Controller
 {
@@ -55,7 +56,7 @@ class IntroduceController extends Controller
         $add['business_latitude'] = $post['business_latitude'];
         $add['business_longtitude'] = $post['business_longtitude'];
         $add['business_website'] = $post['business_website'];
-        
+        $add['business_addr'] = $post['business_addr'];
         $add['text'] = $post['text'];
         // 得到user_id
         $add['user_id'] = $user_id;
@@ -185,16 +186,16 @@ class IntroduceController extends Controller
             ->limit($from, $length)
             ->select();
         foreach ($contents as $k => $v) {
-            $contents[$k]=$this->getIntroContent($v['id'], $user_id);
+            $contents[$k] = $this->getIntroContent($v['id'], $user_id);
             // 得到朋友名字
-            $contents[$k]['friendname']=$contents[$k]['username'];
+            $contents[$k]['friendname'] = $contents[$k]['username'];
             // 整合朋友头像
-            $contents[$k]['friendface']=$contents[$k]['face'];
+            $contents[$k]['friendface'] = $contents[$k]['face'];
             unset($contents[$k]['username']);
             unset($contents[$k]['face']);
-            //若是转发的话，整合原创者头像
-            if($v['isforward']){
-                $contents[$k]['isforward']['userface']=$contents[$k]['isforward']['face'];
+            // 若是转发的话，整合原创者头像
+            if ($v['isforward']) {
+                $contents[$k]['isforward']['userface'] = $contents[$k]['isforward']['face'];
                 unset($contents[$k]['isforward']['face']);
             }
             // 整合推荐前两条评论,要求评论人是好友
@@ -322,11 +323,11 @@ class IntroduceController extends Controller
         $User->where(array(
             'id' => $original_user_id
         ))->setInc('allpraise');
-        // 该推荐的praisenum++
+        // 该推荐的点赞数加一
         $flag2 = $Intro->where(array(
             'id' => $introduce_id
         ))->setInc('praisenum');
-        // 原创推荐的priasenum++
+        // 原创推荐的点赞数加一
         $Intro->where(array(
             'id' => $original_intro_id
         ))->setInc('praisenum');
@@ -599,59 +600,69 @@ class IntroduceController extends Controller
                 $data1["degree"] = $min;
             }
         } else {
-            $degree = $degree + 1;
-            $data1['original_id2'] = $user_id;
-            $data2["degree"] = $degree;
-            $data1["degree"] = $degree;
-        }
-        // 判断是否自己转载自己,避免自己成为自己的度数源的逻辑错误
-        $introduce_owner = $Forward->where(array(
-            'id' => $forward_id
-        ))->getField('user_id');
-        if ($user_id != $introduce_owner) {
-            // 如果转载的度数大于3，给原创推荐的alldegree增加该转载的度数
-            if ($data1["degree"] >= 3) {
-                $Intro->where(array(
-                    'id' => $original_id
-                ))->setInc('alldegree', $data1["degree"]);
+            // 判断是否自己转载自己,避免自己成为自己的度数源的逻辑错误
+            $introduce_owner = $Intro->where(array(
+                'id' => $original_id
+            ))->getField('user_id');
+            // echo "hhhhh".$user_id.'jjjj'.$introduce_owner;
+            if ($user_id != $introduce_owner) {
+                $degree = $degree + 1;
+                $data1['original_id2'] = $user_id;
+                $data2["degree"] = $degree;
+                $data1["degree"] = $degree;
+            } else {
+                // $isMyself用于检测是不是自己转自己
+                $isMyself = 1;
+                $data2["degree"] = $degree;
+                $data1["degree"] = $degree;
             }
-            // 插入转采表
-            // dump($data1);die;
-            $flag1 = $Forward->add($data1);
-            // 插入推荐表
-            // 保存该推荐的转载记录id
-            $data2['forward_id'] = $flag1;
-            $flag = $Intro->add($data2);
-            // 该推荐表转采数加一
-            $flag2 = $Intro->where(array(
-                'id' => $data1['introduce_id']
-            ))->setInc('forwardnum');
-            // 原创推荐转载数加一
+        }
+        // 如果转载的度数大于3，给原创推荐的alldegree增加该转载的度数
+        if ($data1["degree"] >= 3) {
             $Intro->where(array(
                 'id' => $original_id
-            ))->setInc('praisenum');
+            ))->setInc('alldegree', $data1["degree"]);
         }
+        // 插入转采表
+        $flag1 = $Forward->add($data1);
+        // 插入推荐表
+        // 保存该推荐的转载记录id
+        $data2['forward_id'] = $flag1;
+        $flag = $Intro->add($data2);
+        // 该推荐表转采数加一
+        $flag2 = $Intro->where(array(
+            'id' => $data1['introduce_id']
+        ))->setInc('forwardnum');
+        // 原创推荐转载数加一
+        $Intro->where(array(
+            'id' => $original_id
+        ))->setInc('praisenum');
         // 被转载者的总转采数加一
         $User->where(array(
             'id' => $owner_id
         ))->setInc("allforward");
-        // 该用户的朋友的未读推荐数加一
-        $friends2 = $Friend->where(array(
-            'user_id' => $user_id
-        ))->select();
-        foreach ($friends2 as $k => $v) {
-            $friendsunread[] = $v['friend_id'];
+        // 判断是不是自己转自己，是的话下面的都不执行
+        if (! $isMyself) {
+            // 该用户的朋友的未读推荐数加一
+            $friends2 = $Friend->where(array(
+                'user_id' => $user_id
+            ))->select();
+            foreach ($friends2 as $k => $v) {
+                $friendsunread[] = $v['friend_id'];
+            }
+            $where_friend['id'] = array(
+                "IN",
+                $friendsunread
+            );
+            $User->where($where_friend)->setInc("unreadnum");
         }
-        $where_friend['id'] = array(
-            "IN",
-            $friendsunread
-        );
-        $User->where($where_friend)->setInc("unreadnum");
-        // dump(array($flag,$flag1,$flag2,$flag3,$flag4));
         if ($flag && $flag1 && $flag2) {
             // 转采成功
             $this->ajaxReturn(responseMsg(0, $type));
         }
+        // dump($flag);
+        // dump($flag1);
+        // dump($flag2);
         // 转采失败
         $this->ajaxReturn(responseMsg(1, $type));
     }
@@ -830,6 +841,11 @@ class IntroduceController extends Controller
             "exp",
             "is NULL"
         );
+        // 最高度数大于3，因为alldegree只有在最高度数大于3的时候才会不为零
+        $where['alldegree'] = array(
+            "neq",
+            "NULL"
+        );
         // 如果有传user_id,则where有条件，否者where为空
         if ($user_id) {
             loginPermitApiPreTreat($type);
@@ -840,7 +856,6 @@ class IntroduceController extends Controller
             foreach ($domain2 as $k => $v) {
                 $domain[] = $v['domain'];
             }
-            // dump($domain2);die;
             if ($domain) {
                 $where['domain'] = array(
                     "IN",
@@ -853,12 +868,14 @@ class IntroduceController extends Controller
                 ->select();
         } else {
             $msg = $Intro->order('alldegree desc')
+                ->where($where)
                 ->limit($from, $length)
                 ->select();
         }
+        // dump($msg);die;
         foreach ($msg as $k => $v) {
-            //整合推荐内容
-            $msg[$k]=$this->getIntroContent($v['id'], $user_id);
+            // 整合推荐内容
+            $msg[$k] = $this->getIntroContent($v['id'], $user_id);
         }
         $resp = responseMsg(0, $type, $msg);
         // 返回整合from，length
@@ -935,16 +952,11 @@ class IntroduceController extends Controller
      */
     public function getTwoTopDegree($introduce_id)
     {
+        $model = new Model();
         $Intro = D('introduce');
-        $where['id'] = $introduce_id;
-        // $where['isforward'] = 0;
-        $degrees = $Intro->where($where)
-            ->field("degree")
-            ->select();
-        foreach ($degrees as $k => $v) {
-            $degrees1[] = $v['degree'];
-        }
-        $countdegree = array_count_values($degrees1);
+        // 江湖的推荐度数都是大于三的
+        $sql = "SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=" . $introduce_id . " or id=" . $introduce_id . " GROUP BY degree ORDER BY degree ASC ";
+        $countdegree = $model->query($sql);
         // 把这个数组消减到只有最高两个度数
         foreach ($countdegree as $k => $v) {
             if (count($countdegree) <= 2) {
@@ -955,21 +967,21 @@ class IntroduceController extends Controller
         }
         if (count($countdegree) == 2) {
             foreach ($countdegree as $k => $v) {
-                $transdegree['second_degree'] = $k;
-                $transdegree['second_degree_num'] = $countdegree[$k];
+                $transdegree['second_degree'] = $v['degree'];
+                $transdegree['second_degree_num'] = $v['degree_count'];
                 unset($countdegree[$k]);
                 break;
             }
             foreach ($countdegree as $k => $v) {
-                $transdegree['highest_degree'] = $k;
-                $transdegree['highest_degree_num'] = $countdegree[$k];
+                $transdegree['highest_degree'] = $v['degree'];
+                $transdegree['highest_degree_num'] = $v['degree_count'];
                 unset($countdegree[$k]);
                 break;
             }
         } else {
             foreach ($countdegree as $k => $v) {
-                $transdegree['highest_degree'] = $k;
-                $transdegree['highest_degree_num'] = $countdegree[$k];
+                $transdegree['highest_degree'] = $v['degree'];
+                $transdegree['highest_degree_num'] = $v['degree_count'];
                 unset($countdegree[$k]);
                 break;
             }
@@ -1052,7 +1064,7 @@ class IntroduceController extends Controller
         $User = D('user');
         $Busi = D('business');
         $Praise = D('praise');
-        $Collect=D('collection');
+        $Collect = D('collection');
         $Oppose = D('oppose');
         $where['id'] = $introduce_id;
         $contents = $Intro->where($where)->find();
@@ -1092,21 +1104,10 @@ class IntroduceController extends Controller
         $collectrow = $Collect->where($where_collect)->find();
         if ($collectrow) {
             $contents['iscollected'] = 1;
+            // 如果该用户收藏过该推荐，整合收藏id
         } else {
             $contents['iscollected'] = 0;
         }
-//         // 如果business_id不为零，整合经纬度
-//         if ($contents['business_id']) {
-//             $contents['business_latitude'] = $Busi->where(array(
-//                 'id' => $contents["business_id"]
-//             ))->getField("latitude");
-//             $contents['business_longtitude'] = $Busi->where(array(
-//                 'id' => $contents["business_id"]
-//             ))->getField("longtitude");
-//         }else{
-//             $contents['business_latitude'] ="";
-//             $contents['business_longtitude']="";
-//         }
         // 去掉不需要的字段
         unset($contents['alldegree']);
         unset($contents['forward_id']);
@@ -1142,18 +1143,18 @@ class IntroduceController extends Controller
     {
         $type = 215;
         $post = touristApiPreTreat($type);
-        //判断是否登录
-        if($post['user_id']){
-            //如果登录了，判断登录
+        // 判断是否登录
+        if ($post['user_id']) {
+            // 如果登录了，判断登录
             loginPermitApiPreTreat($type);
             $user_id = $post['user_id'];
-        }else{
-            //没有登录user_id则为0,user_id主要是用来判断用户是否点赞和踩
-            $user_id=0;
+        } else {
+            // 没有登录user_id则为0,user_id主要是用来判断用户是否点赞和踩
+            $user_id = 0;
         }
         $Intro = D('introduce');
-        //其他用户id
-        $other_id=$post['other_id'];
+        // 其他用户id
+        $other_id = $post['other_id'];
         $from = $post['from'];
         $length = 10;
         $content = array();

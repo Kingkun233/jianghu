@@ -46,7 +46,7 @@ function checkUserExist($username){
 function imageUpload(){
     $upload = new \Think\Upload();// 实例化上传类
     //保存原大小图片
-    $upload->maxSize   =     3145728 ;// 设置附件上传大小3M
+    $upload->maxSize   =     104857600 ;// 设置附件上传大小20M
     $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
     $upload->rootPath = './Uploads/';
     $upload->savePath  =     ""; // 设置附件上传目录

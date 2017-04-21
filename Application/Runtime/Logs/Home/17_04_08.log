@@ -1,0 +1,64 @@
+[ 2017-04-08T00:34:33+08:00 ] ::1 /jianghu/index.php/home/domain/returnDomain
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000929s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001041s ]
+
+[ 2017-04-08T00:34:33+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=500
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000321s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000586s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000630s ]
+
+[ 2017-04-08T00:43:25+08:00 ] ::1 /jianghu/index.php/home/poster/getPoster
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000361s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000822s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0337s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0221s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0118s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0144s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2d461ebf6c5364e366e759f234d9434e' AND `state` = 0 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-04-08' LIMIT 1   [ RunTime:0.0023s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-08' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('1','2017-04-08') [ RunTime:0.0796s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.0792s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-08'  [ RunTime:0.0007s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2017-04-08','1') [ RunTime:0.0822s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0281s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster_praise` [ RunTime:0.0108s ]
+NOTIC: [8] Undefined index: poster_id D:\xampp\htdocs\jianghu\Application\Home\Controller\PosterController.class.php 第 23 行.
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 44  [ RunTime:0.0004s ]
+
+[ 2017-04-08T00:43:42+08:00 ] ::1 /jianghu/index.php/home/poster/getPoster
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000809s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0029s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2d461ebf6c5364e366e759f234d9434e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-04-08' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-08' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster_praise` [ RunTime:0.0028s ]
+NOTIC: [8] Undefined index: poster_id D:\xampp\htdocs\jianghu\Application\Home\Controller\PosterController.class.php 第 23 行.
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 44  [ RunTime:0.0003s ]
+

@@ -5,6 +5,18 @@
 <title>江湖后台管理系统1.0</title>
 
 <link rel="stylesheet" type="text/css" href="/jianghu/Public/css/backstage.css" />
+<script type="text/javascript"> 
+//刷新上级页面 
+function back(){
+	window.mainFrame.history.back(); 
+}
+function forward(){
+	window.mainFrame.history.forward(); 
+}
+function refresh(){
+	window.mainFrame.location.reload(); 
+}
+</script> 
 </head>
 
 <body>
@@ -16,7 +28,7 @@
        
         <div class="link fr">
             <b>欢迎您&nbsp<?php echo ($loginadmin); ?>
-            </b>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo U('index/main');?>" class="icon icon_i"target="mainFrame">首页</a><span></span><a href="#" class="icon icon_j">前进</a><span></span><a href="#" class="icon icon_t">后退</a><span></span><a href="#" class="icon icon_n">刷新</a><span></span><a href="<?php echo U('admin/logout');?>" class="icon icon_e">退出</a>
+            </b>&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo U('index/main');?>" class="icon icon_i"target="mainFrame">首页</a><span></span><a class="icon icon_j" onclick="back()">后退</a><span></span><a  class="icon icon_t" onclick="forward()">前进</a><span></span><a class="icon icon_n" onclick="refresh()">刷新</a><span></span><a href="<?php echo U('admin/logout');?>" class="icon icon_e">退出</a>
         </div>
     </div>
     <div class="content clearfix">
@@ -25,7 +37,7 @@
             <div class="cont">
                 <div class="title">后台管理</div>
       	 		<!-- 嵌套网页开始 -->         
-                <iframe src="<?php echo U('index/main');?>"  frameborder="0" name="mainFrame" width="100%" height="522"></iframe>
+                <iframe id="myframe"src="<?php echo U('index/main');?>"  frameborder="0" name="mainFrame" width="100%" height="522"></iframe>
                 <!-- 嵌套网页结束 -->   
             </div>
         </div>
@@ -46,6 +58,7 @@
                         <h3 onclick="show('menu3','change3')" id="change3" ><span  >+</span>推荐管理</h3>
                         <dl id="menu3" style="display:none;">
                             <dd><a href="<?php echo U('introduce/showIntroduce');?>" target="mainFrame">推荐列表</a></dd>
+                        	<dd><a href="<?php echo U('introduce/reportedList');?>" target="mainFrame">举报列表</a></dd>
                         </dl>
                     </li>
                     <li>
@@ -53,6 +66,8 @@
                         <dl id="menu4" style="display:none;">
                             <dd><a href="<?php echo U('user/index');?>" target="mainFrame">用户列表</a></dd>
                             <dd><a href="<?php echo U('user/showDailyNum');?>" target="mainFrame">每日统计</a></dd>
+                            <dd><a href="<?php echo U('user/feedbackList');?>" target="mainFrame">用户反馈</a></dd>
+                            <dd><a href="<?php echo U('user/reportedList');?>" target="mainFrame">举报列表</a></dd>
                         </dl>
                     </li>
                     <li>

@@ -1,0 +1,116 @@
+[ 2017-03-30T19:15:03+08:00 ] ::1 /jianghu/index.php/home/business/returnBusinessComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000647s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001137s ]
+SQL: SHOW COLUMNS FROM `jianghu_business_comment` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `jianghu_business_comment` WHERE `business_id` = 1  [ RunTime:0.0026s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-03-30T19:15:52+08:00 ] ::1 /jianghu/index.php/home/business/addBusinessComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000462s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0111s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0051s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2d461ebf6c5364e366e759f234d9434e' AND `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 45 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 45 AND `date` = '2017-03-30' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-30' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 45 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('45','2017-03-30') [ RunTime:0.0721s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 45 [ RunTime:0.0338s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-30'  [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2017-03-30','1') [ RunTime:0.0443s ]
+SQL: SHOW COLUMNS FROM `jianghu_business_comment` [ RunTime:0.0067s ]
+NOTIC: [8] Undefined index: validate D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `jianghu_business_comment` (`user_id`,`business_id`,`comment`) VALUES ('45','2','45的商户评论') [ RunTime:0.0529s ]
+
+[ 2017-03-30T19:16:07+08:00 ] ::1 /jianghu/index.php/home/business/returnBusinessComment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000473s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001511s ]
+SQL: SHOW COLUMNS FROM `jianghu_business_comment` [ RunTime:0.0064s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `jianghu_business_comment` WHERE `business_id` = 2  [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 45 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 45 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-03-30T20:02:42+08:00 ] ::1 /jianghu/index.php/home/user/checkPhoneExisted
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000687s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '13202063303' LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000963s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001010s ]
+
+[ 2017-03-30T20:04:37+08:00 ] ::1 /jianghu/index.php/home/user/checkPhoneExisted
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000548s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000962s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001083s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '13202063303' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-03-30T20:04:50+08:00 ] ::1 /jianghu/index.php/home/user/checkPhoneExisted
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000906s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0072s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '13202063303' LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-03-30T20:04:56+08:00 ] ::1 /jianghu/index.php/home/user/checkPhoneExisted
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000819s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000825s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000922s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '15448' LIMIT 1   [ RunTime:0.0007s ]
+
+[ 2017-03-30T20:12:27+08:00 ] ::1 /jianghu/index.php/home/user/checkPhoneExisted
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000894s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000898s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0069s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '1234588' LIMIT 1   [ RunTime:0.0009s ]
+

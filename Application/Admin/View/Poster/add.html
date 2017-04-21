@@ -20,20 +20,8 @@
 			<td><input type="file" name="poster" /></td>
 		</tr>
 		<tr>
-			<td align="right">海报内容</td>
-			<td>
-				<!-- 加载编辑器的容器 --> <script id="container" name="content"
-					type="text/plain">
-    					</script> 
-    					<!-- 配置文件 -->
-    					 <script type="text/javascript"
-					src="../../../Public/ueditor/ueditor.config.js"></script> <!-- 编辑器源码文件 -->
-				<script type="text/javascript"
-					src="../../../Public/ueditor/ueditor.all.js"></script> <!-- 实例化编辑器 --> <script
-					type="text/javascript">
-						var ue = UE.getEditor('container');
-					</script>
-			</td>
+			<td align="right">秀米推送地址</td>
+			<td><input type="text" name="content_url" placeholder="请输入秀米url" /></td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="添加海报" /></td>

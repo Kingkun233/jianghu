@@ -34,6 +34,9 @@ class DomainController extends Controller{
      */
     public function doadd(){
         $Domain=D('domain');
+        $image=imageUpload();
+//         dump($image);die;
+        $add['domain_pic']=$image['url'][0];
         $add['name']=I('name');
         $Domain->add($add);
         $this->success('添加成功',U('domain/index'));
@@ -45,6 +48,6 @@ class DomainController extends Controller{
         $Domain=D("domain");
         $id=I('id');
         $Domain->where(array('id'=>$id))->delete();
-        $this->success('添加成功',U('domain/index'));
+        $this->success('删除成功',U('domain/index'));
     }
 }

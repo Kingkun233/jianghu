@@ -31,7 +31,7 @@
 					<!--这里的id和for里面的c1 需要循环出来-->
 					<td><input type="checkbox" id="c1" class="check"><label
 						for="c1" class="label"><?php echo ($vo["id"]); ?></label></td>
-					<td><?php echo ($vo["title"]); ?></td>
+					<td><a href="<?php echo ($vo["content_url"]); ?>"><?php echo ($vo["title"]); ?></a></td>
 					<td><?php echo ($vo["time"]); ?></td>
 					<td><?php echo ($vo["state"]); ?></td>
 					<td align="center">

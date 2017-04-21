@@ -24,30 +24,12 @@
 			<td><img alt="#" src="<?php echo ($vo["posterurl"]); ?>"></td>
 		</tr>
 		<tr>
-			<td align="right">海报内容</td>
-			<td>
-				<!-- 加载编辑器的容器 --> 
-				<script id="container" name="content"
-					type="text/plain">
-        				
-    				</script>
-    				 <!-- 配置文件 --> 
-    				 <script type="text/javascript"
-					src="/jianghu/Public/ueditor/ueditor.config.js">
-    				 </script> 
-    				 <!-- 编辑器源码文件 -->
-				<script type="text/javascript"
-					src="/jianghu/Public/ueditor/ueditor.all.js">
-				</script> 
-				<!-- 实例化编辑器 --> 
-				<script
-					type="text/javascript">
-						var ue = UE.getEditor('container');
-						ue.ready(function() {
-							ue.execCommand('inserthtml','<?php echo htmlspecialchars_decode($content);?>');
-						});
-					</script>
-			</td>
+			<td align="right">阅读量</td>
+			<td><?php echo ($vo["readnum"]); ?></td>
+		</tr>
+		<tr>
+			<td align="right">海报秀米url</td>
+			<td><input type="text" name="content_url" value="<?php echo ($vo["content_url"]); ?>" /></td>
 		</tr><?php endforeach; endif; ?>
 		
 		<tr>

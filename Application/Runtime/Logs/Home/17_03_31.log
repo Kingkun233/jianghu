@@ -1,0 +1,748 @@
+[ 2017-03-31T00:16:56+08:00 ] ::1 /jianghu/index.php/home/user/join
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000977s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001096s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0177s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0181s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0199s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0156s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 't1'  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11111' LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `jianghu_user` (`username`,`faceurl`,`password`,`phonenum`,`sex`,`addr`,`wechat_id`,`qq_id`,`jointime`) VALUES ('t1','http://121.42.203.85/jianghu/Public/images/default/userface.png','123','11111','1','','','','2017-03-31') [ RunTime:0.0162s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_user_domain` (`user_id`,`domain`) VALUES ('96','美食') [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('96','96') [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`joinnum`) VALUES ('2017-03-31','1') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 96 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001234s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001337s ]
+
+[ 2017-03-31T00:19:39+08:00 ] ::1 /jianghu/index.php/home/user/join
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000527s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000716s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0159s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0145s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0148s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0163s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 't1'  [ RunTime:0.0007s ]
+
+[ 2017-03-31T00:19:51+08:00 ] ::1 /jianghu/index.php/home/user/join
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000448s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000551s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000606s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0153s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0146s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0152s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0287s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 't2'  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11112' LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `jianghu_user` (`username`,`faceurl`,`password`,`phonenum`,`sex`,`addr`,`wechat_id`,`qq_id`,`jointime`) VALUES ('t2','http://121.42.203.85/jianghu/Public/images/default/userface.png','123','11112','1','','','','2017-03-31') [ RunTime:0.0164s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_user_domain` (`user_id`,`domain`) VALUES ('97','美食') [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('97','97') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `joinnum`=joinnum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0014s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 97 LIMIT 1   [ RunTime:0.0006s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000912s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000978s ]
+
+[ 2017-03-31T00:36:56+08:00 ] ::1 /jianghu/index.php/home/user/join
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000873s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000948s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0128s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0147s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0152s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0136s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0165s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0129s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 't3'  [ RunTime:0.0014s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11113' LIMIT 1   [ RunTime:0.0007s ]
+SQL: INSERT INTO `jianghu_user` (`username`,`faceurl`,`password`,`phonenum`,`sex`,`addr`,`wechat_id`,`qq_id`,`jointime`) VALUES ('t3','http://121.42.203.85/jianghu/Public/images/default/userface.png','123','11113','1','','','','2017-03-31') [ RunTime:0.0174s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_user_domain` (`user_id`,`domain`) VALUES ('98','美食') [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('98','98') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `joinnum`=joinnum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 98 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001127s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001221s ]
+
+[ 2017-03-31T00:38:44+08:00 ] ::1 /jianghu/index.php/home/user/join
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000446s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001025s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0169s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0189s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0138s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0145s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0167s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0142s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 't4'  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11114' LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `jianghu_user` (`username`,`faceurl`,`password`,`phonenum`,`sex`,`addr`,`wechat_id`,`qq_id`,`jointime`) VALUES ('t4','http://121.42.203.85/jianghu/Public/images/default/userface.png','123','11114','1','','','','2017-03-31') [ RunTime:0.0195s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_user_domain` (`user_id`,`domain`) VALUES ('99','美食') [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('99','99') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0005s ]
+SQL: UPDATE `jianghu_daily_num` SET `joinnum`=joinnum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 99 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001021s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001124s ]
+
+[ 2017-03-31T00:39:21+08:00 ] ::1 /jianghu/index.php/home/user/join
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000991s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001140s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001267s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0149s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0154s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0166s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0182s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 't5'  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11115' LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `jianghu_user` (`username`,`faceurl`,`password`,`phonenum`,`sex`,`addr`,`wechat_id`,`qq_id`,`jointime`) VALUES ('t5','http://121.42.203.85/jianghu/Public/images/default/userface.png','123','11115','1','','','','2017-03-31') [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_user_domain` (`user_id`,`domain`) VALUES ('100','美食') [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('100','100') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `joinnum`=joinnum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 100 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000823s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000881s ]
+
+[ 2017-03-31T00:42:28+08:00 ] ::1 /jianghu/index.php/home/user/join
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001470s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001565s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0178s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0165s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0183s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0189s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0169s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0192s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 't6'  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11116' LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `jianghu_user` (`username`,`faceurl`,`password`,`phonenum`,`sex`,`addr`,`wechat_id`,`qq_id`,`jointime`) VALUES ('t6','http://121.42.203.85/jianghu/Public/images/default/userface.png','123','11116','1','','','','2017-03-31') [ RunTime:0.0143s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_user_domain` (`user_id`,`domain`) VALUES ('101','美食') [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('101','101') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `joinnum`=joinnum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 101 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001840s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001936s ]
+
+[ 2017-03-31T00:46:03+08:00 ] ::1 /jianghu/index.php/home/user/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000596s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0157s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0136s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0143s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11117'  [ RunTime:0.0009s ]
+NOTIC: [8] Use of undefined constant flag - assumed 'flag' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 139 行.
+SQL: SELECT `id` FROM `jianghu_user` WHERE `phonenum` = '11117' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 102 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `password` FROM `jianghu_user` WHERE `phonenum` = '11117' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 102 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_token` (`token`,`user_id`,`time`) VALUES ('cxhluKERXUpJtuInOPcPkBpVb0MTbG+YVrsBrSwvdz+c5WcbxpK4Mo7alEjR6Zhz87jLEyL7M697rIcx2w0tDw==','102','2017-03-31 00:46:03') [ RunTime:0.0715s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0603s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 102 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('102','2017-03-31') [ RunTime:0.0432s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 102 [ RunTime:0.0449s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 102  [ RunTime:0.0004s ]
+
+[ 2017-03-31T00:46:03+08:00 ] ::1 /jianghu/index.php/home/user/join
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000744s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001196s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001294s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0151s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0145s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0143s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0146s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0148s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0154s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0148s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 't7'  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11117' LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `jianghu_user` (`username`,`faceurl`,`password`,`phonenum`,`sex`,`addr`,`wechat_id`,`qq_id`,`jointime`) VALUES ('t7','http://121.42.203.85/jianghu/Public/images/default/userface.png','123','11117','1','','','','2017-03-31') [ RunTime:0.0150s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_user_domain` (`user_id`,`domain`) VALUES ('102','美食') [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('102','102') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `joinnum`=joinnum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 102 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001152s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001243s ]
+
+[ 2017-03-31T00:47:25+08:00 ] ::1 /jianghu/index.php/home/user/join
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000645s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001160s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001247s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0140s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0163s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0165s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0146s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 't8'  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11118' LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `jianghu_user` (`username`,`faceurl`,`password`,`phonenum`,`sex`,`addr`,`wechat_id`,`qq_id`,`jointime`) VALUES ('t8','http://121.42.203.85/jianghu/Public/images/default/userface.png','123','11118','1','','','','2017-03-31') [ RunTime:0.0176s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_user_domain` (`user_id`,`domain`) VALUES ('103','美食') [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('103','103') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `joinnum`=joinnum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0005s ]
+
+[ 2017-03-31T00:47:51+08:00 ] ::1 /jianghu/index.php/home/user/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001008s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0194s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0153s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0119s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0137s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11118'  [ RunTime:0.0007s ]
+NOTIC: [8] Use of undefined constant flag - assumed 'flag' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 139 行.
+SQL: SELECT `id` FROM `jianghu_user` WHERE `phonenum` = '11118' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 104 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `password` FROM `jianghu_user` WHERE `phonenum` = '11118' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 104 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_token` (`token`,`user_id`,`time`) VALUES ('CJWm4NxqUYPV6zK9X6wmwBpVb0MTbG+YVrsBrSwvdz+c5WcbxpK4Msvlebva4Q7JgwGXk6Q8YLF7rIcx2w0tDw==','104','2017-03-31 00:47:51') [ RunTime:0.0545s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0443s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 104 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('104','2017-03-31') [ RunTime:0.0432s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 104 [ RunTime:0.0783s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 104  [ RunTime:0.0004s ]
+
+[ 2017-03-31T00:47:51+08:00 ] ::1 /jianghu/index.php/home/user/join
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000511s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000909s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0138s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0144s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0160s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0136s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0145s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0136s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0144s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 't8'  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11118' LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_user` (`username`,`faceurl`,`password`,`phonenum`,`sex`,`addr`,`wechat_id`,`qq_id`,`jointime`) VALUES ('t8','http://121.42.203.85/jianghu/Public/images/default/userface.png','123','11118','1','','','','2017-03-31') [ RunTime:0.0005s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_user_domain` (`user_id`,`domain`) VALUES ('104','美食') [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('104','104') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_daily_num` SET `joinnum`=joinnum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0172s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 104 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001293s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001389s ]
+
+[ 2017-03-31T00:48:10+08:00 ] ::1 /jianghu/index.php/home/user/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000742s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0142s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0125s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0131s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0147s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11119'  [ RunTime:0.0006s ]
+NOTIC: [8] Use of undefined constant flag - assumed 'flag' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 139 行.
+SQL: SELECT `id` FROM `jianghu_user` WHERE `phonenum` = '11119' LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 105 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `password` FROM `jianghu_user` WHERE `phonenum` = '11119' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 105 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_token` (`token`,`user_id`,`time`) VALUES ('k/mUhfvdwLBfuT65cqzNiMMhOnV2AhNfLn6K1diH+USMRzDA7AnzRDOAmOXEtDS4oFFYtL7Pjfa6AsePVMx8aQ==','105','2017-03-31 00:48:09') [ RunTime:0.0788s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0006s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0475s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 105 LIMIT 1   [ RunTime:0.0007s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('105','2017-03-31') [ RunTime:0.0426s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 105 [ RunTime:0.0782s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 105  [ RunTime:0.0003s ]
+
+[ 2017-03-31T00:48:10+08:00 ] ::1 /jianghu/index.php/home/user/join
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000784s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0154s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0138s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0170s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0161s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0519s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0823s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 't9'  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11119' LIMIT 1   [ RunTime:0.0006s ]
+SQL: INSERT INTO `jianghu_user` (`username`,`faceurl`,`password`,`phonenum`,`sex`,`addr`,`wechat_id`,`qq_id`,`jointime`) VALUES ('t9','http://121.42.203.85/jianghu/Public/images/default/userface.png','123','11119','1','','','','2017-03-31') [ RunTime:0.0008s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_user_domain` (`user_id`,`domain`) VALUES ('105','美食') [ RunTime:0.0002s ]
+SQL: INSERT INTO `jianghu_friend` (`user_id`,`friend_id`) VALUES ('105','105') [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `joinnum`=joinnum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 105 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000995s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001065s ]
+
+[ 2017-03-31T00:48:11+08:00 ] ::1 /jianghu/index.php/home/user/join
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000924s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001258s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001361s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0156s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0411s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.1096s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0262s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0208s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0366s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0474s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `username` = 't9'  [ RunTime:0.0007s ]
+
+[ 2017-03-31T17:07:46+08:00 ] ::1 /jianghu/index.php/home/user/checkPhoneExisted
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001267s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000912s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000999s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0180s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '126489' LIMIT 1   [ RunTime:0.0013s ]
+
+[ 2017-03-31T17:07:57+08:00 ] ::1 /jianghu/index.php/home/user/checkPhoneExisted
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0171s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `phonenum` = '11111' LIMIT 1   [ RunTime:0.0010s ]
+
+[ 2017-03-31T17:16:37+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000081s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001092s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001459s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0205s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0210s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0211s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0222s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2ea7c6999b86afb0f34bc274e78377fe' AND `state` = 0 LIMIT 1   [ RunTime:0.0020s ]
+
+[ 2017-03-31T17:16:37+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=2&type=201
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001161s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001254s ]
+
+[ 2017-03-31T17:16:48+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000909s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000980s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0186s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0150s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0172s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0160s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-03-31' LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('1','2017-03-31') [ RunTime:0.0640s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.0650s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31'  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2017-03-31' [ RunTime:0.0553s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0205s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0155s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0168s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0158s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0148s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0173s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0160s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `jianghu_business` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_introduce` (`business_id`,`business_name`,`business_latitude`,`business_longtitude`,`business_website`,`business_addr`,`text`,`user_id`,`time`,`degree`,`domain`) VALUES ('1','章鱼小丸子','白云区','','','this is my business_addr','这是1的内容','1','2017-03-31 17:16:47','1','美食') [ RunTime:0.0682s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('美食','233') [ RunTime:0.0413s ]
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('1','233','233','2017-03-31 17:16:48','1','1') [ RunTime:0.0550s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0730s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` IN ('5','4','3','2','1','6','7','18','20','18') [ RunTime:0.0490s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.0557s ]
+
+[ 2017-03-31T17:32:06+08:00 ] ::1 /jianghu/index.php/home/introduce/showFriendIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000978s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001111s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001217s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0189s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0152s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0169s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0189s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-03-31' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-03-31' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0189s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0178s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0181s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0190s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0173s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0175s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `user_id` IN ('5','4','3','2','1','6','7','18','20','18') ORDER BY time desc LIMIT 0,10   [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0177s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0206s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0205s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 233 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 233  [ RunTime:0.0109s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=233 or id=233 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 233 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 233 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 233 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18','20','18') AND `introduce_id` = 233 ORDER BY time desc LIMIT 0,2   [ RunTime:0.0019s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 232 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 232  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=232 or id=232 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0013s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 232 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 232 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 232 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18','20','18') AND `introduce_id` = 232 ORDER BY time desc LIMIT 0,2   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 230 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 230  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=230 or id=230 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 230 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 230 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 230 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 165 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 165  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 3 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=165 or id=165 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 165 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 165 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 165 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18','20','18') AND `introduce_id` = 230 ORDER BY time desc LIMIT 0,2   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 229 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 229  [ RunTime:0.0019s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=229 or id=229 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 229 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 229 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 229 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 211 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 211  [ RunTime:0.0011s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=211 or id=211 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18','20','18') AND `introduce_id` = 229 ORDER BY time desc LIMIT 0,2   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 228 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 228  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=228 or id=228 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 228 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 228 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 228 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 211 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 211  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=211 or id=211 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18','20','18') AND `introduce_id` = 228 ORDER BY time desc LIMIT 0,2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 227 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 227  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=227 or id=227 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 227 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 227 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 227 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=90 or id=90 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 90 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 90 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 90 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18','20','18') AND `introduce_id` = 227 ORDER BY time desc LIMIT 0,2   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 226 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 226  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=226 or id=226 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 226 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 226 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 226 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 211 LIMIT 1   [ RunTime:0.0023s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 211  [ RunTime:0.0009s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=211 or id=211 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18','20','18') AND `introduce_id` = 226 ORDER BY time desc LIMIT 0,2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 225 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 225  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=225 or id=225 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 225 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 225 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 225 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 211 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 211  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=211 or id=211 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18','20','18') AND `introduce_id` = 225 ORDER BY time desc LIMIT 0,2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 224 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 224  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=224 or id=224 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 224 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 224 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 224 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 211 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 211  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=211 or id=211 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18','20','18') AND `introduce_id` = 224 ORDER BY time desc LIMIT 0,2   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 223 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 223  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=223 or id=223 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 223 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 223 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 223 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 211 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 211  [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=211 or id=211 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 211 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_comment` WHERE `user_id` IN ('5','4','3','2','1','6','7','18','20','18') AND `introduce_id` = 223 ORDER BY time desc LIMIT 0,2   [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`='0' WHERE `id` = 1 [ RunTime:0.0908s ]
+
+[ 2017-03-31T22:53:46+08:00 ] ::1 /jianghu/index.php/home/introduce/getImageUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000796s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001119s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001218s ]
+NOTIC: [8] Array to string conversion D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 16 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2017-03-31T22:54:16+08:00 ] ::1 /jianghu/index.php/home/introduce/getImageUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000148s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001635s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000990s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001086s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2017-03-31T22:54:54+08:00 ] ::1 /jianghu/index.php/home/introduce/getImageUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001251s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001335s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2017-03-31T22:57:35+08:00 ] ::1 /jianghu/index.php/home/introduce/getImageUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000855s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2017-03-31T22:58:56+08:00 ] ::1 /jianghu/index.php/home/introduce/getImageUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000767s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000843s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2017-03-31T22:59:10+08:00 ] ::1 /jianghu/index.php/home/introduce/getImageUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000685s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001149s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001321s ]
+
+[ 2017-03-31T23:03:08+08:00 ] ::1 /jianghu/index.php/home/introduce/getImageUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000721s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001972s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002191s ]
+
+[ 2017-03-31T23:03:42+08:00 ] ::1 /jianghu/index.php/home/introduce/getImageUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000518s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000991s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001096s ]
+
+[ 2017-03-31T23:16:42+08:00 ] ::1 /jianghu/index.php/home/introduce/getImageUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000831s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001431s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001537s ]
+
+[ 2017-03-31T23:25:50+08:00 ] ::1 /jianghu/index.php/home/introduce/getImageUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000746s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001158s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001273s ]
+
+[ 2017-03-31T23:36:08+08:00 ] ::1 /jianghu/index.php/home/introduce/getImageUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001010s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001092s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+

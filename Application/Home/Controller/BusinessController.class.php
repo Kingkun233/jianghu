@@ -77,7 +77,9 @@ class BusinessController extends Controller
                 'star' => $star
             ));
         }
-        $msg['degree'] = R("sort/getTwoTopDegree",array($degrees2));
+        $msg['degree'] = R("sort/getTwoTopDegree", array(
+            $degrees2
+        ));
         $msg['star'] = $star;
         $this->ajaxReturn(responseMsg(0, $type, $msg));
     }
@@ -132,12 +134,15 @@ class BusinessController extends Controller
         $Business = D("business");
         $longtitude = $post['longtitude'];
         $latitude = $post['latitude'];
-        $where['name']=array("like","%".$post['key']."%");
+        $where['name'] = array(
+            "like",
+            "%" . $post['key'] . "%"
+        );
         $business_locations = $Business->where($where)->select();
-        $returnBusiness=array();
+        $returnBusiness = array();
         foreach ($business_locations as $k => $v) {
             if ($business_locations[$k]['latitude'] && $business_locations[$k]['longtitude']) {
-                $distance = $this->getDistance($business_locations[$k]['latitude'],$business_locations[$k]['longtitude'], $latitude, $longtitude);
+                $distance = $this->getDistance($business_locations[$k]['latitude'], $business_locations[$k]['longtitude'], $latitude, $longtitude);
                 if ($distance < 50) {
                     $business_locations[$k]['distance'] = $distance;
                     unset($business_locations[$k]['state']);
@@ -146,18 +151,18 @@ class BusinessController extends Controller
                 }
             }
         }
-      //按照距离排序
-        $returnBusiness=sortTwoDimensionalArrayByKey("distance", $returnBusiness, SORT_ASC);
-//         foreach ($returnBusiness as $k => $v) {
-//             $theKeyArray[] = $v["distance"];
-//         }
-//         array_multisort($theKeyArray, SORT_ASC, $returnBusiness);
+        // 按照距离排序
+        $returnBusiness = sortTwoDimensionalArrayByKey("distance", $returnBusiness, SORT_ASC);
+        // foreach ($returnBusiness as $k => $v) {
+        // $theKeyArray[] = $v["distance"];
+        // }
+        // array_multisort($theKeyArray, SORT_ASC, $returnBusiness);
         $this->ajaxReturn(responseMsg(0, $type, $returnBusiness));
     }
 
     /**
      * 计算两点之间的距离
-     * 
+     *
      * @param unknown $lng1            
      * @param unknown $lat1            
      * @param unknown $lng2            
@@ -174,6 +179,6 @@ class BusinessController extends Controller
         $yards = $feet / 3;
         $kilometers = $miles * 1.609344;
         $meters = $kilometers * 1000;
-        return round($kilometers,1);
+        return round($kilometers, 1);
     }
 }

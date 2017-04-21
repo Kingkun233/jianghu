@@ -5,18 +5,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>添加领域</h3>
-<form action="{:U('domain/doadd')}" method="post">
-<table width="70%" border="1" cellpadding="5" cellspacing="0" bgcolor="#cccccc">
-	<tr>
-		<td align="right">领域名称</td>
-		<td><input type="text" name="name" placeholder="请输入领域名称"/></td>
-	</tr>
-	<tr>
-		<td colspan="2"><input type="submit"  value="添加领域"/></td>
-	</tr>
-
-</table>
-</form>
+	<h3>添加领域</h3>
+	<form action="{:U('domain/doadd')}" method="post"
+		enctype="multipart/form-data">
+		<table width="70%" border="1" cellpadding="5" cellspacing="0"
+			bgcolor="#cccccc">
+			<tr>
+				<td align="right">领域名称</td>
+				<td><input type="text" name="name" placeholder="请输入领域名称" /></td>
+			</tr>
+			<tr>
+				<td align="right">领域图片</td>
+				<td><input type="file" name="domain_pic" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="添加领域" /></td>
+			</tr>
+		</table>
+	</form>
 </body>
 </html>

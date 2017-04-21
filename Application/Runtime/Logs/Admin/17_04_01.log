@@ -1,0 +1,1032 @@
+[ 2017-04-01T14:09:31+08:00 ] ::1 /jianghu/index.php/Admin/poster/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000791s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001181s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001305s ]
+SQL: SHOW COLUMNS FROM `jianghu_admin_token` [ RunTime:0.0191s ]
+SQL: SELECT * FROM `jianghu_admin_token` WHERE `name` = 'superadmin' AND `token` = 'e5c511d751c409f34b0c3a47572e61a6' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0167s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000158s ]
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\c7f3969e8772981c7eb82e95a0cce6cc.php 第 47 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014460s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014521s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000725s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000774s ]
+
+[ 2017-04-01T14:09:33+08:00 ] ::1 /jianghu/index.php/Admin/poster/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000029s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001056s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001026s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014140s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014227s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000753s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000821s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000870s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000925s ]
+
+[ 2017-04-01T14:10:15+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001805s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000884s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0258s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041134s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000844s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000915s ]
+
+[ 2017-04-01T14:10:18+08:00 ] ::1 /jianghu/index.php/Admin/poster/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000969s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001200s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001318s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0241s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000127s ]
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\c7f3969e8772981c7eb82e95a0cce6cc.php 第 47 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027154s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027252s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000978s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001057s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001201s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001269s ]
+
+[ 2017-04-01T14:10:23+08:00 ] ::1 /jianghu/index.php/Admin/poster/overtime.html?id=36
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000523s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000863s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000923s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0187s ]
+SQL: UPDATE `jianghu_poster` SET `state`='1' WHERE `id` = 36 [ RunTime:0.0622s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000154s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011976s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012078s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001184s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001265s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001422s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001525s ]
+
+[ 2017-04-01T14:10:24+08:00 ] ::1 /jianghu/index.php/Admin/poster/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000838s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001213s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0186s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000094s ]
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\c7f3969e8772981c7eb82e95a0cce6cc.php 第 47 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013796s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013986s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001254s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001329s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002321s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002465s ]
+
+[ 2017-04-01T14:10:26+08:00 ] ::1 /jianghu/index.php/Admin/poster/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000873s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000999s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001075s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013801s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013900s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000923s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001081s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001135s ]
+
+[ 2017-04-01T14:11:12+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000159s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000842s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0333s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T14:22:30+08:00 ] ::1 /jianghu/index.php/Admin/poster/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000810s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004864s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004982s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000062s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016616s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016706s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001081s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002169s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002261s ]
+
+[ 2017-04-01T14:22:52+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000502s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002867s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003010s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0705s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+NOTIC: [2] file_put_contents(../../../Uploads/poster/365a1d4bc3f92a9c1a67420ca1bb388f.html): failed to open stream: No such file or directory D:\xampp\htdocs\jianghu\Application\Admin\Controller\PosterController.class.php 第 45 行.
+
+[ 2017-04-01T14:25:04+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001291s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000952s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001047s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0291s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+NOTIC: [2] file_put_contents(../../../Uploads/poster/6df0e64e21e6952d67c1c4616424f05b.html): failed to open stream: No such file or directory D:\xampp\htdocs\jianghu\Application\Admin\Controller\PosterController.class.php 第 45 行.
+
+[ 2017-04-01T14:31:58+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001186s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000896s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000972s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0378s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T14:32:27+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000868s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001205s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001401s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0626s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0055s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T14:33:51+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000767s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003014s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0406s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T14:42:57+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000939s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001256s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001358s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0297s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T14:44:16+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000779s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001125s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001215s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0535s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\jianghu\Application\Admin\Controller\PosterController.class.php 第 44 行.
+
+[ 2017-04-01T14:44:38+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001178s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001275s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0613s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+NOTIC: [2] mkdir(): File exists D:\xampp\htdocs\jianghu\Application\Admin\Controller\PosterController.class.php 第 44 行.
+
+[ 2017-04-01T15:04:25+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002625s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0289s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:08:35+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000858s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001139s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0689s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0071s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+NOTIC: [2] chmod(): No such file or directory D:\xampp\htdocs\jianghu\Application\Admin\Controller\PosterController.class.php 第 47 行.
+
+[ 2017-04-01T15:10:38+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000866s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002189s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0611s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+NOTIC: [2] chmod(): No such file or directory D:\xampp\htdocs\jianghu\Application\Admin\Controller\PosterController.class.php 第 47 行.
+
+[ 2017-04-01T15:12:32+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000923s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001649s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0301s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+NOTIC: [2] chmod(): No such file or directory D:\xampp\htdocs\jianghu\Application\Admin\Controller\PosterController.class.php 第 47 行.
+
+[ 2017-04-01T15:13:55+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001297s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001442s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0299s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:15:57+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001207s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001935s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000947s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001020s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0616s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:16:44+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001452s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001561s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0265s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0023s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:20:58+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001111s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001365s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0313s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:21:29+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001763s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002250s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002417s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0520s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0037s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:26:38+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000708s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001057s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001179s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0242s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:29:01+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001128s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001223s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0630s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:30:34+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001834s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001949s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0611s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+NOTIC: [2] file_put_contents(jianghu/Application/Uploads/poster/test.txt): failed to open stream: No such file or directory D:\xampp\htdocs\jianghu\Application\Admin\Controller\PosterController.class.php 第 58 行.
+
+[ 2017-04-01T15:31:58+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000996s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001235s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001403s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0896s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:33:19+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000575s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000799s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000870s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0806s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:34:17+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000053s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001212s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001328s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0243s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:40:37+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000768s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001217s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001332s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0551s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:43:00+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000509s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001758s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001870s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0381s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+NOTIC: [2] file_put_contents(../../../poster/test.html): failed to open stream: No such file or directory D:\xampp\htdocs\jianghu\Application\Admin\Controller\PosterController.class.php 第 58 行.
+
+[ 2017-04-01T15:44:36+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000082s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001217s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004011s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0326s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:45:51+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000852s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001385s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002328s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0935s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0095s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:47:37+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000787s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005854s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005973s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0328s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:57:08+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.005433s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000888s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000957s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0473s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:58:39+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000054s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001704s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003422s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0340s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T15:59:44+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001126s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.004989s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005086s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0249s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T16:09:48+08:00 ] ::1 /jianghu/index.php/Admin/poster/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000777s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001095s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001189s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014431s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014498s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000861s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000906s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001179s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001245s ]
+
+[ 2017-04-01T16:09:58+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002994s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005602s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005748s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0325s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T16:14:04+08:00 ] ::1 /jianghu/index.php/Admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000513s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002957s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020620s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020747s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.006757s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.006885s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001688s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001853s ]
+
+[ 2017-04-01T16:14:05+08:00 ] ::1 /jianghu/index.php/Admin/index/main.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000777s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001457s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050126s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001515s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001616s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001343s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001444s ]
+
+[ 2017-04-01T16:14:07+08:00 ] ::1 /jianghu/index.php/Admin/poster/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001150s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024134s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024237s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001173s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001705s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003943s ]
+INFO: [ app_end ] --END-- [ RunTime:0.004049s ]
+
+[ 2017-04-01T16:14:40+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000032s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001148s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001058s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001169s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0542s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-04-01T16:23:02+08:00 ] ::1 /jianghu/index.php/Admin/poster/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000813s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001111s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001218s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000065s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000169s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016346s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016441s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000753s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001326s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001450s ]
+
+[ 2017-04-01T16:23:04+08:00 ] ::1 /jianghu/index.php/Admin/poster/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000791s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001106s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001223s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0662s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000060s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000146s ]
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\c7f3969e8772981c7eb82e95a0cce6cc.php 第 47 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023424s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023511s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000984s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001275s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001363s ]
+
+[ 2017-04-01T16:23:06+08:00 ] ::1 /jianghu/index.php/Admin/poster/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000825s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001063s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000137s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043911s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044075s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001037s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001172s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001253s ]
+
+[ 2017-04-01T16:23:52+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000780s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002136s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002271s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0363s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+SQL: INSERT INTO `jianghu_poster` (`posterurl`,`posterpath`,`title`,`content`,`time`) VALUES ('http://localhost/jianghu/Uploads/2017-04-01/58df6398266f7.jpg','./Uploads/2017-04-01/58df6398266f7.jpg','后台满血归来','http://localhost/jianghu/Uploads/poster/3cb009bf82bb14a4f30e41173d1bc6d4.html','2017-04-01 16:23:52') [ RunTime:0.0593s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000069s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000171s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016340s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016424s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000741s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000801s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001022s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001121s ]
+
+[ 2017-04-01T16:23:53+08:00 ] ::1 /jianghu/index.php/Admin/poster/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000650s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001354s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0253s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0009s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000140s ]
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\c7f3969e8772981c7eb82e95a0cce6cc.php 第 47 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015138s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015236s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001193s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001281s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001224s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001311s ]
+
+[ 2017-04-01T16:23:55+08:00 ] ::1 /jianghu/index.php/Admin/poster/detail.html?id=42
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000765s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000928s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001023s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0237s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `id` = 42  [ RunTime:0.0006s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000117s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021880s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000920s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001015s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001095s ]
+
+[ 2017-04-01T16:28:29+08:00 ] ::1 /jianghu/index.php/Admin/poster/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000042s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000985s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001464s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0264s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0008s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000103s ]
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\c7f3969e8772981c7eb82e95a0cce6cc.php 第 47 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014194s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014280s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000905s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000965s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000895s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000946s ]
+
+[ 2017-04-01T16:28:34+08:00 ] ::1 /jianghu/index.php/Admin/poster/overtime.html?id=42
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001370s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001523s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0276s ]
+SQL: UPDATE `jianghu_poster` SET `state`='1' WHERE `id` = 42 [ RunTime:0.0442s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000067s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014589s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014686s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000919s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000828s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000874s ]
+
+[ 2017-04-01T16:28:35+08:00 ] ::1 /jianghu/index.php/Admin/poster/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000269s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001248s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001183s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001294s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0232s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0007s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000113s ]
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\c7f3969e8772981c7eb82e95a0cce6cc.php 第 47 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015205s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015295s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001210s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001576s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001747s ]
+
+[ 2017-04-01T16:28:37+08:00 ] ::1 /jianghu/index.php/Admin/poster/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001039s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001343s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000059s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019372s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019468s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001435s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001522s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003714s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003849s ]
+
+[ 2017-04-01T16:29:11+08:00 ] ::1 /jianghu/index.php/Admin/poster/doadd.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001372s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0666s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jianghu_poster` WHERE `state` = 0 LIMIT 1   [ RunTime:0.0046s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+SQL: INSERT INTO `jianghu_poster` (`posterurl`,`posterpath`,`title`,`content`,`content_url`,`time`) VALUES ('http://localhost/jianghu/Uploads/2017-04-01/58df64d71b9af.jpg','./Uploads/2017-04-01/58df64d71b9af.jpg','这是海报','&lt;p&gt;刘汉山来啦哈哈哈哈哈&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://121.42.203.85/jianghu/Public/ueditor/php/upload/image/20170401/1491035348720136.jpg&quot; title=&quot;1491035348720136.jpg&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;img src=&quot;http://121.42.203.85/jianghu/Public/ueditor/php/upload/image/20170401/1491035348694102.png&quot; title=&quot;1491035348694102.png&quot;/&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;','http://localhost/jianghu/Uploads/poster/698382d7b5118098796bf44e27aad875.html','2017-04-01 16:29:11') [ RunTime:0.2184s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012545s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012625s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001055s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001119s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002361s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002455s ]
+
+[ 2017-04-01T16:29:12+08:00 ] ::1 /jianghu/index.php/Admin/poster/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000852s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002435s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002617s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0400s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0927s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000068s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+NOTIC: [8] Undefined variable: page D:\xampp\htdocs\jianghu\Application\Runtime\Cache\Admin\c7f3969e8772981c7eb82e95a0cce6cc.php 第 47 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.028513s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.028603s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001113s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001189s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001219s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001297s ]
+
+[ 2017-04-01T16:29:14+08:00 ] ::1 /jianghu/index.php/Admin/poster/detail.html?id=43
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000835s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001617s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001716s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0219s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `id` = 43  [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000233s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021950s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022068s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001002s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001082s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001401s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001494s ]
+

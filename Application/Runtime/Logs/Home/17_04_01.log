@@ -1,0 +1,55 @@
+[ 2017-04-01T16:22:37+08:00 ] ::1 /jianghu/index.php/home/poster/getPoster
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000999s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001103s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001209s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0249s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0220s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0303s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0423s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2d461ebf6c5364e366e759f234d9434e' AND `state` = 0 LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-04-01' LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-01' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('1','2017-04-01') [ RunTime:0.0604s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.0648s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-01'  [ RunTime:0.0018s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2017-04-01','1') [ RunTime:0.0665s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0921s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster_praise` [ RunTime:0.0963s ]
+NOTIC: [8] Undefined index: poster_id D:\xampp\htdocs\jianghu\Application\Home\Controller\PosterController.class.php 第 23 行.
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0018s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 41  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 40  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 38  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 37  [ RunTime:0.0007s ]
+
+[ 2017-04-01T16:30:31+08:00 ] ::1 /jianghu/index.php/home/poster/getPoster
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000740s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001890s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0196s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0193s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0204s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0173s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2d461ebf6c5364e366e759f234d9434e' AND `state` = 0 LIMIT 1   [ RunTime:0.0118s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0077s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-04-01' LIMIT 1   [ RunTime:0.0320s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-04-01' LIMIT 1   [ RunTime:0.0096s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0514s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster_praise` [ RunTime:0.0315s ]
+NOTIC: [8] Undefined index: poster_id D:\xampp\htdocs\jianghu\Application\Home\Controller\PosterController.class.php 第 23 行.
+SQL: SELECT * FROM `jianghu_poster` WHERE `state` = 0 ORDER BY time desc  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 43  [ RunTime:0.0014s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 41  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 40  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 38  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 37  [ RunTime:0.0181s ]
+

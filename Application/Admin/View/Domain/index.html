@@ -20,6 +20,7 @@
                             <tr>
                                 <th>编号</th>
                                 <th>领域名称</th>
+                                <th>领域图片</th>
                                 <th>操作</th>
                             </tr>
                         </thead>
@@ -29,6 +30,7 @@
                                 <!--这里的id和for里面的c1 需要循环出来-->
                                 <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label">{$vo.id}</label></td>
                                 <td>{$vo.name}</td>
+                                <td><img alt="" src="{$vo.domain_pic}" height="60px" width="60px"></td>
                                 <td align="center"><input type="button" value="删除" class="btn"  onclick="delDomain({$vo.id})"></td>
                             </tr>
                          </foreach>

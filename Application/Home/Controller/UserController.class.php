@@ -2,6 +2,7 @@
 namespace Home\Controller;
 
 use Think\Controller;
+use Think\Model;
 
 class UserController extends Controller
 {
@@ -13,6 +14,9 @@ class UserController extends Controller
     {
         $type = 100;
         $post = touristApiPreTreat($type);
+        $model=new Model();
+        //开启一个事务
+        $model->startTrans();
         $User = D('user');
         $Friend = D('friend');
         $Token = D('token');
@@ -20,21 +24,21 @@ class UserController extends Controller
         $Joinnum = D("daily_num");
         $UserDomain = D('user_domain');
         $Domain = D('domain');
-        if(!$post['username']){
-            //若username为空，则插入默认用户名
-            $data['username']=$this->getDefaultName();
-        }else{
+        if (! $post['username']) {
+            // 若username为空，则插入默认用户名
+            $data['username'] = $this->getDefaultName();
+        } else {
             $data['username'] = $post['username'];
         }
         if (checkUserExist($data['username'])) {
-            $this->ajaxReturn(responseMsg(6, $type)); // 用户已存在
+            $this->ajaxReturn(responseMsg(6, $type, null)); // 用户已存在
         }
-        //默认头像
-        $data['faceurl'] =$this->getDefaultFaceUrl();
-        $data['password'] =$post['password'];
+        // 默认头像
+        $data['faceurl'] = $this->getDefaultFaceUrl();
+        $data['password'] = $post['password'];
         $data['phonenum'] = $post['phonenum'];
         if ($this->checkPhoneExist($data['phonenum'])) {
-            $this->ajaxReturn(responseMsg(7, $type)); // 电话已存在
+            $this->ajaxReturn(responseMsg(7, $type, null)); // 电话已存在
         }
         $domain_ids = $post['domain_id'];
         // dump($domain_ids);die;
@@ -44,15 +48,15 @@ class UserController extends Controller
             $data['sex'] = 1; // 女
         }
         $data['addr'] = $post['addr'];
-        $data['wechat_id']=$post['wechat_id'];
-        $data['qq_id']=$post['qq_id'];
+        $data['wechat_id'] = $post['wechat_id'];
+        $data['qq_id'] = $post['qq_id'];
         $data['jointime'] = date('Y-m-d');
         // 把数据插入用户表
         $flag1 = $User->add($data);
         $user_id = $flag1;
         // 把数据插入领域表
         $add1['user_id'] = $flag1;
-        foreach ($domain_ids as $k=>$v) {
+        foreach ($domain_ids as $k => $v) {
             $domain_name = $Domain->where(array(
                 'id' => $v
             ))->getField('name');
@@ -81,10 +85,15 @@ class UserController extends Controller
             $flag4 = $Joinnum->add($data1);
         }
         if (! ($flag1 && $flag2 && $flag4)) {
+            //事务回滚
+            $model->rollback();
             $this->ajaxReturn(responseMsg(1, $type)); // 注册失败
+        }else{
+            //事务提交
+            $model->commit();
         }
         // 顺便登录
-            // post json请求
+        // post json请求
         $user_id = $flag1;
         $userinfo = $User->where(array(
             'id' => $user_id
@@ -92,10 +101,10 @@ class UserController extends Controller
         $data = array(
             "phonenum" => $userinfo['phonenum'],
             "password" => $userinfo['password'],
-            "type"=>"101"
+            "type" => "101"
         );
         $data_string = json_encode($data);
-        $url="http://121.42.203.85/jianghu/index.php/home/user/login";
+        $url = "http://".$_SERVER['SERVER_NAME']."/jianghu/index.php/home/user/login";
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
@@ -191,7 +200,7 @@ class UserController extends Controller
             $domain_names2 = $UserDomain->where(array(
                 'user_id' => $user_id
             ))->select();
-            $domain_names=array();
+            $domain_names = array();
             foreach ($domain_names2 as $k => $v) {
                 $domain_names[] = $v['domain'];
             }
@@ -200,6 +209,8 @@ class UserController extends Controller
             $resp['token'] = $add_token['token'];
             $this->ajaxReturn($resp); // 登录成功
         } else {
+            // dump($dbpassword);
+            // dump($data['password']);
             $this->ajaxReturn(responseMsg(1, $type)); // 登录失败
         }
     }
@@ -241,9 +252,11 @@ class UserController extends Controller
         ))->save($add);
         
         if (flag) {
-            //如果成功则刷新融云的个人信息
-            $username=$User->where(array('id'=>$user_id))->getField("username");
-            $rm=$this->refreshRongYun($user_id, $add['faceurl'], $username);
+            // 如果成功则刷新融云的个人信息
+            $username = $User->where(array(
+                'id' => $user_id
+            ))->getField("username");
+            $rm = $this->refreshRongYun($user_id, $add['faceurl'], $username);
             // 如果添加成功则删除原图片
             unlink($originface);
             $this->ajaxReturn(responseMsg(0, $type)); // 头像添加成功
@@ -286,7 +299,7 @@ class UserController extends Controller
         $domain2 = $Domain->where(array(
             'user_id' => $user_id
         ))->select();
-        $domain=array();
+        $domain = array();
         foreach ($domain2 as $k => $v) {
             $domain[] = $v['domain'];
         }
@@ -356,14 +369,17 @@ class UserController extends Controller
         
         return json_decode($result, true);
     }
+
     /**
      * 刷新融云用户信息
-     * @param unknown $user_id
-     * @param unknown $faceurl
-     * @param unknown $username
+     *
+     * @param unknown $user_id            
+     * @param unknown $faceurl            
+     * @param unknown $username            
      * @return mixed
      */
-    public function refreshRongYun($user_id, $faceurl, $username){
+    public function refreshRongYun($user_id, $faceurl, $username)
+    {
         // 参数初始化
         $nonce = mt_rand();
         
@@ -376,15 +392,15 @@ class UserController extends Controller
         $postData = 'userId=' . $user_id . '&name=' . $username . '&portraitUri=' . $faceurl;
         
         $httpHeader = array(
-        
+            
             'App-Key:' . $appKey, // 平台分配
-        
+            
             'Nonce:' . $nonce, // 随机数
-        
+            
             'Timestamp:' . $timeStamp, // 时间戳
-        
+            
             'Signature:' . $signature, // 签名
-        
+            
             'Content-Type: application/x-www-form-urlencoded'
         );
         
@@ -414,168 +430,204 @@ class UserController extends Controller
         
         return json_decode($result, true);
     }
+
     /**
      * 修改用户名
      */
-    public function changeUsername(){
-        $type=106;
-        $post=loginPermitApiPreTreat($type);
-        $User=D('user');
-        $user_id=$post['user_id'];
-        $data['username']=$post['new_username'];
-        //刷新融云上的用户信息
-        $faceurl=$User->where(array("id"=>$user_id))->getField("faceurl");
+    public function changeUsername()
+    {
+        $type = 106;
+        $post = loginPermitApiPreTreat($type);
+        $User = D('user');
+        $user_id = $post['user_id'];
+        $data['username'] = $post['new_username'];
+        // 刷新融云上的用户信息
+        $faceurl = $User->where(array(
+            "id" => $user_id
+        ))->getField("faceurl");
         $this->refreshRongYun($user_id, $faceurl, $data['username']);
-        $User->where(array('id'=>$user_id))->save($data);
+        $User->where(array(
+            'id' => $user_id
+        ))->save($data);
         $this->ajaxReturn(responseMsg(0, $type));
     }
+
     /**
      * 修改密码
      */
-    public function changePassword(){
-        $type=107;
-        $post=loginPermitApiPreTreat($type);
-        $User=D('user');
-        $user_id=$post['user_id'];
-        $data['password']=$post['new_password'];
-        $User->where(array('id'=>$user_id))->save($data);
+    public function changePassword()
+    {
+        $type = 107;
+        $post = loginPermitApiPreTreat($type);
+        $User = D('user');
+        $user_id = $post['user_id'];
+        $data['password'] = $post['new_password'];
+        $User->where(array(
+            'id' => $user_id
+        ))->save($data);
         $this->ajaxReturn(responseMsg(0, $type));
     }
+
     /**
      * 修改个人简介
      */
-    public function changeDescription(){
-        $type=108;
-        $post=loginPermitApiPreTreat($type);
-        $User=D('user');
-        $user_id=$post['user_id'];
-        $data['description']=$post['new_description'];
-        $User->where(array('id'=>$user_id))->save($data);
+    public function changeDescription()
+    {
+        $type = 108;
+        $post = loginPermitApiPreTreat($type);
+        $User = D('user');
+        $user_id = $post['user_id'];
+        $data['description'] = $post['new_description'];
+        $User->where(array(
+            'id' => $user_id
+        ))->save($data);
         $this->ajaxReturn(responseMsg(0, $type));
     }
+
     /**
      * 提交反馈
      */
-    public function feedBack(){
-        $type=109;
-        $post=loginPermitApiPreTreat($type);
-        $Feedback=D('feedback');
-        $add['text']=$post['text'];
-        $add['user_id']=$post['user_id'];
-        $add['time']=date("Y-m-d H:i:s");
+    public function feedBack()
+    {
+        $type = 109;
+        $post = loginPermitApiPreTreat($type);
+        $Feedback = D('feedback');
+        $add['text'] = $post['text'];
+        $add['user_id'] = $post['user_id'];
+        $add['time'] = date("Y-m-d H:i:s");
         $Feedback->add($add);
         $this->ajaxReturn(responseMsg(0, $type));
     }
+
     /**
      * 收藏推荐
      */
-    public function collect(){
-        $type=110;
-        $post=loginPermitApiPreTreat($type);
-        $Collection=D('collection');
-        $add['introduce_id']=$post['introduce_id'];
-        $add['user_id']=$post['user_id'];
-        $add['time']=date("Y-m-d H:i:s");
+    public function collect()
+    {
+        $type = 110;
+        $post = loginPermitApiPreTreat($type);
+        $Collection = D('collection');
+        $add['introduce_id'] = $post['introduce_id'];
+        $add['user_id'] = $post['user_id'];
+        $add['time'] = date("Y-m-d H:i:s");
         $Collection->add($add);
         $this->ajaxReturn(responseMsg(0, $type));
     }
+
     /**
      * 删除收藏
      */
-    public function delCollection(){
-        $type=114;
-        $post=loginPermitApiPreTreat($type);
-        $Collect=D('collection');
-        $where_collect['user_id']=$post['user_id'];
-        $where_collect['id']=$post['collection_id'];
-        $flag=$Collect->where($where_collect)->delete();
-        if($flag){
+    public function delCollection()
+    {
+        $type = 114;
+        $post = loginPermitApiPreTreat($type);
+        $Collect = D('collection');
+        $where_collect['user_id'] = $post['user_id'];
+        $where_collect['introduce_id'] = $post['introduce_id'];
+        $flag = $Collect->where($where_collect)->delete();
+        if ($flag) {
             $this->ajaxReturn(responseMsg(0, $type));
-        }else{
+        } else {
             $this->ajaxReturn(responseMsg(1, $type));
         }
     }
-        
+
     /**
      * 举报用户
      */
-    public function reportUser(){
-        $type=111;
-        $post=loginPermitApiPreTreat($type);
-        $Report=D('user_report');
-        $add['user_id']=$post['user_id'];
-        $add['reported_id']=$post['reported_id'];
-        $add['text']=$post['text'];
-        $add['time']=date("Y-m-d H:i:s");
-        $flag=$Report->add($add);
-        if($flag){
+    public function reportUser()
+    {
+        $type = 111;
+        $post = loginPermitApiPreTreat($type);
+        $Report = D('user_report');
+        $add['user_id'] = $post['user_id'];
+        $add['reported_id'] = $post['reported_id'];
+        $add['text'] = $post['text'];
+        $add['time'] = date("Y-m-d H:i:s");
+        $flag = $Report->add($add);
+        if ($flag) {
             $this->ajaxReturn(responseMsg(0, $type));
-        }else{
+        } else {
             $this->ajaxReturn(responseMsg(1, $type));
         }
     }
+
     /**
      * 得到用户默认头像
+     *
      * @return string 该头像的url
      */
-    public function getDefaultFaceUrl(){
+    public function getDefaultFaceUrl()
+    {
         return "http://121.42.203.85/jianghu/Public/images/default/userface.png";
     }
+
     /**
      * 得到默认用户名
+     *
      * @return NULL|string 默认用户名
      */
-    public function getDefaultName(){
-        $User=D('user');
-        $length=9;
+    public function getDefaultName()
+    {
+        $User = D('user');
+        $length = 9;
         $str = null;
         $strPol = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
-        $max = strlen($strPol)-1;
-        for($i=0;$i<$length;$i++){
-            $str.=$strPol[rand(0,$max)];//rand($min,$max)生成介于min和max两个数之间的一个随机整数
+        $max = strlen($strPol) - 1;
+        for ($i = 0; $i < $length; $i ++) {
+            $str .= $strPol[rand(0, $max)]; // rand($min,$max)生成介于min和max两个数之间的一个随机整数
         }
-        //检查数据库中有没有该名字的用户
-        $flag=$User->where(array("username"=>$str))->find();
-        if($flag){
-            //如果有，递归
-            $str=$this->getDefaultName();
+        // 检查数据库中有没有该名字的用户
+        $flag = $User->where(array(
+            "username" => $str
+        ))->find();
+        if ($flag) {
+            // 如果有，递归
+            $str = $this->getDefaultName();
         }
         return $str;
     }
+
     /**
      * 检查电话是否存在
-     * @param unknown $phonenum
+     *
+     * @param unknown $phonenum            
      * @return boolean
      */
-    function checkPhoneExist($phonenum){
-        $User=D('user');
-        $flag=$User->where(array('phonenum'=>$phonenum))->find();
-        if($flag){
+    function checkPhoneExist($phonenum)
+    {
+        $User = D('user');
+        $flag = $User->where(array(
+            'phonenum' => $phonenum
+        ))->find();
+        if ($flag) {
             return true;
-        }else {
+        } else {
             return false;
         }
     }
+
     /**
      * 用QQ账户登录
      */
-    public function loginByQQAccount(){
-        $type=112;
-        $post=touristApiPreTreat($type);
-        $User=D("user");
-        $where['qq_id']=$post['qq_id'];
-        $userDetails=$User->where($where)->find();
-        //如果存在，就登录，不存在，就返回用户不存在4
-        if($userDetails){
+    public function loginByQQAccount()
+    {
+        $type = 112;
+        $post = touristApiPreTreat($type);
+        $User = D("user");
+        $where['qq_id'] = $post['qq_id'];
+        $userDetails = $User->where($where)->find();
+        // 如果存在，就登录，不存在，就返回用户不存在4
+        if ($userDetails) {
             // 顺便登录
             // post json请求
             $data = array(
                 "phonenum" => $userDetails['phonenum'],
                 "password" => $userDetails['password'],
-                "type"=>"101"
+                "type" => "101"
             );
             $data_string = json_encode($data);
-            $url="http://121.42.203.85/jianghu/index.php/home/user/login";
+            $url = "http://121.42.203.85/jianghu/index.php/home/user/login";
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
@@ -588,30 +640,32 @@ class UserController extends Controller
             $result = curl_exec($ch);
             curl_close($ch);
             print_r($result);
-        }else{
+        } else {
             $this->ajaxReturn(responseMsg(4, $type));
         }
     }
+
     /**
      * 用微信账户登录
      */
-    public function loginByWechatAccount(){
-        $type=113;
-        $post=touristApiPreTreat($type);
-        $User=D("user");
-        $where['wechat_id']=$post['wechat_id'];
-        $userDetails=$User->where($where)->find();
-        //如果存在，就登录，不存在，就返回用户不存在4
-        if($userDetails){
+    public function loginByWechatAccount()
+    {
+        $type = 113;
+        $post = touristApiPreTreat($type);
+        $User = D("user");
+        $where['wechat_id'] = $post['wechat_id'];
+        $userDetails = $User->where($where)->find();
+        // 如果存在，就登录，不存在，就返回用户不存在4
+        if ($userDetails) {
             // 顺便登录
             // post json请求
             $data = array(
                 "phonenum" => $userDetails['phonenum'],
                 "password" => $userDetails['password'],
-                "type"=>"101"
+                "type" => "101"
             );
             $data_string = json_encode($data);
-            $url="http://121.42.203.85/jianghu/index.php/home/user/login";
+            $url = "http://121.42.203.85/jianghu/index.php/home/user/login";
             $ch = curl_init($url);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
@@ -620,12 +674,28 @@ class UserController extends Controller
                 'Content-Type: application/json',
                 'Content-Length: ' . strlen($data_string)
             ));
-    
+            
             $result = curl_exec($ch);
             curl_close($ch);
             print_r($result);
-        }else{
+        } else {
             $this->ajaxReturn(responseMsg(4, $type));
+        }
+    }
+    /**
+     * 检查该手机号是否已存在
+     */
+    public function checkPhoneExisted(){
+        $type=115;
+        $post=touristApiPreTreat($type);
+        $User=D('user');
+        $phonenum=$post['phonenum'];
+        $where_phone['phonenum']=$phonenum;
+        $flag_phoneexist=$User->where($where_phone)->find();
+        if(!$flag_phoneexist){
+            $this->ajaxReturn(responseMsg(0, $type));
+        }else{
+            $this->ajaxReturn(responseMsg(7, $type));
         }
     }
 }

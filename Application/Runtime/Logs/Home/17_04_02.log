@@ -1,0 +1,26 @@
+[ 2017-04-02T19:11:26+08:00 ] ::1 /jianghu/index.php/home/domain/returnDomain
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001203s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001302s ]
+
+[ 2017-04-02T19:11:26+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=500
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000504s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000899s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000958s ]
+
+[ 2017-04-02T19:11:41+08:00 ] ::1 /jianghu/index.php/home/domain/returnDomain
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000074s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000996s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001137s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001237s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0149s ]
+SQL: SELECT * FROM `jianghu_domain`  [ RunTime:0.0004s ]
+
