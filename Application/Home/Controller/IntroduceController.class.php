@@ -120,18 +120,19 @@ class IntroduceController extends Controller
      */
     public function del()
     {
-        if (! checkUserLogin()) {
-            // 用户未登陆
-            $this->ajaxReturn(2);
-        }
+        $type=217;
+        $post=loginPermitApiPreTreat($type);
         $Intro = D('introduce');
         $Image = D('introduce_images');
-        $intro_id = I('id');
+        $intro_id = $post['introduce_id'];
         $IntroDomain = D('introduce_domain');
         $where['introduce_id'] = $intro_id;
+        $model=new Model();
+        $model->startTrans();
         if (! imageDel($Image, $where, 'imagepath')) {
             // 图片删除失败
-            $this->ajaxReturn(1);
+            $model->rollback();
+            $this->ajaxReturn(responseMsg(1, $type));
         }
         // 删除该推荐的领域
         $flag3 = $IntroDomain->where(array(
@@ -143,12 +144,15 @@ class IntroduceController extends Controller
         $flag2 = $Intro->where(array(
             'id' => $intro_id
         ))->delete();
-        if (! ($flag1 && $flag2 && $flag3)) {
+        if (! $flag2) {
             // 推荐删除失败
-            $this->ajaxReturn(1);
+//             dump(array($flag1,$flag2,$flag3));
+            $model->rollback();
+            $this->ajaxReturn(responseMsg(1, $type));
         }
         // 推荐删除成功
-        $this->ajaxReturn(0);
+        $model->commit();
+        $this->ajaxReturn(responseMsg(0, $type));
     }
 
     /**
@@ -333,8 +337,14 @@ class IntroduceController extends Controller
         ))->setInc('praisenum');
         // $res=array($flag1,$flag2, $flag3,$flag4);
         // dump($res);die;
+        
         if ($flag1 && $flag2) {
             // 点赞成功
+            //推送给推荐主人
+            $push_ctrl=A('push');
+            $owner_name=getUsernameByUId($user_id);
+            $push_msg=$owner_name."点赞了你的推荐";
+            $push_ctrl->push_special($push_msg,$owner_id);
             $this->ajaxReturn(responseMsg(0, $type));
         }
         // 数据插入失败
@@ -658,6 +668,12 @@ class IntroduceController extends Controller
         }
         if ($flag && $flag1 && $flag2) {
             // 转采成功
+            //推送给推荐主人
+            $push_ctrl=A('push');
+            $owner_name=getUsernameByUId($user_id);
+            $push_msg=$owner_name."转载了你的推荐";
+            $push_ctrl->push_special($push_msg,$owner_id);
+            
             $this->ajaxReturn(responseMsg(0, $type));
         }
         // dump($flag);
@@ -712,6 +728,12 @@ class IntroduceController extends Controller
             'id' => $data['introduce_id']
         ))->setInc("commentnum");
         if ($flag2) {
+            //推送给推荐主人
+            $push_ctrl=A('push');
+            $owner_name=getUsernameByUId($post['user_id']);
+            $push_msg=$owner_name."评论了你的推荐";
+            $push_ctrl->push_special($push_msg,$data['owner_id']);
+            
             $this->ajaxReturn(responseMsg(0, $type));
         } else {
             $this->ajaxReturn(responseMsg(1, $type));
@@ -815,6 +837,11 @@ class IntroduceController extends Controller
             'id' => $introduce_id
         ))->getField('user_id');
         $Praise->add($add_praise);
+        //推送给推荐主人
+        $push_ctrl=A('push');
+        $owner_name=getUsernameByUId($user_id);
+        $push_msg=$owner_name."点赞了你的推荐";
+        $push_ctrl->push_special($push_msg,$owner);
         $this->ajaxReturn(responseMsg(0, $type));
     }
 
@@ -872,8 +899,21 @@ class IntroduceController extends Controller
                 ->limit($from, $length)
                 ->select();
         }
-        // dump($msg);die;
-        foreach ($msg as $k => $v) {
+        if($user_id){
+            $busi_ctrl=A('business');
+            foreach ($msg as $k => $v) {
+                //推荐距离小于5km
+                $user_latitude=$post['user_latitude'];
+                $user_longtitude=$post['user_longtitude'];
+                $intro_latitude=$v['business_latitude'];
+                $intro_longtitude=$v['business_longtitude'];
+                $distance=$busi_ctrl->getDistance($user_latitude,$user_longtitude,$intro_latitude,$intro_longtitude);
+                if ($distance<5){
+                    // 整合推荐内容
+                    $msg[$k] = $this->getIntroContent($v['id'], $user_id);
+                }
+            }
+        }else{
             // 整合推荐内容
             $msg[$k] = $this->getIntroContent($v['id'], $user_id);
         }

@@ -21,6 +21,7 @@ define('APP_DEBUG',True);
 define('APP_PATH','./Application/');
 // define('BIND_MODULE', 'Admin');
 // 引入ThinkPHP入口文件
+require './ThinkPHP/Library/Vendor/JPush/autoload.php';
 require './ThinkPHP/ThinkPHP.php';
 
 // 亲^_^ 后面不需要任何代码了 就是如此简单

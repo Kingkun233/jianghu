@@ -19,50 +19,100 @@ class SearchController extends Controller
         $Introduce_controller = A("Home/Introduce");
         $key = $post['key'];
         $from = $post['from'];
-        $length = 10;
+        // 搜索类型（转采最多1，好友推荐2）
+        $search_type = $post['search_type'];
+        // 搜索的最大距离
+        $max_distance = $post['max_distance'];
+        $user_latitude=$post['user_latitude'];
+        $user_longtitude=$post['user_longtitude'];
+        $length = 500;
         // 判断有没有传user_id
         $user_id = $post['user_id'];
         if (! $user_id) {
             $user_id = 0;
         }
-        // name为domain名字
-        $where['domain'] = array(
-            'like',
-            '%' . $key . '%'
-        );
-        // text为推荐文字内容
-        $where['text'] = array(
-            'like',
-            '%' . $key . '%'
-        );
-//         // 关键字是商户名
-//         $where['business_name'] = array(
-//             'like',
-//             '%' . $key . '%'
-//         );
-        $where['_logic'] = 'or';
-        $map['_complex'] = $where;
+        if($key){
+            // name为domain名字
+            $where['domain'] = array(
+                'like',
+                '%' . $key . '%'
+            );
+            // text为推荐文字内容
+            $where['text'] = array(
+                'like',
+                '%' . $key . '%'
+            );
+            $where['_logic'] = 'or';
+            $map['_complex'] = $where;
+        }
         // 要求原创
         $map['isforward'] = array(
             "exp",
             "is NULL"
         );
-        //要求三度以上
-        $map['alldegree'] = array(
-            "gt",
-            0
-        );
+        if ($search_type == 1) {
+            // 要求三度以上
+            $map['alldegree'] = array(
+                "gt",
+                0
+            );
+            $order="alldegree desc";
+        } else {
+            if ($search_type == 2) {
+                if($user_id){
+                    // 要求是朋友
+                    // 获取好友list
+                    $Friend = D('friend');
+                    $friends2 = $Friend->where(array(
+                        'user_id' => $user_id
+                    ))
+                    ->field("friend_id")
+                    ->select();
+                    foreach ($friends2 as $k => $v) {
+                        $friends[] = $v['friend_id'];
+                    }
+                    $map['user_id'] = array(
+                        "IN",
+                        $friends
+                    );
+                    $map['user_id'] = array(
+                        "neq",
+                        $user_id
+                    );
+                    $order="time desc";
+                }else{
+                    $this->ajaxReturn(responseMsg(2, $type));
+                }
+            }
+        }
         // 搜索相应原创推荐的id
         $introduce_ids = $Intro->where($map)
-            ->order("time desc")
+            ->order($order)
             ->limit($from, $length)
             ->field('id')
             ->select();
         $introduces = array();
         foreach ($introduce_ids as $k => $v) {
-            $introduces[] = $Introduce_controller->getIntroContent($v['id'], $user_id);
+            $intro_content = null;
+            $intro_content = $Introduce_controller->getIntroContent($v['id'], $user_id);
+            $introduces[] = $intro_content;
         }
-        $resp = responseMsg(0, $type, $introduces);
+        //距离筛选
+        $returnIntros=array();
+        if($max_distance!=-1){
+            foreach ($introduces as $k => $v) {
+                if ($introduces[$k]['business_latitude'] && $introduces[$k]['business_longtitude']) {
+                    $distance = getDistance($introduces[$k]['business_latitude'], $introduces[$k]['business_longtitude'], $user_latitude, $user_longtitude);
+                    if ($distance <= $max_distance) {
+                        $introduces[$k]['distance'] = $distance;
+                        $returnIntros[] = $introduces[$k];
+                    }
+                }
+            }
+        }else{
+            $returnIntros=$introduces;
+        }
+        $resp = responseMsg(0, $type, $returnIntros);
         $resp['from'] = $from;
         $resp['length'] = $length;
         $this->ajaxReturn($resp);
@@ -101,15 +151,6 @@ class SearchController extends Controller
             'like',
             "%" . $key . "%"
         );
-        // $where['d.domain'] = array(
-        // 'like',
-        // "%" . $key . "%"
-        // );
-//         $where['u.phonenum'] = array(
-//             'like',
-//             "%" . $key . "%"
-//         );
-//         $where['_logic'] = 'or';
         // 用外连接的时候注意null值的处理
         $msg = $User->where($where)
             ->table("jianghu_user u")

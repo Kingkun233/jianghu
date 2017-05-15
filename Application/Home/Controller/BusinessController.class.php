@@ -110,9 +110,21 @@ class BusinessController extends Controller
         $BusiComment = D('business_comment');
         $User = D('user');
         $business_id = $post['business_id'];
-        $comments = $BusiComment->where(array(
-            'business_id' => $business_id
-        ))->select();
+        $user_id=$post['user_id']?$post['user_id']:0;
+        $where['business_id']=$business_id;
+        //如果传了user_id的话，搜索条件添加“限定好友”
+        if($user_id){
+            //获取好友list
+            $Friend=D('friend');
+            $friends2=$Friend->where(array('user_id'=>$user_id))->field("friend_id")->select();
+            foreach ($friends2 as $k=>$v){
+                $friends[]=$v['friend_id'];
+            }
+            $where['user_id']=array("IN",$friends);
+        }
+        //返回评论
+        $comments = $BusiComment->where($where
+        )->select();
         foreach ($comments as $k => $v) {
             $comments[$k]['username'] = $User->where(array(
                 'id' => $v['user_id']
@@ -134,6 +146,8 @@ class BusinessController extends Controller
         $Business = D("business");
         $longtitude = $post['longtitude'];
         $latitude = $post['latitude'];
+        //给定的距离范围
+        $post_distance=$post['distance'];
         $where['name'] = array(
             "like",
             "%" . $post['key'] . "%"
@@ -143,7 +157,7 @@ class BusinessController extends Controller
         foreach ($business_locations as $k => $v) {
             if ($business_locations[$k]['latitude'] && $business_locations[$k]['longtitude']) {
                 $distance = $this->getDistance($business_locations[$k]['latitude'], $business_locations[$k]['longtitude'], $latitude, $longtitude);
-                if ($distance < 50) {
+                if ($distance < $post_distance) {
                     $business_locations[$k]['distance'] = $distance;
                     unset($business_locations[$k]['state']);
                     unset($business_locations[$k]['user_id']);
@@ -153,10 +167,6 @@ class BusinessController extends Controller
         }
         // 按照距离排序
         $returnBusiness = sortTwoDimensionalArrayByKey("distance", $returnBusiness, SORT_ASC);
-        // foreach ($returnBusiness as $k => $v) {
-        // $theKeyArray[] = $v["distance"];
-        // }
-        // array_multisort($theKeyArray, SORT_ASC, $returnBusiness);
         $this->ajaxReturn(responseMsg(0, $type, $returnBusiness));
     }
 

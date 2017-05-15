@@ -133,6 +133,7 @@ class UserController extends Controller
         $LoginCount = D('login_count');
         $data['phonenum'] = $post['phonenum'];
         $data['password'] = $post['password'];
+        $push_regid=$post['push_regid'];
         $flag = $User->where(array(
             'phonenum' => $data['phonenum']
         ))->select();
@@ -152,6 +153,11 @@ class UserController extends Controller
         ))->getField('password');
         // 和传过来的密码比较
         if ($dbpassword == $data['password']) {
+            //更新用户推送regid
+            $User->where(array(
+                'id' => $user_id
+            ))->save(array('push_regid'=>$push_regid));
+            //返回用户信息
             $msg = $User->where(array(
                 "id" => $user_id
             ))->find();
@@ -195,7 +201,6 @@ class UserController extends Controller
                 'id' => $user_id
             ))->setInc('praisenum');
             // 整合要返回的数据
-            
             // msg整合domain
             $domain_names2 = $UserDomain->where(array(
                 'user_id' => $user_id

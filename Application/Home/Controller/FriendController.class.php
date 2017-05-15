@@ -11,16 +11,18 @@ class FriendController extends Controller
      */
     public function delete()
     {
+        $type=304;
+        $post=loginPermitApiPreTreat($type);
         $Friend = D('friend');
-        $user_id = I('userid');
-        $friend_id = I('friendid');
+        $user_id = $post['user_id'];
+        $friend_id =$post['friend_id'];
         $where['user_id'] = $user_id;
         $where['friend_id'] = $friend_id;
         $flag = $Friend->where($where)->delete();
         if ($flag) {
-            $this->ajaxReturn(0); // 好友删除成功
+            $this->ajaxReturn(responseMsg(0, $type)); // 好友删除成功
         } else {
-            $this->ajaxReturn(1); // 好友删除失败
+            $this->ajaxReturn(responseMsg(1, $type)); // 好友删除失败
         }
     }
 
@@ -42,6 +44,12 @@ class FriendController extends Controller
         $flag1 = $Request->add($add);
         
         if ($flag1 ) {
+            //推送给推荐主人
+            $push_ctrl=A('push');
+            $owner_name=getUsernameByUId($user_id);
+            $push_msg=$owner_name."请求添加您为好友";
+            $push_ctrl->push_special($push_msg,$friend_id);
+            
             $this->ajaxReturn(responseMsg(0, $type));
         } else {
             $this->ajaxReturn(responseMsg(1, $type));
