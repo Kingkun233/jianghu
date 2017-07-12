@@ -23,8 +23,9 @@ class PosterController extends Controller
         $poster_id = $post['poster_id'];
         $msg = $Poster->where(array(
             'state' => 0
-        ))->
-        order("time desc")->select();
+        ))
+            ->order("time desc")
+            ->select();
         // 整合是否已经点过赞
         $where['user_id'] = $user_id;
         foreach ($msg as $k => $v) {
@@ -76,5 +77,28 @@ class PosterController extends Controller
             'id' => $poster_id
         ))->setInc("praisenum");
         $this->ajaxReturn(responseMsg(0, $type));
+    }
+
+    /**
+     * 通过海报id返回海报
+     */
+    public function getPosterById()
+    {
+        $type = 903;
+        $post = touristApiPreTreat($type);
+        $Poster = D('poster');
+        $PosterPraise=D('poster_praise');
+        $poster = $Poster->where(array(
+            'id' => $post['poster_id']
+        ))->find();
+        // 整合是否已经点过赞
+        $where['user_id'] = $post['user_id'];
+        $where['poster_id'] = $poster['id'];
+        if ($PosterPraise->where($where)->select()) {
+            $poster['ispraised'] = 1;
+        } else {
+            $poster['ispraised'] = 0;
+        }
+        $this->ajaxReturn(responseMsg(0, $type, $poster));
     }
 }

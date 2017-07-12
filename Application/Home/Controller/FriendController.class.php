@@ -48,7 +48,7 @@ class FriendController extends Controller
             $push_ctrl=A('push');
             $owner_name=getUsernameByUId($user_id);
             $push_msg=$owner_name."请求添加您为好友";
-            $push_ctrl->push_special($push_msg,$friend_id);
+            $push_ctrl->push_special($push_msg,$friend_id,"friend");
             
             $this->ajaxReturn(responseMsg(0, $type));
         } else {

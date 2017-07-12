@@ -14445,3 +14445,578 @@ INFO: [ app_begin ] --START--
 INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000929s ]
 INFO: [ app_begin ] --END-- [ RunTime:0.000984s ]
 
+[ 2017-05-15T15:03:04+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000604s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001350s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001439s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0072s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0045s ]
+
+[ 2017-05-15T15:03:04+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000919s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000977s ]
+
+[ 2017-05-15T15:03:15+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000976s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001164s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001254s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0057s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0037s ]
+
+[ 2017-05-15T15:03:15+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000996s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001057s ]
+
+[ 2017-05-15T15:03:26+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001181s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0042s ]
+
+[ 2017-05-15T15:03:26+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000626s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000934s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000986s ]
+
+[ 2017-05-15T15:03:37+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000744s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001875s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0054s ]
+
+[ 2017-05-15T15:03:37+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000812s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001358s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001447s ]
+
+[ 2017-05-15T15:03:48+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001003s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001115s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001181s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0042s ]
+
+[ 2017-05-15T15:03:48+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000633s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001027s ]
+
+[ 2017-05-15T15:03:59+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000915s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000969s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0036s ]
+
+[ 2017-05-15T15:03:59+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000826s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001074s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001153s ]
+
+[ 2017-05-15T15:04:10+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000652s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001123s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001194s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0040s ]
+
+[ 2017-05-15T15:04:10+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000612s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000932s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000986s ]
+
+[ 2017-05-15T15:04:21+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000966s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001024s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0042s ]
+
+[ 2017-05-15T15:04:21+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+
+[ 2017-05-15T15:04:32+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001032s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001111s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0487s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0065s ]
+
+[ 2017-05-15T15:04:32+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000619s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002188s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002293s ]
+
+[ 2017-05-15T15:04:42+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001007s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001068s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0056s ]
+
+[ 2017-05-15T15:04:42+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000577s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001457s ]
+
+[ 2017-05-15T15:04:52+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000615s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001206s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0055s ]
+
+[ 2017-05-15T15:04:52+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000584s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001086s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001160s ]
+
+[ 2017-05-15T15:05:02+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000690s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001114s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0286s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0054s ]
+
+[ 2017-05-15T15:05:02+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000984s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001050s ]
+
+[ 2017-05-15T15:05:13+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000030s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001022s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001792s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0227s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0540s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0549s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0438s ]
+
+[ 2017-05-15T15:05:13+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000536s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001289s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001359s ]
+
+[ 2017-05-15T15:05:22+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000619s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001430s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0035s ]
+
+[ 2017-05-15T15:05:22+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000923s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000979s ]
+
+[ 2017-05-15T15:05:32+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000617s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000938s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000994s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0043s ]
+
+[ 2017-05-15T15:05:32+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000779s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000941s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001002s ]
+
+[ 2017-05-15T15:05:42+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001046s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001567s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0205s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0707s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0391s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+
+[ 2017-05-15T15:05:43+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000613s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001332s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001418s ]
+
+[ 2017-05-15T15:05:52+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000586s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001121s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0039s ]
+
+[ 2017-05-15T15:05:52+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000608s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000944s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000995s ]
+
+[ 2017-05-15T15:06:02+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000832s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000925s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000986s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0044s ]
+
+[ 2017-05-15T15:06:02+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000623s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001036s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001108s ]
+
+[ 2017-05-15T15:06:12+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001152s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000959s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001024s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0287s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0547s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0446s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0038s ]
+
+[ 2017-05-15T15:06:13+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001018s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001094s ]
+
+[ 2017-05-15T15:06:22+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000936s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001005s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0078s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0059s ]
+
+[ 2017-05-15T15:06:22+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000597s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000986s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001048s ]
+
+[ 2017-05-15T15:06:32+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000674s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001098s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001167s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0035s ]
+
+[ 2017-05-15T15:06:32+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000630s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000924s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000982s ]
+
+[ 2017-05-15T15:06:43+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000621s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000918s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000971s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0353s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0474s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0545s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0439s ]
+
+[ 2017-05-15T15:06:43+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000642s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001175s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001252s ]
+
+[ 2017-05-15T15:06:52+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000870s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001475s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001580s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0068s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0440s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0767s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0045s ]
+
+[ 2017-05-15T15:06:53+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001089s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001844s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001955s ]
+
+[ 2017-05-15T15:07:02+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000807s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001118s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001191s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0054s ]
+
+[ 2017-05-15T15:07:02+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000627s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000950s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001005s ]
+
+[ 2017-05-15T15:07:13+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000555s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000960s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001018s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0274s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0623s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0458s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0435s ]
+
+[ 2017-05-15T15:07:13+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000655s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001074s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001145s ]
+
+[ 2017-05-15T15:07:22+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000898s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001152s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001229s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0051s ]
+
+[ 2017-05-15T15:07:22+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000771s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000955s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+
+[ 2017-05-15T15:07:32+08:00 ] ::1 /jianghu/index.php/home/msg/getunreadnum
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000992s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+
+[ 2017-05-15T15:07:32+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=600
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000962s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001028s ]
+
+[ 2017-05-15T15:25:50+08:00 ] ::1 /jianghu/index.php/home/introduce/addPraiseInQuanzi
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000852s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000922s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 4 AND `date` = '2017-05-15' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-15' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('4','2017-05-15') [ RunTime:0.0863s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 4 [ RunTime:0.0740s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-15'  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2017-05-15' [ RunTime:0.0436s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0043s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 233 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `isforward` FROM `jianghu_introduce` WHERE `id` = 233 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = null LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `time` FROM `jianghu_praise` WHERE `user_id` = 4  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `praisenum`=praisenum+1 WHERE `date` = '2017-05-15' [ RunTime:0.0857s ]
+SQL: INSERT INTO `jianghu_praise` (`introduce_id`,`user_id`,`time`,`owner_id`) VALUES ('233','4','2017-05-15 15:25:50','1') [ RunTime:0.0500s ]
+SQL: UPDATE `jianghu_user` SET `allpraise`=allpraise+1 WHERE `id` = 1 [ RunTime:0.1341s ]
+SQL: UPDATE `jianghu_user` SET `allpraise`=allpraise+1 WHERE `id` = null [ RunTime:0.0002s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 233 [ RunTime:0.1054s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = null [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `push_regid` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+

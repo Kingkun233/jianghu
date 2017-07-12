@@ -37,7 +37,7 @@
 				<td><input name='star' type='text' ></input></td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type='submit' class='btn'></input></td>
+				<td colspan="2"><input type='submit' class='btn' value="添加"></input></td>
 			</tr>
 		</table>
 	</form>

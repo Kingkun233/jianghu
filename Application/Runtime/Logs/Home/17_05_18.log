@@ -1,0 +1,1064 @@
+[ 2017-05-18T19:55:52+08:00 ] ::1 /jianghu/index.php/home/poster/getPosterById
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000801s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster_praise` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `id` = 44 LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\PosterController.class.php 第 95 行.
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = null AND `poster_id` = 44  [ RunTime:0.0005s ]
+
+[ 2017-05-18T19:58:17+08:00 ] ::1 /jianghu/index.php/home/poster/praisePoster
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000679s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000986s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2d461ebf6c5364e366e759f234d9434e' AND `state` = 0 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('1','2017-05-18') [ RunTime:0.1071s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.0353s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18'  [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2017-05-18','1') [ RunTime:0.0433s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster_praise` [ RunTime:0.0042s ]
+SQL: INSERT INTO `jianghu_poster_praise` (`user_id`,`poster_id`) VALUES ('1','44') [ RunTime:0.0659s ]
+SQL: UPDATE `jianghu_poster` SET `praisenum`=praisenum+1 WHERE `id` = 44 [ RunTime:0.0361s ]
+
+[ 2017-05-18T19:59:28+08:00 ] ::1 /jianghu/index.php/home/poster/getPosterById
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000886s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000948s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `jianghu_poster_praise` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_poster` WHERE `id` = 44 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_poster_praise` WHERE `user_id` = 1 AND `poster_id` = 44  [ RunTime:0.0003s ]
+
+[ 2017-05-18T20:03:03+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000605s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001022s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0168s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2d461ebf6c5364e366e759f234d9434e' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 45 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 45 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 45 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('45','2017-05-18') [ RunTime:0.1037s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 45 [ RunTime:0.0416s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18'  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2017-05-18' [ RunTime:0.0432s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 45  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' AND `domain` IN ('美食','运动','娱乐') ORDER BY alldegree desc LIMIT 1,10   [ RunTime:0.0010s ]
+
+[ 2017-05-18T20:03:10+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000686s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001089s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001174s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0237s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2d461ebf6c5364e366e759f234d9434e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 888 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 1,10   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: user_latitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 908 行.
+NOTIC: [8] Undefined index: user_longtitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 909 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=90 or id=90 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 90 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 90 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 90 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user_latitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 908 行.
+NOTIC: [8] Undefined index: user_longtitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 909 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 42  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=42 or id=42 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 42 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 42 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 42 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_latitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 908 行.
+NOTIC: [8] Undefined index: user_longtitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 909 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 54 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 54  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=54 or id=54 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 54 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 54 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 54 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_latitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 908 行.
+NOTIC: [8] Undefined index: user_longtitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 909 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 171 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 171  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=171 or id=171 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 171 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 171 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 171 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-18T20:21:12+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000598s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001442s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0074s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'ws0xQqfhC3udXGM5IwCya8MhOnV2AhNfLn6K1diH+USMRzDA7AnzRIau84eYwpXG5TTEzpr+zr6jpCYXi+iOng==' AND `state` = 0 LIMIT 1   [ RunTime:0.0015s ]
+
+[ 2017-05-18T20:21:12+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=2&type=209
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001126s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001218s ]
+
+[ 2017-05-18T20:21:49+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000702s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001122s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001213s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0046s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0016s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 888 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0009s ]
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+
+[ 2017-05-18T20:22:16+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000958s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001042s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: v D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 922 行.
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = null  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1119 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1122 行.
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+
+[ 2017-05-18T20:22:41+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000528s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000833s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: v D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 922 行.
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = null LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = null  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1119 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1122 行.
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+
+[ 2017-05-18T20:23:36+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000559s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001377s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001458s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0029s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 888 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0014s ]
+NOTIC: [8] Undefined index: user_latitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 908 行.
+NOTIC: [8] Undefined index: user_longtitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 909 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 43 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 43  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=43 or id=43 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 43 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 43 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 43 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user_latitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 908 行.
+NOTIC: [8] Undefined index: user_longtitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 909 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=90 or id=90 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0012s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 90 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 90 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 90 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0009s ]
+NOTIC: [8] Undefined index: user_latitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 908 行.
+NOTIC: [8] Undefined index: user_longtitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 909 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 42  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=42 or id=42 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0094s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 42 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0047s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 42 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0018s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 42 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined index: user_latitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 908 行.
+NOTIC: [8] Undefined index: user_longtitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 909 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 54 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 54  [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=54 or id=54 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 54 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 54 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 54 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: user_latitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 908 行.
+NOTIC: [8] Undefined index: user_longtitude D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 909 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 171 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 171  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=171 or id=171 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 171 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 171 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 171 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+
+[ 2017-05-18T20:23:47+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000942s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001032s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: v D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 922 行.
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = null  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1119 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1122 行.
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+
+[ 2017-05-18T20:29:42+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: v D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 922 行.
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = null  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1119 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1122 行.
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+
+[ 2017-05-18T20:29:47+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000506s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000931s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001013s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: v D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 922 行.
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = null  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1119 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1122 行.
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+
+[ 2017-05-18T20:35:03+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000802s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001095s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0197s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0008s ]
+NOTIC: [8] Undefined variable: v D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 920 行.
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = null LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = null  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1117 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1120 行.
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+
+[ 2017-05-18T20:35:28+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0013s ]
+NOTIC: [8] Undefined variable: v D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 921 行.
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = null  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1118 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1121 行.
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0002s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+
+[ 2017-05-18T20:35:39+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000813s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: v D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 921 行.
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = null LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = null  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1118 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1121 行.
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+
+[ 2017-05-18T20:35:55+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000581s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000892s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0121s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0100s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0010s ]
+NOTIC: [8] Undefined variable: v D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 921 行.
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0045s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = null LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = null  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1118 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1121 行.
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = null LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'or id= GROUP BY degree ORDER BY degree ASC' at line 1
+ [ SQL语句 ] : SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward= or id= GROUP BY degree ORDER BY degree ASC 
+
+[ 2017-05-18T20:37:15+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000890s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000962s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 43 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 43  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=43 or id=43 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 43 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 43 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 43 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0015s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0005s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=90 or id=90 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 90 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 90 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 90 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 42  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=42 or id=42 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 42 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 42 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 42 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 54 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 54  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=54 or id=54 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 54 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 54 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 54 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 171 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 171  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=171 or id=171 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 171 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 171 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 171 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-18T20:37:49+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000819s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000887s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0008s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 43 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 43  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=43 or id=43 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 43 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 43 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 43 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=90 or id=90 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 90 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 90 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 90 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 42  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=42 or id=42 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 42 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 42 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 42 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 54 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 54  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=54 or id=54 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 54 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 54 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 54 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 171 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 171  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=171 or id=171 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 171 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 171 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 171 AND `user_id` = 0 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-18T20:38:01+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000651s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0033s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'ws0xQqfhC3udXGM5IwCya8MhOnV2AhNfLn6K1diH+USMRzDA7AnzRIau84eYwpXG5TTEzpr+zr6jpCYXi+iOng==' AND `state` = 0 LIMIT 1   [ RunTime:0.0018s ]
+
+[ 2017-05-18T20:38:01+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=2&type=209
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000546s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000984s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001069s ]
+
+[ 2017-05-18T20:38:16+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000771s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000909s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0060s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0032s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 888 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0005s ]
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+
+[ 2017-05-18T20:38:39+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001193s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001297s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 888 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0009s ]
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+
+[ 2017-05-18T20:38:50+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001142s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000829s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000889s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0052s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0013s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 888 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0006s ]
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_collection` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 43 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 43  [ RunTime:0.0004s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=43 or id=43 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 43 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 43 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 43 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 90 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 90  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=90 or id=90 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 90 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 90 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 90 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 42 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 42  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 18 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=42 or id=42 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 42 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 42 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 42 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 54 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 54  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 17 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=54 or id=54 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0009s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 54 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 54 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 54 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `id` = 171 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `imageurl`,`thumb_imageurl` FROM `jianghu_introduce_images` WHERE `introduce_id` = 171  [ RunTime:0.0003s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `faceurl` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT COUNT('degree') as degree_count,degree FROM jianghu_introduce WHERE isforward=171 or id=171 GROUP BY degree ORDER BY degree ASC  [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_praise` WHERE `introduce_id` = 171 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `jianghu_oppose` WHERE `introduce_id` = 171 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_collection` WHERE `introduce_id` = 171 AND `user_id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+
+[ 2017-05-18T20:41:21+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000668s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000921s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000998s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0002s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 888 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0005s ]
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+
+[ 2017-05-18T20:43:22+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000628s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000856s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000911s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 888 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0007s ]
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+
+[ 2017-05-18T21:06:33+08:00 ] ::1 /jianghu/index.php/home/introduce/jianghuIntroduce
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000579s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001743s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0225s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jianghu_oppose` [ RunTime:0.0031s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined variable: domain D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 888 行.
+SQL: SELECT * FROM `jianghu_introduce` WHERE `isforward` is NULL AND `alldegree` <> 'NULL' ORDER BY alldegree desc LIMIT 0,10   [ RunTime:0.0005s ]
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+NOTIC: [2] deg2rad() expects parameter 1 to be double, string given D:\xampp\htdocs\jianghu\Application\Home\Controller\BusinessController.class.php 第 184 行.
+
+[ 2017-05-18T22:53:28+08:00 ] ::1 /jianghu/index.php/home/introduce/del
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000659s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000960s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001032s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0014s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0044s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `jianghu_introduce_images` WHERE `introduce_id` = 8  [ RunTime:0.0004s ]
+SQL: DELETE FROM `jianghu_introduce_domain` WHERE `introduce_id` = 8 [ RunTime:0.0004s ]
+SQL: DELETE FROM `jianghu_introduce_images` WHERE `introduce_id` = 8 [ RunTime:0.0004s ]
+SQL: DELETE FROM `jianghu_introduce` WHERE `id` = 8 [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_introduce` SET `isforward`=NULL,`isban`='1' WHERE `isforward` = 8 [ RunTime:0.0011s ]
+SQL: DELETE FROM `jianghu_praise` WHERE `introduce_id` = 8 [ RunTime:0.0004s ]
+SQL: DELETE FROM `jianghu_comment` WHERE `introduce_id` = 8 [ RunTime:0.0004s ]
+
+[ 2017-05-18T22:53:59+08:00 ] ::1 /jianghu/index.php/home/introduce/del
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000681s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000862s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000942s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0043s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0007s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_praise` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_comment` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0031s ]
+SQL: SELECT * FROM `jianghu_introduce_images` WHERE `introduce_id` = 211  [ RunTime:0.0004s ]
+SQL: DELETE FROM `jianghu_introduce_domain` WHERE `introduce_id` = 211 [ RunTime:0.0004s ]
+SQL: DELETE FROM `jianghu_introduce_images` WHERE `introduce_id` = 211 [ RunTime:0.0004s ]
+SQL: DELETE FROM `jianghu_introduce` WHERE `id` = 211 [ RunTime:0.0003s ]
+SQL: UPDATE `jianghu_introduce` SET `isforward`=NULL,`isban`='1' WHERE `isforward` = 211 [ RunTime:0.0013s ]
+SQL: DELETE FROM `jianghu_praise` WHERE `introduce_id` = 211 [ RunTime:0.0004s ]
+SQL: DELETE FROM `jianghu_comment` WHERE `introduce_id` = 211 [ RunTime:0.0004s ]
+
+[ 2017-05-18T23:17:40+08:00 ] ::1 /jianghu/index.php/home/user/checkUserDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000825s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 2  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-05-18T23:18:31+08:00 ] ::1 /jianghu/index.php/home/user/getFaceUrl
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000672s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001224s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001372s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given D:\xampp\htdocs\jianghu\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 65 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 66 行.
+NOTIC: [8] Undefined offset: 0 D:\xampp\htdocs\jianghu\Application\Common\Common\function.php 第 67 行.
+
+[ 2017-05-18T23:19:10+08:00 ] ::1 /jianghu/index.php/home/user/addFace
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001222s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000917s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001002s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0063s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'a7369773cfc392c5516570ee3194fa4a' AND `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 2 AND `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('2','2017-05-18') [ RunTime:0.0997s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 2 [ RunTime:0.0624s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-18'  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2017-05-18' [ RunTime:0.0543s ]
+SQL: SELECT `facepath` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_user` SET `faceurl`='http://localhost/jianghu/Uploads/2017-05-18/591dbb4778af8.jpg',`facepath`='./Uploads/2017-05-18/591dbb4778af8.jpg' WHERE `id` = 2 [ RunTime:0.0442s ]
+NOTIC: [8] Use of undefined constant flag - assumed 'flag' D:\xampp\htdocs\jianghu\Application\Home\Controller\UserController.class.php 第 259 行.
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-05-18T23:19:59+08:00 ] ::1 /jianghu/index.php/home/user/checkUserDetail
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000782s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_user_domain` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_user_domain` WHERE `user_id` = 2  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_user` WHERE `id` = 2 LIMIT 1   [ RunTime:0.0005s ]
+

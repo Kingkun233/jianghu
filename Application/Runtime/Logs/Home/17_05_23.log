@@ -1,0 +1,165 @@
+[ 2017-05-23T23:21:21+08:00 ] ::1 /jianghu/index.php/home/friend/getFriendList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000590s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000844s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000896s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0042s ]
+
+[ 2017-05-23T23:22:22+08:00 ] ::1 /jianghu/index.php/home/friend/getFriendList
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000986s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000851s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000915s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0030s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = '2d461ebf6c5364e366e759f234d9434e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-05-23' LIMIT 1   [ RunTime:0.0008s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-23' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('1','2017-05-23') [ RunTime:0.0914s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.0446s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-05-23'  [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2017-05-23','1') [ RunTime:0.0441s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0033s ]
+SQL: SELECT `friend_id` FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0003s ]
+SQL: SELECT `id`,`username`,`faceurl`,`praisenum` FROM `jianghu_user` WHERE `id` IN ('5','4','3','2','1','6','7','18','20','18')  [ RunTime:0.0004s ]
+
+[ 2017-05-23T23:23:50+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000861s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000922s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0032s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%2002%' GROUP BY u.id  [ RunTime:0.0006s ]
+
+[ 2017-05-23T23:24:50+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000719s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000871s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0046s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0035s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%2002%' AND u.phonenum LIKE '%2002%' GROUP BY u.id  [ RunTime:0.0006s ]
+
+[ 2017-05-23T23:25:31+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000753s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000804s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0051s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%2002%' AND u.phonenum LIKE '%2002%' GROUP BY u.id  [ RunTime:0.0005s ]
+
+[ 2017-05-23T23:25:32+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000585s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000835s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000887s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%2002%' AND u.phonenum LIKE '%2002%' GROUP BY u.id  [ RunTime:0.0007s ]
+
+[ 2017-05-23T23:25:43+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000709s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%13202063303%' AND u.phonenum LIKE '%13202063303%' GROUP BY u.id  [ RunTime:0.0005s ]
+
+[ 2017-05-23T23:25:49+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000680s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001441s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0042s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%he%' AND u.phonenum LIKE '%he%' GROUP BY u.id  [ RunTime:0.0006s ]
+
+[ 2017-05-23T23:27:42+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000494s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000980s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001047s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0048s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0039s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%chen%' AND u.phonenum LIKE '%chen%' GROUP BY u.id  [ RunTime:0.0006s ]
+
+[ 2017-05-23T23:28:01+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000579s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000842s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000898s ]
+
+[ 2017-05-23T23:29:38+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000575s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000809s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000859s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0040s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%chen%' GROUP BY u.id  [ RunTime:0.0007s ]
+
+[ 2017-05-23T23:30:42+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000881s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%chen%' OR u.phonenum LIKE '%chen%' GROUP BY u.id  [ RunTime:0.0012s ]
+
+[ 2017-05-23T23:30:48+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000581s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001046s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001117s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0044s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%2002%' OR u.phonenum LIKE '%2002%' GROUP BY u.id  [ RunTime:0.0007s ]
+
+[ 2017-05-23T23:31:02+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000538s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000814s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000862s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0039s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%1320206%' OR u.phonenum LIKE '%1320206%' GROUP BY u.id  [ RunTime:0.0011s ]
+

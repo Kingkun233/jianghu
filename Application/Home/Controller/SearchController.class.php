@@ -145,12 +145,18 @@ class SearchController extends Controller
     {
         $type = 802;
         $post = touristApiPreTreat($type);
+//         dump($post);die;
         $User = D('user');
         $key = $post['key'];
         $where['u.username'] = array(
             'like',
             "%" . $key . "%"
         );
+        $where['u.phonenum'] = array(
+            'like',
+            "%" . $key . "%"
+        );
+        $where['_logic'] = 'OR';
         // 用外连接的时候注意null值的处理
         $msg = $User->where($where)
             ->table("jianghu_user u")

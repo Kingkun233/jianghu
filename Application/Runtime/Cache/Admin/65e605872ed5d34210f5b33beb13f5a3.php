@@ -10,7 +10,7 @@
 <br>
 <h3>&nbsp用户列表</h3>
 <div align="right">
-	<form method="post" action="http://localhost/jianghu/index.php/admin/user/index">
+	<form method="post" action="http://121.42.203.85/jianghu/index.php/admin/user/index">
 	    <input type=“text‘ name="searchkey" class="search" placeholder="请输入搜索条件" value="<?php echo ($searchkey); ?>"></input>
 	    <input class="btn" type="submit" value="搜索"/>
 	</form>
@@ -34,7 +34,7 @@
                         <tbody>
                         <?php if(is_array($user)): foreach($user as $key=>$vo): ?><tr>
                                 <!--这里的id和for里面的c1 需要循环出来-->
-                                <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label"><?php echo ($vo["id"]); ?></label></td>
+                                <td><?php echo ($vo["id"]); ?></td>
                                 <td><a href="<?php echo U('user/userdetails');?>?username=<?php echo ($vo["username"]); ?>"}><?php echo ($vo["username"]); ?></a></td>
                                 <td><?php echo ($vo["sex"]); ?></td>
                                 <td><?php echo ($vo["email"]); ?></td>

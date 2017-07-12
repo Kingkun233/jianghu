@@ -123,17 +123,16 @@ class IntroduceController extends Controller
         $type=217;
         $post=loginPermitApiPreTreat($type);
         $Intro = D('introduce');
+        $Praise=D('praise');
+        $Comment=D('comment');
         $Image = D('introduce_images');
         $intro_id = $post['introduce_id'];
         $IntroDomain = D('introduce_domain');
         $where['introduce_id'] = $intro_id;
         $model=new Model();
         $model->startTrans();
-        if (! imageDel($Image, $where, 'imagepath')) {
-            // 图片删除失败
-            $model->rollback();
-            $this->ajaxReturn(responseMsg(1, $type));
-        }
+        // 图片删除失败
+        imageDel($Image, $where, 'imagepath');
         // 删除该推荐的领域
         $flag3 = $IntroDomain->where(array(
             'introduce_id' => $intro_id
@@ -144,9 +143,13 @@ class IntroduceController extends Controller
         $flag2 = $Intro->where(array(
             'id' => $intro_id
         ))->delete();
-        if (! $flag2) {
+        //转载了该记录的isforward置NULL，并且该推荐的isban置1
+        $flag6=$Intro->where(array('isforward'=>$intro_id))->save(array('isforward'=>null,'isban'=>1));
+        $flag4=$Praise->where(array('introduce_id'=>$intro_id))->delete();
+        $flag5=$Comment->where(array('introduce_id'=>$intro_id))->delete();
+        if (!($flag2)) {
             // 推荐删除失败
-//             dump(array($flag1,$flag2,$flag3));
+//             dump(array($flag2&&$flag4&&$flag5));
             $model->rollback();
             $this->ajaxReturn(responseMsg(1, $type));
         }
@@ -344,7 +347,7 @@ class IntroduceController extends Controller
             $push_ctrl=A('push');
             $owner_name=getUsernameByUId($user_id);
             $push_msg=$owner_name."点赞了你的推荐";
-            $push_ctrl->push_special($push_msg,$owner_id);
+            $push_ctrl->push_special($push_msg,$owner_id,'praise');
             $this->ajaxReturn(responseMsg(0, $type));
         }
         // 数据插入失败
@@ -732,7 +735,7 @@ class IntroduceController extends Controller
             $push_ctrl=A('push');
             $owner_name=getUsernameByUId($post['user_id']);
             $push_msg=$owner_name."评论了你的推荐";
-            $push_ctrl->push_special($push_msg,$data['owner_id']);
+            $push_ctrl->push_special($push_msg,$data['owner_id'],'comment');
             
             $this->ajaxReturn(responseMsg(0, $type));
         } else {
@@ -841,7 +844,7 @@ class IntroduceController extends Controller
         $push_ctrl=A('push');
         $owner_name=getUsernameByUId($user_id);
         $push_msg=$owner_name."点赞了你的推荐";
-        $push_ctrl->push_special($push_msg,$owner);
+        $push_ctrl->push_special($push_msg,$owner,'praise');
         $this->ajaxReturn(responseMsg(0, $type));
     }
 
@@ -899,6 +902,7 @@ class IntroduceController extends Controller
                 ->limit($from, $length)
                 ->select();
         }
+        $resp=array();
         if($user_id){
             $busi_ctrl=A('business');
             foreach ($msg as $k => $v) {
@@ -908,16 +912,19 @@ class IntroduceController extends Controller
                 $intro_latitude=$v['business_latitude'];
                 $intro_longtitude=$v['business_longtitude'];
                 $distance=$busi_ctrl->getDistance($user_latitude,$user_longtitude,$intro_latitude,$intro_longtitude);
+                $distance=0;
                 if ($distance<5){
                     // 整合推荐内容
-                    $msg[$k] = $this->getIntroContent($v['id'], $user_id);
+                    $resp[] = $this->getIntroContent($v['id'], $user_id);
                 }
             }
         }else{
             // 整合推荐内容
-            $msg[$k] = $this->getIntroContent($v['id'], $user_id);
+            foreach ($msg as $k => $v){
+                $resp[] = $this->getIntroContent($v['id'], $user_id);
+            }
         }
-        $resp = responseMsg(0, $type, $msg);
+        $resp = responseMsg(0, $type, $resp);
         // 返回整合from，length
         $resp['from'] = $from;
         $resp['length'] = $length;
@@ -1056,9 +1063,8 @@ class IntroduceController extends Controller
             $intros
         );
         // dump($intros);die;
-        $contents = $Intro->where($where)->select();
+        $contents = $Intro->where($where)->order("time desc")->select();
         foreach ($contents as $k => $v) {
-            
             // 如果是转载
             if ($v['isforward']) {
                 $contents[$k]['isforward'] = $Intro->where(array(
@@ -1077,12 +1083,14 @@ class IntroduceController extends Controller
             }
             // 整合推荐图片
             $contents[$k]['image'] = $Image->getIntroImg($v['id']);
+            //获取该推荐的owner_id
+            $owner_id=$this->getOwnerIdByIntroId($v['id']);
             // 整合用户头像和名字
             $contents[$k]['username'] = $User->where(array(
-                'id' => $user_id
+                'id' => $owner_id
             ))->getField('username');
             $contents[$k]['face'] = $User->where(array(
-                'id' => $user_id
+                'id' => $owner_id
             ))->getField('faceurl');
             // 整合度数
             $contents[$k]['degree'] = $this->getTwoTopDegree($v['id']);
@@ -1097,7 +1105,7 @@ class IntroduceController extends Controller
      * @param unknown $user_id
      *            当前用户id
      */
-    public function getIntroContent($introduce_id, $user_id)
+    public function getIntroContent($introduce_id="", $user_id="")
     {
         $Intro = D('introduce');
         $Image = D('introduce_images');
@@ -1248,5 +1256,13 @@ class IntroduceController extends Controller
         } else {
             echo "error";
         }
+    }
+    /**
+     * 根据推荐id获得推荐所有者id（不一定是原创者）
+     */
+    private function getOwnerIdByIntroId($introduce_id){
+        $Intro=D('introduce');
+        $owner_id=$Intro->where(array('id'=>$introduce_id))->getField("user_id");
+        return $owner_id;
     }
 }

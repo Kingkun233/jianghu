@@ -10,7 +10,7 @@
 <h3>&nbsp推荐列表</h3>
 <div class="details">
 <div align="right">
-<form method="post" action="http://localhost/jianghu/index.php/admin/search/doaction">
+<form method="post" action="http://121.42.203.85/jianghu/index.php/admin/search/doaction">
     <select name="cate" class="btn" >
         <option value="1">按用户名查找</option>
         <option value="2">按推荐关键字查找</option>
