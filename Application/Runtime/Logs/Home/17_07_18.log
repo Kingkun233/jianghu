@@ -1,0 +1,171 @@
+[ 2017-07-18T10:59:10+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000614s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000879s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0066s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'desc time' at line 1
+ [ SQL语句 ] : SELECT * FROM `jianghu_update` ORDER BY desc time 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'desc time' at line 1
+ [ SQL语句 ] : SELECT * FROM `jianghu_update` ORDER BY desc time 
+
+[ 2017-07-18T10:59:59+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000603s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000773s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: akp_name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 18 行.
+
+[ 2017-07-18T11:00:57+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000040s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000662s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000816s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: akp_name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 18 行.
+
+[ 2017-07-18T11:02:00+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000720s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000856s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: akp_name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 18 行.
+
+[ 2017-07-18T11:03:32+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000732s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: akp_name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 18 行.
+
+[ 2017-07-18T11:04:48+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000886s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0257s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: akp_name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 18 行.
+
+[ 2017-07-18T11:05:08+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000737s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000789s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0042s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: akp_name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 18 行.
+
+[ 2017-07-18T11:05:23+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000624s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000756s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+
+[ 2017-07-18T11:05:23+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=1001
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000736s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000785s ]
+
+[ 2017-07-18T11:05:28+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000552s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0049s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: akp_name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 18 行.
+
+[ 2017-07-18T11:06:27+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000783s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000837s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: akp_name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 18 行.
+NOTIC: [8] Undefined index: akp_name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 20 行.
+
+[ 2017-07-18T11:06:48+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000602s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0037s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: akp_name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 20 行.
+
+[ 2017-07-18T11:06:50+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000561s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000827s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0145s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: akp_name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 20 行.
+
+[ 2017-07-18T11:07:02+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000632s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000843s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000909s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0239s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0003s ]
+
+[ 2017-07-18T16:45:24+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000556s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000817s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000866s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 18 行.
+
+[ 2017-07-18T23:43:58+08:00 ] ::1 /jianghu/index.php/home/update/getNewestHomepage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000043s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000817s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000894s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+SQL: SHOW COLUMNS FROM `jianghu_homepage` [ RunTime:0.0057s ]
+SQL: SELECT * FROM `jianghu_homepage` ORDER BY time desc LIMIT 1   [ RunTime:0.0004s ]
+

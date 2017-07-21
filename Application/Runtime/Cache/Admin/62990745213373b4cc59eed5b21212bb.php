@@ -7,6 +7,7 @@
 </head>
 <body>
 	<h3>添加海报</h3>
+	<a href='https://xiumi.us/studio/paper#/for/new' target="_blank">秀米入口</a>
 	<form action="<?php echo U('poster/doadd');?>" method="post"
 		enctype="multipart/form-data" />
 	<table width="70%" border="1" cellpadding="5" cellspacing="0"

@@ -23,15 +23,15 @@ class SearchController extends Controller
         $search_type = $post['search_type'];
         // 搜索的最大距离
         $max_distance = $post['max_distance'];
-        $user_latitude=$post['user_latitude'];
-        $user_longtitude=$post['user_longtitude'];
+        $user_latitude = $post['user_latitude'];
+        $user_longtitude = $post['user_longtitude'];
         $length = 500;
         // 判断有没有传user_id
         $user_id = $post['user_id'];
         if (! $user_id) {
             $user_id = 0;
         }
-        if($key){
+        if ($key) {
             // name为domain名字
             $where['domain'] = array(
                 'like',
@@ -56,18 +56,18 @@ class SearchController extends Controller
                 "gt",
                 0
             );
-            $order="alldegree desc";
+            $order = "alldegree desc";
         } else {
             if ($search_type == 2) {
-                if($user_id){
+                if ($user_id) {
                     // 要求是朋友
                     // 获取好友list
                     $Friend = D('friend');
                     $friends2 = $Friend->where(array(
                         'user_id' => $user_id
                     ))
-                    ->field("friend_id")
-                    ->select();
+                        ->field("friend_id")
+                        ->select();
                     foreach ($friends2 as $k => $v) {
                         $friends[] = $v['friend_id'];
                     }
@@ -75,12 +75,12 @@ class SearchController extends Controller
                         "IN",
                         $friends
                     );
-                    $map['user_id'] = array(
-                        "neq",
-                        $user_id
-                    );
-                    $order="time desc";
-                }else{
+//                     $map['user_id'] = array(
+//                         "neq",
+//                         $user_id
+//                     );
+                    $order = "time desc";
+                } else {
                     $this->ajaxReturn(responseMsg(2, $type));
                 }
             }
@@ -91,15 +91,16 @@ class SearchController extends Controller
             ->limit($from, $length)
             ->field('id')
             ->select();
+//         echo D('introduce')->_sql();
         $introduces = array();
         foreach ($introduce_ids as $k => $v) {
             $intro_content = null;
             $intro_content = $Introduce_controller->getIntroContent($v['id'], $user_id);
             $introduces[] = $intro_content;
         }
-        //距离筛选
-        $returnIntros=array();
-        if($max_distance!=-1){
+        // 距离筛选
+        $returnIntros = array();
+        if ($max_distance != - 1) {
             foreach ($introduces as $k => $v) {
                 if ($introduces[$k]['business_latitude'] && $introduces[$k]['business_longtitude']) {
                     $distance = getDistance($introduces[$k]['business_latitude'], $introduces[$k]['business_longtitude'], $user_latitude, $user_longtitude);
@@ -109,8 +110,8 @@ class SearchController extends Controller
                     }
                 }
             }
-        }else{
-            $returnIntros=$introduces;
+        } else {
+            $returnIntros = $introduces;
         }
         $resp = responseMsg(0, $type, $returnIntros);
         $resp['from'] = $from;
@@ -145,7 +146,7 @@ class SearchController extends Controller
     {
         $type = 802;
         $post = touristApiPreTreat($type);
-//         dump($post);die;
+        // dump($post);die;
         $User = D('user');
         $key = $post['key'];
         $where['u.username'] = array(

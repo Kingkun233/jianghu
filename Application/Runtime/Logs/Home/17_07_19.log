@@ -1,0 +1,447 @@
+[ 2017-07-19T09:59:07+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000729s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000975s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0010s ]
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 18 行.
+
+[ 2017-07-19T09:59:20+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000676s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001554s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 18 行.
+
+[ 2017-07-19T09:59:22+08:00 ] ::1 /jianghu/index.php/home/update/getNewestAkp
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000571s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001094s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001167s ]
+SQL: SHOW COLUMNS FROM `jianghu_update` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `jianghu_update` ORDER BY time desc  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: name D:\xampp\htdocs\jianghu\Application\Home\Controller\UpdateController.class.php 第 18 行.
+
+[ 2017-07-19T10:34:45+08:00 ] ::1 /jianghu/index.php/home/update/getNewestHomepage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000821s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001318s ]
+
+[ 2017-07-19T10:34:45+08:00 ] ::1 /jianghu/index.php/Home/return/returnMsg.html?re=5&type=1002
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000624s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000868s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+
+[ 2017-07-19T10:35:01+08:00 ] ::1 /jianghu/index.php/home/update/getNewestHomepage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001586s ]
+SQL: SHOW COLUMNS FROM `jianghu_homepage` [ RunTime:0.0063s ]
+SQL: SELECT * FROM `jianghu_homepage` ORDER BY time desc LIMIT 1   [ RunTime:0.0005s ]
+
+[ 2017-07-19T10:35:51+08:00 ] ::1 /jianghu/index.php/home/update/getNewestHomepage
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000568s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000826s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000878s ]
+SQL: SHOW COLUMNS FROM `jianghu_homepage` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_homepage` ORDER BY time desc LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-07-19T13:18:09+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000705s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0049s ]
+SQL: SELECT `id` FROM `jianghu_introduce` LIMIT 1   [ RunTime:0.0008s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1274 行.
+NOTIC: [8] Undefined variable: add_ids D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1277 行.
+
+[ 2017-07-19T13:18:25+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000572s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001182s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0035s ]
+SQL: SELECT `id` FROM `jianghu_introduce` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1274 行.
+NOTIC: [8] Undefined variable: add_ids D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1277 行.
+
+[ 2017-07-19T13:18:29+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000606s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000688s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000740s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0039s ]
+SQL: SELECT `id` FROM `jianghu_introduce` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1274 行.
+NOTIC: [8] Undefined variable: add_ids D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1277 行.
+
+[ 2017-07-19T13:18:41+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000831s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000889s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0061s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SELECT `id` FROM `jianghu_introduce` LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 1274 行.
+
+[ 2017-07-19T13:19:09+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000583s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000777s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000828s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0042s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `jianghu_introduce`  [ RunTime:0.0031s ]
+
+[ 2017-07-19T13:20:47+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000900s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003053s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003272s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0054s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0048s ]
+SQL: SELECT * FROM `jianghu_introduce`  [ RunTime:0.0033s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'in ) AND (  (  7 ) AND (  8 ) AND (  9 ) AND (  10 ) AND (  11 ) AND (  12 ) AND' at line 1
+ [ SQL语句 ] : SELECT * FROM `jianghu_forward` WHERE (  not in ) AND (  (  7 ) AND (  8 ) AND (  9 ) AND (  10 ) AND (  11 ) AND (  12 ) AND (  13 ) AND (  14 ) AND (  15 ) AND (  16 ) AND (  17 ) AND (  18 ) AND (  19 ) AND (  21 ) AND (  22 ) AND (  23 ) AND (  24 ) AND (  25 ) AND (  26 ) AND (  27 ) AND (  28 ) AND (  29 ) AND (  30 ) AND (  31 ) AND (  32 ) AND (  33 ) AND (  34 ) AND (  35 ) AND (  36 ) AND (  37 ) AND (  38 ) AND (  39 ) AND (  40 ) AND (  41 ) AND (  42 ) AND (  43 ) AND (  44 ) AND (  45 ) AND (  46 ) AND (  47 ) AND (  48 ) AND (  49 ) AND (  50 ) AND (  51 ) AND (  52 ) AND (  53 ) AND (  54 ) AND (  55 ) AND (  56 ) AND (  57 ) AND (  58 ) AND (  59 ) AND (  60 ) AND (  61 ) AND (  62 ) AND (  63 ) AND (  64 ) AND (  65 ) AND (  66 ) AND (  67 ) AND (  68 ) AND (  69 ) AND (  70 ) AND (  71 ) AND (  72 ) AND (  73 ) AND (  74 ) AND (  75 ) AND (  76 ) AND (  77 ) AND (  78 ) AND (  79 ) AND (  80 ) AND (  81 ) AND (  82 ) AND (  83 ) AND (  84 ) AND (  85 ) AND (  86 ) AND (  87 ) AND (  88 ) AND (  89 ) AND (  90 ) AND (  91 ) AND (  92 ) AND (  93 ) AND (  94 ) AND (  95 ) AND (  96 ) AND (  97 ) AND (  98 ) AND (  99 ) AND (  100 ) AND (  101 ) AND (  102 ) AND (  103 ) AND (  104 ) AND (  105 ) AND (  106 ) AND (  107 ) AND (  108 ) AND (  109 ) AND (  110 ) AND (  111 ) AND (  112 ) AND (  113 ) AND (  114 ) AND (  115 ) AND (  116 ) AND (  117 ) AND (  118 ) AND (  119 ) AND (  120 ) AND (  121 ) AND (  123 ) AND (  124 ) AND (  125 ) AND (  126 ) AND (  127 ) AND (  128 ) AND (  129 ) AND (  130 ) AND (  131 ) AND (  132 ) AND (  133 ) AND (  134 ) AND (  135 ) AND (  136 ) AND (  137 ) AND (  138 ) AND (  139 ) AND (  140 ) AND (  141 ) AND (  142 ) AND (  143 ) AND (  144 ) AND (  145 ) AND (  146 ) AND (  147 ) AND (  148 ) AND (  149 ) AND (  150 ) AND (  151 ) AND (  152 ) AND (  153 ) AND (  154 ) AND (  155 ) AND (  156 ) AND (  157 ) AND (  158 ) AND (  159 ) AND (  160 ) AND (  161 ) AND (  162 ) AND (  163 ) AND (  164 ) AND (  165 ) AND (  166 ) AND (  167 ) AND (  168 ) AND (  169 ) AND (  170 ) AND (  171 ) AND (  172 ) AND (  173 ) AND (  174 ) AND (  175 ) AND (  176 ) AND (  177 ) AND (  178 ) AND (  179 ) AND (  180 ) AND (  181 ) AND (  182 ) AND (  183 ) AND (  184 ) AND (  185 ) AND (  186 ) AND (  187 ) AND (  188 ) AND (  189 ) AND (  190 ) AND (  191 ) AND (  192 ) AND (  193 ) AND (  194 ) AND (  195 ) AND (  196 ) AND (  197 ) AND (  198 ) AND (  199 ) AND (  200 ) AND (  201 ) AND (  202 ) AND (  203 ) AND (  204 ) AND (  205 ) AND (  206 ) AND (  207 ) AND (  208 ) AND (  209 ) AND (  210 ) AND (  211 ) AND (  212 ) AND (  213 ) AND (  214 ) AND (  215 ) AND (  216 ) AND (  217 ) AND (  218 ) AND (  219 ) AND (  220 ) AND (  221 ) AND (  222 ) AND (  227 ) AND (  228 ) AND (  229 ) AND (  230 ) AND (  231 ) AND (  232 ) AND (  233 ) AND (  234 ) AND (  235 ) AND (  236 ) AND (  237 ) AND (  238 ) AND (  239 ) AND (  240 ) AND (  241 ) AND (  242 ) AND (  243 ) AND (  244 ) AND (  245 ) AND (  246 ) AND (  247 ) AND (  248 ) AND (  249 ) AND (  250 ) AND (  251 ) AND (  252 ) AND (  253 ) AND (  254 ) AND (  255 ) AND (  256 ) AND (  257 ) AND (  258 ) AND (  259 ) AND (  260 ) AND (  261 ) AND (  262 ) AND (  263 ) AND (  264 ) AND (  265 ) AND (  266 ) AND (  267 ) AND (  268 ) AND (  269 ) AND (  270 ) AND (  271 ) AND (  272 ) AND (  273 ) AND (  274 ) AND (  275 ) AND (  276 ) AND (  277 ) AND (  278 ) AND (  279 ) AND (  280 ) AND (  281 ) AND (  282 ) AND (  283 ) AND (  284 ) AND (  285 ) AND (  286 ) AND (  287 ) AND (  288 ) AND (  289 ) AND (  290 ) AND (  293 ) AND (  305 ) AND (  307 ) AND (  308 ) AND (  309 ) AND (  310 ) AND (  311 ) AND (  312 ) AND (  313 ) AND (  314 ) AND (  315 ) AND (  316 ) AND (  317 ) AND (  318 ) AND (  319 ) AND (  330 ) AND (  331 ) AND (  332 ) AND (  334 ) AND (  335 ) AND (  336 ) AND (  337 ) AND (  339 ) AND (  342 ) AND (  343 ) AND (  346 ) AND (  347 ) AND (  348 ) ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'in ) AND (  (  7 ) AND (  8 ) AND (  9 ) AND (  10 ) AND (  11 ) AND (  12 ) AND' at line 1
+ [ SQL语句 ] : SELECT * FROM `jianghu_forward` WHERE (  not in ) AND (  (  7 ) AND (  8 ) AND (  9 ) AND (  10 ) AND (  11 ) AND (  12 ) AND (  13 ) AND (  14 ) AND (  15 ) AND (  16 ) AND (  17 ) AND (  18 ) AND (  19 ) AND (  21 ) AND (  22 ) AND (  23 ) AND (  24 ) AND (  25 ) AND (  26 ) AND (  27 ) AND (  28 ) AND (  29 ) AND (  30 ) AND (  31 ) AND (  32 ) AND (  33 ) AND (  34 ) AND (  35 ) AND (  36 ) AND (  37 ) AND (  38 ) AND (  39 ) AND (  40 ) AND (  41 ) AND (  42 ) AND (  43 ) AND (  44 ) AND (  45 ) AND (  46 ) AND (  47 ) AND (  48 ) AND (  49 ) AND (  50 ) AND (  51 ) AND (  52 ) AND (  53 ) AND (  54 ) AND (  55 ) AND (  56 ) AND (  57 ) AND (  58 ) AND (  59 ) AND (  60 ) AND (  61 ) AND (  62 ) AND (  63 ) AND (  64 ) AND (  65 ) AND (  66 ) AND (  67 ) AND (  68 ) AND (  69 ) AND (  70 ) AND (  71 ) AND (  72 ) AND (  73 ) AND (  74 ) AND (  75 ) AND (  76 ) AND (  77 ) AND (  78 ) AND (  79 ) AND (  80 ) AND (  81 ) AND (  82 ) AND (  83 ) AND (  84 ) AND (  85 ) AND (  86 ) AND (  87 ) AND (  88 ) AND (  89 ) AND (  90 ) AND (  91 ) AND (  92 ) AND (  93 ) AND (  94 ) AND (  95 ) AND (  96 ) AND (  97 ) AND (  98 ) AND (  99 ) AND (  100 ) AND (  101 ) AND (  102 ) AND (  103 ) AND (  104 ) AND (  105 ) AND (  106 ) AND (  107 ) AND (  108 ) AND (  109 ) AND (  110 ) AND (  111 ) AND (  112 ) AND (  113 ) AND (  114 ) AND (  115 ) AND (  116 ) AND (  117 ) AND (  118 ) AND (  119 ) AND (  120 ) AND (  121 ) AND (  123 ) AND (  124 ) AND (  125 ) AND (  126 ) AND (  127 ) AND (  128 ) AND (  129 ) AND (  130 ) AND (  131 ) AND (  132 ) AND (  133 ) AND (  134 ) AND (  135 ) AND (  136 ) AND (  137 ) AND (  138 ) AND (  139 ) AND (  140 ) AND (  141 ) AND (  142 ) AND (  143 ) AND (  144 ) AND (  145 ) AND (  146 ) AND (  147 ) AND (  148 ) AND (  149 ) AND (  150 ) AND (  151 ) AND (  152 ) AND (  153 ) AND (  154 ) AND (  155 ) AND (  156 ) AND (  157 ) AND (  158 ) AND (  159 ) AND (  160 ) AND (  161 ) AND (  162 ) AND (  163 ) AND (  164 ) AND (  165 ) AND (  166 ) AND (  167 ) AND (  168 ) AND (  169 ) AND (  170 ) AND (  171 ) AND (  172 ) AND (  173 ) AND (  174 ) AND (  175 ) AND (  176 ) AND (  177 ) AND (  178 ) AND (  179 ) AND (  180 ) AND (  181 ) AND (  182 ) AND (  183 ) AND (  184 ) AND (  185 ) AND (  186 ) AND (  187 ) AND (  188 ) AND (  189 ) AND (  190 ) AND (  191 ) AND (  192 ) AND (  193 ) AND (  194 ) AND (  195 ) AND (  196 ) AND (  197 ) AND (  198 ) AND (  199 ) AND (  200 ) AND (  201 ) AND (  202 ) AND (  203 ) AND (  204 ) AND (  205 ) AND (  206 ) AND (  207 ) AND (  208 ) AND (  209 ) AND (  210 ) AND (  211 ) AND (  212 ) AND (  213 ) AND (  214 ) AND (  215 ) AND (  216 ) AND (  217 ) AND (  218 ) AND (  219 ) AND (  220 ) AND (  221 ) AND (  222 ) AND (  227 ) AND (  228 ) AND (  229 ) AND (  230 ) AND (  231 ) AND (  232 ) AND (  233 ) AND (  234 ) AND (  235 ) AND (  236 ) AND (  237 ) AND (  238 ) AND (  239 ) AND (  240 ) AND (  241 ) AND (  242 ) AND (  243 ) AND (  244 ) AND (  245 ) AND (  246 ) AND (  247 ) AND (  248 ) AND (  249 ) AND (  250 ) AND (  251 ) AND (  252 ) AND (  253 ) AND (  254 ) AND (  255 ) AND (  256 ) AND (  257 ) AND (  258 ) AND (  259 ) AND (  260 ) AND (  261 ) AND (  262 ) AND (  263 ) AND (  264 ) AND (  265 ) AND (  266 ) AND (  267 ) AND (  268 ) AND (  269 ) AND (  270 ) AND (  271 ) AND (  272 ) AND (  273 ) AND (  274 ) AND (  275 ) AND (  276 ) AND (  277 ) AND (  278 ) AND (  279 ) AND (  280 ) AND (  281 ) AND (  282 ) AND (  283 ) AND (  284 ) AND (  285 ) AND (  286 ) AND (  287 ) AND (  288 ) AND (  289 ) AND (  290 ) AND (  293 ) AND (  305 ) AND (  307 ) AND (  308 ) AND (  309 ) AND (  310 ) AND (  311 ) AND (  312 ) AND (  313 ) AND (  314 ) AND (  315 ) AND (  316 ) AND (  317 ) AND (  318 ) AND (  319 ) AND (  330 ) AND (  331 ) AND (  332 ) AND (  334 ) AND (  335 ) AND (  336 ) AND (  337 ) AND (  339 ) AND (  342 ) AND (  343 ) AND (  346 ) AND (  347 ) AND (  348 ) ) 
+
+[ 2017-07-19T13:22:56+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000566s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001889s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001988s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0049s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `jianghu_introduce`  [ RunTime:0.0036s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'in ) AND (  (  7 ) AND (  8 ) AND (  9 ) AND (  10 ) AND (  11 ) AND (  12 ) AND' at line 1
+ [ SQL语句 ] : SELECT * FROM `jianghu_forward` WHERE (  not in ) AND (  (  7 ) AND (  8 ) AND (  9 ) AND (  10 ) AND (  11 ) AND (  12 ) AND (  13 ) AND (  14 ) AND (  15 ) AND (  16 ) AND (  17 ) AND (  18 ) AND (  19 ) AND (  21 ) AND (  22 ) AND (  23 ) AND (  24 ) AND (  25 ) AND (  26 ) AND (  27 ) AND (  28 ) AND (  29 ) AND (  30 ) AND (  31 ) AND (  32 ) AND (  33 ) AND (  34 ) AND (  35 ) AND (  36 ) AND (  37 ) AND (  38 ) AND (  39 ) AND (  40 ) AND (  41 ) AND (  42 ) AND (  43 ) AND (  44 ) AND (  45 ) AND (  46 ) AND (  47 ) AND (  48 ) AND (  49 ) AND (  50 ) AND (  51 ) AND (  52 ) AND (  53 ) AND (  54 ) AND (  55 ) AND (  56 ) AND (  57 ) AND (  58 ) AND (  59 ) AND (  60 ) AND (  61 ) AND (  62 ) AND (  63 ) AND (  64 ) AND (  65 ) AND (  66 ) AND (  67 ) AND (  68 ) AND (  69 ) AND (  70 ) AND (  71 ) AND (  72 ) AND (  73 ) AND (  74 ) AND (  75 ) AND (  76 ) AND (  77 ) AND (  78 ) AND (  79 ) AND (  80 ) AND (  81 ) AND (  82 ) AND (  83 ) AND (  84 ) AND (  85 ) AND (  86 ) AND (  87 ) AND (  88 ) AND (  89 ) AND (  90 ) AND (  91 ) AND (  92 ) AND (  93 ) AND (  94 ) AND (  95 ) AND (  96 ) AND (  97 ) AND (  98 ) AND (  99 ) AND (  100 ) AND (  101 ) AND (  102 ) AND (  103 ) AND (  104 ) AND (  105 ) AND (  106 ) AND (  107 ) AND (  108 ) AND (  109 ) AND (  110 ) AND (  111 ) AND (  112 ) AND (  113 ) AND (  114 ) AND (  115 ) AND (  116 ) AND (  117 ) AND (  118 ) AND (  119 ) AND (  120 ) AND (  121 ) AND (  123 ) AND (  124 ) AND (  125 ) AND (  126 ) AND (  127 ) AND (  128 ) AND (  129 ) AND (  130 ) AND (  131 ) AND (  132 ) AND (  133 ) AND (  134 ) AND (  135 ) AND (  136 ) AND (  137 ) AND (  138 ) AND (  139 ) AND (  140 ) AND (  141 ) AND (  142 ) AND (  143 ) AND (  144 ) AND (  145 ) AND (  146 ) AND (  147 ) AND (  148 ) AND (  149 ) AND (  150 ) AND (  151 ) AND (  152 ) AND (  153 ) AND (  154 ) AND (  155 ) AND (  156 ) AND (  157 ) AND (  158 ) AND (  159 ) AND (  160 ) AND (  161 ) AND (  162 ) AND (  163 ) AND (  164 ) AND (  165 ) AND (  166 ) AND (  167 ) AND (  168 ) AND (  169 ) AND (  170 ) AND (  171 ) AND (  172 ) AND (  173 ) AND (  174 ) AND (  175 ) AND (  176 ) AND (  177 ) AND (  178 ) AND (  179 ) AND (  180 ) AND (  181 ) AND (  182 ) AND (  183 ) AND (  184 ) AND (  185 ) AND (  186 ) AND (  187 ) AND (  188 ) AND (  189 ) AND (  190 ) AND (  191 ) AND (  192 ) AND (  193 ) AND (  194 ) AND (  195 ) AND (  196 ) AND (  197 ) AND (  198 ) AND (  199 ) AND (  200 ) AND (  201 ) AND (  202 ) AND (  203 ) AND (  204 ) AND (  205 ) AND (  206 ) AND (  207 ) AND (  208 ) AND (  209 ) AND (  210 ) AND (  211 ) AND (  212 ) AND (  213 ) AND (  214 ) AND (  215 ) AND (  216 ) AND (  217 ) AND (  218 ) AND (  219 ) AND (  220 ) AND (  221 ) AND (  222 ) AND (  227 ) AND (  228 ) AND (  229 ) AND (  230 ) AND (  231 ) AND (  232 ) AND (  233 ) AND (  234 ) AND (  235 ) AND (  236 ) AND (  237 ) AND (  238 ) AND (  239 ) AND (  240 ) AND (  241 ) AND (  242 ) AND (  243 ) AND (  244 ) AND (  245 ) AND (  246 ) AND (  247 ) AND (  248 ) AND (  249 ) AND (  250 ) AND (  251 ) AND (  252 ) AND (  253 ) AND (  254 ) AND (  255 ) AND (  256 ) AND (  257 ) AND (  258 ) AND (  259 ) AND (  260 ) AND (  261 ) AND (  262 ) AND (  263 ) AND (  264 ) AND (  265 ) AND (  266 ) AND (  267 ) AND (  268 ) AND (  269 ) AND (  270 ) AND (  271 ) AND (  272 ) AND (  273 ) AND (  274 ) AND (  275 ) AND (  276 ) AND (  277 ) AND (  278 ) AND (  279 ) AND (  280 ) AND (  281 ) AND (  282 ) AND (  283 ) AND (  284 ) AND (  285 ) AND (  286 ) AND (  287 ) AND (  288 ) AND (  289 ) AND (  290 ) AND (  293 ) AND (  305 ) AND (  307 ) AND (  308 ) AND (  309 ) AND (  310 ) AND (  311 ) AND (  312 ) AND (  313 ) AND (  314 ) AND (  315 ) AND (  316 ) AND (  317 ) AND (  318 ) AND (  319 ) AND (  330 ) AND (  331 ) AND (  332 ) AND (  334 ) AND (  335 ) AND (  336 ) AND (  337 ) AND (  339 ) AND (  342 ) AND (  343 ) AND (  346 ) AND (  347 ) AND (  348 ) ) 
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'in ) AND (  (  7 ) AND (  8 ) AND (  9 ) AND (  10 ) AND (  11 ) AND (  12 ) AND' at line 1
+ [ SQL语句 ] : SELECT * FROM `jianghu_forward` WHERE (  not in ) AND (  (  7 ) AND (  8 ) AND (  9 ) AND (  10 ) AND (  11 ) AND (  12 ) AND (  13 ) AND (  14 ) AND (  15 ) AND (  16 ) AND (  17 ) AND (  18 ) AND (  19 ) AND (  21 ) AND (  22 ) AND (  23 ) AND (  24 ) AND (  25 ) AND (  26 ) AND (  27 ) AND (  28 ) AND (  29 ) AND (  30 ) AND (  31 ) AND (  32 ) AND (  33 ) AND (  34 ) AND (  35 ) AND (  36 ) AND (  37 ) AND (  38 ) AND (  39 ) AND (  40 ) AND (  41 ) AND (  42 ) AND (  43 ) AND (  44 ) AND (  45 ) AND (  46 ) AND (  47 ) AND (  48 ) AND (  49 ) AND (  50 ) AND (  51 ) AND (  52 ) AND (  53 ) AND (  54 ) AND (  55 ) AND (  56 ) AND (  57 ) AND (  58 ) AND (  59 ) AND (  60 ) AND (  61 ) AND (  62 ) AND (  63 ) AND (  64 ) AND (  65 ) AND (  66 ) AND (  67 ) AND (  68 ) AND (  69 ) AND (  70 ) AND (  71 ) AND (  72 ) AND (  73 ) AND (  74 ) AND (  75 ) AND (  76 ) AND (  77 ) AND (  78 ) AND (  79 ) AND (  80 ) AND (  81 ) AND (  82 ) AND (  83 ) AND (  84 ) AND (  85 ) AND (  86 ) AND (  87 ) AND (  88 ) AND (  89 ) AND (  90 ) AND (  91 ) AND (  92 ) AND (  93 ) AND (  94 ) AND (  95 ) AND (  96 ) AND (  97 ) AND (  98 ) AND (  99 ) AND (  100 ) AND (  101 ) AND (  102 ) AND (  103 ) AND (  104 ) AND (  105 ) AND (  106 ) AND (  107 ) AND (  108 ) AND (  109 ) AND (  110 ) AND (  111 ) AND (  112 ) AND (  113 ) AND (  114 ) AND (  115 ) AND (  116 ) AND (  117 ) AND (  118 ) AND (  119 ) AND (  120 ) AND (  121 ) AND (  123 ) AND (  124 ) AND (  125 ) AND (  126 ) AND (  127 ) AND (  128 ) AND (  129 ) AND (  130 ) AND (  131 ) AND (  132 ) AND (  133 ) AND (  134 ) AND (  135 ) AND (  136 ) AND (  137 ) AND (  138 ) AND (  139 ) AND (  140 ) AND (  141 ) AND (  142 ) AND (  143 ) AND (  144 ) AND (  145 ) AND (  146 ) AND (  147 ) AND (  148 ) AND (  149 ) AND (  150 ) AND (  151 ) AND (  152 ) AND (  153 ) AND (  154 ) AND (  155 ) AND (  156 ) AND (  157 ) AND (  158 ) AND (  159 ) AND (  160 ) AND (  161 ) AND (  162 ) AND (  163 ) AND (  164 ) AND (  165 ) AND (  166 ) AND (  167 ) AND (  168 ) AND (  169 ) AND (  170 ) AND (  171 ) AND (  172 ) AND (  173 ) AND (  174 ) AND (  175 ) AND (  176 ) AND (  177 ) AND (  178 ) AND (  179 ) AND (  180 ) AND (  181 ) AND (  182 ) AND (  183 ) AND (  184 ) AND (  185 ) AND (  186 ) AND (  187 ) AND (  188 ) AND (  189 ) AND (  190 ) AND (  191 ) AND (  192 ) AND (  193 ) AND (  194 ) AND (  195 ) AND (  196 ) AND (  197 ) AND (  198 ) AND (  199 ) AND (  200 ) AND (  201 ) AND (  202 ) AND (  203 ) AND (  204 ) AND (  205 ) AND (  206 ) AND (  207 ) AND (  208 ) AND (  209 ) AND (  210 ) AND (  211 ) AND (  212 ) AND (  213 ) AND (  214 ) AND (  215 ) AND (  216 ) AND (  217 ) AND (  218 ) AND (  219 ) AND (  220 ) AND (  221 ) AND (  222 ) AND (  227 ) AND (  228 ) AND (  229 ) AND (  230 ) AND (  231 ) AND (  232 ) AND (  233 ) AND (  234 ) AND (  235 ) AND (  236 ) AND (  237 ) AND (  238 ) AND (  239 ) AND (  240 ) AND (  241 ) AND (  242 ) AND (  243 ) AND (  244 ) AND (  245 ) AND (  246 ) AND (  247 ) AND (  248 ) AND (  249 ) AND (  250 ) AND (  251 ) AND (  252 ) AND (  253 ) AND (  254 ) AND (  255 ) AND (  256 ) AND (  257 ) AND (  258 ) AND (  259 ) AND (  260 ) AND (  261 ) AND (  262 ) AND (  263 ) AND (  264 ) AND (  265 ) AND (  266 ) AND (  267 ) AND (  268 ) AND (  269 ) AND (  270 ) AND (  271 ) AND (  272 ) AND (  273 ) AND (  274 ) AND (  275 ) AND (  276 ) AND (  277 ) AND (  278 ) AND (  279 ) AND (  280 ) AND (  281 ) AND (  282 ) AND (  283 ) AND (  284 ) AND (  285 ) AND (  286 ) AND (  287 ) AND (  288 ) AND (  289 ) AND (  290 ) AND (  293 ) AND (  305 ) AND (  307 ) AND (  308 ) AND (  309 ) AND (  310 ) AND (  311 ) AND (  312 ) AND (  313 ) AND (  314 ) AND (  315 ) AND (  316 ) AND (  317 ) AND (  318 ) AND (  319 ) AND (  330 ) AND (  331 ) AND (  332 ) AND (  334 ) AND (  335 ) AND (  336 ) AND (  337 ) AND (  339 ) AND (  342 ) AND (  343 ) AND (  346 ) AND (  347 ) AND (  348 ) ) 
+
+[ 2017-07-19T13:23:26+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000531s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000774s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000823s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0053s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0036s ]
+SQL: SELECT * FROM `jianghu_introduce`  [ RunTime:0.0032s ]
+
+[ 2017-07-19T13:27:46+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000553s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001130s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001219s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `jianghu_introduce`  [ RunTime:0.0029s ]
+SQL: SELECT * FROM `jianghu_forward` WHERE `introduce_id` NOT IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','139','140','141','142','143','144','145','146','147','148','149','150','151','152','153','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199','200','201','202','203','204','205','206','207','208','209','210','211','212','213','214','215','216','217','218','219','220','221','222','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','249','250','251','252','253','254','255','256','257','258','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','287','288','289','290','293','305','307','308','309','310','311','312','313','314','315','316','317','318','319','330','331','332','334','335','336','337','339','342','343','346','347','348')  [ RunTime:0.0014s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001198s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001328s ]
+
+[ 2017-07-19T13:28:46+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000968s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0185s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `jianghu_introduce`  [ RunTime:0.0033s ]
+SQL: SELECT `id` FROM `jianghu_forward` WHERE `introduce_id` NOT IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','139','140','141','142','143','144','145','146','147','148','149','150','151','152','153','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199','200','201','202','203','204','205','206','207','208','209','210','211','212','213','214','215','216','217','218','219','220','221','222','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','249','250','251','252','253','254','255','256','257','258','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','287','288','289','290','293','305','307','308','309','310','311','312','313','314','315','316','317','318','319','330','331','332','334','335','336','337','339','342','343','346','347','348')  [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001038s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001095s ]
+
+[ 2017-07-19T13:39:50+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000641s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002372s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002450s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0038s ]
+SQL: SELECT * FROM `jianghu_introduce`  [ RunTime:0.0031s ]
+SQL: SELECT `introduce_id` FROM `jianghu_forward` WHERE `introduce_id` NOT IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','139','140','141','142','143','144','145','146','147','148','149','150','151','152','153','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199','200','201','202','203','204','205','206','207','208','209','210','211','212','213','214','215','216','217','218','219','220','221','222','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','249','250','251','252','253','254','255','256','257','258','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','287','288','289','290','293','305','307','308','309','310','311','312','313','314','315','316','317','318','319','330','331','332','334','335','336','337','339','342','343','346','347','348')  [ RunTime:0.0007s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001430s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001515s ]
+
+[ 2017-07-19T13:41:56+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000593s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003219s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003410s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0039s ]
+SQL: SELECT * FROM `jianghu_introduce`  [ RunTime:0.0028s ]
+SQL: SELECT `introduce_id` FROM `jianghu_forward` WHERE `introduce_id` NOT IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','139','140','141','142','143','144','145','146','147','148','149','150','151','152','153','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199','200','201','202','203','204','205','206','207','208','209','210','211','212','213','214','215','216','217','218','219','220','221','222','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','249','250','251','252','253','254','255','256','257','258','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','287','288','289','290','293','305','307','308','309','310','311','312','313','314','315','316','317','318','319','330','331','332','334','335','336','337','339','342','343','346','347','348')  [ RunTime:0.0008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001392s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001477s ]
+
+[ 2017-07-19T13:42:39+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000755s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001133s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001204s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0239s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0041s ]
+SQL: SELECT * FROM `jianghu_introduce`  [ RunTime:0.0032s ]
+SQL: SELECT `introduce_id` FROM `jianghu_forward` WHERE `introduce_id` NOT IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','139','140','141','142','143','144','145','146','147','148','149','150','151','152','153','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199','200','201','202','203','204','205','206','207','208','209','210','211','212','213','214','215','216','217','218','219','220','221','222','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','249','250','251','252','253','254','255','256','257','258','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','287','288','289','290','293','305','307','308','309','310','311','312','313','314','315','316','317','318','319','330','331','332','334','335','336','337','339','342','343','346','347','348')  [ RunTime:0.0015s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000972s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001041s ]
+
+[ 2017-07-19T13:45:33+08:00 ] ::1 /jianghu/index.php/home/introduce/cleanNotExistIntro
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000588s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000915s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000968s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0047s ]
+SQL: SELECT * FROM `jianghu_introduce`  [ RunTime:0.0041s ]
+SQL: SELECT `introduce_id` FROM `jianghu_forward` WHERE `introduce_id` NOT IN ('7','8','9','10','11','12','13','14','15','16','17','18','19','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77','78','79','80','81','82','83','84','85','86','87','88','89','90','91','92','93','94','95','96','97','98','99','100','101','102','103','104','105','106','107','108','109','110','111','112','113','114','115','116','117','118','119','120','121','123','124','125','126','127','128','129','130','131','132','133','134','135','136','137','138','139','140','141','142','143','144','145','146','147','148','149','150','151','152','153','154','155','156','157','158','159','160','161','162','163','164','165','166','167','168','169','170','171','172','173','174','175','176','177','178','179','180','181','182','183','184','185','186','187','188','189','190','191','192','193','194','195','196','197','198','199','200','201','202','203','204','205','206','207','208','209','210','211','212','213','214','215','216','217','218','219','220','221','222','227','228','229','230','231','232','233','234','235','236','237','238','239','240','241','242','243','244','245','246','247','248','249','250','251','252','253','254','255','256','257','258','259','260','261','262','263','264','265','266','267','268','269','270','271','272','273','274','275','276','277','278','279','280','281','282','283','284','285','286','287','288','289','290','293','305','307','308','309','310','311','312','313','314','315','316','317','318','319','330','331','332','334','335','336','337','339','342','343','346','347','348')  [ RunTime:0.0008s ]
+SQL: DELETE FROM `jianghu_forward` WHERE `introduce_id` IN ('223','224','291','292','294','295','296','298','299','300','302','304','306','297','322','325','327','338','340','341','344','345') [ RunTime:0.0857s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001888s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001960s ]
+
+[ 2017-07-19T13:48:19+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000629s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000824s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0412s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0034s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 4 AND `date` = '2017-07-19' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-07-19' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('4','2017-07-19') [ RunTime:0.0933s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 4 [ RunTime:0.0593s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-07-19'  [ RunTime:0.0004s ]
+SQL: INSERT INTO `jianghu_daily_num` (`date`,`lognum`) VALUES ('2017-07-19','1') [ RunTime:0.0332s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0056s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0096s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0065s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0095s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0072s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `name` FROM `jianghu_business` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: business_addr D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 59 行.
+ERR: 1048:Column 'business_addr' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_introduce` (`business_id`,`business_name`,`business_latitude`,`business_longtitude`,`business_website`,`business_addr`,`text`,`user_id`,`time`,`degree`,`domain`) VALUES ('1','章鱼小丸子','123456','123456','',NULL,'这是4的内容','4','2017-07-19 13:48:19','1',NULL)
+ERR: 1048:Column 'business_addr' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_introduce` (`business_id`,`business_name`,`business_latitude`,`business_longtitude`,`business_website`,`business_addr`,`text`,`user_id`,`time`,`degree`,`domain`) VALUES ('1','章鱼小丸子','123456','123456','',NULL,'这是4的内容','4','2017-07-19 13:48:19','1',NULL)
+
+[ 2017-07-19T13:50:11+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000569s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000839s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000891s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0058s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0009s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 4 AND `date` = '2017-07-19' LIMIT 1   [ RunTime:0.0017s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-07-19' LIMIT 1   [ RunTime:0.0006s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0041s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0047s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0035s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0039s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `jianghu_business` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+ERR: 1048:Column 'domain' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_introduce` (`business_id`,`business_name`,`business_latitude`,`business_longtitude`,`business_website`,`business_addr`,`text`,`user_id`,`time`,`degree`,`domain`) VALUES ('1','章鱼小丸子','123456','123456','','','这是4的内容','4','2017-07-19 13:50:11','1',NULL)
+ERR: 1048:Column 'domain' cannot be null
+ [ SQL语句 ] : INSERT INTO `jianghu_introduce` (`business_id`,`business_name`,`business_latitude`,`business_longtitude`,`business_website`,`business_addr`,`text`,`user_id`,`time`,`degree`,`domain`) VALUES ('1','章鱼小丸子','123456','123456','','','这是4的内容','4','2017-07-19 13:50:11','1',NULL)
+
+[ 2017-07-19T13:51:10+08:00 ] ::1 /jianghu/index.php/home/introduce/add
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000678s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000818s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000870s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0035s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'sn/yv1TijVcqin9FrIPDScUO1G2njjZlU3MP4/aI7V/qZiFpRY2Pajeh5YsSBbLbHrqhvKOBa9l/TIpKbBFpoA==' AND `state` = 0 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 4 AND `date` = '2017-07-19' LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-07-19' LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_domain` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_domain` [ RunTime:0.0037s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0039s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce_images` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0036s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0038s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0057s ]
+SQL: SELECT `name` FROM `jianghu_domain` WHERE `id` = 10 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `name` FROM `jianghu_business` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_introduce` (`business_id`,`business_name`,`business_latitude`,`business_longtitude`,`business_website`,`business_addr`,`text`,`user_id`,`time`,`degree`,`domain`) VALUES ('1','章鱼小丸子','123456','123456','','','这是4的内容','4','2017-07-19 13:51:09','1','电影') [ RunTime:0.1456s ]
+SQL: INSERT INTO `jianghu_introduce_domain` (`domain`,`introduce_id`) VALUES ('电影','349') [ RunTime:0.0582s ]
+SQL: INSERT INTO `jianghu_introduce_images` (`introduce_id`,`imageurl`,`imagepath`,`thumb_imageurl`,`thumb_imagepath`) VALUES ('349','http://121.42.203.85/jianghu/Uploads/2016-12-21/585a7bf4495a0.jpg','./Uploads/2016-12-21/585a7bf4495a0.jpg','http://localhost/jianghu/Uploads/2016-12-21/1585a7bf4495a0.jpg','./Uploads/2016-12-21/1585a7bf4495a0.jpg') [ RunTime:0.0337s ]
+SQL: INSERT INTO `jianghu_introduce_images` (`introduce_id`,`imageurl`,`imagepath`,`thumb_imageurl`,`thumb_imagepath`) VALUES ('349','http://121.42.203.85/jianghu/Uploads/2016-12-21/585a7bf44998f.jpg','./Uploads/2016-12-21/585a7bf44998f.jpg','http://localhost/jianghu/Uploads/2016-12-21/1585a7bf44998f.jpg','./Uploads/2016-12-21/1585a7bf44998f.jpg') [ RunTime:0.0324s ]
+SQL: INSERT INTO `jianghu_introduce_images` (`introduce_id`,`imageurl`,`imagepath`,`thumb_imageurl`,`thumb_imagepath`) VALUES ('349','http://121.42.203.85/jianghu/Uploads/2016-12-21/585a7bf449bdd.jpg','./Uploads/2016-12-21/585a7bf449bdd.jpg','http://localhost/jianghu/Uploads/2016-12-21/1585a7bf449bdd.jpg','./Uploads/2016-12-21/1585a7bf449bdd.jpg') [ RunTime:0.0336s ]
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`original_id`,`time`,`owner_id`,`degree`) VALUES ('4','349','349','2017-07-19 13:51:09','4','1') [ RunTime:0.0325s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 4  [ RunTime:0.0004s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` IN ('4','2','1','1') [ RunTime:0.0554s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 4 [ RunTime:0.0564s ]
+
+[ 2017-07-19T13:52:44+08:00 ] ::1 /jianghu/index.php/home/introduce/forward
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000830s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000880s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0045s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `jianghu_login_count` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_daily_num` [ RunTime:0.0055s ]
+SQL: SELECT * FROM `jianghu_token` WHERE `token` = 'f0eac881e871f806c946703600ca3c5e' AND `state` = 0 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `isban` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_login_count` WHERE `user_id` = 1 AND `date` = '2017-07-19' LIMIT 1   [ RunTime:0.0262s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-07-19' LIMIT 1   [ RunTime:0.0198s ]
+SQL: SELECT `jointime` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_login_count` (`user_id`,`date`) VALUES ('1','2017-07-19') [ RunTime:0.0897s ]
+SQL: UPDATE `jianghu_user` SET `praisenum`=praisenum+1 WHERE `id` = 1 [ RunTime:0.0376s ]
+SQL: SELECT * FROM `jianghu_daily_num` WHERE `date` = '2017-07-19'  [ RunTime:0.0010s ]
+SQL: UPDATE `jianghu_daily_num` SET `lognum`=lognum+1 WHERE `date` = '2017-07-19' [ RunTime:0.0312s ]
+SQL: SHOW COLUMNS FROM `jianghu_introduce` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `jianghu_forward` [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0032s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 349 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `isforward` FROM `jianghu_introduce` WHERE `id` = 349 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT `degree` FROM `jianghu_introduce` WHERE `id` = 349 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `forward_id` FROM `jianghu_introduce` WHERE `id` = 349 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT `user_id` FROM `jianghu_introduce` WHERE `id` = 349 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO `jianghu_forward` (`user_id`,`introduce_id`,`time`,`owner_id`,`original_id`,`original_id2`,`degree`) VALUES ('1','349','2017-07-19 13:52:43','4','349','1','2') [ RunTime:0.0749s ]
+SQL: INSERT INTO `jianghu_introduce` (`time`,`isforward`,`text`,`user_id`,`degree`,`forward_id`) VALUES ('2017-07-19 13:52:43','349','哈哈哈','1','2','327') [ RunTime:0.0404s ]
+SQL: UPDATE `jianghu_introduce` SET `forwardnum`=forwardnum+1 WHERE `id` = 349 [ RunTime:0.0337s ]
+SQL: UPDATE `jianghu_introduce` SET `praisenum`=praisenum+1 WHERE `id` = 349 [ RunTime:0.0326s ]
+SQL: UPDATE `jianghu_user` SET `allforward`=allforward+1 WHERE `id` = 4 [ RunTime:0.0360s ]
+NOTIC: [8] Undefined variable: isMyself D:\xampp\htdocs\jianghu\Application\Home\Controller\IntroduceController.class.php 第 667 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1  [ RunTime:0.0018s ]
+SQL: UPDATE `jianghu_user` SET `unreadnum`=unreadnum+1 WHERE `id` IN ('5','4','1','6','7','18','20','18','4','4','1','1','99','2','93') [ RunTime:0.0393s ]
+SQL: SELECT `username` FROM `jianghu_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT `push_regid` FROM `jianghu_user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0004s ]
+
+[ 2017-07-19T16:37:32+08:00 ] ::1 /jianghu/index.php/home/user/outlogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001541s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001646s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0055s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: UPDATE `jianghu_token` SET `state`='1' WHERE `user_id` = 10 [ RunTime:0.0603s ]
+
+[ 2017-07-19T16:38:42+08:00 ] ::1 /jianghu/index.php/home/user/outlogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000988s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000859s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0047s ]
+SQL: UPDATE `jianghu_token` SET `state`='1' WHERE `user_id` = 10 [ RunTime:0.0659s ]
+
+[ 2017-07-19T16:39:13+08:00 ] ::1 /jianghu/index.php/home/user/outlogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000837s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000910s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0033s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0037s ]
+SQL: UPDATE `jianghu_token` SET `state`='1' WHERE `user_id` = 5 [ RunTime:0.0830s ]
+
+[ 2017-07-19T16:40:00+08:00 ] ::1 /jianghu/index.php/home/user/outlogin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000912s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000801s ]
+SQL: SHOW COLUMNS FROM `jianghu_token` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0034s ]
+SQL: UPDATE `jianghu_token` SET `state`='1' WHERE `user_id` = 2 [ RunTime:0.0816s ]
+SQL: UPDATE `jianghu_user` SET `push_regid`='' WHERE `id` = 2 [ RunTime:0.0459s ]
+

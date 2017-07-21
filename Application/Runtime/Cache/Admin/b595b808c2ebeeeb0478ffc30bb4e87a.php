@@ -100,6 +100,20 @@ function refresh(){
                              <dd><a href="<?php echo U('poster/overtimeList');?>" target="mainFrame">已过期海报</a></dd>
                         </dl>
                     </li>
+                    <li>
+                        <h3 onclick="show('menu9','change9')" id="change9"><span >+</span>版本管理</h3>
+                        <dl id="menu9" style="display:none;">
+                            <dd><a href="<?php echo U('update/index');?>" target="mainFrame">版本列表</a></dd>
+                            <dd><a href="<?php echo U('update/add');?>" target="mainFrame">添加新版本</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <h3 onclick="show('menu10','change10')" id="change10"><span >+</span>首页大图管理</h3>
+                        <dl id="menu10" style="display:none;">
+                            <dd><a href="<?php echo U('homepage/index');?>" target="mainFrame">首页大图列表</a></dd>
+                            <dd><a href="<?php echo U('homepage/add');?>" target="mainFrame">添加新首页大图</a></dd>
+                        </dl>
+                    </li>
                 </ul>
             </div>
         </div>

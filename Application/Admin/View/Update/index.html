@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>-.-</title>
+</script>
+<link rel="stylesheet" href="/jianghu/Public/css/backstage.css">
+</head>
+<body>
+	</br>
+	<h3>&nbsp版本列表</h3>
+	<div class="details">
+		<div align="right">
+			</br>
+		</div>
+		<!--表格-->
+		<table class="table" cellspacing="0" cellpadding="0">
+			<thead>
+				<tr>
+					<th>编号</th>
+					<th>版本名</th>
+					<th>更新描述</th>
+					<th>时间</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<foreach name='update' item='vo' id="introduce_id">
+				<tr>
+					<!--这里的id和for里面的c1 需要循环出来-->
+					<td align="center">{$vo.id}</td>
+					<td align="center">{$vo.version}</td>
+					<td align="center">{$vo.description}</td>
+					<td align="center">{$vo.time}</td>
+					<td align="center">
+						<input type="button" value="下载" class="btn"onclick="download({$vo.id})">
+					</td>
+				</tr>
+				</foreach>
+			</tbody>
+		</table>
+		<div class="pagination">{$page}</div>
+	</div>
+</body>
+<script type="text/javascript">
+function download(id){
+	window.location="{:U('update/download')}"+'?id='+id;
+}
+</script>
+</html>

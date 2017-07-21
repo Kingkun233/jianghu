@@ -23,7 +23,7 @@ class PushController extends Controller
             ->setPlatform('all')
             ->addAllAudience()
             ->androidNotification($message, array(
-                'title' => '江湖',
+                'title' => '江湖指南',
                 'extras' => array(
                     'type' => $type,
                     'msg' => $msg
@@ -57,7 +57,7 @@ class PushController extends Controller
                     ->
                 // ->setNotificationAlert($message)
                 androidNotification($message, array(
-                    'title' => '江湖',
+                    'title' => '江湖指南',
                     'extras' => array(
                         'type' => $type
                     )

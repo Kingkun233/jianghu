@@ -279,12 +279,15 @@ class UserController extends Controller
         // 检查调用是否正确
         $post = touristApiPreTreat($type);
         $Token = D("token");
+        $User=D('user');
         $user_id = $post['user_id'];
         if ($Token->where(array(
             "user_id" => $user_id
         ))->save(array(
             "state" => 1
         ))) {
+            //该用户的regid置空
+            $User->where(array('id'=>$user_id))->save(array('push_regid'=>''));
             $this->ajaxReturn(responseMsg(0, $type)); // 登出成功
         } else {
             $this->ajaxReturn(responseMsg(1, $type)); // 登出失败
