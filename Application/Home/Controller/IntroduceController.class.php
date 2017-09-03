@@ -1,4 +1,5 @@
 <?php
+
 namespace Home\Controller;
 
 use Think\Controller;
@@ -50,7 +51,7 @@ class IntroduceController extends Controller
         $add['business_name'] = $Busi->where(array(
             'id' => $business_id
         ))->getField('name');
-        if (! $add['business_name']) {
+        if (!$add['business_name']) {
             $add['business_name'] = "";
         }
         $add['business_latitude'] = $post['business_latitude'];
@@ -68,7 +69,7 @@ class IntroduceController extends Controller
         // 插入推荐表，获取推荐id
         $img['intro_id'] = $Intro->add($add);
         $add2['introduce_id'] = $img['intro_id'];
-        if (! $img['intro_id']) {
+        if (!$img['intro_id']) {
             // 数据插入失败
             $this->ajaxReturn(responseMsg(1, $type));
         }
@@ -156,7 +157,7 @@ class IntroduceController extends Controller
         $flag5 = $Comment->where(array(
             'introduce_id' => $intro_id
         ))->delete();
-        if (! ($flag2)) {
+        if (!($flag2)) {
             // 推荐删除失败
             // dump(array($flag2&&$flag4&&$flag5));
             $model->rollback();
@@ -247,7 +248,7 @@ class IntroduceController extends Controller
         // 分页返回
         $resp = responseMsg(0, 202, $contents);
         $resp['from'] = $from;
-        $resp['length'] = $length;
+        $resp['length'] = count($contents);
         $this->ajaxReturn($resp);
     }
 
@@ -268,6 +269,7 @@ class IntroduceController extends Controller
         $contents = $Intro->where(array(
             'user_id' => $user_id
         ))
+            ->limit($from, $length)
             ->order('time desc')
             ->select();
         foreach ($contents as $k => $v) {
@@ -275,7 +277,7 @@ class IntroduceController extends Controller
         }
         $resp = responseMsg(0, 203, $contents);
         $resp['from'] = $from;
-        $resp['length'] = $length;
+        $resp['length'] = count($contents);
         $this->ajaxReturn($resp);
     }
 
@@ -319,7 +321,7 @@ class IntroduceController extends Controller
                 break;
             }
         }
-        if (! $count) {
+        if (!$count) {
             $Num->where(array(
                 "date" => $today
             ))->setInc("praisenum");
@@ -349,7 +351,7 @@ class IntroduceController extends Controller
         ))->setInc('praisenum');
         // $res=array($flag1,$flag2, $flag3,$flag4);
         // dump($res);die;
-        
+
         if ($flag1 && $flag2) {
             // 点赞成功
             // 推送给推荐主人
@@ -368,7 +370,7 @@ class IntroduceController extends Controller
      */
     public function showWhoPraise()
     {
-        if (! checkUserLogin()) {
+        if (!checkUserLogin()) {
             // 用户未登陆
             $this->ajaxReturn(2);
         }
@@ -402,7 +404,7 @@ class IntroduceController extends Controller
      */
     public function delPraise()
     {
-        if (! checkUserLogin()) {
+        if (!checkUserLogin()) {
             // 用户未登陆
             $this->ajaxReturn(2);
         }
@@ -505,7 +507,7 @@ class IntroduceController extends Controller
                 $friend
             );
             $rows = $Forward->where($where1)->select();
-            if (! $rows) {
+            if (!$rows) {
                 // 如果没有找到
                 // 度数为被转载推荐的度数加一
                 $degree = $degree + 1;
@@ -519,7 +521,7 @@ class IntroduceController extends Controller
                 $original_ids = $Forward->where(array(
                     'id' => $forward_id
                 ))->select();
-                for ($i = 2; $i < $degree; $i ++) {
+                for ($i = 2; $i < $degree; $i++) {
                     $data1['original_id' . $i] = $original_ids[0]['original_id' . $i];
                     // 给度数源用户加口碑
                     $User->where(array(
@@ -579,7 +581,7 @@ class IntroduceController extends Controller
                 $data1['original_id' . $min] = $user_id;
                 // 复制度数源
                 $degreesum = 0;
-                for ($i = 2; $i < $min; $i ++) {
+                for ($i = 2; $i < $min; $i++) {
                     $data1['original_id' . $i] = $forword['original_id' . $i];
                     // 给度数源用户加口碑
                     $User->where(array(
@@ -664,7 +666,7 @@ class IntroduceController extends Controller
             'id' => $owner_id
         ))->setInc("allforward");
         // 判断是不是自己转自己，是的话下面的都不执行
-        if (! $isMyself) {
+        if (!$isMyself) {
             // 该用户的朋友的未读推荐数加一
             $friends2 = $Friend->where(array(
                 'user_id' => $user_id
@@ -682,10 +684,13 @@ class IntroduceController extends Controller
             // 转采成功
             // 推送给推荐主人
             $push_ctrl = A('push');
+            if ($user_id == $owner_id) {
+                $this->ajaxReturn(responseMsg(0, $type));
+            }
             $owner_name = getUsernameByUId($user_id);
             $push_msg = $owner_name . "转载了你的推荐";
             $push_ctrl->push_special($push_msg, $owner_id);
-            
+
             $this->ajaxReturn(responseMsg(0, $type));
         }
         // dump($flag);
@@ -728,7 +733,7 @@ class IntroduceController extends Controller
                 break;
             }
         }
-        if (! $count) {
+        if (!$count) {
             $Num->where(array(
                 "date" => $today
             ))->setInc("commentnum");
@@ -741,11 +746,14 @@ class IntroduceController extends Controller
         ))->setInc("commentnum");
         if ($flag2) {
             // 推送给推荐主人
+            $comment_name = getUsernameByUId($post['user_id']);
+            if ($data['owner_id'] == $post['user_id']) {
+                $this->ajaxReturn(responseMsg(0, $type));
+            }
             $push_ctrl = A('push');
-            $owner_name = getUsernameByUId($post['user_id']);
-            $push_msg = $owner_name . "评论了你的推荐";
+            $push_msg = $comment_name . "评论了你的推荐";
             $push_ctrl->push_special($push_msg, $data['owner_id'], 'comment');
-            
+
             $this->ajaxReturn(responseMsg(0, $type));
         } else {
             $this->ajaxReturn(responseMsg(1, $type));
@@ -888,19 +896,19 @@ class IntroduceController extends Controller
         // 如果有传user_id,则where有条件，否者where为空
         if ($user_id) {
             loginPermitApiPreTreat($type);
-            // 得到该用户的domain
-            $domain2 = $UserDomain->where(array(
-                'user_id' => $user_id
-            ))->select();
-            foreach ($domain2 as $k => $v) {
-                $domain[] = $v['domain'];
-            }
-            if ($domain) {
-                $where['domain'] = array(
-                    "IN",
-                    $domain
-                );
-            }
+//            // 得到该用户的domain
+//            $domain2 = $UserDomain->where(array(
+//                'user_id' => $user_id
+//            ))->select();
+//            foreach ($domain2 as $k => $v) {
+//                $domain[] = $v['domain'];
+//            }
+//            if ($domain) {
+//                $where['domain'] = array(
+//                    "IN",
+//                    $domain
+//                );
+//            }
             $msg = $Intro->where($where)
                 ->order('alldegree desc')
                 ->limit($from, $length)
@@ -933,11 +941,11 @@ class IntroduceController extends Controller
                 $resp[] = $this->getIntroContent($v['id'], $user_id);
             }
         }
-        $resp = responseMsg(0, $type, $resp);
+        $_resp = responseMsg(0, $type, $resp);
         // 返回整合from，length
-        $resp['from'] = $from;
-        $resp['length'] = $length;
-        $this->ajaxReturn($resp);
+        $_resp['from'] = $from;
+        $_resp['length'] = count($resp);
+        $this->ajaxReturn($_resp);
     }
 
     /**
@@ -979,8 +987,8 @@ class IntroduceController extends Controller
             $msg[$k]['comment_comment'] = array();
             $msg[$k]['comment_comment'] = $CommentComment->table('jianghu_comment_comment c')
                 ->where(array(
-                'comment_id' => $v['id']
-            ))
+                    'comment_id' => $v['id']
+                ))
                 ->join("left join jianghu_user u on u.id=c.user_id")
                 ->field("u.faceurl,u.username,c.*")
                 ->select();
@@ -997,9 +1005,15 @@ class IntroduceController extends Controller
     {
         $type = 212;
         $post = loginPermitApiPreTreat($type);
-        $Comment = D("comment_comment");
-        $add = $Comment->create($post);
-        $Comment->add($add);
+        $Comment_comment = D("comment_comment");
+        $Comment = D('comment');
+        $add = $Comment_comment->create($post);
+        //整合owner_id,也就是comment_id的user_id
+        $add['time'] = date('Y-m-d H:i:s');
+        $comment_info = $Comment->where(['id' => $post['comment_id']])->find();
+        $add['owner_id'] = $comment_info['user_id'];
+        $add['introduce_id'] = $comment_info['introduce_id'];
+        $Comment_comment->add($add);
         $this->ajaxReturn(responseMsg(0, $type));
     }
 
@@ -1067,10 +1081,14 @@ class IntroduceController extends Controller
         foreach ($intros2 as $k => $v) {
             $intros[] = $v['introduce_id'];
         }
-        $where['id'] = array(
-            "IN",
-            $intros
-        );
+        if ($intros) {
+            $where['id'] = array(
+                "IN",
+                $intros
+            );
+        } else {
+            $where['id'] = 0;
+        }
         // dump($intros);die;
         $contents = $Intro->where($where)
             ->order("time desc")
@@ -1112,7 +1130,7 @@ class IntroduceController extends Controller
     /**
      * 得到详细推荐
      *
-     * @param unknown $introduce_id            
+     * @param unknown $introduce_id
      * @param unknown $user_id
      *            当前用户id
      */

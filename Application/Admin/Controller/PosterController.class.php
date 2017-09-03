@@ -35,6 +35,9 @@ class PosterController extends Controller
         if ($count >= 5) {
             $this->error("最多只能有五张海报哦！", U('poster/index'));
         } else {
+            if(mb_strlen(I('title'))>16){
+                $this->error("标题不能超过16个字！");
+            }
             $poster = imageUpload();
             $add['posterurl'] = $poster['url'][0];
             $add['posterpath'] = $poster['path'][0];

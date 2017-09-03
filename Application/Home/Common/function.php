@@ -125,3 +125,18 @@ function getDistance($latitude1, $longitude1, $latitude2, $longitude2)
     $meters = $kilometers * 1000;
     return round($kilometers, 1);
 }
+
+/**检查是不是朋友
+ * @param $user_id1
+ * @param $user_id2
+ */
+function is_friend($user_id,$is_friend_id){
+    $Friend=D('friend');
+    $rows=$Friend->where(['user_id'=>$user_id,'friend_id'=>$is_friend_id])->select();
+    if($rows){
+        return true;
+    }else{
+        return false;
+    }
+}
+

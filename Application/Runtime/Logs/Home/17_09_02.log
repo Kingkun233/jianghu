@@ -1,0 +1,20 @@
+[ 2017-09-02T16:19:28+08:00 ] ::1 /jianghu/index.php/home/business/getNearBusiness
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000682s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000827s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000877s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0052s ]
+SQL: SELECT * FROM `jianghu_business` WHERE `name` LIKE '%%'  [ RunTime:0.0007s ]
+
+[ 2017-09-02T16:31:14+08:00 ] ::1 /jianghu/index.php/home/business/getNearBusiness
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000744s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000953s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001031s ]
+SQL: SHOW COLUMNS FROM `jianghu_business` [ RunTime:0.0044s ]
+SQL: SELECT * FROM `jianghu_business` WHERE `name` LIKE '%%'  [ RunTime:0.0006s ]
+

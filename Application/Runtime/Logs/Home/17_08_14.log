@@ -1,0 +1,146 @@
+[ 2017-08-14T11:17:47+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000687s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001416s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0069s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0064s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%100003%' OR u.phonenum LIKE '%100003%' GROUP BY u.id  [ RunTime:0.0254s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0062s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 29  [ RunTime:0.0065s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 54  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 55  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 56  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 57  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 58  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 59  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 60  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 61  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 62  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 63  [ RunTime:0.0004s ]
+
+[ 2017-08-14T11:18:15+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000601s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0067s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0060s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%100003%' OR u.phonenum LIKE '%100003%' GROUP BY u.id  [ RunTime:0.0012s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 29  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 54  [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 55  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 56  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 57  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 58  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 59  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 60  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 61  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 62  [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: user_id D:\xampp\htdocs\jianghu\Application\Home\Controller\SearchController.class.php 第 174 行.
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = null AND `friend_id` = 63  [ RunTime:0.0003s ]
+
+[ 2017-08-14T11:20:17+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000845s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000772s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0060s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%100003%' OR u.phonenum LIKE '%100003%' GROUP BY u.id  [ RunTime:0.0010s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0061s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 29  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 54  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 55  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 56  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 57  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 58  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 59  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 60  [ RunTime:0.0002s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 61  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 62  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 63  [ RunTime:0.0003s ]
+
+[ 2017-08-14T11:20:38+08:00 ] ::1 /jianghu/index.php/home/search/searchUser
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000809s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000772s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `jianghu_user` [ RunTime:0.0065s ]
+SQL: SELECT u.id,u.username,u.faceurl,u.allforward,u.allpraise,d.domain FROM jianghu_user u left join jianghu_user_domain d on u.id=d.user_id  WHERE u.username LIKE '%2%' OR u.phonenum LIKE '%2%' GROUP BY u.id  [ RunTime:0.0020s ]
+SQL: SHOW COLUMNS FROM `jianghu_friend` [ RunTime:0.0067s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 1  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 2  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 3  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 4  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 5  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 6  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 7  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 8  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 10  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 11  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 12  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 13  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 14  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 15  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 16  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 22  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 23  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 24  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 25  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 26  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 28  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 38  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 44  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 45  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 46  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 47  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 48  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 49  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 50  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 51  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 52  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 53  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 56  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 69  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 79  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 85  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 92  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 93  [ RunTime:0.0004s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 94  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 96  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 98  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 99  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `jianghu_friend` WHERE `user_id` = 1 AND `friend_id` = 100  [ RunTime:0.0005s ]
+

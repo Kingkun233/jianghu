@@ -19,11 +19,13 @@ class BusinessController extends Controller
         $add['name'] = $post['name'];
         $add['addr'] = $post['addr'];
         $add['latitude'] = $post['latitude'];
+        $add['longtitude'] = $post['longtitude'];
         $add['discription'] = $post['discription'];
         $add['state'] = 1;
         $add['joindate'] = date('Y-m-d');
         $add['phone'] = $post['phone'];
         $add['user_id'] = $post['user_id'];
+        $add['logourl']=$post['logourl']?$post['logourl']:"http://121.42.203.85/jianghu/Uploads/2017-09-02/59aa7047b73ce.jpg";
         $domain_id = $post['domain_id'];
         $add['domain'] = $Domain->where(array(
             'id' => $domain_id
@@ -54,6 +56,7 @@ class BusinessController extends Controller
             ->field("degree,alldegree")
             ->select();
         $star = 0;
+        $alldegree=0;
         foreach ($degrees2 as $k => $v) {
             $alldegree += $v['alldegree'];
             $degrees[] = $v['degree'];
@@ -147,11 +150,12 @@ class BusinessController extends Controller
         $longtitude = $post['longtitude'];
         $latitude = $post['latitude'];
         //给定的距离范围
-        $post_distance=$post['distance'];
+        $post_distance=$post['distance']?$post['distance']:50;
         $where['name'] = array(
             "like",
             "%" . $post['key'] . "%"
         );
+        $where['state'] = 0;
         $business_locations = $Business->where($where)->select();
         $returnBusiness = array();
         foreach ($business_locations as $k => $v) {

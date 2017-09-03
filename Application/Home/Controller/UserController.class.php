@@ -1,4 +1,5 @@
 <?php
+
 namespace Home\Controller;
 
 use Think\Controller;
@@ -14,7 +15,7 @@ class UserController extends Controller
     {
         $type = 100;
         $post = touristApiPreTreat($type);
-        $model=new Model();
+        $model = new Model();
         //开启一个事务
         $model->startTrans();
         $User = D('user');
@@ -24,22 +25,22 @@ class UserController extends Controller
         $Joinnum = D("daily_num");
         $UserDomain = D('user_domain');
         $Domain = D('domain');
-        if (! $post['username']) {
+        if (!$post['username']) {
             // 若username为空，则插入默认用户名
             $data['username'] = $this->getDefaultName();
         } else {
             $data['username'] = $post['username'];
         }
-        if (checkUserExist($data['username'])) {
-            $this->ajaxReturn(responseMsg(6, $type, null)); // 用户已存在
+        if (checkUserExist($data['phonenum'])) {
+            $this->ajaxReturn(responseMsg(6, $type)); // 用户已存在
         }
         // 默认头像
         $data['faceurl'] = $this->getDefaultFaceUrl();
         $data['password'] = $post['password'];
         $data['phonenum'] = $post['phonenum'];
-        if ($this->checkPhoneExist($data['phonenum'])) {
-            $this->ajaxReturn(responseMsg(7, $type, null)); // 电话已存在
-        }
+//        if ($this->checkPhoneExist($data['phonenum'])) {
+//            $this->ajaxReturn(responseMsg(7, $type, null)); // 电话已存在
+//        }
         $domain_ids = $post['domain_id'];
         // dump($domain_ids);die;
         if ('男' == $post['sex']) {
@@ -84,11 +85,11 @@ class UserController extends Controller
             $data1['joinnum'] = 1;
             $flag4 = $Joinnum->add($data1);
         }
-        if (! ($flag1 && $flag2 && $flag4)) {
+        if (!($flag1 && $flag2 && $flag4)) {
             //事务回滚
             $model->rollback();
             $this->ajaxReturn(responseMsg(1, $type)); // 注册失败
-        }else{
+        } else {
             //事务提交
             $model->commit();
         }
@@ -104,7 +105,7 @@ class UserController extends Controller
             "type" => "101"
         );
         $data_string = json_encode($data);
-        $url = "http://".$_SERVER['SERVER_NAME']."/jianghu/index.php/home/user/login";
+        $url = "http://" . $_SERVER['SERVER_NAME'] . "/jianghu/index.php/home/user/login";
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
@@ -113,7 +114,7 @@ class UserController extends Controller
             'Content-Type: application/json',
             'Content-Length: ' . strlen($data_string)
         ));
-        
+
         $result = curl_exec($ch);
         curl_close($ch);
         print_r($result);
@@ -133,11 +134,11 @@ class UserController extends Controller
         $LoginCount = D('login_count');
         $data['phonenum'] = $post['phonenum'];
         $data['password'] = $post['password'];
-        $push_regid=$post['push_regid'];
+        $push_regid = $post['push_regid'];
         $flag = $User->where(array(
             'phonenum' => $data['phonenum']
         ))->select();
-        if (! flag) {
+        if (!flag) {
             $this->ajaxReturn(responseMsg(4, $type)); // 用户不存在
         }
         // 检查用户被禁用
@@ -156,7 +157,7 @@ class UserController extends Controller
             //更新用户推送regid
             $User->where(array(
                 'id' => $user_id
-            ))->save(array('push_regid'=>$push_regid));
+            ))->save(array('push_regid' => $push_regid));
             //返回用户信息
             $msg = $User->where(array(
                 "id" => $user_id
@@ -255,7 +256,7 @@ class UserController extends Controller
         $flag = $User->where(array(
             'id' => $user_id
         ))->save($add);
-        
+
         if (flag) {
             // 如果成功则刷新融云的个人信息
             $username = $User->where(array(
@@ -279,7 +280,7 @@ class UserController extends Controller
         // 检查调用是否正确
         $post = touristApiPreTreat($type);
         $Token = D("token");
-        $User=D('user');
+        $User = D('user');
         $user_id = $post['user_id'];
         if ($Token->where(array(
             "user_id" => $user_id
@@ -287,7 +288,7 @@ class UserController extends Controller
             "state" => 1
         ))) {
             //该用户的regid置空
-            $User->where(array('id'=>$user_id))->save(array('push_regid'=>''));
+            $User->where(array('id' => $user_id))->save(array('push_regid' => ''));
             $this->ajaxReturn(responseMsg(0, $type)); // 登出成功
         } else {
             $this->ajaxReturn(responseMsg(1, $type)); // 登出失败
@@ -329,113 +330,113 @@ class UserController extends Controller
     {
         // 参数初始化
         $nonce = mt_rand();
-        
+
         $timeStamp = time();
         $appSec = "8u358zT5qaJX";
         $signature = sha1($appSec . $nonce . $timeStamp); // $appSec是平台分配
         $appKey = "4z3hlwrv4xj8t";
         $url = 'https://api.cn.rong.io/user/getToken.json';
-        
+
         $postData = 'userId=' . $user_id . '&name=' . $username . '&portraitUri=' . $faceurl;
-        
+
         $httpHeader = array(
-            
+
             'App-Key:' . $appKey, // 平台分配
-            
+
             'Nonce:' . $nonce, // 随机数
-            
+
             'Timestamp:' . $timeStamp, // 时间戳
-            
+
             'Signature:' . $signature, // 签名
-            
+
             'Content-Type: application/x-www-form-urlencoded'
         );
-        
+
         // 创建http header
-        
+
         $ch = curl_init();
-        
+
         curl_setopt($ch, CURLOPT_URL, $url);
-        
+
         curl_setopt($ch, CURLOPT_POST, 1);
-        
+
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
-        
+
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        
+
         curl_setopt($ch, CURLOPT_HEADER, false);
-        
+
         curl_setopt($ch, CURLOPT_HTTPHEADER, $httpHeader);
-        
+
         curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-        
+
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        
+
         $result = curl_exec($ch);
-        
+
         curl_close($ch);
-        
+
         return json_decode($result, true);
     }
 
     /**
      * 刷新融云用户信息
      *
-     * @param unknown $user_id            
-     * @param unknown $faceurl            
-     * @param unknown $username            
+     * @param unknown $user_id
+     * @param unknown $faceurl
+     * @param unknown $username
      * @return mixed
      */
     public function refreshRongYun($user_id, $faceurl, $username)
     {
         // 参数初始化
         $nonce = mt_rand();
-        
+
         $timeStamp = time();
         $appSec = "8u358zT5qaJX";
         $signature = sha1($appSec . $nonce . $timeStamp); // $appSec是平台分配
         $appKey = "4z3hlwrv4xj8t";
         $url = 'http://api.cn.ronghub.com/user/refresh.json';
-        
+
         $postData = 'userId=' . $user_id . '&name=' . $username . '&portraitUri=' . $faceurl;
-        
+
         $httpHeader = array(
-            
+
             'App-Key:' . $appKey, // 平台分配
-            
+
             'Nonce:' . $nonce, // 随机数
-            
+
             'Timestamp:' . $timeStamp, // 时间戳
-            
+
             'Signature:' . $signature, // 签名
-            
+
             'Content-Type: application/x-www-form-urlencoded'
         );
-        
+
         // 创建http header
-        
+
         $ch = curl_init();
-        
+
         curl_setopt($ch, CURLOPT_URL, $url);
-        
+
         curl_setopt($ch, CURLOPT_POST, 1);
-        
+
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
-        
+
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        
+
         curl_setopt($ch, CURLOPT_HEADER, false);
-        
+
         curl_setopt($ch, CURLOPT_HTTPHEADER, $httpHeader);
-        
+
         curl_setopt($ch, CURLOPT_TIMEOUT, 30);
-        
+
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        
+
         $result = curl_exec($ch);
-        
+
         curl_close($ch);
-        
+
         return json_decode($result, true);
     }
 
@@ -582,7 +583,7 @@ class UserController extends Controller
         $str = null;
         $strPol = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz";
         $max = strlen($strPol) - 1;
-        for ($i = 0; $i < $length; $i ++) {
+        for ($i = 0; $i < $length; $i++) {
             $str .= $strPol[rand(0, $max)]; // rand($min,$max)生成介于min和max两个数之间的一个随机整数
         }
         // 检查数据库中有没有该名字的用户
@@ -599,7 +600,7 @@ class UserController extends Controller
     /**
      * 检查电话是否存在
      *
-     * @param unknown $phonenum            
+     * @param unknown $phonenum
      * @return boolean
      */
     function checkPhoneExist($phonenum)
@@ -644,7 +645,7 @@ class UserController extends Controller
                 'Content-Type: application/json',
                 'Content-Length: ' . strlen($data_string)
             ));
-            
+
             $result = curl_exec($ch);
             curl_close($ch);
             print_r($result);
@@ -682,7 +683,7 @@ class UserController extends Controller
                 'Content-Type: application/json',
                 'Content-Length: ' . strlen($data_string)
             ));
-            
+
             $result = curl_exec($ch);
             curl_close($ch);
             print_r($result);
@@ -690,20 +691,36 @@ class UserController extends Controller
             $this->ajaxReturn(responseMsg(4, $type));
         }
     }
+
     /**
      * 检查该手机号是否已存在
      */
-    public function checkPhoneExisted(){
-        $type=115;
-        $post=touristApiPreTreat($type);
-        $User=D('user');
-        $phonenum=$post['phonenum'];
-        $where_phone['phonenum']=$phonenum;
-        $flag_phoneexist=$User->where($where_phone)->find();
-        if(!$flag_phoneexist){
+    public function checkPhoneExisted()
+    {
+        $type = 115;
+        $post = touristApiPreTreat($type);
+        $User = D('user');
+        $phonenum = $post['phonenum'];
+        $where_phone['phonenum'] = $phonenum;
+        $flag_phoneexist = $User->where($where_phone)->find();
+        if (!$flag_phoneexist) {
             $this->ajaxReturn(responseMsg(0, $type));
-        }else{
+        } else {
             $this->ajaxReturn(responseMsg(7, $type));
         }
+    }
+
+    /**
+     * 忘记密码
+     */
+    public function forget_password()
+    {
+        $type = 116;
+        $post = touristApiPreTreat($type);
+        $User = D('user');
+        $password = $post['password'];
+        $phonenum = $post['phonenum'];
+        $User->where(['phonenum' => $phonenum])->save(['password' => $password]);
+        $this->ajaxReturn(responseMsg(0, $type));
     }
 }

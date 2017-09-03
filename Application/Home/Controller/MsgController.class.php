@@ -1,4 +1,5 @@
 <?php
+
 namespace Home\Controller;
 
 use Think\Controller;
@@ -17,6 +18,7 @@ class MsgController extends Controller
         $Forward = D('forward');
         $Praise = D('praise');
         $Comment = D('comment');
+        $Comment_comment = D('comment_comment');
         $Friend = D('friend_request');
         $user_id = $post['user_id'];
         // 条件：不是自己转载自己,被转载推荐的owner是user_id
@@ -32,6 +34,9 @@ class MsgController extends Controller
         $praisemsgnum = $Praise->where($where)->count();
         // 得到评论未读消息数
         $commentmsgnum = $Comment->where($where)->count();
+        // 评论的评论未读消息数
+        $comment_commentmsgnum = $Comment_comment->where($where)->count();
+        $commentmsgnum += $comment_commentmsgnum;
         // 得到好友申请未读消息
         $wherefriend['state'] = 0;
         $wherefriend['friend_id'] = $user_id;
@@ -117,13 +122,13 @@ class MsgController extends Controller
             $msg[$k]['name'] = $User->where(array(
                 'id' => $v['user_id']
             ))->getField('username');
-            if (! $msg[$k]['name']) {
+            if (!$msg[$k]['name']) {
                 $msg[$k]['name'] = "";
             }
             $msg[$k]['face'] = $User->where(array(
                 'id' => $v['user_id']
             ))->getField('faceurl');
-            if (! $msg[$k]['face']) {
+            if (!$msg[$k]['face']) {
                 $msg[$k]['face'] = "";
             }
             unset($msg[$k]['original_id']);
@@ -154,6 +159,7 @@ class MsgController extends Controller
         $post = loginPermitApiPreTreat($type);
         $User = D('user');
         $Comment = D('comment');
+        $Comment_comment = D('comment_comment');
         $user_id = $post['user_id'];
         // 把自己给自己评论的排除
         $where1['owner_id'] = $user_id;
@@ -161,8 +167,10 @@ class MsgController extends Controller
             'neq',
             $user_id
         );
-        $msg = $Comment->where($where1)
-            ->order("time desc")
+        $msg = $Comment
+            ->table('jianghu_comment')
+            ->where($where1)
+            ->union("SELECT id,user_id,introduce_id,time ,text as content,owner_id,state FROM jianghu_comment_comment WHERE owner_id =$user_id AND user_id <> $user_id ORDER BY time desc")
             ->select();
         // 整合头像和名字
         foreach ($msg as $k => $v) {
@@ -174,10 +182,13 @@ class MsgController extends Controller
             ))->getField('faceurl');
             unset($msg[$k]['owner_id']);
         }
-        // 该用户点赞信息的state全部置一
+        // 该用户comment的state全部置一
         $where['owner_id'] = $user_id;
         $where['state'] = 0;
         $Comment->where($where)->save(array(
+            'state' => 1
+        ));
+        $Comment_comment->where($where)->save(array(
             'state' => 1
         ));
         $this->ajaxReturn(responseMsg(0, $type, $msg));
@@ -207,7 +218,7 @@ class MsgController extends Controller
             ))->getField('faceurl');
             unset($msg[$k]['friend_id']);
         }
-        // 该用户点赞信息的state全部置一
+        // 该用户好友请求的state全部置一
         $where['friend_id'] = $user_id;
         $where['state'] = 0;
         $Request->where($where)->save(array(

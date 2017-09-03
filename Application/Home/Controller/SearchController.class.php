@@ -1,4 +1,5 @@
 <?php
+
 namespace Home\Controller;
 
 use Think\Controller;
@@ -28,7 +29,7 @@ class SearchController extends Controller
         $length = 500;
         // 判断有没有传user_id
         $user_id = $post['user_id'];
-        if (! $user_id) {
+        if (!$user_id) {
             $user_id = 0;
         }
         if ($key) {
@@ -100,7 +101,7 @@ class SearchController extends Controller
         }
         // 距离筛选
         $returnIntros = array();
-        if ($max_distance != - 1) {
+        if ($max_distance != -1) {
             foreach ($introduces as $k => $v) {
                 if ($introduces[$k]['business_latitude'] && $introduces[$k]['business_longtitude']) {
                     $distance = getDistance($introduces[$k]['business_latitude'], $introduces[$k]['business_longtitude'], $user_latitude, $user_longtitude);
@@ -132,6 +133,7 @@ class SearchController extends Controller
             'like',
             "%" . $key . "%"
         );
+        $where['state'] = 0;
         $business = $Busi->where($where)
             ->field("id,name,star,logourl")
             ->order("star desc")
@@ -153,10 +155,7 @@ class SearchController extends Controller
             'like',
             "%" . $key . "%"
         );
-        $where['u.phonenum'] = array(
-            'like',
-            "%" . $key . "%"
-        );
+        $where['u.phonenum'] = $key;
         $where['_logic'] = 'OR';
         // 用外连接的时候注意null值的处理
         $msg = $User->where($where)
@@ -167,9 +166,11 @@ class SearchController extends Controller
             ->select();
         // 如果domain为null的话改为“”
         foreach ($msg as $k => $v) {
-            if (! $v["domain"]) {
+            if (!$v["domain"]) {
                 $msg[$k]["domain"] = "";
             }
+            //整合is_friend
+            $msg[$k]['is_friend'] = is_friend($post['user_id'], $v['id']) ? 1 : 0;
         }
         $this->ajaxReturn(responseMsg(0, $type, $msg));
     }

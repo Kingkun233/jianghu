@@ -1,4 +1,5 @@
 <?php
+
 namespace Admin\Controller;
 
 use Think\Controller;
@@ -145,17 +146,13 @@ class UserController extends Controller
         ))->save(array(
             "isban" => 1
         ));
-        if ($flag) {
-            // 关于该用户的所有举报全都解决
-            $Report->where(array(
-                'reported_id' => $user_id
-            ))->save(array(
-                "state" => 1
-            ));
-            $this->success("禁用成功");
-        } else {
-            $this->error("禁用失败");
-        }
+        // 关于该用户的所有举报全都解决
+        $Report->where(array(
+            'reported_id' => $user_id
+        ))->save(array(
+            "state" => 1
+        ));
+        $this->success("禁用成功");
     }
 
     /**
@@ -187,11 +184,11 @@ class UserController extends Controller
         $rows = $User->where(array(
             "username" => $username
         ))->select();
-        foreach ($rows as $k=>$v){
-            if($v['isban']){
-                $rows[$k]['isban']="该用户已被禁用";
-            }else{
-                $rows[$k]['isban']="正常";
+        foreach ($rows as $k => $v) {
+            if ($v['isban']) {
+                $rows[$k]['isban'] = "该用户已被禁用";
+            } else {
+                $rows[$k]['isban'] = "正常";
             }
         }
         $this->assign("rows", $rows);
@@ -255,7 +252,7 @@ class UserController extends Controller
             ))->getField("username");
             if ($list[$k]['state'] == 1) {
                 $list[$k]['state'] = "已禁用用户";
-            } else 
+            } else
                 if ($list[$k]['state'] == 2) {
                     $list[$k]['state'] = "已忽略";
                 } else {
@@ -276,7 +273,44 @@ class UserController extends Controller
         $id = I('id');
         $Report->where(array(
             'id' => $id
-        ))->setInc("state", 2);
+        ))->save(["state" => 2]);
         $this->success("忽略成功");
+    }
+
+    /**
+     *
+     */
+    public function check_unread()
+    {
+        //查看feedback有没有未处理的记录
+        $Feedback = D('feedback');
+        $Report = D('user_report');
+        $Business = D('business');
+        $IntroReport = D('introduce_report');
+        $feedback = $Feedback->where(['state' => 0])->find();
+        $report = $Report->where(['state' => 0])->find();
+        $business = $Business->where(['state' => 0])->find();
+        $introduce = $IntroReport->where(['state' => 0])->find();
+        if ($feedback) {
+            $resp['feedback'] = 0;
+        } else {
+            $resp['feedback'] = 1;
+        }
+        if ($report) {
+            $resp['report'] = 0;
+        } else {
+            $resp['report'] = 1;
+        }
+        if ($business) {
+            $resp['business'] = 0;
+        } else {
+            $resp['business'] = 1;
+        }
+        if ($introduce) {
+            $resp['introduce'] = 0;
+        } else {
+            $resp['introduce'] = 1;
+        }
+        $this->ajaxReturn($resp);
     }
 }

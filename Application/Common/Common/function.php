@@ -30,9 +30,9 @@ function checkUserLogin($token,$user_id){
  * @param unknown $username
  * @return boolean
  */
-function checkUserExist($username){
+function checkUserExist($phonenum){
     $User=D('user');
-    $flag=$User->where(array('username'=>$username))->select();
+    $flag=$User->where(array('phonenum'=>$phonenum))->select();
     if($flag){
         return true;
     }else {

@@ -20,7 +20,7 @@ class UpdateController extends Controller
             $this->ajaxReturn(responseMsg(0, $type, $msg));
         } else {
             // $msg =json_encode(new class{});
-            $this->ajaxReturn(responseMsg(0, $type, null));
+            $this->ajaxReturn(responseMsg(0, $type,new \stdClass()));
         }
     }
 
